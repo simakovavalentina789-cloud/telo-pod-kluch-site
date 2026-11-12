@@ -198,7 +198,7 @@ h3{letter-spacing:-.5px}
 .v9-expert-portrait{padding:0;background:#313332}.v9-expert-portrait:before{display:none}.v9-founder-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:saturate(.86);image-rendering:auto}.v9-expert-caption{letter-spacing:.15em}
 
 /* V10: pain-led copy and refined expert portrait proportions */
-.story-lead{max-width:510px}.v9-expert-copy h2{letter-spacing:-.035em}.v9-expert-portrait{max-width:415px;margin-inline:auto}@media(min-width:1100px){.v9-expert{grid-template-columns:.83fr 1.17fr;gap:8%}}
+.story-lead{max-width:510px}.v9-expert-copy h2{letter-spacing:-.035em}.v9-expert-portrait{max-width:330px;margin-inline:auto}@media(min-width:1100px){.v9-expert{grid-template-columns:.83fr 1.17fr;gap:8%}}
 </style>
 </head>
 <body>
@@ -417,6 +417,19 @@ h3{letter-spacing:-.5px}
   document.getElementById('story-prev')?.addEventListener('click',()=>setStory(storyIndex-1));
   document.getElementById('story-next')?.addEventListener('click',()=>setStory(storyIndex+1));
   document.querySelectorAll('[data-story-slide]').forEach(btn=>btn.addEventListener('click',()=>setStory(Number(btn.dataset.storySlide))));
+  const carouselRoot=document.querySelector('.editorial-rebuild');
+  const motionReduced=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  let carouselPaused=false;
+  let carouselTimer=null;
+  const pauseCarousel=()=>{carouselPaused=true;};
+  carouselRoot?.addEventListener('mouseenter',pauseCarousel);
+  carouselRoot?.addEventListener('focusin',pauseCarousel);
+  carouselRoot?.addEventListener('touchstart',pauseCarousel,{passive:true});
+  if(!motionReduced){
+    carouselTimer=window.setInterval(()=>{
+      if(!carouselPaused && document.visibilityState==='visible')setStory(storyIndex+1);
+    },8500);
+  }
 
   document.getElementById('year').textContent = String(new Date().getFullYear());
 })();
