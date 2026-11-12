@@ -151,6 +151,41 @@ h3{letter-spacing:-.5px}
 
 /* Privacy-first: no person imagery, no signup forms or embedded third-party trackers. */
 .contact-action .button{min-width:260px;justify-content:center}.proof-note{max-width:760px}
+
+/* V8: refined editorial identity, photographic triptych, no text over dishes */
+.editorial-rebuild{background:#f2f0eb;color:#222824;overflow:hidden;min-height:0}
+.editorial-rebuild .story-hero{display:grid;grid-template-columns:45% 55%;min-height:740px;gap:0}
+.editorial-rebuild .story-copy{padding:88px 58px 60px 0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.story-kicker{font-size:10px;letter-spacing:.21em;font-weight:700;color:#708071;line-height:1.6}
+.story-count{font-size:12px;letter-spacing:.12em;color:#9a9c91;margin:35px 0 15px}
+.editorial-rebuild h1{font:400 clamp(58px,5.7vw,90px)/1.07 var(--serif);letter-spacing:-.055em;color:#202c25;margin:0 0 30px}
+.editorial-rebuild h1 em{color:#687b63;font-weight:400;letter-spacing:-.045em}
+.story-lead{font:400 15px/1.85 var(--sans);max-width:470px;color:#626c63;margin:0}
+.story-links{display:flex;align-items:center;gap:30px;margin-top:36px;flex-wrap:wrap}
+.story-primary{background:#203c30;color:#fff;min-height:53px;padding:16px 24px;display:inline-flex;align-items:center;gap:50px;font-weight:650;font-size:12px;transition:background .2s}
+.story-primary:hover{background:#385944}
+.story-secondary{font-size:12px;border-bottom:1px solid #768374;padding:9px 0}
+.story-controls{display:flex;align-items:center;gap:18px;margin-top:72px}
+.story-controls>button{appearance:none;border:1px solid #cad0c5;color:#243a2d;background:transparent;width:38px;height:38px;cursor:pointer;font-size:18px}
+.story-controls>button:hover{background:#e0e5db}
+.story-pagination{display:flex;gap:9px;align-items:center}
+.story-dot{appearance:none;width:6px;height:6px;background:#b6bdb1;border:0;border-radius:50%;padding:0;cursor:pointer}
+.story-dot.active{background:#234533;width:24px;border-radius:5px}
+.story-visual{position:relative;display:grid;grid-template-rows:minmax(0,3.1fr) minmax(0,1fr);gap:8px;padding:44px 0 55px 0;min-width:0;height:740px}
+.story-visual figure{margin:0;overflow:hidden;background:#d9d8d0}
+.story-visual img{height:100%;width:100%;object-fit:cover;display:block;filter:saturate(.82)}
+.story-main-photo img{object-position:center center}
+.story-companions{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:0}
+.story-image-caption{position:absolute;bottom:21px;left:0;color:#66746b;font-size:10px;letter-spacing:.15em}
+.story-image-caption span{margin-right:8px;color:#a0a99b}
+.story-bottom{border-top:1px solid #dbded5;background:#e9ece6}
+.story-bottom .shell{display:flex;justify-content:space-between;gap:16px;padding:22px 0}
+.story-bottom span{font-size:11px;letter-spacing:.065em;color:#496252}
+@media(max-width:1000px){.editorial-rebuild .story-hero{grid-template-columns:1fr 1fr;min-height:650px}.story-visual{height:650px}.editorial-rebuild .story-copy{padding-right:25px}.editorial-rebuild h1{font-size:clamp(48px,6vw,68px)}.story-controls{margin-top:45px}}
+@media(max-width:800px){.editorial-rebuild .story-hero{grid-template-columns:1fr;min-height:0}.editorial-rebuild .story-copy{padding:66px 0 32px}.editorial-rebuild h1{font-size:clamp(51px,11vw,76px)}.story-count{margin-top:22px}.story-visual{height:490px;padding:0 0 42px}.story-controls{margin-top:35px}.story-bottom .shell{flex-wrap:wrap;justify-content:flex-start;gap:14px 24px}}
+@media(max-width:520px){.story-visual{height:380px}.story-visual{grid-template-rows:minmax(0,2.6fr) minmax(0,1fr)}.editorial-rebuild h1{font-size:clamp(48px,11vw,61px)}.story-lead{font-size:14px}.story-links{gap:18px}.story-image-caption{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.story-primary{transition:none}}
+
 </style>
 </head>
 <body>
@@ -169,26 +204,32 @@ h3{letter-spacing:-.5px}
     </nav>
   </header>
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grain"></div>
-      <div class="shell hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow light"><span class="eyebrow-rule"></span> ЧИСТОЕ ПИТАНИЕ • ИНДИВИДУАЛЬНЫЕ РАСЧЁТЫ • ВАШ ВКУС</div>
-          <h1 id="hero-title">Питание под вас.<br><em>Не вы под диету.</em></h1>
-          <p class="hero-lead">Индивидуальное здоровое, чистое и вкусное питание с расчётами под ваш организм, любимые продукты и конкретную цель: снижение веса, рекомпозицию, набор мышечной массы или поддержание веса. Без голодных диет и марафонов. Если требуется личная поддержка — отдельно подберём и посильную физическую нагрузку.</p>
-          <div class="hero-actions"><a class="button button-cream" href="#paths">Выбрать свой формат <span>↗</span></a><a class="text-link light-link" href="#method">Как это работает <span>↓</span></a></div>
-          <div class="hero-foot"><div><b>01 /</b> ПОД ВАШУ ЦЕЛЬ</div><div><b>02 /</b> ПОД ВАШИ ВКУСЫ</div><div><b>03 /</b> БЕЗ КРАЙНОСТЕЙ</div></div>
-        </div>
-        <div class="hero-visual" aria-label="Гастрономическая фотография, иллюстрирующая разнообразное здоровое питание">
-          <div class="hero-photo-wrap">
-            <img class="hero-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Красочно сервированное блюдо из свежих овощей, зелени и авокадо" fetchpriority="high" />
-            <div class="hero-photo-shade"></div>
-            <div class="hero-photo-label"><span>THE ART OF EATING WELL</span><strong>Питание как искусство заботы о себе.</strong></div>
+    <section class="hero editorial-rebuild" aria-labelledby="hero-title">
+      <div class="shell story-hero">
+        <div class="story-copy">
+          <span class="story-kicker">АВТОРСКАЯ СИСТЕМА ВАЛЕНТИНЫ СЧАСТЬЕ</span>
+          <div class="story-slides" id="story-slides" aria-live="polite">
+            <p class="story-count" id="story-count">01 — 03</p>
+            <h1 id="hero-title">Еда, которую<br>вы <em>полюбите.</em></h1>
+            <p class="story-lead" id="story-lead">Полноценное питание под вашу цель и привычки. Индивидуальные расчёты, настоящие продукты и блюда, которые хочется готовить.</p>
           </div>
-          <span class="hero-side-index">PERSONAL NUTRITION / 2026</span>
+          <div class="story-links"><a class="story-primary" href="#paths">Выбрать свой формат <span aria-hidden="true">↗</span></a><a class="story-secondary" href="#method">Узнать о методике</a></div>
+          <div class="story-controls" role="group" aria-label="Слайды главного экрана">
+            <button type="button" id="story-prev" aria-label="Предыдущий слайд">←</button>
+            <div class="story-pagination"><button type="button" class="story-dot active" data-story-slide="0" aria-label="Слайд 1" aria-current="true"></button><button type="button" class="story-dot" data-story-slide="1" aria-label="Слайд 2"></button><button type="button" class="story-dot" data-story-slide="2" aria-label="Слайд 3"></button></div>
+            <button type="button" id="story-next" aria-label="Следующий слайд">→</button>
+          </div>
+        </div>
+        <div class="story-visual" id="story-visual">
+          <figure class="story-main-photo"><img id="story-main-image" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Ресторанная подача рыбного блюда" fetchpriority="high"></figure>
+          <div class="story-companions">
+            <figure><img id="story-side-image" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Свежий овощной салат" loading="lazy"></figure>
+            <figure><img id="story-dessert-image" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Десерт с ягодами" loading="lazy"></figure>
+          </div>
+          <div class="story-image-caption"><span>01 /</span> ПОЛНОЦЕННЫЙ ПРИЁМ ПИЩИ</div>
         </div>
       </div>
-      <div class="hero-bottom"><div class="shell">СНИЖЕНИЕ ВЕСА <span>✳</span> РЕКОМПОЗИЦИЯ <span>✳</span> НАБОР МЫШЦ <span>✳</span> ПОДДЕРЖАНИЕ ВЕСА</div></div>
+      <div class="story-bottom"><div class="shell"><span>Снижение веса</span><span>Рекомпозиция</span><span>Набор мышц</span><span>Поддержание веса</span></div></div>
     </section>
 
     <section class="intro-section section-pad" id="method">
@@ -296,6 +337,32 @@ h3{letter-spacing:-.5px}
     const meals = demoDays[Number(btn.dataset.day)]; if (!meals || !demoMeals) return;
     demoMeals.innerHTML = meals.map((name,i) => `<div class="app-meal"><span class="meal-symbol ${i===1?'soup':i===2?'berry':''}">${['◒','✳','●'][i]}</span><div><small>${['ЗАВТРАК','ОБЕД','ПЕРЕКУС'][i]}</small><strong>${esc(name)}</strong><span>Иллюстративный пример, не персональный рацион</span></div><b>↗</b></div>`).join('');
   }));
+
+  const story = [
+    {count:'01 — 03',title:'Еда, которую<br>вы <em>полюбите.</em>',lead:'Полноценное питание под вашу цель и привычки. Индивидуальные расчёты, настоящие продукты и блюда, которые хочется готовить.',main:'photo-1467003909585-2f8a72700288',side:'photo-1512621776951-a57141f2eefd',dessert:'photo-1488477181946-6428a0291777',caption:'ПОЛНОЦЕННЫЙ ПРИЁМ ПИЩИ'},
+    {count:'02 — 03',title:'Ваша цель.<br><em>Ваш рацион.</em>',lead:'Снижение веса, рекомпозиция, набор мышечной массы или поддержание веса. Без чужих схем и однообразного меню.',main:'photo-1547592180-85f173990554',side:'photo-1512621776951-a57141f2eefd',dessert:'photo-1488477181946-6428a0291777',caption:'РАЗНООБРАЗИЕ И ВКУС'},
+    {count:'03 — 03',title:'Профессионально.<br><em>Индивидуально.</em>',lead:'Приложение для здоровых взрослых или личная работа со мной: питание и, при сопровождении, посильные индивидуальные нагрузки.',main:'photo-1467003909585-2f8a72700288',side:'photo-1547592180-85f173990554',dessert:'photo-1488477181946-6428a0291777',caption:'АВТОРСКАЯ МЕТОДИКА'}
+  ];
+  let storyIndex=0;
+  const storyUrl=(id,w)=>'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w='+w+'&q=85';
+  const setStory=(i)=>{
+    storyIndex=(i+story.length)%story.length;
+    const d=story[storyIndex];
+    const title=document.getElementById('hero-title');
+    if(!title)return;
+    title.innerHTML=d.title;
+    document.getElementById('story-count').textContent=d.count;
+    document.getElementById('story-lead').textContent=d.lead;
+    document.getElementById('story-main-image').src=storyUrl(d.main,1500);
+    document.getElementById('story-side-image').src=storyUrl(d.side,650);
+    document.getElementById('story-dessert-image').src=storyUrl(d.dessert,650);
+    document.querySelector('.story-image-caption').innerHTML='<span>'+String(storyIndex+1).padStart(2,'0')+' /</span> '+d.caption;
+    document.querySelectorAll('[data-story-slide]').forEach((btn,index)=>{btn.classList.toggle('active',index===storyIndex);if(index===storyIndex)btn.setAttribute('aria-current','true');else btn.removeAttribute('aria-current')});
+  };
+  document.getElementById('story-prev')?.addEventListener('click',()=>setStory(storyIndex-1));
+  document.getElementById('story-next')?.addEventListener('click',()=>setStory(storyIndex+1));
+  document.querySelectorAll('[data-story-slide]').forEach(btn=>btn.addEventListener('click',()=>setStory(Number(btn.dataset.storySlide))));
+
   document.getElementById('year').textContent = String(new Date().getFullYear());
 })();
 
