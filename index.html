@@ -205,6 +205,32 @@ h3{letter-spacing:-.5px}
 
 /* Visible V11 identity and clearer viewport branding */
 .brand-text small{display:block;color:#c9d4c7;font-size:8px;letter-spacing:1.1px;margin-top:6px;font-weight:500}.v11-identity{font:700 11px/1.5 var(--sans);color:#3e624e;letter-spacing:.15em;margin-top:28px;display:flex;align-items:center;gap:15px}.v11-identity span{font-size:9px;color:#f8f7f1;background:#233e30;padding:5px 7px;letter-spacing:.07em}.editorial-rebuild h1{margin-top:21px}@media(max-width:520px){.v11-identity{font-size:9px;letter-spacing:.07em;flex-wrap:wrap;gap:8px}.brand-text small{font-size:7px}}
+
+/* V12 — interactive conversion storytelling, editorial not questionnaire */
+.visitor-problem{background:#20362d;color:#f7f5ed;padding:118px 0 130px}
+.visitor-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:10%;align-items:start}
+.visitor-heading{position:sticky;top:130px}
+.visitor-heading .eyebrow{color:#b7c7b8;line-height:1.8}
+.visitor-heading h2{font-size:clamp(58px,5.1vw,82px);line-height:1.14;margin:32px 0}
+.visitor-heading h2 em{color:#c1cba6}
+.visitor-heading>p{font-size:15px;line-height:1.9;color:#ccd7cc;max-width:390px}
+.visitor-rule{height:1px;width:90%;background:#ffffff29;margin:60px 0 20px}
+.visitor-mini{font-size:10px;line-height:1.7;color:#afbfaf;letter-spacing:.02em}
+.visitor-choices{border-top:1px solid #ffffff3a}
+.visitor-choice{appearance:none;width:100%;background:transparent;color:#fff;display:grid;grid-template-columns:36px 1fr 30px;gap:20px;align-items:center;text-align:left;border:0;border-bottom:1px solid #ffffff3a;padding:27px 4px;cursor:pointer}
+.visitor-choice>span{font-size:10px;color:#aebfac;align-self:start;margin-top:5px;letter-spacing:.09em}
+.visitor-choice strong{font:400 clamp(19px,2vw,27px)/1.32 var(--serif);letter-spacing:-.015em}
+.visitor-choice i{font-style:normal;font-size:22px;color:#b6c7b3;font-weight:300}
+.visitor-choice.chosen strong,.visitor-choice:hover strong{color:#d6debd}
+.visitor-choice.chosen{border-bottom-color:#c2d6bd}
+.visitor-answer{margin-top:35px;background:#edf0e8;color:#23382d;padding:35px 40px 32px;min-height:270px}
+.visitor-answer>span{font-size:10px;letter-spacing:.13em;color:#627d67;font-weight:700}
+.visitor-answer h3{font-size:clamp(26px,2.6vw,36px);line-height:1.23;margin:19px 0 15px;font-weight:400}
+.visitor-answer p{font-size:13px;line-height:1.85;color:#56665b;max-width:520px;margin:0 0 22px}
+.visitor-answer a{display:inline-flex;align-items:center;gap:35px;border-bottom:1px solid #647969;padding-bottom:9px;font-size:12px;font-weight:700}
+@media(max-width:900px){.visitor-grid{grid-template-columns:1fr;gap:55px}.visitor-heading{position:static}.visitor-heading h2{margin:24px 0}.visitor-rule{margin:25px 0 15px}.visitor-problem{padding:90px 0}}
+@media(max-width:520px){.visitor-problem{padding:70px 0 85px}.visitor-choice{grid-template-columns:22px 1fr 24px;gap:10px;padding:20px 0}.visitor-choice strong{font-size:21px}.visitor-answer{padding:28px 25px}.visitor-answer h3{font-size:27px}}
+
 </style>
 </head>
 <body>
@@ -226,7 +252,7 @@ h3{letter-spacing:-.5px}
     <section class="hero editorial-rebuild" aria-labelledby="hero-title">
       <div class="shell story-hero">
         <div class="story-copy">
-          <span class="story-kicker">ВАЛЕНТИНА СЧАСТЬЕ · АВТОРСКАЯ СИСТЕМА</span><div class="v11-identity">ИНДИВИДУАЛЬНЫЙ КОНСТРУКТОР ПИТАНИЯ <span>V11</span></div>
+          <span class="story-kicker">ВАЛЕНТИНА СЧАСТЬЕ · АВТОРСКАЯ СИСТЕМА</span><div class="v11-identity">ИНДИВИДУАЛЬНЫЙ КОНСТРУКТОР ПИТАНИЯ</div>
           <div class="story-slides" id="story-slides" aria-live="polite">
             <p class="story-count" id="story-count">01 — 03</p>
             <h1 id="hero-title">Ешьте вкусно.<br><em>Меняйтесь осознанно.</em></h1>
@@ -249,6 +275,21 @@ h3{letter-spacing:-.5px}
         </div>
       </div>
       <div class="story-bottom"><div class="shell"><span>Снижение веса</span><span>Рекомпозиция</span><span>Набор мышц</span><span>Поддержание веса</span></div></div>
+    </section>
+
+    <section class="visitor-problem" id="my-question" aria-labelledby="visitor-problem-heading">
+      <div class="shell visitor-grid">
+        <div class="visitor-heading"><span class="eyebrow">ВАША ПРОБЛЕМА — НАША ОТПРАВНАЯ ТОЧКА</span><h2 id="visitor-problem-heading">Вы узнаёте<br><em>себя?</em></h2><p>Выберите ситуацию. Покажем, как наша система помогает организовать питание без шаблонных решений.</p><div class="visitor-rule"></div><span class="visitor-mini">Здесь нет анкеты. Ответы не отправляются и не сохраняются.</span></div>
+        <div class="visitor-interaction">
+          <div class="visitor-choices" role="group" aria-label="Что мешает достигать своей цели">
+            <button type="button" class="visitor-choice chosen" data-visitor="start" aria-pressed="true"><span>01</span><strong>Снова начинаю худеть с понедельника</strong><i aria-hidden="true">↗</i></button>
+            <button type="button" class="visitor-choice" data-visitor="menu" aria-pressed="false"><span>02</span><strong>Не знаю, что готовить и сколько есть</strong><i aria-hidden="true">↗</i></button>
+            <button type="button" class="visitor-choice" data-visitor="taste" aria-pressed="false"><span>03</span><strong>Надоели запреты и невкусные диеты</strong><i aria-hidden="true">↗</i></button>
+            <button type="button" class="visitor-choice" data-visitor="expert" aria-pressed="false"><span>04</span><strong>Есть особенности здоровья — нужен специалист</strong><i aria-hidden="true">↗</i></button>
+          </div>
+          <div class="visitor-answer" id="visitor-answer" aria-live="polite"><span>НАШ ПОДХОД</span><h3>Не очередная диета. Устойчивая система питания.</h3><p>Начинаем с индивидуальных расчётов и привычных продуктов, а не с запретов. Собираем полноценную неделю под вашу цель и предпочтения.</p><a href="#app">Как работает конструктор <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
     </section>
 
     <section class="intro-section section-pad" id="method">
@@ -436,6 +477,21 @@ h3{letter-spacing:-.5px}
       if(!carouselPaused && document.visibilityState==='visible')setStory(storyIndex+1);
     },8500);
   }
+
+
+  // On-page choice only; no forms, storage, analytics or network requests.
+  const visitorResponses={
+    start:['Не очередная диета. Устойчивая система питания.','Начинаем с индивидуальных расчётов и привычных продуктов, а не с запретов. Собираем полноценную неделю под вашу цель и предпочтения.','#app','Как работает конструктор'],
+    menu:['Семь дней без ежедневного вопроса «что приготовить».','Ваше питание организовано заранее: рецепты, порции и список продуктов. Меньше рутины — больше ясности и вкуса.','#app','Посмотреть меню на неделю'],
+    taste:['Вкусное питание — не награда за хорошее поведение.','Конструктор учитывает пищевые предпочтения и составляет разнообразные блюда. Стейк, рыба, овощи и десерты могут стать частью рациона, если вписываются в индивидуальные расчёты.','#situations','Выбрать свою цель'],
+    expert:['Когда нужен специалист, я работаю лично.','Индивидуальный разбор, питание и персональные тренировки онлайн или офлайн с учётом возможностей. При заболеваниях и симптомах учитываются врачебные рекомендации.','#paths','Посмотреть личную работу']
+  };
+  const answerElement=document.getElementById('visitor-answer');
+  document.querySelectorAll('[data-visitor]').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-visitor]').forEach(b=>{b.classList.toggle('chosen',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
+    const data=visitorResponses[btn.dataset.visitor];if(!data||!answerElement)return;
+    answerElement.innerHTML='<span>НАШ ПОДХОД</span><h3>'+esc(data[0])+'</h3><p>'+esc(data[1])+'</p><a href="'+esc(data[2])+'">'+esc(data[3])+' <span aria-hidden="true">↗</span></a>';
+  }));
 
   document.getElementById('year').textContent = String(new Date().getFullYear());
 })();
