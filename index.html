@@ -391,9 +391,9 @@ h3{letter-spacing:-.5px}
   }));
 
   const story = [
-    {count:'01 — 03',title:'Больше не нужно<br><em>начинать заново.</em>',lead:'Устали от диет, голода, срывов и вечного вопроса «что приготовить»? Получите вкусное и полноценное питание, рассчитанное под вас и вашу цель.',main:'photo-1467003909585-2f8a72700288',side:'photo-1512621776951-a57141f2eefd',dessert:'photo-1488477181946-6428a0291777',caption:'ПОЛНОЦЕННЫЙ ПРИЁМ ПИЩИ'},
-    {count:'02 — 03',title:'Любите стейк?<br><em>Он может быть в меню.</em>',lead:'Здоровый рацион — не бесконечная курица с гречкой. Любимые блюда, полноценные приёмы пищи и расчёты под похудение, рекомпозицию, набор мышц или поддержание веса.',main:'https://images.unsplash.com/photo-1755811248279-1ab13b7d4384?auto=format&fit=crop&w=1500&q=85',side:'photo-1512621776951-a57141f2eefd',dessert:'photo-1488477181946-6428a0291777',caption:'РАЗНООБРАЗИЕ И ВКУС'},
-    {count:'03 — 03',title:'Нет времени<br><em>думать о меню?</em>',lead:'Недельный план, рецепты, порции и покупки — в приложении для здоровых взрослых. Если нужна помощь специалиста, я работаю лично: питание и индивидуальные онлайн- и офлайн-тренировки.',main:'photo-1547592180-85f173990554',side:'photo-1547592180-85f173990554',dessert:'photo-1488477181946-6428a0291777',caption:'АВТОРСКАЯ МЕТОДИКА'}
+    {count:'01 — 03',title:'Больше не нужно<br><em>начинать заново.</em>',lead:'Устали от диет, голода, срывов и вечного вопроса «что приготовить»? Получите вкусное и полноценное питание, рассчитанное под вас и вашу цель.',main:'photo-1467003909585-2f8a72700288',side:'photo-1512621776951-a57141f2eefd',dessert:'photo-1488477181946-6428a0291777',caption:'ПОЛНОЦЕННЫЙ ПРИЁМ ПИЩИ',alts:['Рыбное блюдо в ресторанной подаче','Овощной салат','Ягодный десерт']},
+    {count:'02 — 03',title:'Любите стейк?<br><em>Он может быть в меню.</em>',lead:'Здоровый рацион — не бесконечная курица с гречкой. Любимые блюда, полноценные приёмы пищи и расчёты под похудение, рекомпозицию, набор мышц или поддержание веса.',main:'https://images.unsplash.com/photo-1755811248279-1ab13b7d4384?auto=format&fit=crop&w=1500&q=85',side:'photo-1490645935967-10de6ba17061',dessert:'photo-1567620905732-2d1ec7ab7445',caption:'МЯСНОЙ СТЕЙК И ПОЛНОЦЕННЫЙ РАЦИОН',alts:['Ресторанный стейк из говядины с овощным гарниром','Разнообразные овощные блюда','Подача завтрака с панкейками']},
+    {count:'03 — 03',title:'Нет времени<br><em>думать о меню?</em>',lead:'Недельный план, рецепты, порции и покупки — в приложении для здоровых взрослых. Если нужна помощь специалиста, я работаю лично: питание и индивидуальные онлайн- и офлайн-тренировки.',main:'photo-1547592180-85f173990554',side:'photo-1476224203421-9ac39bcb3327',dessert:'photo-1563805042-7684c019e1cb',caption:'РАЗНООБРАЗИЕ НА КАЖДЫЙ ДЕНЬ',alts:['Свежее блюдо с зеленью и овощами','Полноценный завтрак','Десерт']}
   ];
   let storyIndex=0;
   const storyUrl=(id,w)=>id.startsWith('https://')?id:'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w='+w+'&q=85';
@@ -406,8 +406,11 @@ h3{letter-spacing:-.5px}
     document.getElementById('story-count').textContent=d.count;
     document.getElementById('story-lead').textContent=d.lead;
     document.getElementById('story-main-image').src=storyUrl(d.main,1500);
+    document.getElementById('story-main-image').alt=d.alts[0];
     document.getElementById('story-side-image').src=storyUrl(d.side,650);
+    document.getElementById('story-side-image').alt=d.alts[1];
     document.getElementById('story-dessert-image').src=storyUrl(d.dessert,650);
+    document.getElementById('story-dessert-image').alt=d.alts[2];
     document.querySelector('.story-image-caption').innerHTML='<span>'+String(storyIndex+1).padStart(2,'0')+' /</span> '+d.caption;
     document.querySelectorAll('[data-story-slide]').forEach((btn,index)=>{btn.classList.toggle('active',index===storyIndex);if(index===storyIndex)btn.setAttribute('aria-current','true');else btn.removeAttribute('aria-current')});
   };
