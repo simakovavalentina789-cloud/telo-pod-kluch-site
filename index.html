@@ -231,13 +231,37 @@ h3{letter-spacing:-.5px}
 @media(max-width:900px){.visitor-grid{grid-template-columns:1fr;gap:55px}.visitor-heading{position:static}.visitor-heading h2{margin:24px 0}.visitor-rule{margin:25px 0 15px}.visitor-problem{padding:90px 0}}
 @media(max-width:520px){.visitor-problem{padding:70px 0 85px}.visitor-choice{grid-template-columns:22px 1fr 24px;gap:10px;padding:20px 0}.visitor-choice strong{font-size:21px}.visitor-answer{padding:28px 25px}.visitor-answer h3{font-size:27px}}
 
+
+/* V13 — original mark, premium visual alignment, conversion refinements */
+.brand-real-logo{display:grid;place-items:center;padding:0;border:0;background:transparent;width:52px;height:52px;flex-shrink:0}
+.brand-real-logo img{display:block;width:50px;height:50px;object-fit:contain;border-radius:1px}
+.site-header .brand-text{font-family:Georgia,serif;font-size:12px;line-height:1.1;letter-spacing:1.2px}
+.story-hero{position:relative}
+.story-copy{position:relative;z-index:1}
+.story-kicker{font-weight:600;color:#4b6253}
+.editorial-rebuild{background:#f4f2ed}
+.editorial-rebuild .story-visual img{filter:saturate(.92) contrast(1.04)}
+.story-main-photo{position:relative}
+.story-main-photo:after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px #ffffff30;pointer-events:none}
+.story-primary{background:#213c30;box-shadow:none}
+.story-primary:hover{background:#355b44}
+.story-proofline{font-weight:550;letter-spacing:.04em}
+.story-bottom{background:#e5e8df}
+.story-bottom span{font-weight:650}
+.v9-expert-copy h2{font-size:clamp(43px,4.4vw,70px)}
+.v9-expert-portrait{background:#303733}
+.contact-section .button{transition:transform .2s,background .2s}
+.contact-section .button:hover{transform:translateY(-2px)}
+@media(max-width:800px){.brand-real-logo{width:43px;height:43px}.brand-real-logo img{width:42px;height:42px}.site-header .brand-text{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.contact-section .button{transition:none!important}}
+
 </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
   <header class="site-header" id="top">
     <div class="shell nav-row">
-      <a class="brand" href="#top" aria-label="Тело под ключ — на главную"><span class="brand-mark">Т<span>•</span>К</span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ<small>КОНСТРУКТОР ПИТАНИЯ</small></span></a>
+      <a class="brand" href="#top" aria-label="Тело под ключ — на главную"><span class="brand-mark brand-real-logo"><img src="data:image/webp;base64,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" alt="" width="45" height="45" decoding="async"></span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ<small>КОНСТРУКТОР ПИТАНИЯ</small></span></a>
       <nav class="desktop-nav" aria-label="Основное меню">
         <a href="#method">Метод</a><a href="#situations">Цели</a><a href="#paths">Два формата</a><a href="#app">Приложение</a><a href="#formats">Форматы</a><a href="#expert">Об эксперте</a><a href="#proof">Результаты</a>
       </nav>
@@ -265,7 +289,7 @@ h3{letter-spacing:-.5px}
             <button type="button" id="story-next" aria-label="Следующий слайд">→</button>
           </div>
         </div>
-        <div class="story-visual" id="story-visual">
+        <div class="story-visual" id="story-visual" aria-label="Фотографии блюд, иллюстрирующих индивидуальный рацион">
           <figure class="story-main-photo"><img id="story-main-image" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Ресторанная подача рыбного блюда" fetchpriority="high"></figure>
           <div class="story-companions">
             <figure><img id="story-side-image" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=650&amp;q=80" alt="Свежий овощной салат" loading="lazy"></figure>
@@ -294,7 +318,7 @@ h3{letter-spacing:-.5px}
 
     <section class="intro-section section-pad" id="method">
       <div class="shell"><div class="section-topline"><span class="eyebrow">01 / ФИЛОСОФИЯ</span><span class="small-side">РЕШЕНИЯ ПОД ВАС, А НЕ НАОБОРОТ</span></div>
-      <div class="intro-grid"><h2>Никакой<br>чужой <em>формулы.</em></h2><div class="intro-copy"><p>Не существует одного рациона, который одинаково подходит всем. У каждого человека — свой ритм жизни, привычки, предпочтения и цели.</p><p>«Тело под ключ» начинается с конкретной цели, индивидуального расчёта энергии и питательных веществ, предпочтений в еде и реального образа жизни. Система помогает питаться разнообразно и с удовольствием, без жёстких диет и насилия над собой.</p><a class="text-link" href="#app">Посмотреть систему <span>↗</span></a></div></div>
+      <div class="intro-grid"><h2>Никакой<br>чужой <em>формулы.</em></h2><div class="intro-copy"><p>Не существует одного рациона, который одинаково подходит всем. У каждого человека — свой ритм жизни, привычки, предпочтения и цели.</p><p>«Тело под ключ» — это интеллектуальный конструктор питания: сначала выбирается цель, затем учитываются индивидуальные параметры, энергия, нутриенты, привычки и любимые продукты. Система помогает питаться разнообразно и с удовольствием, без жёстких диет и насилия над собой.</p><a class="text-link" href="#app">Посмотреть систему <span>↗</span></a></div></div>
       <div class="value-grid">
         <article class="value-card"><span class="value-no">01</span><div class="value-icon">◉</div><h3>Ваша цель</h3><p>Снижение веса, рекомпозиция тела, набор мышечной массы и здоровое поддержание веса — для каждой цели своя логика питания и расчётов.</p></article>
         <article class="value-card"><span class="value-no">02</span><div class="value-icon">✳</div><h3>Ваш вкус</h3><p>Любимые продукты, исключения, разнообразие блюд и удобный режим готовки — меню строится вокруг индивидуальных предпочтений.</p></article>
@@ -374,7 +398,7 @@ h3{letter-spacing:-.5px}
 
     <section class="contact-section" id="contact"><div class="shell contact-grid"><div><span class="eyebrow light">10 / НАЧАЛО ПУТИ</span><h2>Выберите свой путь.<br><em>Остальное — персонально.</em></h2><p>Хотите узнать о приложении или обсудить индивидуальную работу? Напишите мне напрямую в Telegram. На этом сайте не нужно оставлять имя, телефон, почту или заполнять анкету.</p></div><div class="contact-action"><a class="button button-cream" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать Валентине лично <span>↗</span></a><small>Откроется личный чат с Валентиной Счастье. Сайт не предлагает анкету или форму заявки.</small></div></div></section>
   </main>
-  <footer class="footer"><div class="shell footer-main"><a class="brand" href="#top"><span class="brand-mark">Т<span>•</span>К</span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ</span></a><p>Чистое питание под вашу цель и вкусы. Индивидуальные физические нагрузки — при личном сопровождении.<br>Методика Валентины Счастье.</p><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a></div><div class="shell footer-bottom"><span>© <span id="year"></span> «Тело под ключ»</span><span>Предварительная версия сайта · Информация о запуске обновляется</span><a href="#top">Наверх ↑</a></div></footer>
+  <footer class="footer"><div class="shell footer-main"><a class="brand" href="#top"><span class="brand-mark brand-real-logo"><img src="data:image/webp;base64,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" alt="" width="45" height="45" decoding="async"></span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ</span></a><p>Чистое питание под вашу цель и вкусы. Индивидуальные физические нагрузки — при личном сопровождении.<br>Методика Валентины Счастье.</p><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a></div><div class="shell footer-bottom"><span>© <span id="year"></span> «Тело под ключ»</span><span>Предварительная версия сайта · Информация о запуске обновляется</span><a href="#top">Наверх ↑</a></div></footer>
   <script>
 (() => {
   const toggle = document.querySelector('.menu-toggle');
