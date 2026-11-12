@@ -316,6 +316,47 @@ h3{letter-spacing:-.5px}
 }
 @media(prefers-reduced-motion:reduce){.v14-hero .story-primary{transition:none}}
 
+
+/* V16: premium editorial constructor narrative - deliberately separate from app UI */
+.v16-constructor{background:#172b23!important;color:#f3f0e7;overflow:hidden}
+.v16-constructor .shell{width:min(1320px,calc(100% - 110px))}
+.v16-section-meta{display:flex;align-items:center;justify-content:space-between;gap:25px;border-bottom:1px solid #b9b8a644;padding-bottom:23px;color:#d9c59f;font:700 10px/1.6 var(--sans);letter-spacing:.19em}
+.v16-section-meta span:last-child{font-weight:500;color:#d9e3d0a6}
+.v16-intro{display:grid;grid-template-columns:1.18fr .82fr;gap:9%;padding:76px 0 72px;align-items:end}
+.v16-intro h2{margin:0;font-size:clamp(46px,5vw,75px);color:#f4f1e9;line-height:1.17;letter-spacing:-.055em}
+.v16-intro h2 em{color:#c2b393}
+.v16-intro-aside p{margin:0;color:#d4ddd1;font-size:15px;line-height:1.95}
+.v16-release-note{font-size:11px;display:flex;align-items:center;gap:11px;margin-top:28px;color:#e5cb9b}
+.v16-status-pulse{display:inline-block;flex-shrink:0;width:8px;height:8px;background:#c2a876;border-radius:50%}
+.v16-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#d0d5cc48;border:1px solid #d0d5cc48}
+.v16-stages article{background:#1d372c;padding:43px 29px 42px;min-height:235px;display:flex;flex-direction:column}
+.v16-stages article>span{font:700 10px var(--sans);letter-spacing:.16em;color:#bca985}
+.v16-stages strong{font:400 clamp(28px,2.5vw,39px)/1.2 var(--serif);color:#faf9f3;margin:35px 0 15px}
+.v16-stages p{font-size:12px;line-height:1.8;color:#c7d0c4;margin:0}
+.v16-week{margin-top:68px;background:#f3f1e9;color:#263329;padding:50px 55px 0}
+.v16-week-header{display:grid;grid-template-columns:1.15fr .85fr;gap:11%;align-items:end}
+.v16-eyebrow{font:700 10px var(--sans);letter-spacing:.17em;color:#6d846d}
+.v16-week h3{font:400 clamp(41px,4vw,64px)/1.18 var(--serif);letter-spacing:-.045em;margin:17px 0 38px;color:#22392d}
+.v16-week h3 em{color:#7c8f7c}
+.v16-week-sidebar p{font-size:13px;line-height:1.85;color:#647467;max-width:380px;margin:0 0 26px}
+.v16-week-sidebar>span{font:700 10px var(--sans);letter-spacing:.16em;color:#7c917d}
+.v16-week-days{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px!important;margin:0 0 10px!important}
+.v16-week-days button{border:1px solid #c8cec1!important;background:transparent!important;color:#49624f!important;cursor:pointer;border-radius:0!important;padding:14px 6px!important;min-height:47px;font-size:11px;font-weight:700}
+.v16-week-days button.selected{background:#203d2e!important;color:#fff!important;border-color:#203d2e!important}
+.v16-week-days button:focus-visible{outline:3px solid #a0bda5;outline-offset:2px}
+.v16-meal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.v16-meal{min-height:225px;display:flex;flex-direction:column;justify-content:space-between;background:#e7e9e0;padding:33px 27px}
+.v16-meal:nth-child(2){background:#d9e0d5}
+.v16-meal span{font:700 10px var(--sans);letter-spacing:.13em;color:#5e785e}
+.v16-meal strong{font:400 clamp(24px,2.4vw,36px)/1.25 var(--serif);letter-spacing:-.025em;color:#1e3829}
+.v16-meal small{font-size:11px;color:#68786a}
+.v16-week-footer{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:31px 0 35px;flex-wrap:wrap}
+.v16-week-footer>span{font-size:10px;letter-spacing:.09em;color:#6f806d;font-weight:700}
+.v16-week-footer a{border-bottom:1px solid #4d6955;padding-bottom:8px;font-size:12px;font-weight:700;color:#294b35;white-space:nowrap}
+@media(max-width:1100px){.v16-constructor .shell{width:calc(100% - 70px)}.v16-stages article{padding:30px 19px;min-height:250px}}
+@media(max-width:800px){.v16-constructor .shell{width:calc(100% - 42px)}.v16-intro,.v16-week-header{grid-template-columns:1fr;gap:25px}.v16-intro{padding:57px 0}.v16-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.v16-stages article{min-height:195px}.v16-week{padding:36px 26px 0}.v16-week h3{margin-bottom:15px}.v16-week-sidebar p{margin-bottom:20px}.v16-meal-grid{grid-template-columns:1fr}.v16-meal{min-height:130px;padding:22px;gap:16px}.v16-week-days{gap:4px!important}.v16-week-days button{padding:13px 1px!important}}
+@media(max-width:520px){.v16-section-meta span:last-child{display:none}.v16-intro h2{font-size:44px}.v16-stages{grid-template-columns:1fr 1fr}.v16-stages article{padding:22px 17px;min-height:205px}.v16-stages strong{font-size:28px;margin:21px 0 10px}.v16-stages p{font-size:11px}.v16-week{padding:30px 18px 0}.v16-week h3{font-size:38px}.v16-week-footer{align-items:flex-start;flex-direction:column}}
+
 </style>
 </head>
 <body>
@@ -395,8 +436,42 @@ h3{letter-spacing:-.5px}
 
     <section class="steps-section section-pad" id="steps"><div class="shell"><span class="eyebrow">03 / МОЙ ПОДХОД</span><h2>Не заставлять себя.<br><em>Понять, что подходит вам.</em></h2><div class="steps-grid"><article><span class="step-num">01</span><h3>Разбираем исходные данные</h3><p>Цель, параметры, образ жизни, активность, предпочтения и ограничения в питании. В личной работе — также особенности здоровья и медицинские рекомендации.</p></article><article><span class="step-num">02</span><h3>Создаём персональную систему</h3><p>Индивидуальные расчёты и вкусный рацион. Только при личной работе — дополнительно посильные физические нагрузки, соответствующие вашей подготовке и цели.</p></article><article><span class="step-num">03</span><h3>Двигаемся к результату</h3><p>Без марафонов и наказания едой. При сопровождении я лично отслеживаю динамику и корректирую питание и нагрузки по ситуации.</p></article></div></div></section>
 
-    <section class="app-section section-pad" id="app"><div class="shell app-grid"><div class="app-info"><span class="eyebrow light">04 / КОНСТРУКТОР ПИТАНИЯ</span><h2>Не генератор диет.<br><em>Ваш персональный конструктор.</em></h2><p>Для здоровых взрослых конструктор составляет недельное меню с учётом цели, индивидуальной потребности в энергии и нутриентах, образа жизни и пищевых предпочтений. Это не случайная подборка рецептов: расчёты, состав блюд и закупки связаны в единую систему. Клиентский запуск — после завершения проверок.</p><ul class="check-list"><li>Индивидуальные расчёты энергии, белков, жиров и углеводов</li><li>Недельное меню для одной из четырёх целей</li><li>Вкусные рецепты, порции и понятные инструкции</li><li>Список покупок и учёт пищевых предпочтений</li></ul><div class="app-status">● ПРИЛОЖЕНИЕ В РАЗРАБОТКЕ · ИНТЕРАКТИВНАЯ ДЕМОНСТРАЦИЯ</div></div>
-      <div class="app-showcase"><div class="app-panel"><div class="app-panel-top"><div class="app-logo">тело<span>под ключ</span></div><span>ДЕМО · НЕ РЕАЛЬНОЕ МЕНЮ</span></div><div class="app-welcome">Ваш план питания <span>Неделя 01</span></div><div class="app-days" role="group" aria-label="Демонстрация дней недели"><button type="button" data-day="0" aria-pressed="true" class="selected">ПН</button><button type="button" data-day="1" aria-pressed="false" class="">ВТ</button><button type="button" data-day="2" aria-pressed="false" class="">СР</button><button type="button" data-day="3" aria-pressed="false" class="">ЧТ</button><button type="button" data-day="4" aria-pressed="false" class="">ПТ</button><button type="button" data-day="5" aria-pressed="false" class="">СБ</button><button type="button" data-day="6" aria-pressed="false" class="">ВС</button></div><div id="demo-meals" aria-live="polite"><div class="app-meal"><span class="meal-symbol">◒</span><div><small>ЗАВТРАК</small><strong>Омлет с овощами</strong><span>Пример блюда</span></div><b>↗</b></div><div class="app-meal"><span class="meal-symbol soup">✳</span><div><small>ОБЕД</small><strong>Курица, крупа и салат</strong><span>Пример блюда</span></div><b>↗</b></div><div class="app-meal"><span class="meal-symbol berry">●</span><div><small>ПЕРЕКУС</small><strong>Творожный десерт</strong><span>Пример блюда</span></div><b>↗</b></div></div><div class="app-panel-bottom"><span>Рецепты</span><span>План недели</span><span>Покупки</span></div></div><div class="app-orbit">7 <span>дней</span></div></div></div></section>
+    <section class="app-section section-pad v16-constructor" id="app">
+  <div class="shell">
+    <div class="v16-section-meta"><span>04 / ВНУТРИ СИСТЕМЫ</span><span>ПЕРСОНАЛИЗАЦИЯ · РАСЧЁТЫ · ГАСТРОНОМИЯ</span></div>
+    <div class="v16-intro">
+      <div><h2>Не диета по шаблону.<br><em>Рацион, собранный под вас.</em></h2></div>
+      <div class="v16-intro-aside"><p>Интеллектуальный конструктор соединяет ваши параметры, конкретную цель, пищевые предпочтения и профессиональную методику — чтобы получить не список запретов, а полноценную неделю питания.</p><div class="v16-release-note"><span class="v16-status-pulse"></span> Клиентская версия проходит проверку перед запуском</div></div>
+    </div>
+    <div class="v16-stages" aria-label="Как конструктор формирует питание">
+      <article><span>01 / ЦЕЛЬ</span><strong>Для чего?</strong><p>Снижение веса, рекомпозиция, набор мышц или поддержание веса.</p></article>
+      <article><span>02 / РАСЧЁТ</span><strong>Сколько?</strong><p>Индивидуальная потребность в энергии и питательных веществах.</p></article>
+      <article><span>03 / ВКУС</span><strong>Что любите?</strong><p>Предпочтения, исключения, состав блюд и удобство приготовления.</p></article>
+      <article><span>04 / НЕДЕЛЯ</span><strong>Что готовить?</strong><p>Семь дней питания, порции, рецепты и список покупок.</p></article>
+    </div>
+    <div class="v16-week">
+      <div class="v16-week-header">
+        <div><span class="v16-eyebrow">ДЕМОНСТРАЦИЯ ЛОГИКИ, НЕ РЕАЛЬНЫЙ РАЦИОН</span><h3>Семь дней.<br><em>Ни одного одинакового дня.</em></h3></div>
+        <div class="v16-week-sidebar"><p>Переключайте дни и смотрите, как выглядит планирование питания. Данные ниже — иллюстративный пример, не назначение и не персональный расчёт.</p><span>01 — 07 / ВЫБЕРИТЕ ДЕНЬ</span></div>
+      </div>
+      <div class="app-days v16-week-days" role="group" aria-label="Демонстрация дней недели">
+        <button type="button" data-day="0" aria-pressed="true" class="selected">ПН</button>
+        <button type="button" data-day="1" aria-pressed="false">ВТ</button>
+        <button type="button" data-day="2" aria-pressed="false">СР</button>
+        <button type="button" data-day="3" aria-pressed="false">ЧТ</button>
+        <button type="button" data-day="4" aria-pressed="false">ПТ</button>
+        <button type="button" data-day="5" aria-pressed="false">СБ</button>
+        <button type="button" data-day="6" aria-pressed="false">ВС</button>
+      </div>
+      <div class="v16-meal-grid" id="demo-meals" aria-live="polite">
+        <article class="v16-meal"><span>01 / ЗАВТРАК</span><strong>Омлет с овощами</strong><small>Иллюстративный пример блюда</small></article>
+        <article class="v16-meal"><span>02 / ОБЕД</span><strong>Курица, крупа и салат</strong><small>Иллюстративный пример блюда</small></article>
+        <article class="v16-meal"><span>03 / ДОПОЛНЕНИЕ</span><strong>Творожный десерт</strong><small>Иллюстративный пример блюда</small></article>
+      </div>
+      <div class="v16-week-footer"><span>ВАШИ ПАРАМЕТРЫ → ВАШИ ПРЕДПОЧТЕНИЯ → ВАША НЕДЕЛЯ</span><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Узнать о запуске <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </div>
+</section>
 
     <section class="difference section-pad"><div class="shell"><span class="eyebrow">05 / В ЧЁМ НАША РАЗНИЦА</span><div class="difference-header"><h2>Любой может попросить меню.<br><em>Не каждый получит систему.</em></h2><p>Разовый ответ ИИ зависит от формулировки запроса. Здесь логика продукта выстроена профессионалом: индивидуальный расчёт, пищевая база, проверяемые рецептуры, вкусовые предпочтения и недельный план связаны между собой.</p></div><div class="comparison"><div class="compare-col muted"><span>РАЗОВЫЙ ЗАПРОС</span><h3>«Составь мне рацион»</h3><p>Текстовый ответ, качество и применимость которого зависят от запроса и дальнейшей самостоятельной проверки.</p></div><div class="compare-col highlighted"><span>ПОДХОД «ТЕЛО ПОД КЛЮЧ»</span><h3>Система решений</h3><p>Методика расчётов, продуктовая база, рецептуры, логика предпочтений и недельный сценарий — всё это разрабатывается и тестируется как единый продукт.</p></div></div><p class="disclaimer">Показаны принципы разрабатываемой системы. До запуска пользовательской версии отдельные функции могут измениться.</p></div></section>
 
@@ -497,10 +572,11 @@ h3{letter-spacing:-.5px}
     ['Омлет с зеленью','Говядина с овощами','Творожный десерт']
   ];
   const demoMeals = document.getElementById('demo-meals');
+  const demoMealLabels = ['01 / ЗАВТРАК','02 / ОБЕД','03 / ДОПОЛНЕНИЕ'];
   document.querySelectorAll('[data-day]').forEach(btn => btn.addEventListener('click', () => {
     document.querySelectorAll('[data-day]').forEach(b => {b.classList.toggle('selected',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
     const meals = demoDays[Number(btn.dataset.day)]; if (!meals || !demoMeals) return;
-    demoMeals.innerHTML = meals.map((name,i) => `<div class="app-meal"><span class="meal-symbol ${i===1?'soup':i===2?'berry':''}">${['◒','✳','●'][i]}</span><div><small>${['ЗАВТРАК','ОБЕД','ПЕРЕКУС'][i]}</small><strong>${esc(name)}</strong><span>Иллюстративный пример, не персональный рацион</span></div><b>↗</b></div>`).join('');
+    demoMeals.innerHTML = meals.map((name,i) => '<article class="v16-meal"><span>'+esc(demoMealLabels[i])+'</span><strong>'+esc(name)+'</strong><small>Иллюстративный пример блюда</small></article>').join('');
   }));
 
   const story = [
