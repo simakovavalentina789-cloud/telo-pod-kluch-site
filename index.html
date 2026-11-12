@@ -68,6 +68,84 @@ body{overflow-x:hidden}section{scroll-margin-top:84px}
 @media(max-width:520px){.goal-selector{gap:9px}.goal-button{padding:17px 14px;min-height:224px}.goal-icon{font-size:41px;margin:21px 0 15px}.goal-button strong{font-size:21px}.goal-button small{font-size:10px}.goal-arrow{bottom:12px;right:14px}.goal-result{display:block;padding:25px 20px}.goal-result .button{margin-top:23px}.path-chooser{padding:24px 18px}.path-chooser h3{font-size:28px}.path-option{padding:17px 14px;font-size:12px}.app-panel{transform:none}.hero-visual{height:365px}.hero-foot{margin-top:33px}}
 @media(prefers-reduced-motion:reduce){.hero-halo,.plate{animation:none!important}}
 
+
+/* V6 — editorial art direction; retains existing interaction and content */
+:root{--green:#172d27;--green2:#263e34;--cream:#f3f0e8;--paper:#f7f5f0;--sage:#deded4;--gold:#b09b74;--ink:#202421;--line:#d6d4cb;--serif:'Playfair Display',Georgia,serif}
+body{background:var(--paper)}
+.shell{width:min(1360px,calc(100% - 112px))}
+.site-header{height:92px;background:#182b25;position:sticky;top:0;z-index:50;border-bottom:1px solid #ffffff20;backdrop-filter:blur(14px)}
+.brand-mark{border-radius:0;width:38px;height:38px;letter-spacing:-3px;font-size:18px;border-color:#c6b58f}
+.brand-text{letter-spacing:2.4px;line-height:1.16;font-size:10px}
+.desktop-nav{font-size:11px;letter-spacing:.04em;gap:25px}
+.nav-cta{border-radius:0;padding:16px 21px;font-size:11px;letter-spacing:.07em}
+.hero{background:#192e27;min-height:780px}
+.hero-grid{grid-template-columns:1.07fr .93fr;gap:0;min-height:760px;align-items:stretch}
+.hero-copy{padding:115px 76px 100px 0;display:flex;flex-direction:column;justify-content:center}
+.hero-copy .eyebrow{font-size:10px;letter-spacing:2.5px;line-height:1.8;max-width:480px}
+h1{font-family:var(--serif);font-size:clamp(68px,6.2vw,106px);line-height:1.09;font-weight:400;letter-spacing:-4.8px;margin:37px 0 34px}
+h1 em{font-style:italic;color:#c9bc9e}
+.hero-lead{max-width:570px;line-height:1.85;font-size:14px;color:#d4dad3}
+.hero-actions{margin-top:37px}
+.button{border-radius:0;font-size:11px;letter-spacing:.06em;min-height:58px;padding:18px 25px}
+.hero-foot{margin-top:75px;gap:25px;border-top:1px solid #ffffff29;padding-top:22px}
+.hero-foot div{font-size:9px;letter-spacing:1.5px}
+.hero-visual{height:auto;min-height:760px;display:block;overflow:visible}
+.hero-photo-wrap{height:100%;position:relative;overflow:hidden;background:#6f7966}
+.hero-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:saturate(.75) contrast(1.03)}
+.hero-photo-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,23,16,.74) 0%,rgba(9,25,17,.08) 46%,rgba(9,25,17,.06) 100%)}
+.hero-photo-label{position:absolute;bottom:49px;left:42px;right:40px;display:flex;flex-direction:column;gap:12px;color:#fff}
+.hero-photo-label span,.hero-side-index{font-size:10px;letter-spacing:2.8px;font-weight:700}
+.hero-photo-label strong{font:italic 29px/1.25 var(--serif);max-width:380px;font-weight:400}
+.hero-side-index{position:absolute;writing-mode:vertical-rl;right:-32px;top:80px;color:#bfc6b9;opacity:.7}
+.hero-bottom{background:#202f29;font-size:10px;font-weight:500;letter-spacing:2.6px;padding:22px 0}
+.hero-bottom span{font-size:10px;margin:0 28px;color:#a79c83}
+.hero-grain{opacity:.045}
+.section-pad{padding:150px 0}
+h2{font-size:clamp(45px,4.8vw,76px);line-height:1.14;letter-spacing:-2.8px}
+h3{letter-spacing:-.5px}
+.eyebrow{font-size:10px;letter-spacing:2.5px}
+.intro-section{background:#f8f7f2}
+.intro-grid{margin:70px 0 95px}
+.intro-copy p,.difference-header p,.expert-copy p{font-size:15px;line-height:1.95}
+.value-card{padding-top:55px;padding-bottom:35px}
+.value-icon,.goal-icon{display:none}
+.value-card h3{margin-top:58px;font-size:30px}
+.goal-selector{gap:1px;background:var(--line);border:1px solid var(--line)}
+.goal-button{border-radius:0!important;box-shadow:none!important;min-height:265px;padding:30px!important;background:#f8f7f2!important;color:#26342d!important;transform:none!important;border:0!important;transition:background .25s,color .25s!important}
+.goal-button:hover{background:#eeede5!important}
+.goal-button.is-active{background:#1f3b30!important;color:#fff!important}
+.goal-button strong{font-size:clamp(23px,2.2vw,32px);margin-top:54px;line-height:1.2}
+.goal-button small{font-size:11px}
+.goal-index{font-size:11px}
+.goal-arrow{font-family:var(--sans);font-size:20px}
+.goal-result{border-radius:0;background:#e8e7dc;padding:42px;margin-top:0}
+.route-card{border-radius:0!important;box-shadow:none!important;transform:none!important}
+.route-card:first-child{background:#e5e6dd!important}
+.route-card:last-child{background:#eeece4!important}
+.path-chooser{border-radius:0;background:#20372e;padding:55px}
+.path-option{border-radius:0;background:transparent;padding:22px 20px}
+.path-answer{border-radius:0}
+.steps-grid article,.compare-col,.format-detail{border-radius:0}
+.app-section{background:#e4e7e0}
+.app-panel{transform:none!important;border:8px solid #24352e;border-radius:24px;box-shadow:25px 40px 65px #1a2e2436}
+.app-orbit{border-radius:0;right:-35px;bottom:10px;width:115px;height:115px;font-size:48px;background:#c6b995}
+.format-tabs button{border-radius:0;padding:17px 26px;letter-spacing:.03em}
+.portrait-frame{background:#243a30;height:610px;justify-content:flex-start;align-items:stretch}
+.portrait-frame:before{display:none}
+.portrait-editorial{position:relative;z-index:1;display:flex;flex-direction:column;padding:65px 56px 55px;width:100%;height:100%;justify-content:space-between;color:#f4f0e6;background:radial-gradient(circle at 80% 20%,#405849 0%,transparent 45%),linear-gradient(135deg,#253d32,#172b24)}
+.portrait-overline{font-size:11px;letter-spacing:3px;color:#c9c4ae}
+.portrait-name{font:400 clamp(56px,5vw,85px)/1.12 var(--serif);letter-spacing:-2px}
+.portrait-name em{color:#c9b993}
+.portrait-rule{height:1px;background:#ffffff55;width:100%}
+.portrait-bottomline{font-size:12px;line-height:1.8;letter-spacing:.07em;color:#e0e3d9}
+.faq,.formats{background:#eeeDE6}
+.contact-section{background:#1a3028;padding:130px 0}
+.footer{background:#11251f}
+@media(min-width:801px) and (max-width:1150px){.shell{width:calc(100% - 64px)}.hero-copy{padding-right:45px}h1{font-size:clamp(62px,6vw,83px)}.hero-visual,.hero-grid{min-height:630px}.hero-foot{margin-top:45px}.hero-photo-label{left:30px;bottom:32px}}
+@media(max-width:800px){.shell{width:min(100% - 42px,690px)}.site-header{height:74px}.hero-grid{grid-template-columns:1fr;min-height:0}.hero-copy{padding:78px 0 55px}.hero-visual{height:475px;min-height:0;max-width:none;width:100%;margin:0}.hero-photo-label{left:25px;bottom:30px}.hero-side-index{display:none}.hero-foot{margin-top:50px}.section-pad{padding:90px 0}.goal-selector{gap:1px}.goal-button{min-height:215px}.goal-button strong{margin-top:40px}.portrait-frame{height:530px}.portrait-editorial{padding:48px 35px}.path-chooser{padding:32px 24px}.app-orbit{right:0}.hero-bottom{line-height:2}}
+@media(max-width:520px){h1{font-size:clamp(53px,12.5vw,74px);letter-spacing:-2.8px}.hero-copy{padding:65px 0 46px}.hero-visual{height:395px!important}.hero-photo-label strong{font-size:23px}.hero-actions{gap:16px;flex-wrap:wrap}.hero-foot{gap:16px}.hero-bottom{font-size:8px}.hero-bottom span{margin:0 7px}.goal-button{min-height:180px;padding:18px!important}.goal-button strong{font-size:21px;margin-top:28px}.goal-result{padding:28px 22px}.portrait-name{font-size:55px}.portrait-editorial{padding:38px 27px}.app-orbit{display:none}}
+@media(prefers-reduced-motion:reduce){.goal-button,.hero-photo{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -96,25 +174,13 @@ body{overflow-x:hidden}section{scroll-margin-top:84px}
           <div class="hero-actions"><a class="button button-cream" href="#paths">Выбрать свой формат <span>↗</span></a><a class="text-link light-link" href="#method">Как это работает <span>↓</span></a></div>
           <div class="hero-foot"><div><b>01 /</b> ПОД ВАШУ ЦЕЛЬ</div><div><b>02 /</b> ПОД ВАШИ ВКУСЫ</div><div><b>03 /</b> БЕЗ КРАЙНОСТЕЙ</div></div>
         </div>
-        <div class="hero-visual" aria-label="Стилизованное блюдо — визуальный концепт до подключения фотосъёмки">
-          <div class="hero-halo"></div>
-          <svg class="plate" viewBox="0 0 560 560" role="img" aria-label="Декоративная иллюстрация блюда с зеленью, овощами и злаками">
-            <defs><radialGradient id="dish" cx="48%" cy="42%"><stop stop-color="#fbf7e9"/><stop offset=".76" stop-color="#e8dfcd"/><stop offset=".95" stop-color="#faf6ec"/><stop offset="1" stop-color="#d2c6b2"/></radialGradient><linearGradient id="salmon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dfaa7b"/><stop offset="1" stop-color="#b2674d"/></linearGradient><filter id="drop"><feGaussianBlur stdDeviation="8"/></filter></defs>
-            <ellipse cx="286" cy="305" rx="228" ry="222" fill="#071e17" opacity=".40" filter="url(#drop)"/><circle cx="280" cy="280" r="228" fill="url(#dish)"/><circle cx="280" cy="280" r="190" fill="#f8f4e9"/><circle cx="280" cy="280" r="177" fill="#ede7d5" opacity=".45"/>
-            <g transform="rotate(-21 280 280)">
-              <ellipse cx="268" cy="293" rx="139" ry="103" fill="#628446"/><ellipse cx="258" cy="287" rx="128" ry="94" fill="#a3b36b"/>
-              <path d="M166 247 Q255 174 354 243 Q394 291 344 342 Q254 373 171 331 Q138 287 166 247" fill="url(#salmon)"/>
-              <path d="M188 253 Q278 199 351 254 M174 279 Q267 237 371 280 M188 306 Q279 270 356 312" fill="none" stroke="#efc19e" stroke-width="8" opacity=".68"/>
-              <g fill="#3b6332"><ellipse cx="169" cy="232" rx="36" ry="15" transform="rotate(-38 169 232)"/><ellipse cx="368" cy="340" rx="48" ry="16" transform="rotate(38 368 340)"/><ellipse cx="320" cy="191" rx="41" ry="12" transform="rotate(-55 320 191)"/><ellipse cx="184" cy="356" rx="34" ry="13" transform="rotate(35 184 356)"/></g>
-              <g fill="#e7cc65"><circle cx="170" cy="312" r="21"/><circle cx="352" cy="219" r="18"/><circle cx="363" cy="301" r="16"/><circle cx="232" cy="202" r="13"/></g>
-              <g fill="#f6e7ad"><circle cx="168" cy="311" r="9"/><circle cx="353" cy="218" r="8"/><circle cx="362" cy="301" r="7"/></g>
-              <g fill="#9cbd6a"><circle cx="213" cy="357" r="13"/><circle cx="320" cy="365" r="14"/><circle cx="227" cy="180" r="11"/><circle cx="379" cy="251" r="9"/></g>
-              <g fill="#db734c"><circle cx="187" cy="206" r="10"/><circle cx="376" cy="326" r="12"/><circle cx="203" cy="381" r="9"/></g>
-              <path d="M181 204 Q230 166 270 197 M330 360 Q378 351 391 314 M150 298 Q157 339 189 347" fill="none" stroke="#386536" stroke-width="7" stroke-linecap="round"/>
-            </g>
-          </svg>
-          <div class="floating-note"><span class="note-icon">✳</span><span>Вкусно — не значит<br><strong>сложно</strong></span></div>
-          <span class="visual-caption">Еда как удовольствие, а не наказание.</span>
+        <div class="hero-visual" aria-label="Гастрономическая фотография, иллюстрирующая разнообразное здоровое питание">
+          <div class="hero-photo-wrap">
+            <img class="hero-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Красочно сервированное блюдо из свежих овощей, зелени и авокадо" fetchpriority="high" />
+            <div class="hero-photo-shade"></div>
+            <div class="hero-photo-label"><span>THE ART OF EATING WELL</span><strong>Питание как искусство заботы о себе.</strong></div>
+          </div>
+          <span class="hero-side-index">PERSONAL NUTRITION / 2026</span>
         </div>
       </div>
       <div class="hero-bottom"><div class="shell">СНИЖЕНИЕ ВЕСА <span>✳</span> РЕКОМПОЗИЦИЯ <span>✳</span> НАБОР МЫШЦ <span>✳</span> ПОДДЕРЖАНИЕ ВЕСА</div></div>
@@ -155,7 +221,7 @@ body{overflow-x:hidden}section{scroll-margin-top:84px}
 
     <section class="formats section-pad" id="formats"><div class="shell"><div class="section-topline"><span class="eyebrow">06 / ВЫБОР ФОРМАТА</span><span class="small-side">ВЫБЕРИТЕ ПОДХОДЯЩИЙ УРОВЕНЬ ПОДДЕРЖКИ</span></div><h2>Если вы здоровы — приложение.<br><em>Если нужна помощь — я рядом.</em></h2><div class="format-tabs" role="tablist" aria-label="Форматы работы"><button type="button" class="active" role="tab" aria-selected="true" data-tab="app">Приложение</button><button type="button" role="tab" aria-selected="false" data-tab="diagnostic">Диагностика</button><button type="button" role="tab" aria-selected="false" data-tab="personal">Сопровождение</button></div><div class="format-detail" id="format-detail" role="tabpanel" aria-live="polite"><div><span class="detail-kicker">САМОСТОЯТЕЛЬНЫЙ ФОРМАТ</span><h3>Ваше индивидуальное меню на 7 дней</h3><p>Для здоровых взрослых: недельный рацион по индивидуальным расчётам, под вашу цель и вкусы, с рецептами, порциями и покупками. Доступ после завершения клиентских проверок.</p></div><div class="detail-right"><span class="detail-price">Скоро</span><a href="#contact" class="button button-dark">Узнать о запуске <span>↗</span></a></div></div><p class="formats-note">Стоимость недельного меню и личных программ пока пересматривается. До утверждения тарифов здесь нет публичной цены или кнопки оплаты.</p></div></section>
 
-    <section class="expert-section section-pad" id="expert"><div class="shell expert-grid"><div class="expert-art"><div class="portrait-frame"><div class="portrait-monogram">ВС</div><span>ВАЛЕНТИНА СЧАСТЬЕ</span></div><div class="portrait-note">Портрет будет добавлен из оригинальной фотографии</div></div><div class="expert-copy"><span class="eyebrow">07 / ЭКСПЕРТ И ОСНОВАТЕЛЬ</span><h2>За каждой системой<br>стоит <em>человек.</em></h2><h3>Валентина Счастье</h3><p>Нутрициолог, специалист по диетологии, мастер-тренер по бодибилдингу и фитнесу высшей категории. Более 17 лет практики. Основатель проекта «Тело под ключ». Индивидуальный подбор тренировочной нагрузки доступен только в личной работе со мной.</p><p>Я объединяю индивидуальные расчёты питания, профессиональную тренерскую практику и работу с привычками. Моя задача — не заставлять человека жить по чужой схеме, а построить рацион под его организм, цели и предпочтения. Результаты клиентов и профессиональные материалы публикуются с вниманием к фактам и конфиденциальности.</p><div class="expert-highlight">«Я не предлагаю подгонять человека под программу. Я создаю систему под человека».</div><a class="text-link" href="#contact">Обсудить свою задачу <span>↗</span></a></div></div></section>
+    <section class="expert-section section-pad" id="expert"><div class="shell expert-grid"><div class="expert-art"><div class="portrait-frame"><div class="portrait-editorial"><span class="portrait-overline">FOUNDER & EXPERT</span><span class="portrait-name">Валентина<br><em>Счастье</em></span><span class="portrait-rule"></span><span class="portrait-bottomline">Личный подход. Профессиональная методика.<br>Никаких чужих шаблонов.</span></div></div><div class="portrait-note">В следующей версии здесь будет оригинальный портрет эксперта</div></div><div class="expert-copy"><span class="eyebrow">07 / ЭКСПЕРТ И ОСНОВАТЕЛЬ</span><h2>За каждой системой<br>стоит <em>человек.</em></h2><h3>Валентина Счастье</h3><p>Нутрициолог, специалист по диетологии, мастер-тренер по бодибилдингу и фитнесу высшей категории. Более 17 лет практики. Основатель проекта «Тело под ключ». Индивидуальный подбор тренировочной нагрузки доступен только в личной работе со мной.</p><p>Я объединяю индивидуальные расчёты питания, профессиональную тренерскую практику и работу с привычками. Моя задача — не заставлять человека жить по чужой схеме, а построить рацион под его организм, цели и предпочтения. Результаты клиентов и профессиональные материалы публикуются с вниманием к фактам и конфиденциальности.</p><div class="expert-highlight">«Я не предлагаю подгонять человека под программу. Я создаю систему под человека».</div><a class="text-link" href="#contact">Обсудить свою задачу <span>↗</span></a></div></div></section>
 
     <section class="proof-section section-pad" id="proof"><div class="shell"><span class="eyebrow">08 / ДОКАЗАТЕЛЬСТВА И ДОВЕРИЕ</span><h2>Реальная практика.<br><em>Реальные люди.</em></h2><p>В основе подхода — профессиональная практика, реальные истории клиентов и подтверждённые изменения. В этом разделе появятся оригинальные отзывы и результаты с разрешения участников.</p><div class="proof-grid"><div><strong>Результаты клиентов</strong><span>Документированные истории — после переноса оригиналов</span></div><div><strong>Профессиональная квалификация</strong><span>Мастер-тренер высшей категории, нутрициология, диетология</span></div><div><strong>Публикации в СМИ</strong><span>Материалы с проверенными ссылками на публикации</span></div></div><p class="proof-note">Кейсы, фотографии и публикации будут добавлены после сверки с оригинальными материалами.</p></div></section>
 
