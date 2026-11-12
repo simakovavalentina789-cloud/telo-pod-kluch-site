@@ -566,6 +566,33 @@ section[id],header[id]{scroll-margin-top:112px}
 @media(max-width:520px){.story-controls{flex-wrap:wrap;gap:12px!important}.story-controls .story-pause{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.v20-card,.story-primary,.story-controls>button{transition:none!important}}
 
+
+/* V24: a coherent seven-chapter editorial site architecture */
+.v24-chapter-nav{background:#e7e8dc;color:#284432;border-bottom:1px solid #d1d5c9}
+.v24-chapter-nav .shell{display:flex;justify-content:center;align-items:center;gap:clamp(20px,5vw,65px);padding:18px 0;flex-wrap:wrap}
+.v24-chapter-nav a{font-size:11px;font-weight:700;letter-spacing:.035em;white-space:nowrap}
+.v24-chapter-nav a:hover,.v24-chapter-nav a:focus-visible{color:#8d784e}
+.v24-method-contrast{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:60px;background:#9eaa9c66;border:1px solid #9eaa9c66}
+.v24-method-contrast>div{padding:33px 32px;background:#1e372c;min-width:0}
+.v24-method-contrast>div:last-child{background:#d9c6a4;color:#1c3826}
+.v24-method-contrast span{display:block;font-size:10px;letter-spacing:.15em;color:#bdae91;font-weight:700}
+.v24-method-contrast>div:last-child span{color:#5a775a}
+.v24-method-contrast strong{display:block;font:400 clamp(26px,2.3vw,34px)/1.25 var(--serif);margin:17px 0;color:#f7f4e9}
+.v24-method-contrast>div:last-child strong{color:#21412e}
+.v24-method-contrast p{font-size:12px;line-height:1.85;color:#cad6ca;max-width:57ch}
+.v24-method-contrast>div:last-child p{color:#4b6b54}
+.v24-food-gallery{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:11px;height:490px;margin:38px 0 18px}
+.v24-food-gallery figure{min-width:0;min-height:0;overflow:hidden;position:relative;margin:0;background:#122b21}
+.v24-food-gallery .v24-food-main{grid-row:span 2}
+.v24-food-gallery img{display:block;width:100%;height:100%;object-fit:cover;object-position:73% center}
+.v24-food-gallery figcaption{position:absolute;left:20px;bottom:19px;color:#f3ece0;font-size:10px;letter-spacing:.14em;font-weight:700;text-shadow:0 2px 10px #000}
+.v24-gallery-note{font-size:11px;color:#6b796e;line-height:1.8;margin-bottom:34px}
+#situations .goals-heading{margin-bottom:32px}
+#app,#situations,#proof,#expert,#formats,#questions,#contact{scroll-margin-top:106px}
+@media(min-width:1200px){.v24-food-gallery{height:560px}}
+@media(max-width:800px){.v24-chapter-nav .shell{justify-content:flex-start;gap:23px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.v24-chapter-nav .shell::-webkit-scrollbar{display:none}.v24-food-gallery{height:400px}.v24-method-contrast{grid-template-columns:1fr}.v24-method-contrast>div{padding:27px}.v24-method-contrast{margin-top:38px}}
+@media(max-width:550px){.v24-food-gallery{grid-template-columns:1fr 1fr;grid-template-rows:240px 140px;height:390px;gap:7px}.v24-food-gallery .v24-food-main{grid-column:span 2;grid-row:span 1}.v24-food-gallery figcaption{font-size:9px;left:12px;bottom:11px}.v24-chapter-nav .shell{width:calc(100% - 28px)}}
+
 </style>
 </head>
 <body>
@@ -574,19 +601,20 @@ section[id],header[id]{scroll-margin-top:112px}
     <div class="shell nav-row">
       <a class="brand" href="#top" aria-label="Тело под ключ — на главную"><span class="brand-mark brand-real-logo"><img src="assets/logo-vs.webp" alt="" width="45" height="45" decoding="async"></span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ<small>КОНСТРУКТОР ПИТАНИЯ</small></span></a>
       <nav class="desktop-nav" aria-label="Основное меню">
-        <a href="#method">Метод</a><a href="#situations">Цели</a><a href="#paths">Два формата</a><a href="#app">Приложение</a><a href="#formats">Форматы</a><a href="#expert">Об эксперте</a><a href="#proof">Результаты</a>
+        <a href="#app">Конструктор</a><a href="#situations">Вкус и цели</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a>
       </nav>
       <a class="nav-cta" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать лично <span aria-hidden="true">↗</span></a>
       <a class="mobile-contact-cta" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer" aria-label="Написать Валентине лично в Telegram"><span class="mobile-contact-label">Написать</span><span aria-hidden="true">↗</span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню"><span></span><span></span><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильное меню" hidden>
-      <a href="#method">Метод</a><a href="#situations">Цели</a><a href="#paths">Два формата</a><a href="#app">Приложение</a><a href="#formats">Форматы</a><a href="#expert">Об эксперте</a><a href="#proof">Результаты</a><a href="#contact">Связаться</a>
+      <a href="#app">Конструктор</a><a href="#situations">Вкус и цели</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a><a href="#contact">Связаться</a>
       <a class="mobile-nav-telegram" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать Валентине лично в Telegram <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
   <main id="main">
-    <section class="hero editorial-rebuild v14-hero" aria-labelledby="hero-title">
+    <div class="v24-chapter-nav" aria-label="Быстрый переход по сайту"><div class="shell"><a href="#app">Конструктор</a><a href="#situations">Вкус и цели</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a></div></div>
+<section class="hero editorial-rebuild v14-hero" aria-labelledby="hero-title">
   <div class="v14-hero-visual" aria-hidden="true"><img id="story-main-image" src="assets/hero-01-fish.webp" alt="Ресторанная подача полноценного обеда: лосось, овощи, салат, десерт и напиток" fetchpriority="high" decoding="async"><div class="v14-hero-grad"></div></div>
   <div class="shell v14-hero-layout">
     <div class="story-copy">
@@ -597,7 +625,7 @@ section[id],header[id]{scroll-margin-top:112px}
         <h1 id="hero-title">Ешьте вкусно.<br><em>Меняйтесь осознанно.</em></h1>
         <p class="story-lead" id="story-lead">Надоели голодные диеты, срывы и однообразное меню? Конструктор создаёт персональную неделю питания с учётом вашей цели, расчётов и любимых продуктов.</p>
       </div>
-      <div class="story-links"><a class="story-primary" href="#app">Посмотреть конструктор <span aria-hidden="true">↗</span></a><a class="story-secondary" href="#paths">Выбрать формат</a></div>
+      <div class="story-links"><a class="story-primary" href="#app">Посмотреть конструктор <span aria-hidden="true">↗</span></a><a class="story-secondary" href="#formats">Выбрать формат</a></div>
       <p class="story-proofline">4 цели <span>·</span> Индивидуальные расчёты <span>·</span> Меню на 7 дней</p>
       <div class="story-controls" role="group" aria-label="Слайды главного экрана">
         <button type="button" id="story-prev" aria-label="Предыдущий слайд">←</button>
@@ -611,49 +639,12 @@ section[id],header[id]{scroll-margin-top:112px}
   <div class="story-bottom"><div class="shell"><span>Снижение веса</span><span>Рекомпозиция</span><span>Набор мышц</span><span>Поддержание веса</span></div></div>
 </section>
 
-<section class="intro-section section-pad" id="method">
-      <div class="shell"><div class="section-topline"><span class="eyebrow">01 / ФИЛОСОФИЯ</span><span class="small-side">РЕШЕНИЯ ПОД ВАС, А НЕ НАОБОРОТ</span></div>
-      <div class="intro-grid"><h2>Никакой<br>чужой <em>формулы.</em></h2><div class="intro-copy"><p>Не существует одного рациона, который одинаково подходит всем. У каждого человека — свой ритм жизни, привычки, предпочтения и цели.</p><p>«Тело под ключ» — это интеллектуальный конструктор питания: сначала выбирается цель, затем учитываются индивидуальные параметры, энергия, нутриенты, привычки и любимые продукты. Система помогает питаться разнообразно и с удовольствием, без жёстких диет и насилия над собой.</p><a class="text-link" href="#app">Посмотреть систему <span>↗</span></a></div></div>
-      <div class="value-grid">
-        <article class="value-card"><span class="value-no">01</span><div class="value-icon">◉</div><h3>Ваша цель</h3><p>Снижение веса, рекомпозиция тела, набор мышечной массы и здоровое поддержание веса — для каждой цели своя логика питания и расчётов.</p></article>
-        <article class="value-card"><span class="value-no">02</span><div class="value-icon">✳</div><h3>Ваш вкус</h3><p>Любимые продукты, исключения, разнообразие блюд и удобный режим готовки — меню строится вокруг индивидуальных предпочтений.</p></article>
-        <article class="value-card"><span class="value-no">03</span><div class="value-icon">◎</div><h3>Ваш образ жизни</h3><p>Для расчёта питания учитываем активность и распорядок жизни. Персональные тренировки подбираются только при личной работе с Валентиной.</p></article>
-      </div></div>
-    </section>
-
-    <section class="situations-section section-pad" id="situations" aria-labelledby="goals-title">
-      <div class="shell">
-        <div class="section-topline"><span class="eyebrow">02 / ВАША ЦЕЛЬ</span><span class="small-side">ЧЕТЫРЕ ЦЕЛИ · ОДИН ИНДИВИДУАЛЬНЫЙ ПОДХОД</span></div>
-        <div class="goals-heading"><div><h2 id="goals-title">Не универсальная диета.<br><em>Ваша личная цель.</em></h2><p class="situations-lead">Выберите, к чему стремитесь. Посмотрите, на чём строится подход к питанию в каждом случае.</p></div><span class="goals-prompt">НАЖМИТЕ НА КАРТОЧКУ ↘</span></div>
-        <div class="goal-selector" role="group" aria-label="Выберите цель питания">
-          <button type="button" class="goal-button is-active" data-goal="loss" aria-pressed="true"><span class="goal-index">01 /</span><span class="goal-icon" aria-hidden="true">↘</span><strong>Снижение веса</strong><small>Бережно и без голодания</small><span class="goal-arrow">↗</span></button>
-          <button type="button" class="goal-button" data-goal="recomp" aria-pressed="false"><span class="goal-index">02 /</span><span class="goal-icon" aria-hidden="true">◐</span><strong>Рекомпозиция</strong><small>Работа с составом тела</small><span class="goal-arrow">↗</span></button>
-          <button type="button" class="goal-button" data-goal="muscle" aria-pressed="false"><span class="goal-index">03 /</span><span class="goal-icon" aria-hidden="true">↗</span><strong>Набор мышц</strong><small>Питание для роста</small><span class="goal-arrow">↗</span></button>
-          <button type="button" class="goal-button" data-goal="maintain" aria-pressed="false"><span class="goal-index">04 /</span><span class="goal-icon" aria-hidden="true">◎</span><strong>Поддержание веса</strong><small>Баланс на каждый день</small><span class="goal-arrow">↗</span></button>
-        </div>
-        <div class="goal-result" id="goal-result" aria-live="polite"><div><span class="detail-kicker">ВЫБРАНА ЦЕЛЬ · СНИЖЕНИЕ ВЕСА</span><h3>Без голодания и чужих диет</h3><p>Расчёт индивидуальной потребности в энергии, подбор полноценного рациона и любимых продуктов. Задача — создать устойчивый, комфортный подход к питанию, а не краткосрочный марафон.</p></div><a class="button button-dark" href="#paths">Выбрать формат <span>↗</span></a></div>
-      </div>
-    </section>
-
-    <section class="route-section section-pad" id="paths">
+<section class="app-section section-pad v16-constructor" id="app">
   <div class="shell">
-    <div class="section-topline"><span class="eyebrow">03 / ВАШ ФОРМАТ</span><span class="small-side">ДВА ПУТИ · ОДИН ПРОФЕССИОНАЛЬНЫЙ ПРИНЦИП</span></div>
-    <div class="v9-section-head"><h2>Никаких чужих правил.<br><em>Только ваш путь.</em></h2><p>Выберите, насколько самостоятельным должен быть ваш путь. В основе обоих вариантов — индивидуальный расчёт, качественные продукты и уважение к вашему образу жизни.</p></div>
-    <div class="v9-route-layout">
-      <article class="v9-route v9-route-app"><span class="v9-route-top">01 / ДЛЯ ЗДОРОВЫХ ВЗРОСЛЫХ</span><div class="v9-route-body"><span class="v9-route-counter">01</span><h3>Приложение</h3><p>Устали каждый день придумывать, что приготовить, и переживать за калории? Приложение подготовит персональную неделю чистого и разнообразного питания: расчёты под цель, любимые продукты, рецепты, порции и список покупок.</p><div class="v9-route-features"><span>4 цели</span><span>7 дней</span><span>Ваш вкус</span></div></div><div class="v9-route-footer"><span>Приложение тренировок не назначает. Клиентский запуск готовится.</span><a href="#app">Изучить возможности <span>↗</span></a></div></article>
-      <article class="v9-route v9-route-personal"><span class="v9-route-top">02 / ПЕРСОНАЛЬНОЕ СОПРОВОЖДЕНИЕ</span><div class="v9-route-body"><span class="v9-route-counter">02</span><h3>Личная работа<br>со мной</h3><p>Когда результат не приходит, сложно соблюдать режим или есть особенности здоровья, нужна индивидуальная работа. Я лично подбираю питание, провожу тренировки онлайн и офлайн и корректирую нагрузки под состояние, подготовку и цель — без изнурения.</p><div class="v9-route-features"><span>Питание</span><span>Онлайн и офлайн</span><span>Поддержка</span></div></div><div class="v9-route-footer"><span>При медицинских особенностях учитываем рекомендации врача.</span><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать лично <span>↗</span></a></div></article>
-    </div>
-  </div>
-</section>
-
-    <section class="steps-section section-pad" id="steps"><div class="shell"><span class="eyebrow">03 / МОЙ ПОДХОД</span><h2>Не заставлять себя.<br><em>Понять, что подходит вам.</em></h2><div class="steps-grid"><article><span class="step-num">01</span><h3>Разбираем исходные данные</h3><p>Цель, параметры, образ жизни, активность, предпочтения и ограничения в питании. В личной работе — также особенности здоровья и медицинские рекомендации.</p></article><article><span class="step-num">02</span><h3>Создаём персональную систему</h3><p>Индивидуальные расчёты и вкусный рацион. Только при личной работе — дополнительно посильные физические нагрузки, соответствующие вашей подготовке и цели.</p></article><article><span class="step-num">03</span><h3>Двигаемся к результату</h3><p>Без марафонов и наказания едой. При сопровождении я лично отслеживаю динамику и корректирую питание и нагрузки по ситуации.</p></article></div></div></section>
-
-    <section class="app-section section-pad v16-constructor" id="app">
-  <div class="shell">
-    <div class="v16-section-meta"><span>04 / ВНУТРИ СИСТЕМЫ</span><span>ПЕРСОНАЛИЗАЦИЯ · РАСЧЁТЫ · ГАСТРОНОМИЯ</span></div>
+    <div class="v16-section-meta"><span>01 / ВНУТРИ СИСТЕМЫ</span><span>ПЕРСОНАЛИЗАЦИЯ · РАСЧЁТЫ · ГАСТРОНОМИЯ</span></div>
     <div class="v16-intro">
-      <div><h2>Не диета по шаблону.<br><em>Рацион, собранный под вас.</em></h2></div>
-      <div class="v16-intro-aside"><p>Интеллектуальный конструктор соединяет ваши параметры, конкретную цель, пищевые предпочтения и профессиональную методику — чтобы получить не список запретов, а полноценную неделю питания.</p><div class="v16-release-note"><span class="v16-status-pulse"></span> Клиентская версия проходит проверку перед запуском</div></div>
+      <div><h2>Не диета по шаблону.<br><em>Питание, собранное под вас.</em></h2></div>
+      <div class="v16-intro-aside"><p>В основе конструктора — индивидуальный расчёт энергии и нутриентов, цель и ваши любимые продукты. Всё это объединяется в меню на семь дней с рецептурами и покупками. Не случайная подборка блюд, а последовательная система.</p><div class="v16-release-note"><span class="v16-status-pulse"></span> Клиентская версия проходит проверку перед запуском</div></div>
     </div>
     <div class="v16-stages" aria-label="Как конструктор формирует питание">
       <article><span>01 / ЦЕЛЬ</span><strong>Для чего?</strong><p>Снижение веса, рекомпозиция, набор мышц или поддержание веса.</p></article>
@@ -663,7 +654,7 @@ section[id],header[id]{scroll-margin-top:112px}
     </div>
     <div class="v16-week">
       <div class="v16-week-header">
-        <div><span class="v16-eyebrow">ДЕМОНСТРАЦИЯ ЛОГИКИ, НЕ РЕАЛЬНЫЙ РАЦИОН</span><h3>Семь дней.<br><em>Ни одного одинакового дня.</em></h3></div>
+        <div><span class="v16-eyebrow">ДЕМОНСТРАЦИЯ ЛОГИКИ, НЕ РЕАЛЬНЫЙ РАЦИОН</span><h3>Семь дней.<br><em>Под вашу жизнь.</em></h3></div>
         <div class="v16-week-sidebar"><p>Переключайте дни и смотрите, как выглядит планирование питания. Данные ниже — иллюстративный пример, не назначение и не персональный расчёт.</p><span>01 — 07 / ВЫБЕРИТЕ ДЕНЬ</span></div>
       </div>
       <div class="app-days v16-week-days" role="group" aria-label="Демонстрация дней недели">
@@ -682,62 +673,36 @@ section[id],header[id]{scroll-margin-top:112px}
       </div>
       <div class="v16-week-footer"><span>ВАШИ ПАРАМЕТРЫ → ВАШИ ПРЕДПОЧТЕНИЯ → ВАША НЕДЕЛЯ</span><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Узнать о запуске <span aria-hidden="true">↗</span></a></div>
     </div>
-  </div>
+  <div class="v24-method-contrast">
+  <div><span>РАЗОВЫЙ ЗАПРОС К ИИ</span><strong>Текст — ещё не готовая система.</strong><p>Результат зависит от формулировки запроса и самостоятельной проверки порций, состава, расчётов и закупок.</p></div>
+  <div><span>«ТЕЛО ПОД КЛЮЧ»</span><strong>Персонализация по методике.</strong><p>Цель, расчёты, продукты, предпочтения и рецептуры проектируются как взаимосвязанные части конструктора.</p></div>
+</div>
+</div>
 </section>
 
-    <section class="difference section-pad v17-difference" id="why-us">
-  <div class="shell">
-    <div class="v17-prelude"><span>05 / ПОЧЕМУ НЕ ПРОСТО ЗАПРОС К ИИ</span><span>ПРОДУКТ СО СВОЕЙ МЕТОДИКОЙ</span></div>
-    <div class="v17-diff-heading"><h2>Меню может написать ИИ.<br><em>А кто отвечает за систему?</em></h2><p>Разовый ответ нейросети — это отправная точка, качество которой зависит от запроса. Мы строим другой продукт: методику и логику подбора питания, которые разрабатываются, проверяются и объединяются в единую систему.</p></div>
-    <div class="v17-comparison" role="group" aria-label="Сравнение разового запроса и системы «Тело под ключ»">
-      <article class="v17-compare-simple"><span>РАЗОВЫЙ ЗАПРОС</span><h3>«Составь мне меню»</h3><p>Текстовый вариант рациона. Чтобы пользоваться им безопасно и удобно, вам самим может потребоваться проверять расчёты, состав продуктов, порции, рецепты и покупки.</p><div class="v17-compare-foot">Результат зависит от конкретного запроса и его проверки.</div></article>
-      <article class="v17-compare-system"><span>АВТОРСКИЙ КОНСТРУКТОР</span><h3>«Подбери под меня»</h3><p>Цель, индивидуальная потребность в питании, вкусовые предпочтения, продуктовая база, рецептуры и план недели работают в рамках одной разрабатываемой методики.</p><div class="v17-compare-foot">Не обещание волшебства. Продуманная архитектура продукта.</div></article>
-    </div>
-    <p class="v17-disclaimer">Мы показываем принципы разработки. Пользовательская версия приложения проходит проверки и не представляется готовым медицинским инструментом.</p>
-  </div>
-</section>
-
-    <section class="formats section-pad v17-formats" id="formats">
-  <div class="shell">
-    <div class="v17-prelude"><span>06 / ВЫБОР ФОРМАТА</span><span>ВАША ЗАДАЧА · ВАШ СПОСОБ РАБОТЫ</span></div>
-    <div class="v17-format-head"><h2>Самостоятельно.<br><em>Или со мной лично.</em></h2><p>Если вы здоровы, конструктор поможет организовать питание под вашу цель после запуска. Если необходим персональный разбор, поддержка или индивидуальные тренировки — выбирайте прямую работу со мной.</p></div>
-    <div class="v17-format-controls format-tabs" role="tablist" aria-label="Форматы работы">
-      <button type="button" class="active" role="tab" aria-controls="format-detail" aria-selected="true" id="format-tab-app" data-tab="app">01 <span>Конструктор</span></button>
-      <button type="button" role="tab" aria-controls="format-detail" aria-selected="false" id="format-tab-diagnostic" data-tab="diagnostic">02 <span>Диагностика</span></button>
-      <button type="button" role="tab" aria-controls="format-detail" aria-selected="false" id="format-tab-personal" data-tab="personal">03 <span>Личное сопровождение</span></button>
-    </div>
-    <div class="v17-format-panel format-detail" id="format-detail" role="tabpanel" aria-labelledby="format-tab-app" aria-live="polite">
-      <div><span class="detail-kicker">ДЛЯ ЗДОРОВЫХ ВЗРОСЛЫХ · ПОСЛЕ ЗАПУСКА</span><h3>Ваше меню.<br>Ваши правила.</h3><p>Семь дней полноценного питания с учётом цели, индивидуальных расчётов и вкусов. Рецепты, порции и список покупок в одной системе. Клиентская версия проходит проверку.</p><div class="v17-features"><span>4 цели</span><span>7 дней</span><span>Личный вкус</span></div></div>
-      <div class="v17-format-action"><div><span>СТАТУС</span><strong>Готовится к запуску</strong></div><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer" class="v17-direct-link">Узнать о запуске <span>↗</span></a></div>
-    </div>
-    <p class="v17-price-note">Стоимость приложения и персональных форматов уточняется. На сайте нет онлайн-оплаты и форм сбора контактов.</p>
-  </div>
-</section>
-
-    <section class="expert-section section-pad" id="expert">
-  <div class="shell v9-expert">
-    <div class="v9-expert-visual">
-      <div class="v9-expert-portrait">
-        <img class="v9-founder-photo" src="assets/valentina-schaste.jpg" alt="Валентина Счастье — основатель проекта «Тело под ключ»" loading="lazy" decoding="async">
+<section class="situations-section section-pad" id="situations" aria-labelledby="goals-title">
+      <div class="shell">
+        <div class="section-topline"><span class="eyebrow">02 / ПИТАНИЕ БЕЗ СКУКИ</span><span class="small-side">ЧЕТЫРЕ ЦЕЛИ · ОДИН ИНДИВИДУАЛЬНЫЙ ПОДХОД</span></div>
+        <div class="goals-heading"><div><h2 id="goals-title">Четыре цели.<br><em>Бесконечный вкус.</em></h2><p class="situations-lead">От изысканной рыбы до любимого стейка. Разнообразие продуктов — не исключение из системы, а её важная часть. Выберите цель и узнайте, на чём строится расчёт.</p></div><span class="goals-prompt">НАЖМИТЕ НА КАРТОЧКУ ↘</span></div>
+        <div class="v24-food-gallery" aria-label="Гастрономическое разнообразие">
+          <figure class="v24-food-main"><img src="assets/hero-01-fish.webp" alt="Ресторанный обед с рыбой и овощами" width="1200" height="675" loading="lazy" decoding="async"><figcaption>ПОЛНОЦЕННЫЙ ОБЕД</figcaption></figure>
+          <figure><img src="assets/hero-02-steak.webp" alt="Мясной стейк с овощами в ресторанной подаче" width="1200" height="675" loading="lazy" decoding="async"><figcaption>ЛЮБИМЫЕ ПРОДУКТЫ</figcaption></figure>
+          <figure><img src="assets/hero-03-constructor.webp" alt="Визуальная композиция компонентов блюда" width="1200" height="675" loading="lazy" decoding="async"><figcaption>ПРОДУМАННЫЙ СОСТАВ</figcaption></figure>
+        </div>
+        <p class="v24-gallery-note">Фотографии передают гастрономический характер бренда; персональные блюда и порции определяются расчётами.</p>
+        <div class="goal-selector" role="group" aria-label="Выберите цель питания">
+          <button type="button" class="goal-button is-active" data-goal="loss" aria-pressed="true"><span class="goal-index">01 /</span><span class="goal-icon" aria-hidden="true">↘</span><strong>Снижение веса</strong><small>Бережно и без голодания</small><span class="goal-arrow">↗</span></button>
+          <button type="button" class="goal-button" data-goal="recomp" aria-pressed="false"><span class="goal-index">02 /</span><span class="goal-icon" aria-hidden="true">◐</span><strong>Рекомпозиция</strong><small>Работа с составом тела</small><span class="goal-arrow">↗</span></button>
+          <button type="button" class="goal-button" data-goal="muscle" aria-pressed="false"><span class="goal-index">03 /</span><span class="goal-icon" aria-hidden="true">↗</span><strong>Набор мышц</strong><small>Питание для роста</small><span class="goal-arrow">↗</span></button>
+          <button type="button" class="goal-button" data-goal="maintain" aria-pressed="false"><span class="goal-index">04 /</span><span class="goal-icon" aria-hidden="true">◎</span><strong>Поддержание веса</strong><small>Баланс на каждый день</small><span class="goal-arrow">↗</span></button>
+        </div>
+        <div class="goal-result" id="goal-result" aria-live="polite"><div><span class="detail-kicker">ВЫБРАНА ЦЕЛЬ · СНИЖЕНИЕ ВЕСА</span><h3>Без голодания и чужих диет</h3><p>Расчёт индивидуальной потребности в энергии, подбор полноценного рациона и любимых продуктов. Задача — создать устойчивый, комфортный подход к питанию, а не краткосрочный марафон.</p></div><a class="button button-dark" href="#formats">Выбрать формат <span>↗</span></a></div>
       </div>
-      <div class="v9-expert-caption">ОСНОВАТЕЛЬ ПРОЕКТА · АВТОР МЕТОДИКИ</div>
-    </div>
-    <div class="v9-expert-copy">
-      <span class="eyebrow">07 / ЛИЦО БРЕНДА</span>
-      <h2>Экспертность,<br><em>которой можно доверять.</em></h2>
-      <h3>Валентина Счастье</h3>
-      <p class="v9-expert-role">Нутрициолог · специалист по диетологии · мастер-тренер по бодибилдингу и фитнесу высшей категории · персональные тренировки онлайн и офлайн</p>
-      <p>Более 17 лет практики. Я не предлагаю очередную диету и не заставляю людей жить по одной схеме. Я выстраиваю питание под параметры человека, его цель, образ жизни и вкусы.</p>
-      <p>При индивидуальной работе я также провожу персональные тренировки онлайн и офлайн. Программа упражнений подбирается под уровень подготовки, возможности, цель и особенности здоровья — без изнурительных тренировок. При необходимости учитываются медицинские рекомендации и ограничения. Приложение тренировок не назначает.</p>
-      <div class="v9-expert-quote">«Я создаю систему под человека, а не подгоняю человека под программу».</div>
-      <a class="v9-expert-link" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Обсудить свою задачу в Telegram <span>↗</span></a>
-    </div>
-  </div>
-</section>
+    </section>
 
-    <section class="proof-section section-pad v20-proof" id="proof" aria-labelledby="cases-heading">
+<section class="proof-section section-pad v20-proof" id="proof" aria-labelledby="cases-heading">
  <div class="shell">
-  <div class="v20-overline"><span>08 / РЕЗУЛЬТАТЫ ЛИЧНОЙ ПРАКТИКИ</span><span>ЧЕТЫРЕ ЦЕЛИ · ИНДИВИДУАЛЬНЫЙ ПОДХОД</span></div>
+  <div class="v20-overline"><span>03 / РЕЗУЛЬТАТЫ ЛИЧНОЙ ПРАКТИКИ</span><span>ЧЕТЫРЕ ЦЕЛИ · ИНДИВИДУАЛЬНЫЙ ПОДХОД</span></div>
   <div class="v20-heading"><h2 id="cases-heading">Не обещания.<br><em>Результаты.</em></h2><p>Реальные истории индивидуальной работы. От питания для мышечной формы до снижения веса и закрепления новых привычек.</p></div>
   <div class="v20-card-grid"><article class="v20-card">
  <div class="v20-image"><img src="assets/case-muscle.webp" alt="Две фотографии клиента, иллюстрирующие изменения мышечной формы" loading="lazy" decoding="async" width="640" height="478"><span class="v20-photo-tag v20-before">ДО</span><span class="v20-photo-tag v20-after">ПОСЛЕ</span></div>
@@ -759,17 +724,53 @@ section[id],header[id]{scroll-margin-top:112px}
  </div>
 </section>
 
-    <section class="faq section-pad" id="questions"><div class="shell faq-grid"><div><span class="eyebrow">09 / ЧАСТЫЕ ВОПРОСЫ</span><h2>О важном.<br><em>Без сложных слов.</em></h2></div><div class="faq-items"><details><summary>Кому подойдёт система? <span>+</span></summary><p>Приложение рассчитано на здоровых взрослых с целями снижения веса, рекомпозиции, набора мышц или поддержания веса. Если есть заболевания, симптомы, приём лекарств или особые медицинские потребности, выберите личную работу, а не автоматический план питания.</p></details><details><summary>Можно ли выбрать продукты, которые я люблю? <span>+</span></summary><p>Учёт предпочтений и исключаемых продуктов предусмотрен в логике разрабатываемого приложения. Фактические возможности будут подтверждены перед запуском.</p></details><details><summary>Нужны ли строгие диеты и тяжёлые тренировки? <span>+</span></summary><p>Строгие диеты и изнурительные марафоны не нужны. Приложение рассчитывает питание и не назначает тренировки. Только при личной работе со мной физическая нагрузка подбирается индивидуально — по состоянию, подготовке и цели. Для набора мышечной массы силовые нагрузки обычно важны, но их объём и интенсивность должны быть посильными.</p></details><details><summary>Приложением уже можно пользоваться? <span>+</span></summary><p>Клиентская версия ещё проходит разработку и проверку. Мы не обозначаем её готовой, пока испытания не будут завершены.</p></details></div></div></section>
+<section class="expert-section section-pad" id="expert">
+  <div class="shell v9-expert">
+    <div class="v9-expert-visual">
+      <div class="v9-expert-portrait">
+        <img class="v9-founder-photo" src="assets/valentina-schaste.jpg" alt="Валентина Счастье — основатель проекта «Тело под ключ»" loading="lazy" decoding="async">
+      </div>
+      <div class="v9-expert-caption">ОСНОВАТЕЛЬ ПРОЕКТА · АВТОР МЕТОДИКИ</div>
+    </div>
+    <div class="v9-expert-copy">
+      <span class="eyebrow">04 / ОСНОВАТЕЛЬ И МЕТОДИКА</span>
+      <h2>За технологией<br><em>стоит профессионал.</em></h2>
+      <h3>Валентина Счастье</h3>
+      <p class="v9-expert-role">Нутрициолог · специалист по диетологии · мастер-тренер по бодибилдингу и фитнесу высшей категории · персональные тренировки онлайн и офлайн</p>
+      <p>Более 17 лет практики. Я не предлагаю очередную диету и не заставляю людей жить по одной схеме. Я выстраиваю питание под параметры человека, его цель, образ жизни и вкусы.</p>
+      <p>При индивидуальной работе я также провожу персональные тренировки онлайн и офлайн. Программа упражнений подбирается под уровень подготовки, возможности, цель и особенности здоровья — без изнурительных тренировок. При необходимости учитываются медицинские рекомендации и ограничения. Приложение тренировок не назначает.</p>
+      <div class="v9-expert-quote">«Я создаю систему под человека, а не подгоняю человека под программу».</div>
+      <a class="v9-expert-link" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Обсудить свою задачу в Telegram <span>↗</span></a>
+    </div>
+  </div>
+</section>
 
-    <section class="contact-section v17-contact" id="contact">
+<section class="formats section-pad v17-formats" id="formats">
+  <div class="shell">
+    <div class="v17-prelude"><span>05 / ВЫБОР ФОРМАТА</span><span>ВАША ЗАДАЧА · ВАШ СПОСОБ РАБОТЫ</span></div>
+    <div class="v17-format-head"><h2>Конструктор.<br><em>Или работа со мной.</em></h2><p>Если вы здоровы, конструктор поможет организовать питание под вашу цель после запуска. Если необходим персональный разбор, поддержка или индивидуальные тренировки — выбирайте прямую работу со мной.</p></div>
+    <div class="v17-format-controls format-tabs" role="tablist" aria-label="Форматы работы">
+      <button type="button" class="active" role="tab" aria-controls="format-detail" aria-selected="true" id="format-tab-app" data-tab="app">01 <span>Конструктор</span></button>
+      <button type="button" role="tab" aria-controls="format-detail" aria-selected="false" id="format-tab-diagnostic" data-tab="diagnostic">02 <span>Диагностика</span></button>
+      <button type="button" role="tab" aria-controls="format-detail" aria-selected="false" id="format-tab-personal" data-tab="personal">03 <span>Личное сопровождение</span></button>
+    </div>
+    <div class="v17-format-panel format-detail" id="format-detail" role="tabpanel" aria-labelledby="format-tab-app" aria-live="polite">
+      <div><span class="detail-kicker">ДЛЯ ЗДОРОВЫХ ВЗРОСЛЫХ · ПОСЛЕ ЗАПУСКА</span><h3>Ваше меню.<br>Ваши правила.</h3><p>Семь дней полноценного питания с учётом цели, индивидуальных расчётов и вкусов. Рецепты, порции и список покупок в одной системе. Клиентская версия проходит проверку.</p><div class="v17-features"><span>4 цели</span><span>7 дней</span><span>Личный вкус</span></div></div>
+      <div class="v17-format-action"><div><span>СТАТУС</span><strong>Готовится к запуску</strong></div><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer" class="v17-direct-link">Узнать о запуске <span>↗</span></a></div>
+    </div>
+    <p class="v17-price-note">Стоимость приложения и персональных форматов уточняется. На сайте нет онлайн-оплаты и форм сбора контактов.</p>
+  </div>
+</section>
+
+<section class="faq section-pad" id="questions"><div class="shell faq-grid"><div><span class="eyebrow">06 / ОТВЕТЫ НА ВОПРОСЫ</span><h2>О важном.<br><em>Без сложных слов.</em></h2></div><div class="faq-items"><details><summary>Кому подойдёт система? <span>+</span></summary><p>Приложение рассчитано на здоровых взрослых с целями снижения веса, рекомпозиции, набора мышц или поддержания веса. Если есть заболевания, симптомы, приём лекарств или особые медицинские потребности, выберите личную работу, а не автоматический план питания.</p></details><details><summary>Можно ли выбрать продукты, которые я люблю? <span>+</span></summary><p>Учёт предпочтений и исключаемых продуктов предусмотрен в логике разрабатываемого приложения. Фактические возможности будут подтверждены перед запуском.</p></details><details><summary>Нужны ли строгие диеты и тяжёлые тренировки? <span>+</span></summary><p>Строгие диеты и изнурительные марафоны не нужны. Приложение рассчитывает питание и не назначает тренировки. Только при личной работе со мной физическая нагрузка подбирается индивидуально — по состоянию, подготовке и цели. Для набора мышечной массы силовые нагрузки обычно важны, но их объём и интенсивность должны быть посильными.</p></details><details><summary>Приложением уже можно пользоваться? <span>+</span></summary><p>Клиентская версия ещё проходит разработку и проверку. Мы не обозначаем её готовой, пока испытания не будут завершены.</p></details></div></div></section>
+
+<section class="contact-section v17-contact" id="contact">
   <div class="shell v17-contact-grid">
-    <div class="v17-contact-intro"><span class="v17-contact-kicker">10 / ВАШ СЛЕДУЮЩИЙ ШАГ</span><h2>Хватит начинать заново.<br><em>Начните с себя.</em></h2><p>Хочется понять, подойдёт ли вам конструктор, или нужна индивидуальная работа? Напишите мне напрямую. Я расскажу о доступных форматах и помогу определить следующий шаг.</p></div>
+    <div class="v17-contact-intro"><span class="v17-contact-kicker">07 / ВАШ СЛЕДУЮЩИЙ ШАГ</span><h2>Хватит начинать заново.<br><em>Начните с себя.</em></h2><p>Хочется понять, подойдёт ли вам конструктор, или нужна индивидуальная работа? Напишите мне напрямую. Я расскажу о доступных форматах и помогу определить следующий шаг.</p></div>
     <div class="v17-contact-aside"><span class="v17-contact-label">ЛИЧНЫЙ КОНТАКТ С ОСНОВАТЕЛЕМ</span><strong>Валентина Счастье</strong><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать в Telegram <span aria-hidden="true">↗</span></a><small>Без анкеты, заявки и передачи контактов через сайт. Переписка проходит в Telegram по правилам этой платформы.</small></div>
   </div>
 </section>
-  
-
-    </main>
+</main>
   <footer class="footer"><div class="shell footer-main"><a class="brand" href="#top"><span class="brand-mark brand-real-logo"><img src="assets/logo-vs.webp" alt="" width="45" height="45" decoding="async"></span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ</span></a><p>Чистое питание под вашу цель и вкусы. Индивидуальные физические нагрузки — при личном сопровождении.<br>Методика Валентины Счастье.</p><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a></div><div class="shell footer-bottom"><span>© <span id="year"></span> «Тело под ключ»</span><span>Предварительная версия сайта · Информация о запуске обновляется</span><a href="#top">Наверх ↑</a></div></footer>
   <script>
 (() => {
@@ -840,7 +841,7 @@ section[id],header[id]{scroll-margin-top:112px}
   document.querySelectorAll('[data-goal]').forEach(btn => btn.addEventListener('click', () => {
     document.querySelectorAll('[data-goal]').forEach(b => {b.classList.toggle('is-active',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
     const d = goalData[btn.dataset.goal]; if (!d || !goalPanel) return;
-    goalPanel.innerHTML = `<div><span class="detail-kicker">ВЫБРАНА ЦЕЛЬ · ${esc(d[0])}</span><h3>${esc(d[1])}</h3><p>${esc(d[2])}</p></div><a class="button button-dark" href="#paths">Выбрать формат <span>↗</span></a>`;
+    goalPanel.innerHTML = `<div><span class="detail-kicker">ВЫБРАНА ЦЕЛЬ · ${esc(d[0])}</span><h3>${esc(d[1])}</h3><p>${esc(d[2])}</p></div><a class="button button-dark" href="#formats">Выбрать формат <span>↗</span></a>`;
   }));
   const pathAnswer = document.getElementById('path-answer');
   document.querySelectorAll('[data-path]').forEach(btn => btn.addEventListener('click', () => {
@@ -920,20 +921,6 @@ section[id],header[id]{scroll-margin-top:112px}
     else window.setTimeout(warmImages,1600);
   },{once:true});
 
-
-  // On-page choice only; no forms, storage, analytics or network requests.
-  const visitorResponses={
-    start:['Не очередная диета. Устойчивая система питания.','Начинаем с индивидуальных расчётов и привычных продуктов, а не с запретов. Собираем полноценную неделю под вашу цель и предпочтения.','#app','Как работает конструктор'],
-    menu:['Семь дней без ежедневного вопроса «что приготовить».','Ваше питание организовано заранее: рецепты, порции и список продуктов. Меньше рутины — больше ясности и вкуса.','#app','Посмотреть меню на неделю'],
-    taste:['Вкусное питание — не награда за хорошее поведение.','Конструктор учитывает пищевые предпочтения и составляет разнообразные блюда. Стейк, рыба, овощи и десерты могут стать частью рациона, если вписываются в индивидуальные расчёты.','#situations','Выбрать свою цель'],
-    expert:['Когда нужен специалист, я работаю лично.','Индивидуальный разбор, питание и персональные тренировки онлайн или офлайн с учётом возможностей. При заболеваниях и симптомах учитываются врачебные рекомендации.','#paths','Посмотреть личную работу']
-  };
-  const answerElement=document.getElementById('visitor-answer');
-  document.querySelectorAll('[data-visitor]').forEach(btn=>btn.addEventListener('click',()=>{
-    document.querySelectorAll('[data-visitor]').forEach(b=>{b.classList.toggle('chosen',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
-    const data=visitorResponses[btn.dataset.visitor];if(!data||!answerElement)return;
-    answerElement.innerHTML='<span>НАШ ПОДХОД</span><h3>'+esc(data[0])+'</h3><p>'+esc(data[1])+'</p><a href="'+esc(data[2])+'">'+esc(data[3])+' <span aria-hidden="true">↗</span></a>';
-  }));
 
   document.getElementById('year').textContent = String(new Date().getFullYear());
 })();
