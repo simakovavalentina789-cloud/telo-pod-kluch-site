@@ -410,6 +410,39 @@ h3{letter-spacing:-.5px}
 @media(max-width:900px){.v17-diff-heading,.v17-format-head,.v17-contact-grid{grid-template-columns:1fr;gap:27px}.v17-format-panel{gap:7%;padding:38px!important}.v17-format-action{padding-left:23px}.v17-contact{padding:95px 0}}
 @media(max-width:650px){.v17-prelude span:last-child{display:none}.v17-comparison,.v17-format-panel{grid-template-columns:1fr}.v17-comparison article{min-height:340px;padding:35px 27px}.v17-comparison h3{margin:32px 0 16px}.v17-format-controls button{flex-direction:column;align-items:flex-start;gap:9px;min-height:90px;padding:17px 9px!important}.v17-format-controls button span{font-size:11px}.v17-format-panel{padding:32px 26px!important}.v17-format-action{padding:20px 0 0;border:0;border-top:1px solid #afc0af}.v17-contact h2{font-size:47px}.v17-contact-aside strong{font-size:25px}}
 
+
+/* V18: four anonymous case studies, no client portraits */
+.v18-proof{background:#11251c!important;color:#f8f5ec;position:relative;overflow:hidden}
+.v18-proof:before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 90% 10%,rgba(119,144,111,.1),transparent 40%)}
+.v18-proof>.shell{position:relative}
+.v18-proof-overline{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #d6c5a549;padding-bottom:24px;color:#d4c19f;font:700 10px/1.6 var(--sans);letter-spacing:.18em}
+.v18-proof-overline span:last-child{color:#a9baaa;font-weight:500}
+.v18-proof-heading{display:grid;grid-template-columns:1fr .8fr;gap:8%;align-items:end;padding:52px 0 60px}
+.v18-proof-heading h2{font-size:clamp(50px,5.5vw,84px);letter-spacing:-.06em;line-height:1.12;color:#fcf8f0;margin:0}
+.v18-proof-heading h2 em{color:#d2ba90}
+.v18-proof-heading p{font-size:15px;line-height:1.9;color:#cad6c7;margin:0}
+.v18-cases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;border:1px solid #a2ae9a5e;background:#a2ae9a5e}
+.v18-case{background:#1a3327;min-height:435px;padding:32px 24px 27px;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:background .2s}
+.v18-case:hover{background:#254331}
+.v18-case-accent{background:#d7c4a2;color:#183228}
+.v18-case-accent:hover{background:#e3d2b2}
+.v18-case-index,.v18-case-end{font:700 10px/1.6 var(--sans);letter-spacing:.115em;color:#c5b18e}
+.v18-case-accent .v18-case-index,.v18-case-accent .v18-case-end{color:#42624f}
+.v18-case-body{padding:36px 0 25px}
+.v18-case-glyph{font:400 72px/1 var(--serif);color:#cbb58a}
+.v18-case-metric{display:block;font:400 clamp(43px,4vw,62px)/1 var(--serif);letter-spacing:-.05em;color:#234435;white-space:nowrap}
+.v18-case-metric small{font-size:.55em}
+.v18-case h3{font:400 clamp(29px,2.5vw,39px)/1.18 var(--serif);letter-spacing:-.035em;color:#f4f1e9;margin:23px 0 18px}
+.v18-case-accent h3{color:#203c2a}
+.v18-case p{font-size:12px;line-height:1.8;color:#cdd6c9;margin:0}
+.v18-case-accent p{color:#385b46}
+.v18-proof-footer{display:flex;gap:9%;justify-content:space-between;align-items:center;padding-top:35px}
+.v18-proof-footer p{color:#adbbae;font-size:11px;line-height:1.8;max-width:680px;margin:0}
+.v18-proof-footer a{display:inline-flex;justify-content:space-between;gap:25px;align-items:center;color:#e4d0aa;border-bottom:1px solid #a28b66;padding-bottom:12px;font-size:12px;font-weight:700;white-space:nowrap}
+@media(max-width:1060px){.v18-cases{grid-template-columns:repeat(2,minmax(0,1fr))}.v18-case{min-height:365px}.v18-proof-heading{grid-template-columns:1fr;gap:24px}.v18-case h3{font-size:36px}}
+@media(max-width:650px){.v18-proof-overline span:last-child{display:none}.v18-cases{grid-template-columns:1fr}.v18-case{min-height:330px;padding:29px}.v18-case-body{padding:25px 0}.v18-proof-heading{padding:37px 0 39px}.v18-proof-footer{flex-direction:column;align-items:flex-start;gap:27px}.v18-proof-footer a{white-space:normal}.v18-case h3{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.v18-case{transition:none}}
+
 </style>
 </head>
 <body>
@@ -576,16 +609,39 @@ h3{letter-spacing:-.5px}
   </div>
 </section>
 
-    <section class="proof-section section-pad" id="proof">
+    <section class="proof-section section-pad v18-proof" id="proof">
   <div class="shell">
-    <div class="section-topline"><span class="eyebrow">08 / ДОВЕРИЕ</span><span class="small-side">ОПЫТ · МЕТОДИКА · ПОДТВЕРЖДЁННЫЕ РЕЗУЛЬТАТЫ</span></div>
-    <div class="v9-proof-head"><h2>За подходом —<br><em>реальная практика.</em></h2><p>Важны не громкие обещания, а профессиональная подготовка, персональные решения и честная оценка изменений. Личность клиентов и их фотографии не публикуем.</p></div>
-    <div class="v9-evidence-grid">
-      <article class="v9-evidence"><span>01 / КВАЛИФИКАЦИЯ</span><strong>17+ лет</strong><p>Практика в работе с питанием и телом, квалификация мастер-тренера высшей категории, подготовка в диетологии и нутрициологии.</p></article>
-      <article class="v9-evidence"><span>02 / МЕТОДИКА</span><strong>4 цели</strong><p>Снижение веса, рекомпозиция, набор мышечной массы и поддержание веса — с индивидуальной логикой расчётов.</p></article>
-      <article class="v9-evidence"><span>03 / РЕЗУЛЬТАТЫ</span><strong>Без фото клиентов</strong><p>Подтверждённые показатели и истории могут публиковаться в обезличенном виде только после проверки.</p></article>
+    <div class="v18-proof-overline"><span>08 / РЕЗУЛЬТАТЫ ПРАКТИКИ</span><span>4 НАПРАВЛЕНИЯ · ИНДИВИДУАЛЬНАЯ РАБОТА</span></div>
+    <div class="v18-proof-heading">
+      <h2>Не обещания.<br><em>Результаты.</em></h2>
+      <p>Разные исходные задачи. Разные пути. За каждым результатом — персональный подход к питанию, образу жизни и при необходимости физической нагрузке. Без публикации имён и фотографий клиентов.</p>
     </div>
-    <div class="v9-editorial-note"><span>В ОСНОВЕ — ЧЕЛОВЕК</span><p>Питание должно работать на вашу жизнь, а не заставлять вас жить ради питания.</p></div>
+    <div class="v18-cases" aria-label="Четыре направления результатов">
+      <article class="v18-case">
+        <span class="v18-case-index">01 / НАБОР МЫШЕЧНОЙ МАССЫ</span>
+        <div class="v18-case-body"><span class="v18-case-glyph" aria-hidden="true">↗</span><h3>Сильнее.<br>Рельефнее.</h3><p>Долгосрочная работа над мышечной формой с учётом питания, восстановления и индивидуальной тренировочной нагрузки.</p></div>
+        <span class="v18-case-end">РАЗВИТИЕ МЫШЕЧНОЙ ФОРМЫ</span>
+      </article>
+      <article class="v18-case v18-case-accent">
+        <span class="v18-case-index">02 / СНИЖЕНИЕ ВЕСА</span>
+        <div class="v18-case-body"><strong class="v18-case-metric">−23,9 <small>кг</small></strong><h3>Изменения,<br>которые видны.</h3><p>Снижение веса с 75,1 до 51,2 кг за 6 месяцев в рамках личной работы.</p></div>
+        <span class="v18-case-end">6 МЕСЯЦЕВ · ИНДИВИДУАЛЬНЫЙ РЕЗУЛЬТАТ</span>
+      </article>
+      <article class="v18-case">
+        <span class="v18-case-index">03 / РЕКОМПОЗИЦИЯ ТЕЛА</span>
+        <div class="v18-case-body"><span class="v18-case-glyph" aria-hidden="true">≈</span><h3>Меняется<br>не только вес.</h3><p>Работа над пропорциями тела: соотношением мышечной и жировой массы, силой и формой.</p></div>
+        <span class="v18-case-end">ИЗМЕНЕНИЕ СОСТАВА ТЕЛА</span>
+      </article>
+      <article class="v18-case">
+        <span class="v18-case-index">04 / ПОХУДЕНИЕ И ПОДДЕРЖАНИЕ</span>
+        <div class="v18-case-body"><span class="v18-case-glyph" aria-hidden="true">∞</span><h3>Не только<br>достичь. Сохранить.</h3><p>Переход от снижения веса к привычкам питания, которые помогают удерживать достигнутые изменения.</p></div>
+        <span class="v18-case-end">ДОЛГОСРОЧНЫЕ ПРИВЫЧКИ</span>
+      </article>
+    </div>
+    <div class="v18-proof-footer">
+      <p>Кейсы обезличены. Показатели приведены только там, где они представлены в материалах. Результаты индивидуальны и не гарантируют аналогичных изменений у других людей. Это опыт личной практики, а не результаты ещё не запущенного приложения.</p>
+      <a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Обсудить свою цель в Telegram <span aria-hidden="true">↗</span></a>
+    </div>
   </div>
 </section>
 
