@@ -593,6 +593,69 @@ section[id],header[id]{scroll-margin-top:112px}
 @media(max-width:800px){.v24-chapter-nav .shell{justify-content:flex-start;gap:23px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.v24-chapter-nav .shell::-webkit-scrollbar{display:none}.v24-food-gallery{height:400px}.v24-method-contrast{grid-template-columns:1fr}.v24-method-contrast>div{padding:27px}.v24-method-contrast{margin-top:38px}}
 @media(max-width:550px){.v24-food-gallery{grid-template-columns:1fr 1fr;grid-template-rows:240px 140px;height:390px;gap:7px}.v24-food-gallery .v24-food-main{grid-column:span 2;grid-row:span 1}.v24-food-gallery figcaption{font-size:9px;left:12px;bottom:11px}.v24-chapter-nav .shell{width:calc(100% - 28px)}}
 
+
+/* V25 premium app presentation / conceptual dashboard */
+.v25-app-showcase{margin-top:56px}
+.v25-demo-disclaimer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:700 10px/1.7 var(--sans);letter-spacing:.13em;color:#d7c8a8;margin-bottom:16px}
+.v25-demo-disclaimer span:last-child{font-weight:500;color:#a2b5a5;letter-spacing:0}
+.v25-dashboard{display:grid;grid-template-columns:215px minmax(0,1fr);background:#f5f2e9;border:1px solid #8b9e8470;box-shadow:0 25px 70px #030e0c47;overflow:hidden}
+.v25-sidebar{background:#0d2119;color:#edf0e8;padding:27px 15px;display:flex;flex-direction:column;min-width:0}
+.v25-dash-logo{display:flex;align-items:center;gap:10px;padding:0 6px 34px;border-bottom:1px solid #c4af7849;margin-bottom:19px}
+.v25-dash-logo>span{border:1px solid #cbb281;border-radius:9px;color:#e4cd99;padding:9px 7px;font:italic 23px var(--serif)}
+.v25-dash-logo strong{font:600 12px/1.5 var(--serif);letter-spacing:.035em}
+.v25-dash-logo small{display:block;font:700 8px var(--sans);letter-spacing:.18em;color:#b2c1b6;margin-top:5px}
+.v25-side-item{display:flex;gap:15px;align-items:center;color:#b9cbbc;font-size:12px;padding:17px 14px;border-bottom:1px solid #ffffff13}
+.v25-side-item span{font-size:18px;color:#c3b388}
+.v25-side-active{background:linear-gradient(115deg,#9e8654,#d7bb82);color:#183124;font-weight:750;border-radius:7px}
+.v25-side-active span{color:#1d3826}
+.v25-side-bottom{margin-top:auto;padding:30px 8px 4px;color:#bba67f;font:700 9px var(--sans);letter-spacing:.14em}
+.v25-dash-main{min-width:0;color:#22392b}
+.v25-topbar{height:52px;background:#10291f;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 23px;color:#ebdfc5;font:700 9px var(--sans);letter-spacing:.13em}
+.v25-dash-hero{height:285px;position:relative;overflow:hidden;background:#0b1912}
+.v25-dash-hero-photo,.v25-dash-hero-shade{position:absolute;inset:0}
+.v25-dash-hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:75% 54%}
+.v25-dash-hero-shade{background:linear-gradient(90deg,#0a1712 0%,#0a1712dc 27%,#0a171261 64%,transparent 100%)}
+.v25-dash-hero-copy{position:relative;z-index:1;max-width:550px;padding:37px 33px;color:#f9f4e7}
+.v25-dash-hero-copy>span{color:#dec69a;font:700 9px var(--sans);letter-spacing:.16em}
+.v25-dash-hero-copy h3{font:400 clamp(30px,3.3vw,49px)/1.07 var(--serif);letter-spacing:-.045em;margin:16px 0}
+.v25-dash-hero-copy h3 em{color:#dec59a}
+.v25-dash-hero-copy p{font-size:12px;line-height:1.8;color:#e2e6de;max-width:345px;margin-bottom:22px}
+.v25-dash-hero-copy a{display:inline-flex;gap:20px;align-items:center;background:#e7cb96;color:#183324;padding:13px 19px;font-size:11px;font-weight:750}
+.v25-demo-content{padding:30px 26px 26px}
+.v25-week-intro{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:18px}
+.v25-week-intro span{font:700 9px var(--sans);letter-spacing:.13em;color:#6b866d}
+.v25-week-intro h4{font:400 clamp(33px,3.2vw,45px)/1.1 var(--serif);color:#1e402b;margin:10px 0 0}
+.v25-week-intro p{font-size:10px;line-height:1.75;color:#6e7e6f;max-width:340px;margin:0}
+.v25-day-list{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:14px}
+.v25-day-list button{background:#e9e8df;color:#415d46;border:1px solid #cdd5ca;min-height:39px;font-size:11px;cursor:pointer}
+.v25-day-list button.selected{background:#1e4331;color:#fff;border-color:#1e4331}
+.v25-day-list button:focus-visible{outline:3px solid #bd965c;outline-offset:2px}
+.v25-meal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.v25-meal{min-width:0;background:#172f22;color:#f8f3e9;border-radius:9px;overflow:hidden;display:flex;flex-direction:column}
+.v25-meal-image{height:140px;overflow:hidden}
+.v25-meal-image img{width:100%;height:100%;object-fit:cover;object-position:72% center;display:block}
+.v25-meal-text{padding:16px 15px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.v25-meal-text span{font:700 9px var(--sans);letter-spacing:.13em;color:#d9bd8d}
+.v25-meal-text strong{font:400 clamp(17px,1.9vw,25px)/1.2 var(--serif);color:#fff4e8}
+.v25-meal-text small{font:400 9px/1.4 var(--sans);color:#abbcab;margin-top:auto}
+.v25-lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}
+.v25-info-tile{padding:21px;background:#213c2b;color:#e9eee5;border-radius:8px;min-width:0}
+.v25-info-tile>span{font:700 9px var(--sans);letter-spacing:.15em;color:#cbb68b}
+.v25-info-tile h5{font:400 25px/1.2 var(--serif);color:#f0e8d7;margin:13px 0}
+.v25-info-tile p{font-size:11px;line-height:1.8;color:#c5d4c6;max-width:400px}
+.v25-recipe-mini{display:grid;grid-template-columns:28px 1fr;align-items:center;gap:6px 10px;font-size:11px;color:#e5d9bd}
+.v25-recipe-mini span:nth-child(odd){color:#d4ba86}
+.v25-shopping{background:#e4dfcf;color:#203c2b}
+.v25-shopping>span{color:#6a7e61}.v25-shopping h5{color:#203d2c}.v25-shopping p{color:#647465}
+.v25-shopping-row{border-top:1px solid #bdc3af;padding:7px 0;font-size:11px;color:#354e3a;display:flex;gap:10px}
+.v25-shopping-row span{color:#628265}
+.v25-demo-footer{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#708675;font:700 9px/1.6 var(--sans);letter-spacing:.06em}
+.v25-demo-footer a{color:#264d32;font-size:11px;white-space:nowrap;border-bottom:1px solid #6b9571;padding-bottom:8px}
+@media(max-width:1050px){.v25-dashboard{grid-template-columns:160px minmax(0,1fr)}.v25-sidebar{padding:20px 10px}.v25-side-item{padding:13px 8px;gap:9px}.v25-dash-logo strong{font-size:9px}.v25-dash-logo>span{font-size:17px}.v25-meal-image{height:120px}.v25-dash-hero{height:275px}}
+@media(max-width:770px){.v25-dashboard{grid-template-columns:1fr}.v25-sidebar{display:none}.v25-topbar{height:45px}.v25-demo-content{padding:22px}.v25-dash-hero{height:265px}.v25-dash-hero-copy{padding:28px}.v25-week-intro{align-items:flex-start;flex-direction:column;gap:9px}.v25-week-intro p{max-width:unset}}
+@media(max-width:530px){.v25-dash-hero{height:310px}.v25-dash-hero-copy{padding:25px 20px}.v25-dash-hero-copy h3{font-size:39px}.v25-dash-hero-shade{background:linear-gradient(90deg,#0a1712ee 0%,#0a1712b0 60%,#0a171275 100%)}.v25-demo-content{padding:19px 13px}.v25-day-list{gap:3px}.v25-day-list button{min-height:42px}.v25-meal-grid{grid-template-columns:1fr 1fr;gap:8px}.v25-meal:last-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}.v25-meal:last-child .v25-meal-image{height:100%}.v25-meal-image{height:110px}.v25-meal-text{padding:12px;min-height:113px}.v25-meal-text strong{font-size:19px}.v25-lower-grid{grid-template-columns:1fr}.v25-demo-footer{flex-direction:column;align-items:flex-start}.v25-demo-disclaimer{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.v25-day-list button{transition:none}}
+
 </style>
 </head>
 <body>
@@ -652,26 +715,47 @@ section[id],header[id]{scroll-margin-top:112px}
       <article><span>03 / ВКУС</span><strong>Что любите?</strong><p>Предпочтения, исключения, состав блюд и удобство приготовления.</p></article>
       <article><span>04 / НЕДЕЛЯ</span><strong>Что готовить?</strong><p>Семь дней питания, порции, рецепты и список покупок.</p></article>
     </div>
-    <div class="v16-week">
-      <div class="v16-week-header">
-        <div><span class="v16-eyebrow">ДЕМОНСТРАЦИЯ ЛОГИКИ, НЕ РЕАЛЬНЫЙ РАЦИОН</span><h3>Семь дней.<br><em>Под вашу жизнь.</em></h3></div>
-        <div class="v16-week-sidebar"><p>Переключайте дни и смотрите, как выглядит планирование питания. Данные ниже — иллюстративный пример, не назначение и не персональный расчёт.</p><span>01 — 07 / ВЫБЕРИТЕ ДЕНЬ</span></div>
+    <div class="v25-app-showcase" aria-label="Визуальная демонстрация будущего интерфейса">
+      <div class="v25-demo-disclaimer"><span>КОНЦЕПЦИЯ ИНТЕРФЕЙСА · НЕ ДЕЙСТВУЮЩИЙ ЛИЧНЫЙ КАБИНЕТ</span><span>Приложение проходит проверку перед запуском</span></div>
+      <div class="v25-dashboard">
+        <aside class="v25-sidebar">
+          <div class="v25-dash-logo"><span>VS</span><strong>ТЕЛО ПОД КЛЮЧ<small>МОЁ ПИТАНИЕ</small></strong></div>
+          <div class="v25-side-item v25-side-active"><span aria-hidden="true">◈</span> Моя неделя</div>
+          <div class="v25-side-item"><span aria-hidden="true">◉</span> Рецепты</div>
+          <div class="v25-side-item"><span aria-hidden="true">▤</span> Покупки</div>
+          <div class="v25-side-item"><span aria-hidden="true">♡</span> Предпочтения</div>
+          <div class="v25-side-bottom">ВАШ ВКУС · ВАША ЦЕЛЬ</div>
+        </aside>
+        <div class="v25-dash-main">
+          <div class="v25-topbar"><span>ПЕРСОНАЛЬНАЯ НЕДЕЛЯ ПИТАНИЯ</span><span>01—07 / ДЕМО</span></div>
+          <div class="v25-dash-hero">
+            <div class="v25-dash-hero-photo" aria-hidden="true"><img src="assets/hero-01-fish.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="v25-dash-hero-shade"></div>
+            <div class="v25-dash-hero-copy">
+              <span>ПРОЕКТ «ТЕЛО ПОД КЛЮЧ»</span>
+              <h3>Ваше питание.<br><em>Ваши правила.</em></h3>
+              <p>Полноценная неделя с любимыми продуктами, рецептами и списком покупок — в единой системе.</p>
+              <a href="#formats">Выбрать свой формат <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="v25-demo-content">
+            <div class="v25-week-intro"><div><span>ИНТЕРАКТИВНЫЙ ПРИМЕР</span><h4>Меню на неделю</h4></div><p>Выбирайте день. Названия блюд — иллюстративные, фотографии передают стиль подачи и не являются фотографиями этих рецептов.</p></div>
+            <div class="v25-day-list" role="group" aria-label="Выбрать день демонстрационного меню">
+              <button type="button" class="selected" aria-pressed="true" data-day="0">ПН</button><button type="button" aria-pressed="false" data-day="1">ВТ</button><button type="button" aria-pressed="false" data-day="2">СР</button><button type="button" aria-pressed="false" data-day="3">ЧТ</button><button type="button" aria-pressed="false" data-day="4">ПТ</button><button type="button" aria-pressed="false" data-day="5">СБ</button><button type="button" aria-pressed="false" data-day="6">ВС</button>
+            </div>
+            <div class="v25-meal-grid" id="demo-meals" aria-live="polite">
+              <article class="v25-meal"><div class="v25-meal-image"><img src="assets/hero-03-constructor.webp" alt="Гастрономическая визуализация ингредиентов" loading="lazy" decoding="async"></div><div class="v25-meal-text"><span>ЗАВТРАК</span><strong>Омлет с овощами</strong><small>Пример блюда · фото иллюстративное</small></div></article>
+              <article class="v25-meal"><div class="v25-meal-image"><img src="assets/hero-02-steak.webp" alt="Премиальная гастрономическая подача мясного блюда" loading="lazy" decoding="async"></div><div class="v25-meal-text"><span>ОБЕД</span><strong>Курица, крупа и салат</strong><small>Пример блюда · фото иллюстративное</small></div></article>
+              <article class="v25-meal"><div class="v25-meal-image"><img src="assets/hero-01-fish.webp" alt="Ресторанная гастрономическая композиция" loading="lazy" decoding="async"></div><div class="v25-meal-text"><span>ДОПОЛНЕНИЕ</span><strong>Творожный десерт</strong><small>Пример блюда · фото иллюстративное</small></div></article>
+            </div>
+            <div class="v25-lower-grid">
+              <div class="v25-info-tile"><span>РЕЦЕПТЫ</span><h5>Не просто названия блюд.</h5><p>Состав, понятные шаги приготовления и индивидуальные порции — предусмотренная логика конструктора.</p><div class="v25-recipe-mini"><span>01</span><span>Ингредиенты</span><span>02</span><span>Приготовление</span><span>03</span><span>Порция</span></div></div>
+              <div class="v25-info-tile v25-shopping"><span>ПОКУПКИ</span><h5>Вся неделя. Один список.</h5><p>Продукты собираются из запланированных блюд.</p><div class="v25-shopping-row"><span>◯</span> Овощи и зелень</div><div class="v25-shopping-row"><span>◯</span> Мясо и птица</div><div class="v25-shopping-row"><span>◯</span> Крупы и другие продукты</div></div>
+            </div>
+            <div class="v25-demo-footer"><span>ДЕМОНСТРАЦИОННЫЙ ДИЗАЙН · НЕ ПЕРСОНАЛЬНЫЙ ПЛАН И НЕ РАБОТАЮЩЕЕ ПРИЛОЖЕНИЕ</span><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Узнать о запуске ↗</a></div>
+          </div>
+        </div>
       </div>
-      <div class="app-days v16-week-days" role="group" aria-label="Демонстрация дней недели">
-        <button type="button" data-day="0" aria-pressed="true" class="selected">ПН</button>
-        <button type="button" data-day="1" aria-pressed="false">ВТ</button>
-        <button type="button" data-day="2" aria-pressed="false">СР</button>
-        <button type="button" data-day="3" aria-pressed="false">ЧТ</button>
-        <button type="button" data-day="4" aria-pressed="false">ПТ</button>
-        <button type="button" data-day="5" aria-pressed="false">СБ</button>
-        <button type="button" data-day="6" aria-pressed="false">ВС</button>
-      </div>
-      <div class="v16-meal-grid" id="demo-meals" aria-live="polite">
-        <article class="v16-meal"><span>01 / ЗАВТРАК</span><strong>Омлет с овощами</strong><small>Иллюстративный пример блюда</small></article>
-        <article class="v16-meal"><span>02 / ОБЕД</span><strong>Курица, крупа и салат</strong><small>Иллюстративный пример блюда</small></article>
-        <article class="v16-meal"><span>03 / ДОПОЛНЕНИЕ</span><strong>Творожный десерт</strong><small>Иллюстративный пример блюда</small></article>
-      </div>
-      <div class="v16-week-footer"><span>ВАШИ ПАРАМЕТРЫ → ВАШИ ПРЕДПОЧТЕНИЯ → ВАША НЕДЕЛЯ</span><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Узнать о запуске <span aria-hidden="true">↗</span></a></div>
     </div>
   <div class="v24-method-contrast">
   <div><span>РАЗОВЫЙ ЗАПРОС К ИИ</span><strong>Текст — ещё не готовая система.</strong><p>Результат зависит от формулировки запроса и самостоятельной проверки порций, состава, расчётов и закупок.</p></div>
@@ -859,12 +943,21 @@ section[id],header[id]{scroll-margin-top:112px}
     ['Овсяные оладьи','Индейка с крупой и салатом','Йогурт с ягодами'],
     ['Омлет с зеленью','Говядина с овощами','Творожный десерт']
   ];
-  const demoMeals = document.getElementById('demo-meals');
-  const demoMealLabels = ['01 / ЗАВТРАК','02 / ОБЕД','03 / ДОПОЛНЕНИЕ'];
-  document.querySelectorAll('[data-day]').forEach(btn => btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-day]').forEach(b => {b.classList.toggle('selected',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
-    const meals = demoDays[Number(btn.dataset.day)]; if (!meals || !demoMeals) return;
-    demoMeals.innerHTML = meals.map((name,i) => '<article class="v16-meal"><span>'+esc(demoMealLabels[i])+'</span><strong>'+esc(name)+'</strong><small>Иллюстративный пример блюда</small></article>').join('');
+  const mealKinds=['ЗАВТРАК','ОБЕД','ДОПОЛНЕНИЕ'];
+  const mealImages=[
+    ['assets/hero-03-constructor.webp','Гастрономическая визуализация ингредиентов'],
+    ['assets/hero-02-steak.webp','Премиальная гастрономическая подача'],
+    ['assets/hero-01-fish.webp','Ресторанная композиция еды']
+  ];
+  const demoMeals=document.getElementById('demo-meals');
+  document.querySelectorAll('[data-day]').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-day]').forEach(button=>{
+      button.classList.toggle('selected',button===btn);
+      button.setAttribute('aria-pressed',String(button===btn));
+    });
+    const day=demoDays[Number(btn.dataset.day)];
+    if(!day||!demoMeals)return;
+    demoMeals.innerHTML=day.map((meal,i)=>'<article class="v25-meal"><div class="v25-meal-image"><img loading="lazy" decoding="async" src="'+mealImages[i][0]+'" alt="'+esc(mealImages[i][1])+'"></div><div class="v25-meal-text"><span>'+mealKinds[i]+'</span><strong>'+esc(meal)+'</strong><small>Пример блюда · фото иллюстративное</small></div></article>').join('');
   }));
 
   const story = [
