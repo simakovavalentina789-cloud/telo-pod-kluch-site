@@ -18,6 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate site before deployment
+        run: |
+          python3 scripts/check_site.py
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("index.html").read_text(encoding="utf-8")
+          scripts = re.findall(r"<script(?:\\s[^>]*)?>([\\s\\S]*?)</script>", html)
+          assert len(scripts) == 1, "Expected exactly one inline script"
+          Path("/tmp/tpk-inline.js").write_text(scripts[0], encoding="utf-8")
+          PY
+          node --check /tmp/tpk-inline.js
       - name: Prepare site
         run: |
           mkdir -p _site
@@ -29,6 +41,10 @@ jobs:
           test -s _site/assets/hero-02-steak.webp
           test -s _site/assets/hero-03-constructor.webp
           test -s _site/assets/valentina-schaste.jpg
+          test -s _site/assets/case-muscle.webp
+          test -s _site/assets/case-weight.webp
+          test -s _site/assets/case-maintain.webp
+          test -s _site/assets/case-recomposition.webp
           touch _site/.nojekyll
       - name: Configure Pages
         uses: actions/configure-pages@v5
