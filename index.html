@@ -492,6 +492,44 @@ h3{letter-spacing:-.5px}
 @media(max-width:480px){.v19-case-tabs button{font-size:11px;gap:8px;padding:12px 10px}.v19-case-meta{gap:13px}.v19-case-meta strong{font-size:12px}.v19-case-controls{flex-direction:column;align-items:stretch}.v19-case-cta{align-self:flex-start}.v19-primary-number{font-size:59px}}
 @media(prefers-reduced-motion:reduce){.v19-case-tabs button{transition:none}}
 
+
+/* V20 — premium photography-led case study cards */
+.v20-proof{background:#0f241c!important;color:#f7f3e9;overflow:hidden}
+.v20-overline{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:24px;border-bottom:1px solid #a3b69d55;font:700 10px/1.6 var(--sans);letter-spacing:.16em;color:#c9b18a}
+.v20-overline span:last-child{color:#bdc9b6;font-weight:500}
+.v20-heading{display:grid;grid-template-columns:1.08fr .92fr;gap:9%;align-items:end;margin:52px 0 52px}
+.v20-heading h2{font:400 clamp(55px,5.5vw,82px)/1.1 var(--serif);letter-spacing:-.055em;color:#f8f5eb;margin:0}
+.v20-heading h2 em{color:#d5bf96}
+.v20-heading p{max-width:520px;color:#c7d4c7;font-size:15px;line-height:1.95;margin:0}
+.v20-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.v20-card{min-width:0;background:#19382a;border:1px solid #ae9b7377;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.v20-card:hover{transform:translateY(-3px);border-color:#d9c29a}
+.v20-image{position:relative;aspect-ratio:640 / 400;overflow:hidden;background:#1c3027}
+.v20-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 27%;filter:saturate(.94)}
+.v20-photo-tag{position:absolute;bottom:14px;background:#10271de0;border:1px solid #cbb08780;padding:8px 14px;font-size:10px;letter-spacing:.12em;color:#eee4d0;font-weight:700}
+.v20-before{left:calc(25% - 20px)}.v20-after{left:calc(75% - 24px)}
+.v20-card-body{padding:28px 32px 32px;display:flex;flex-direction:column;flex:1}
+.v20-card-head{display:flex;justify-content:space-between;gap:12px;color:#cdb68e;font:700 10px/1.5 var(--sans);letter-spacing:.13em}
+.v20-card h3{font:400 clamp(31px,3vw,44px)/1.14 var(--serif);letter-spacing:-.025em;color:#f7f2e7;margin:20px 0 20px}
+.v20-highlight{display:flex;align-items:baseline;gap:20px;border-top:1px solid #aaba9e59;border-bottom:1px solid #aaba9e59;padding:20px 0;flex-wrap:wrap}
+.v20-highlight strong{font:400 clamp(37px,3.6vw,59px)/1.06 var(--serif);color:#dcc398;letter-spacing:-.045em}
+.v20-highlight span{font:italic 20px/1.3 var(--serif);color:#cfdbcb}
+.v20-card-body>p{font-size:13px;line-height:1.8;color:#c7d4c8;margin:21px 0 30px}
+.v20-card-footer{margin-top:auto;display:flex;flex-direction:column;gap:13px}
+.v20-card-footer>span{color:#91ad96;font:700 10px/1.5 var(--sans);letter-spacing:.13em}
+.v20-card details{border-top:1px solid #8aa28b66}
+.v20-card summary{cursor:pointer;padding:15px 0 6px;display:flex;justify-content:space-between;gap:20px;color:#efd9ae;font-size:12px;font-weight:700;list-style:none}
+.v20-card summary::-webkit-details-marker{display:none}
+.v20-card summary:focus-visible{outline:2px solid #dfc69f;outline-offset:4px}
+.v20-card details[open] summary span{transform:rotate(45deg)}
+.v20-card details p{font-size:12px;line-height:1.8;color:#c1d1c0;margin:14px 0 5px}
+.v20-bottom{display:flex;justify-content:space-between;align-items:center;gap:8%;margin-top:32px}
+.v20-bottom p{font-size:11px;line-height:1.8;color:#aebfad;max-width:700px;margin:0}
+.v20-bottom a{white-space:nowrap;color:#f0d5a4;border-bottom:1px solid #c0a270;padding-bottom:9px;font-size:12px;font-weight:700;display:inline-flex;gap:18px;align-items:center}
+@media(max-width:850px){.v20-heading{grid-template-columns:1fr;gap:20px}.v20-card-grid{gap:12px}.v20-card-body{padding:22px}.v20-image{aspect-ratio:640 / 440}.v20-card h3{font-size:32px}.v20-highlight strong{font-size:42px}.v20-bottom{align-items:flex-start;flex-direction:column;gap:28px}}
+@media(max-width:610px){.v20-overline span:last-child{display:none}.v20-card-grid{grid-template-columns:1fr;gap:20px}.v20-heading{margin:35px 0}.v20-heading h2{font-size:53px}.v20-image{aspect-ratio:640 / 415}.v20-card h3{font-size:35px}.v20-highlight strong{font-size:49px}}
+@media(prefers-reduced-motion:reduce){.v20-card{transition:none}.v20-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -658,43 +696,28 @@ h3{letter-spacing:-.5px}
   </div>
 </section>
 
-    <section class="proof-section section-pad v19-proof" id="proof" aria-labelledby="cases-heading">
-  <div class="shell">
-    <div class="v19-overline"><span>08 / РЕЗУЛЬТАТЫ ЛИЧНОЙ ПРАКТИКИ</span><span>4 НАПРАВЛЕНИЯ · 4 ИСТОРИИ РАБОТЫ</span></div>
-    <div class="v19-head">
-      <h2 id="cases-heading">Не обещания.<br><em>Результаты.</em></h2>
-      <p>От снижения веса до работы над мышечной формой. Каждый путь индивидуален. Выберите направление и посмотрите, как я выстраиваю работу.</p>
-    </div>
-    <div class="v19-case-tabs" role="tablist" aria-label="Выбор направления кейса">
-      <button type="button" role="tab" class="is-current" id="case-tab-0" aria-selected="true" aria-controls="case-panel" tabindex="0" data-case="0"><span>01</span> Похудение</button>
-      <button type="button" role="tab" id="case-tab-1" aria-selected="false" aria-controls="case-panel" tabindex="-1" data-case="1"><span>02</span> Набор мышц</button>
-      <button type="button" role="tab" id="case-tab-2" aria-selected="false" aria-controls="case-panel" tabindex="-1" data-case="2"><span>03</span> Рекомпозиция</button>
-      <button type="button" role="tab" id="case-tab-3" aria-selected="false" aria-controls="case-panel" tabindex="-1" data-case="3"><span>04</span> Снижение и поддержание</button>
-    </div>
-    <div class="v19-case-stage" id="case-panel" role="tabpanel" aria-labelledby="case-tab-0" tabindex="0" aria-live="polite">
-      <div class="v19-case-main">
-        <span class="v19-label" id="case-overline">КЕЙС 01 / СНИЖЕНИЕ ВЕСА</span>
-        <h3 id="case-title">Изменить вес.<br><em>Не потерять себя.</em></h3>
-        <p id="case-description">Персональная работа с питанием и привычками с учётом исходных параметров и образа жизни.</p>
-        <div class="v19-case-meta">
-          <div><span>ФОРМАТ РАБОТЫ</span><strong id="case-format">Личное сопровождение</strong></div>
-          <div><span>ФОКУС ПРОГРАММЫ</span><strong id="case-focus">Снижение веса · питание · привычки</strong></div>
-        </div>
-      </div>
-      <aside class="v19-case-result">
-        <span class="v19-result-label">РЕЗУЛЬТАТ / ИНДИВИДУАЛЬНАЯ ПРАКТИКА</span>
-        <strong class="v19-primary-number" id="case-number">−23,9 <small>кг</small></strong>
-        <span class="v19-result-period" id="case-period">за 6 месяцев</span>
-        <div class="v19-stats" id="case-stats"><div><span>Вес</span><b>75,1 → 51,2 кг</b></div><div><span>Подход</span><b>Индивидуальное питание</b></div></div>
-        <p id="case-qualifier">Показатели относятся к конкретной истории личной работы, а не к результатам приложения.</p>
-      </aside>
-    </div>
-    <div class="v19-case-controls">
-      <div class="v19-arrows" aria-label="Переключение кейсов"><button type="button" id="case-prev" aria-label="Предыдущий кейс">←</button><span id="case-counter" aria-live="off">01 / 04</span><button type="button" id="case-next" aria-label="Следующий кейс">→</button></div>
-      <a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer" class="v19-case-cta">Обсудить свою цель <span aria-hidden="true">↗</span></a>
-    </div>
-    <p class="v19-case-disclaimer">Кейсы представлены без имён и фотографий клиентов. Отдельные направления описаны без числовых показателей, пока измерения не подтверждены. Результаты индивидуальны и не гарантируют аналогичных изменений. Это примеры личной профессиональной практики, а не результатов приложения.</p>
-  </div>
+    <section class="proof-section section-pad v20-proof" id="proof" aria-labelledby="cases-heading">
+ <div class="shell">
+  <div class="v20-overline"><span>08 / РЕЗУЛЬТАТЫ ЛИЧНОЙ ПРАКТИКИ</span><span>ЧЕТЫРЕ ЦЕЛИ · ИНДИВИДУАЛЬНЫЙ ПОДХОД</span></div>
+  <div class="v20-heading"><h2 id="cases-heading">Не обещания.<br><em>Результаты.</em></h2><p>Реальные истории индивидуальной работы. От питания для мышечной формы до снижения веса и закрепления новых привычек.</p></div>
+  <div class="v20-card-grid"><article class="v20-card">
+ <div class="v20-image"><img src="assets/case-muscle.webp" alt="Две фотографии клиента, иллюстрирующие изменения мышечной формы" loading="lazy" decoding="async" width="640" height="478"><span class="v20-photo-tag v20-before">ДО</span><span class="v20-photo-tag v20-after">ПОСЛЕ</span></div>
+ <div class="v20-card-body"><div class="v20-card-head"><span>КЕЙС 01 · СИЛОВОЕ РАЗВИТИЕ</span><span>01 / 04</span></div><h3>Набор мышечной массы</h3><div class="v20-highlight"><strong>2 года</strong><span>динамики формы</span></div><p>Питание под задачу, силовые тренировки и восстановление — в индивидуальной программе.</p><div class="v20-card-footer"><span>ФОРМАТ · ЛИЧНАЯ РАБОТА</span><details><summary>Подробнее о кейсе <span aria-hidden="true">+</span></summary><p>Продолжительность отражает период между предоставленными фотографиями. Точный прирост мышечной массы не измерен; килограммы мышц не заявляем.</p></details></div></div>
+ </article>
+<article class="v20-card">
+ <div class="v20-image"><img src="assets/case-weight.webp" alt="Фотографии до и после программы снижения веса" loading="lazy" decoding="async" width="640" height="478"><span class="v20-photo-tag v20-before">ДО</span><span class="v20-photo-tag v20-after">ПОСЛЕ</span></div>
+ <div class="v20-card-body"><div class="v20-card-head"><span>КЕЙС 02 · СНИЖЕНИЕ ВЕСА</span><span>02 / 04</span></div><h3>Похудение</h3><div class="v20-highlight"><strong>−23,9 кг</strong><span>за 6 месяцев</span></div><p>Снижение веса с 75,1 до 51,2 кг в формате индивидуального сопровождения и работы с питанием.</p><div class="v20-card-footer"><span>ФОРМАТ · ЛИЧНАЯ РАБОТА</span><details><summary>Подробнее о кейсе <span aria-hidden="true">+</span></summary><p>Показатели взяты из предоставленного материала кейса. Личные обстоятельства и имена не публикуются.</p></details></div></div>
+ </article>
+<article class="v20-card">
+ <div class="v20-image"><img src="assets/case-maintain.webp" alt="Фотографии до и после снижения веса с акцентом на дальнейшее поддержание" loading="lazy" decoding="async" width="640" height="478"><span class="v20-photo-tag v20-before">ДО</span><span class="v20-photo-tag v20-after">ПОСЛЕ</span></div>
+ <div class="v20-card-body"><div class="v20-card-head"><span>КЕЙС 03 · РАБОТА НА РЕЗУЛЬТАТ</span><span>03 / 04</span></div><h3>Похудение и поддержание</h3><div class="v20-highlight"><strong>−14,6 кг</strong><span>за 5 месяцев</span></div><p>Снижение веса с 96,85 до 82,2 кг. Следующая задача — закрепление привычек и поддержание изменений.</p><div class="v20-card-footer"><span>ФОРМАТ · ЛИЧНАЯ РАБОТА</span><details><summary>Подробнее о кейсе <span aria-hidden="true">+</span></summary><p>Срок подтверждённого удержания веса в материалах не указан. Поэтому история не представлена как доказательство длительного поддержания.</p></details></div></div>
+ </article>
+<article class="v20-card">
+ <div class="v20-image"><img src="assets/case-recomposition.webp" alt="Фотографии до и после изменений веса и физической формы" loading="lazy" decoding="async" width="640" height="478"><span class="v20-photo-tag v20-before">ДО</span><span class="v20-photo-tag v20-after">ПОСЛЕ</span></div>
+ <div class="v20-card-body"><div class="v20-card-head"><span>КЕЙС 04 · ИЗМЕНЕНИЕ ФОРМЫ</span><span>04 / 04</span></div><h3>Рекомпозиция тела</h3><div class="v20-highlight"><strong>−15,4 кг</strong><span>за 3 месяца</span></div><p>Изменение веса с 108,4 до 93 кг; работа с питанием, объёмами и физической формой.</p><div class="v20-card-footer"><span>ФОРМАТ · ЛИЧНАЯ РАБОТА</span><details><summary>Подробнее о кейсе <span aria-hidden="true">+</span></summary><p>Показатели изменения мышечной и жировой массы отдельно не подтверждены. Снижение веса не является само по себе доказательством рекомпозиции.</p></details></div></div>
+ </article></div>
+  <div class="v20-bottom"><p>Фотографии подготовлены из предоставленных материалов. Результаты индивидуальны и не гарантируют аналогичных изменений. Все кейсы относятся к личной практике, а не к ещё не запущенному приложению.</p><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Обсудить свою цель <span aria-hidden="true">↗</span></a></div>
+ </div>
 </section>
 
     <section class="faq section-pad" id="questions"><div class="shell faq-grid"><div><span class="eyebrow">09 / ЧАСТЫЕ ВОПРОСЫ</span><h2>О важном.<br><em>Без сложных слов.</em></h2></div><div class="faq-items"><details><summary>Кому подойдёт система? <span>+</span></summary><p>Приложение рассчитано на здоровых взрослых с целями снижения веса, рекомпозиции, набора мышц или поддержания веса. Если есть заболевания, симптомы, приём лекарств или особые медицинские потребности, выберите личную работу, а не автоматический план питания.</p></details><details><summary>Можно ли выбрать продукты, которые я люблю? <span>+</span></summary><p>Учёт предпочтений и исключаемых продуктов предусмотрен в логике разрабатываемого приложения. Фактические возможности будут подтверждены перед запуском.</p></details><details><summary>Нужны ли строгие диеты и тяжёлые тренировки? <span>+</span></summary><p>Строгие диеты и изнурительные марафоны не нужны. Приложение рассчитывает питание и не назначает тренировки. Только при личной работе со мной физическая нагрузка подбирается индивидуально — по состоянию, подготовке и цели. Для набора мышечной массы силовые нагрузки обычно важны, но их объём и интенсивность должны быть посильными.</p></details><details><summary>Приложением уже можно пользоваться? <span>+</span></summary><p>Клиентская версия ещё проходит разработку и проверку. Мы не обозначаем её готовой, пока испытания не будут завершены.</p></details></div></div></section>
