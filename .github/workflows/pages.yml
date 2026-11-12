@@ -46,6 +46,24 @@ jobs:
           test -s _site/assets/case-maintain.webp
           test -s _site/assets/case-recomposition.webp
           touch _site/.nojekyll
+      - name: Capture responsive browser previews (non-blocking)
+        continue-on-error: true
+        run: |
+          CHROME="$(command -v google-chrome || command -v chromium || true)"
+          if [ -z "$CHROME" ]; then echo "Chrome not installed on runner"; exit 0; fi
+          mkdir -p screenshots
+          PAGE="file://$(pwd)/_site/index.html"
+          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=3500 --window-size=390,844 --screenshot=screenshots/mobile.png "$PAGE"
+          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=3500 --window-size=820,1180 --screenshot=screenshots/ipad.png "$PAGE"
+          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=3500 --window-size=1440,900 --screenshot=screenshots/desktop.png "$PAGE"
+      - name: Upload browser preview screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-responsive-preview
+          path: screenshots/
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
