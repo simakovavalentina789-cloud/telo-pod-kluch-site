@@ -871,6 +871,39 @@ section[id],header[id]{scroll-margin-top:112px}
  .v14-hero .story-primary,.v25-dash-hero-copy a,.v17-format-action .v17-direct-link,.v17-contact-aside>a,.goal-result .button-dark,.mobile-contact-cta,.mobile-nav-telegram{transition:none}
 }
 
+
+/* V33 — screenshot-audited header/nav: one clear CTA per viewport */
+.v24-chapter-nav{display:none!important}
+.site-header .nav-row{min-width:0}
+.site-header .desktop-nav a{white-space:nowrap}
+.site-header .nav-cta{white-space:nowrap;border-radius:11px;background:#e9e1ce;color:#20392a}
+.site-header .mobile-contact-cta,.site-header .menu-toggle{display:none}
+.site-header .mobile-contact-cta{min-height:44px;white-space:nowrap}
+.site-header .mobile-contact-label{display:inline}
+@media(min-width:1101px){
+ .site-header .desktop-nav{display:flex;gap:clamp(14px,2.1vw,32px)}
+ .site-header .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 20px}
+ .site-header .mobile-contact-cta,.site-header .menu-toggle{display:none!important}
+}
+@media(max-width:1100px){
+ .site-header .desktop-nav,.site-header .nav-cta{display:none!important}
+ .site-header .mobile-contact-cta{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;padding:10px 16px;gap:9px;min-height:44px;font-size:12px}
+ .site-header .menu-toggle{display:block;flex:0 0 46px;min-height:46px;margin:0}
+ .site-header .nav-row{gap:13px}
+ .site-header .mobile-nav{position:absolute;top:100%;left:0;right:0;z-index:80;background:#152e23;max-height:calc(100dvh - 74px);overflow-y:auto;overscroll-behavior:contain}
+ .site-header .mobile-nav[hidden]{display:none!important}
+}
+@media(max-width:520px){
+ .site-header .nav-row{gap:8px}
+ .site-header .mobile-contact-cta{padding:10px 11px;gap:5px;font-size:11px;min-width:88px}
+ .site-header .mobile-contact-label{display:inline!important}
+ .site-header .menu-toggle{flex-basis:42px;width:42px;min-width:42px;min-height:44px}
+}
+@media(max-width:365px){
+ .site-header .brand-text small{display:none}
+ .site-header .mobile-contact-cta{min-width:80px;padding:9px}
+}
+
 </style>
 </head>
 <body>
@@ -891,7 +924,7 @@ section[id],header[id]{scroll-margin-top:112px}
     </nav>
   </header>
   <main id="main">
-    <div class="v24-chapter-nav" aria-label="Быстрый переход по сайту"><div class="shell"><a href="#app">Конструктор</a><a href="#situations">Вкус и цели</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a></div></div>
+    
 <section class="hero editorial-rebuild v14-hero v28-emotional-active" aria-labelledby="hero-title">
   <div class="v14-hero-visual" aria-hidden="true"><div class="v29-emotional-panels"><div class="v29-figure-panel v29-left"><img src="assets/hero-emotional.webp" alt="" decoding="async"></div><div class="v29-figure-panel v29-right"><img src="assets/hero-emotional.webp" alt="" decoding="async"></div></div><img id="story-main-image" src="assets/hero-emotional.webp" alt="Символический художественный образ: женщина, уставшая от попыток изменить привычки, и уверенная спортивная женщина. Это не реальный результат клиента" fetchpriority="high" decoding="async"><div class="v14-hero-grad"></div></div>
   <div class="shell v14-hero-layout">
@@ -1104,7 +1137,7 @@ section[id],header[id]{scroll-margin-top:112px}
     toggle?.setAttribute('aria-label', 'Открыть меню');
   }));
   // Close the menu when the layout changes to desktop, including iPad rotation.
-  window.matchMedia('(min-width: 801px)').addEventListener?.('change', event => {
+  window.matchMedia('(min-width: 1101px)').addEventListener?.('change', event => {
     if (event.matches && menu && toggle) {
       menu.hidden = true;
       toggle.setAttribute('aria-expanded', 'false');
