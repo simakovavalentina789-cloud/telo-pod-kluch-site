@@ -698,37 +698,60 @@ section[id],header[id]{scroll-margin-top:112px}
 @media(max-width:520px){.v14-hero #hero-title{font-size:clamp(43px,10vw,57px);line-height:1.07}.v14-hero .story-lead{line-height:1.75}.v14-hero .story-proofline{font-size:10px}}
 
 
-/* V28 approved emotional key visual, next slides retain gourmet photography */
-@media(min-width:1061px){
- .v28-emotional-active .v14-hero-visual img{object-position:center 40%;filter:contrast(1.02)}
- .v28-emotional-active .v14-hero-grad{background:linear-gradient(90deg,#06120e55 0%,#06120e10 31%,#06120e58 49%,#06120e0d 74%),linear-gradient(0deg,#06120e60,transparent 40%)}
- .v28-emotional-active .story-copy{width:405px;max-width:405px;margin-left:35%;padding:18px 22px 24px;background:linear-gradient(100deg,#091d15de,#091d15b3 78%,transparent);border-left:1px solid #d6bb8538}
- .v28-emotional-active .story-kicker{font-size:9px;letter-spacing:.13em}
- .v28-emotional-active .v11-identity{font-size:9px;margin-top:8px}
- .v28-emotional-active .story-count{margin:13px 0 9px}
- .v28-emotional-active h1{font-size:clamp(45px,4vw,60px);line-height:1.05;margin-bottom:14px}
- .v28-emotional-active .story-lead{font-size:12px;line-height:1.65}
- .v28-emotional-active .story-links{margin-top:15px;gap:12px}
- .v28-emotional-active .story-primary{padding:12px 15px;min-height:43px}
- .v28-emotional-active .story-proofline{font-size:10px;margin-top:15px}
- .v28-emotional-active .story-controls{margin-top:20px}
+/* V29 — approved edge-figures composition with real accessible live text.
+   Emotional slide only; original food slides keep their own design. */
+.v29-emotional-panels{display:none}
+@media(min-width:1150px){
+ .v28-emotional-active .v14-hero-visual{background:#071b15}
+ .v28-emotional-active #story-main-image{opacity:0}
+ .v28-emotional-active .v29-emotional-panels{position:absolute;inset:0;display:block;overflow:hidden}
+ .v28-emotional-active .v29-figure-panel{position:absolute;top:0;bottom:0;width:50%;overflow:hidden}
+ .v28-emotional-active .v29-left{left:0;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 65%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 65%,transparent 100%)}
+ .v28-emotional-active .v29-right{right:0;-webkit-mask-image:linear-gradient(270deg,#000 0%,#000 65%,transparent 100%);mask-image:linear-gradient(270deg,#000 0%,#000 65%,transparent 100%)}
+ .v28-emotional-active .v29-figure-panel img{position:absolute;top:0;width:200%;max-width:none;height:100%;object-fit:cover;filter:contrast(1.03) saturate(.98)}
+ .v28-emotional-active .v29-left img{left:-20%}
+ .v28-emotional-active .v29-right img{left:-80%}
+ .v28-emotional-active .v14-hero-grad{background:linear-gradient(90deg,transparent 0%,#061c15b0 34%,#061c15ba 50%,#061c15b0 66%,transparent 100%),linear-gradient(0deg,#07160ec9,transparent 22%)}
+ .v28-emotional-active .v14-hero-layout{min-height:735px;padding-top:52px;padding-bottom:48px}
+ .v28-emotional-active .story-copy{width:min(100%,620px);max-width:620px;margin:0 auto;text-align:center;padding:0;background:none;border:0;box-shadow:none}
+ .v28-emotional-active .story-kicker{font-size:10px;letter-spacing:.19em}
+ .v28-emotional-active .v11-identity{font-size:10px;margin-top:13px;letter-spacing:.13em}
+ .v28-emotional-active .story-count{margin:14px 0 10px;font-size:10px}
+ .v28-emotional-active h1{font-size:clamp(52px,4.7vw,72px);line-height:1.08;margin-bottom:20px;letter-spacing:-.05em;text-wrap:balance}
+ .v28-emotional-active .story-lead{font-size:16px;line-height:1.75;max-width:555px;margin:0 auto}
+ .v28-emotional-active .story-links{justify-content:center;margin-top:25px;gap:22px}
+ .v28-emotional-active .story-primary{padding:17px 25px;min-height:54px}
+ .v28-emotional-active .story-proofline{font-size:11px;margin:22px 0 0}
+ .v28-emotional-active .story-controls{justify-content:center;margin-top:26px}
+ .v28-emotional-active .story-image-caption{right:14px;bottom:22px;font-size:9px}
 }
-@media(min-width:801px) and (max-width:1060px){
- .v28-emotional-active .v14-hero-visual img{object-position:center center}
- .v28-emotional-active .v14-hero-grad{background:linear-gradient(90deg,#07140dc9,#07140d75 58%,transparent)}
- .v28-emotional-active .story-copy{width:420px;max-width:420px;padding:20px;background:#091d15b8}
- .v28-emotional-active h1{font-size:clamp(44px,5.2vw,58px)}
+@media(min-width:801px) and (max-width:1149px){
+ .v28-emotional-active .v14-hero-visual{position:relative;inset:auto;height:auto;aspect-ratio:16/9}
+ .v28-emotional-active #story-main-image{width:100%;height:100%;object-fit:contain;object-position:center;background:#071b15}
+ .v28-emotional-active .v14-hero-grad{background:linear-gradient(0deg,#0c100e 0%,transparent 12%)}
+ .v28-emotional-active .v14-hero-layout{min-height:0;padding:40px 0 45px}
+ .v28-emotional-active .story-copy{width:min(100%,730px);max-width:730px;margin:auto;text-align:center;padding:0;background:none;border:0}
+ .v28-emotional-active h1{font-size:clamp(50px,6.5vw,75px)}
+ .v28-emotional-active .story-lead{font-size:16px;margin-left:auto;margin-right:auto}
+ .v28-emotional-active .story-links,.v28-emotional-active .story-controls{justify-content:center}
+ .v28-emotional-active .story-image-caption{display:none}
 }
 @media(max-width:800px){
- .v28-emotional-active .v14-hero-visual img{object-position:center center;object-fit:contain;background:#0c2118}
- .v28-emotional-active .v14-hero-visual{background:#0c2118}
- .v28-emotional-active .v14-hero-grad{background:linear-gradient(0deg,#0c100e 0%,#0c100e00 16%)}
+ .v28-emotional-active .v14-hero-visual{background:#071b15}
+ .v28-emotional-active #story-main-image{object-fit:contain;object-position:center center;background:#071b15}
+ .v28-emotional-active .v14-hero-grad{background:linear-gradient(0deg,#0c100e 0%,transparent 12%)}
+ .v28-emotional-active .story-copy{text-align:center;background:none;border:0}
+ .v28-emotional-active .story-links,.v28-emotional-active .story-controls{justify-content:center}
+ .v28-emotional-active .story-lead{margin-left:auto;margin-right:auto;max-width:560px}
+ .v28-emotional-active .story-image-caption{display:none}
 }
 @media(max-width:520px){
- .v28-emotional-active .v14-hero-visual img{object-fit:contain;object-position:center center}
  .v28-emotional-active .v14-hero-visual{height:245px}
- .v28-emotional-active .v14-hero-layout{padding-top:257px}
- .v28-emotional-active .story-image-caption{top:226px;font-size:8px}
+ .v28-emotional-active .v14-hero-layout{padding-top:265px}
+ .v28-emotional-active .story-kicker{font-size:9px}
+ .v28-emotional-active h1{font-size:clamp(42px,10.1vw,59px);line-height:1.09}
+ .v28-emotional-active .story-lead{font-size:14px;line-height:1.75}
+ .v28-emotional-active .story-links{gap:14px}
 }
 
 </style>
@@ -753,7 +776,7 @@ section[id],header[id]{scroll-margin-top:112px}
   <main id="main">
     <div class="v24-chapter-nav" aria-label="Быстрый переход по сайту"><div class="shell"><a href="#app">Конструктор</a><a href="#situations">Вкус и цели</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a></div></div>
 <section class="hero editorial-rebuild v14-hero v28-emotional-active" aria-labelledby="hero-title">
-  <div class="v14-hero-visual" aria-hidden="true"><img id="story-main-image" src="assets/hero-emotional.webp" alt="Символический художественный образ: женщина, уставшая от попыток изменить привычки, и уверенная спортивная женщина. Это не реальный результат клиента" fetchpriority="high" decoding="async"><div class="v14-hero-grad"></div></div>
+  <div class="v14-hero-visual" aria-hidden="true"><div class="v29-emotional-panels"><div class="v29-figure-panel v29-left"><img src="assets/hero-emotional.webp" alt="" decoding="async"></div><div class="v29-figure-panel v29-right"><img src="assets/hero-emotional.webp" alt="" decoding="async"></div></div><img id="story-main-image" src="assets/hero-emotional.webp" alt="Символический художественный образ: женщина, уставшая от попыток изменить привычки, и уверенная спортивная женщина. Это не реальный результат клиента" fetchpriority="high" decoding="async"><div class="v14-hero-grad"></div></div>
   <div class="shell v14-hero-layout">
     <div class="story-copy">
       <span class="story-kicker">ВАЛЕНТИНА СЧАСТЬЕ · АВТОРСКАЯ СИСТЕМА</span>
@@ -1061,6 +1084,7 @@ section[id],header[id]{scroll-margin-top:112px}
   let storyIndex=0;
   const setStory=(i)=>{
     storyIndex=(i+story.length)%story.length;
+    document.querySelector('.editorial-rebuild')?.classList.toggle('v28-emotional-active',storyIndex===0);
     const d=story[storyIndex];
     carouselRoot?.classList.toggle('v28-emotional-active',storyIndex===0);
     const title=document.getElementById('hero-title');
