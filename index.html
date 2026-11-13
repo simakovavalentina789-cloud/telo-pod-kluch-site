@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#153c35" />
   <link rel="icon" type="image/webp" href="assets/logo-vs.webp" />
-  <link rel="preload" href="assets/hero-01-fish.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="preload" href="assets/hero-emotional.webp" as="image" type="image/webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="description" content="Тело под ключ — индивидуальное здоровое питание с расчётами под вашу цель и вкусы: похудение, рекомпозиция, набор мышц или поддержание веса. Методика Валентины Счастье." />
@@ -697,6 +697,40 @@ section[id],header[id]{scroll-margin-top:112px}
 @media(max-width:800px){.v14-hero .story-proofline{font-size:11px;line-height:1.8}}
 @media(max-width:520px){.v14-hero #hero-title{font-size:clamp(43px,10vw,57px);line-height:1.07}.v14-hero .story-lead{line-height:1.75}.v14-hero .story-proofline{font-size:10px}}
 
+
+/* V28 approved emotional key visual, next slides retain gourmet photography */
+@media(min-width:1061px){
+ .v28-emotional-active .v14-hero-visual img{object-position:center 40%;filter:contrast(1.02)}
+ .v28-emotional-active .v14-hero-grad{background:linear-gradient(90deg,#06120e55 0%,#06120e10 31%,#06120e58 49%,#06120e0d 74%),linear-gradient(0deg,#06120e60,transparent 40%)}
+ .v28-emotional-active .story-copy{width:405px;max-width:405px;margin-left:35%;padding:18px 22px 24px;background:linear-gradient(100deg,#091d15de,#091d15b3 78%,transparent);border-left:1px solid #d6bb8538}
+ .v28-emotional-active .story-kicker{font-size:9px;letter-spacing:.13em}
+ .v28-emotional-active .v11-identity{font-size:9px;margin-top:8px}
+ .v28-emotional-active .story-count{margin:13px 0 9px}
+ .v28-emotional-active h1{font-size:clamp(45px,4vw,60px);line-height:1.05;margin-bottom:14px}
+ .v28-emotional-active .story-lead{font-size:12px;line-height:1.65}
+ .v28-emotional-active .story-links{margin-top:15px;gap:12px}
+ .v28-emotional-active .story-primary{padding:12px 15px;min-height:43px}
+ .v28-emotional-active .story-proofline{font-size:10px;margin-top:15px}
+ .v28-emotional-active .story-controls{margin-top:20px}
+}
+@media(min-width:801px) and (max-width:1060px){
+ .v28-emotional-active .v14-hero-visual img{object-position:center center}
+ .v28-emotional-active .v14-hero-grad{background:linear-gradient(90deg,#07140dc9,#07140d75 58%,transparent)}
+ .v28-emotional-active .story-copy{width:420px;max-width:420px;padding:20px;background:#091d15b8}
+ .v28-emotional-active h1{font-size:clamp(44px,5.2vw,58px)}
+}
+@media(max-width:800px){
+ .v28-emotional-active .v14-hero-visual img{object-position:center center;object-fit:contain;background:#0c2118}
+ .v28-emotional-active .v14-hero-visual{background:#0c2118}
+ .v28-emotional-active .v14-hero-grad{background:linear-gradient(0deg,#0c100e 0%,#0c100e00 16%)}
+}
+@media(max-width:520px){
+ .v28-emotional-active .v14-hero-visual img{object-fit:contain;object-position:center center}
+ .v28-emotional-active .v14-hero-visual{height:245px}
+ .v28-emotional-active .v14-hero-layout{padding-top:257px}
+ .v28-emotional-active .story-image-caption{top:226px;font-size:8px}
+}
+
 </style>
 </head>
 <body>
@@ -718,8 +752,8 @@ section[id],header[id]{scroll-margin-top:112px}
   </header>
   <main id="main">
     <div class="v24-chapter-nav" aria-label="Быстрый переход по сайту"><div class="shell"><a href="#app">Конструктор</a><a href="#situations">Вкус и цели</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a></div></div>
-<section class="hero editorial-rebuild v14-hero" aria-labelledby="hero-title">
-  <div class="v14-hero-visual" aria-hidden="true"><img id="story-main-image" src="assets/hero-01-fish.webp" alt="Ресторанная подача полноценного обеда: лосось, овощи, салат, десерт и напиток" fetchpriority="high" decoding="async"><div class="v14-hero-grad"></div></div>
+<section class="hero editorial-rebuild v14-hero v28-emotional-active" aria-labelledby="hero-title">
+  <div class="v14-hero-visual" aria-hidden="true"><img id="story-main-image" src="assets/hero-emotional.webp" alt="Символический художественный образ: женщина, уставшая от попыток изменить привычки, и уверенная спортивная женщина. Это не реальный результат клиента" fetchpriority="high" decoding="async"><div class="v14-hero-grad"></div></div>
   <div class="shell v14-hero-layout">
     <div class="story-copy">
       <span class="story-kicker">ВАЛЕНТИНА СЧАСТЬЕ · АВТОРСКАЯ СИСТЕМА</span>
@@ -738,7 +772,7 @@ section[id],header[id]{scroll-margin-top:112px}
         <button type="button" class="story-pause" id="story-pause" aria-label="Остановить автоматическое переключение" aria-pressed="false" title="Остановить автопоказ">Ⅱ</button>
       </div>
     </div>
-    <div class="story-image-caption"><span>01 /</span> ПИТАНИЕ БЕЗ ЖЁСТКИХ ЗАПРЕТОВ</div>
+    <div class="story-image-caption"><span>01 /</span> ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС</div>
   </div>
   <div class="story-bottom"><div class="shell"><span>Снижение веса</span><span>Рекомпозиция</span><span>Набор мышц</span><span>Поддержание веса</span></div></div>
 </section>
@@ -1019,14 +1053,15 @@ section[id],header[id]{scroll-margin-top:112px}
   }));
 
   const story = [
-    {count:'01 — 03',title:'Устали начинать<br><em>с понедельника?</em>',lead:'Однообразные меню, вечные запреты и снова вопрос «что приготовить»? Вам нужна не очередная диета, а питание, выстроенное под вашу цель, привычки и вкусы.',main:'assets/hero-01-fish.webp',caption:'ПИТАНИЕ БЕЗ ЖЁСТКИХ ЗАПРЕТОВ',alt:'Ресторанная композиция обеда: лосось с овощами, салат, десерт и напиток'},
-    {count:'02 — 03',title:'Стейк, а не<br><em>запреты.</em>',lead:'Любимые продукты могут быть частью здорового рациона. Конструктор подбирает сочетания, порции и блюда под цель, а не заставляет питаться одинаково.',main:'assets/hero-02-steak.webp',caption:'РАЗНООБРАЗИЕ БЕЗ ЖЁСТКИХ ДИЕТ',alt:'Стейк из говядины с гарниром из овощей в премиальной ресторанной подаче'},
-    {count:'03 — 03',title:'Не случайный рецепт.<br><em>Продуманная система.</em>',lead:'Цель, индивидуальные параметры, вкусы, расчёт питательных веществ — и готовая неделя с рецептами и покупками. Приложение для здоровых взрослых готовится к запуску.',main:'assets/hero-03-constructor.webp',caption:'ПРОДУКТЫ → РАСЧЁТЫ → ВАШЕ МЕНЮ',alt:'Гастрономическая визуализация ингредиентов, собирающихся в готовое блюдо'}
+    {count:'01 — 03',title:'Устали начинать<br><em>с понедельника?</em>',lead:'Однообразные меню, вечные запреты и снова вопрос «что приготовить»? Вам нужна не очередная диета, а питание, выстроенное под вашу цель, привычки и вкусы.',main:'assets/hero-emotional.webp',caption:'ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС',alt:'Символический художественный образ женщины до и после изменения образа жизни. Это не фотография одного человека и не результат клиента'},
+    {count:'02 — 03',title:'Стейк, а не<br><em>запреты.</em>',lead:'Любимые продукты могут быть частью здорового рациона. Конструктор подбирает сочетания, порции и блюда под цель, а не заставляет питаться одинаково.',main:'assets/hero-01-fish.webp',caption:'РАЗНООБРАЗИЕ БЕЗ ЖЁСТКИХ ДИЕТ',alt:'Стейк из говядины с гарниром из овощей в премиальной ресторанной подаче'},
+    {count:'03 — 03',title:'Не случайный рецепт.<br><em>Продуманная система.</em>',lead:'Цель, индивидуальные параметры, вкусы, расчёт питательных веществ — и готовая неделя с рецептами и покупками. Приложение для здоровых взрослых готовится к запуску.',main:'assets/hero-02-steak.webp',caption:'ПРОДУКТЫ → РАСЧЁТЫ → ВАШЕ МЕНЮ',alt:'Гастрономическая визуализация ингредиентов, собирающихся в готовое блюдо'}
   ];
   let storyIndex=0;
   const setStory=(i)=>{
     storyIndex=(i+story.length)%story.length;
     const d=story[storyIndex];
+    carouselRoot?.classList.toggle('v28-emotional-active',storyIndex===0);
     const title=document.getElementById('hero-title');
     if(!title)return;
     title.innerHTML=d.title;
