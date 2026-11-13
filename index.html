@@ -754,6 +754,42 @@ section[id],header[id]{scroll-margin-top:112px}
  .v28-emotional-active .story-links{gap:14px}
 }
 
+
+/* V30 — refined first-screen typography, central alignment, accessible live text */
+.v14-hero .v30-kicker-break{color:#d4b77f}
+.v14-hero .v30-thesis{color:#f7f3e8;font:700 clamp(16px,1.65vw,22px)/1.45 var(--sans);letter-spacing:-.015em;margin:0 0 14px}
+.v14-hero .v30-thesis[hidden]{display:none!important}
+.v28-emotional-active .story-kicker{display:block;max-width:570px;margin-left:auto;margin-right:auto;line-height:1.7;text-wrap:balance}
+.v28-emotional-active .story-count{opacity:.78}
+.v28-emotional-active .story-lead{font-size:clamp(13px,1.18vw,16px);line-height:1.75;max-width:530px;margin-left:auto;margin-right:auto}
+.v28-emotional-active .story-links{justify-content:center}
+.v28-emotional-active .story-controls{justify-content:center}
+.v28-emotional-active .story-primary{min-height:54px;font-weight:750}
+@media(min-width:1150px){
+ .v28-emotional-active .story-copy{width:min(100%,610px);max-width:610px}
+ .v28-emotional-active h1{font-size:clamp(50px,4.55vw,69px);margin:0 0 16px}
+ .v28-emotional-active .v30-thesis{font-size:clamp(17px,1.45vw,21px);margin-bottom:12px}
+ .v28-emotional-active .story-links{margin-top:21px}
+ .v28-emotional-active .story-proofline{margin-top:15px}
+ .v28-emotional-active .story-controls{margin-top:18px}
+}
+@media(min-width:801px) and (max-width:1149px){
+ .v28-emotional-active .story-copy{width:min(100%,720px);max-width:720px}
+ .v28-emotional-active .v30-thesis{font-size:19px}
+}
+@media(max-width:800px){
+ .v28-emotional-active .story-copy{width:100%;max-width:680px;margin:0 auto}
+ .v28-emotional-active .story-kicker{font-size:10px;letter-spacing:.12em}
+ .v28-emotional-active .v30-thesis{font-size:18px;line-height:1.5}
+}
+@media(max-width:520px){
+ .v28-emotional-active .story-kicker{font-size:9px;line-height:1.75;letter-spacing:.11em}
+ .v28-emotional-active h1{font-size:clamp(40px,9.8vw,54px);margin-bottom:16px}
+ .v28-emotional-active .v30-thesis{font-size:16px;margin-bottom:13px}
+ .v28-emotional-active .story-lead{font-size:13px;line-height:1.8}
+ .v28-emotional-active .story-links{margin-top:20px}
+}
+
 </style>
 </head>
 <body>
@@ -779,12 +815,12 @@ section[id],header[id]{scroll-margin-top:112px}
   <div class="v14-hero-visual" aria-hidden="true"><div class="v29-emotional-panels"><div class="v29-figure-panel v29-left"><img src="assets/hero-emotional.webp" alt="" decoding="async"></div><div class="v29-figure-panel v29-right"><img src="assets/hero-emotional.webp" alt="" decoding="async"></div></div><img id="story-main-image" src="assets/hero-emotional.webp" alt="Символический художественный образ: женщина, уставшая от попыток изменить привычки, и уверенная спортивная женщина. Это не реальный результат клиента" fetchpriority="high" decoding="async"><div class="v14-hero-grad"></div></div>
   <div class="shell v14-hero-layout">
     <div class="story-copy">
-      <span class="story-kicker">ВАЛЕНТИНА СЧАСТЬЕ · АВТОРСКАЯ СИСТЕМА</span>
-      <div class="v11-identity">ИНТЕЛЛЕКТУАЛЬНЫЙ КОНСТРУКТОР ПИТАНИЯ</div>
+      <span class="story-kicker">ВАЛЕНТИНА СЧАСТЬЕ <span class="v30-kicker-break">·</span> АВТОРСКАЯ СИСТЕМА «ТЕЛО ПОД КЛЮЧ»</span>
       <div class="story-slides" id="story-slides" aria-live="off">
         <p class="story-count" id="story-count">01 — 04</p>
         <h1 id="hero-title">Устали начинать<br><em>с понедельника?</em></h1>
-        <p class="story-lead" id="story-lead">Однообразные меню, вечные запреты и снова вопрос «что приготовить»? Вам нужна не очередная диета, а питание, выстроенное под вашу цель, привычки и вкусы.</p>
+        <p class="v30-thesis" id="hero-thesis">Вашему телу нужна не очередная диета.<br>Ему нужна ваша система.</p>
+        <p class="story-lead" id="story-lead">Персональное питание с учётом вашей цели, образа жизни, вкусов и реальных возможностей. Без жёстких запретов и чувства вины.</p>
       </div>
       <div class="story-links"><a class="story-primary" href="#app">Увидеть решение <span aria-hidden="true">↗</span></a><a class="story-secondary" href="#formats">Обсудить свою цель</a></div>
       <p class="story-proofline">Не подстраивайтесь под диету. <span>·</span> Постройте питание под себя.</p>
@@ -1076,7 +1112,7 @@ section[id],header[id]{scroll-margin-top:112px}
   }));
 
   const story = [
-    {count:'01 — 04',title:'Устали начинать<br><em>с понедельника?</em>',lead:'Однообразные меню, вечные запреты и снова вопрос «что приготовить»? Вам нужна не очередная диета, а питание, выстроенное под вашу цель, привычки и вкусы.',main:'assets/hero-emotional.webp',caption:'ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС',alt:'Символический художественный образ двух женщин, отражающий усталость от ограничений и уверенность. Не реальное клиентское до и после'},
+    {count:'01 — 04',title:'Устали начинать<br><em>с понедельника?</em>',lead:'Персональное питание с учётом вашей цели, образа жизни, вкусов и реальных возможностей. Без жёстких запретов и чувства вины.',main:'assets/hero-emotional.webp',caption:'ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС',alt:'Символический художественный образ двух женщин, отражающий усталость от ограничений и уверенность. Не реальное клиентское до и после'},
     {count:'02 — 04',title:'Ешьте вкусно.<br><em>Меняйтесь осознанно.</em>',lead:'Разнообразное питание не должно превращаться в список запретов. Наша методика соединяет индивидуальную цель, предпочтения и полноценные блюда.',main:'assets/hero-01-fish.webp',caption:'ПОЛНОЦЕННОЕ ПИТАНИЕ',alt:'Ресторанная композиция рыбы с овощами, салатом, десертом и напитком'},
     {count:'03 — 04',title:'Стейк, а не<br><em>запреты.</em>',lead:'Любимые продукты могут быть частью здорового рациона. Конструктор подбирает сочетания и порции под цель — без скучного однообразия.',main:'assets/hero-02-steak.webp',caption:'РАЗНООБРАЗИЕ И ВКУС',alt:'Говяжий стейк с овощами в премиальной ресторанной подаче'},
     {count:'04 — 04',title:'Не случайный рецепт.<br><em>Продуманная система.</em>',lead:'Цель, параметры, вкусы и расчёты питательных веществ соединяются в недельном меню с рецептами и списком покупок. Клиентская версия ещё проходит проверку.',main:'assets/hero-03-constructor.webp',caption:'ПРОДУКТЫ → РАСЧЁТЫ → ВАШЕ МЕНЮ',alt:'Гастрономическая визуализация ингредиентов, собирающихся в готовое блюдо'}
@@ -1085,6 +1121,8 @@ section[id],header[id]{scroll-margin-top:112px}
   const setStory=(i)=>{
     storyIndex=(i+story.length)%story.length;
     document.querySelector('.editorial-rebuild')?.classList.toggle('v28-emotional-active',storyIndex===0);
+    const thesis=document.getElementById('hero-thesis');
+    if(thesis)thesis.hidden=storyIndex!==0;
     const d=story[storyIndex];
     carouselRoot?.classList.toggle('v28-emotional-active',storyIndex===0);
     const title=document.getElementById('hero-title');
