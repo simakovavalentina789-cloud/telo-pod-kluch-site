@@ -54,7 +54,6 @@ jobs:
           npm install --no-save --ignore-scripts playwright-core@1.56.1
           node scripts/smoke.mjs
       - name: WebKit tablet compatibility audit (Safari engine, not physical Safari)
-        continue-on-error: true
         run: |
           npx --yes playwright-core@1.56.1 install --with-deps webkit
           BROWSER_ENGINE=webkit SMOKE_VIEWPORTS=tablet-portrait,ipad,tablet-landscape node scripts/smoke.mjs
