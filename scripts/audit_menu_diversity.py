@@ -35,18 +35,23 @@ FAMILIES={
     "десерт": "творожный/ягодный мусс",
 }
 families=defaultdict(list)
+unclassified=[]
 photos=defaultdict(list)
 exact=defaultdict(list)
 for ix,(name,note,photo) in enumerate(rows):
     role=roles[ix%4];day=days[ix//4]
     n=unicodedata.normalize("NFKC",name.lower())
-    family=next((v for k,v in FAMILIES.items() if k in n),"другое")
+    family=next((v for k,v in FAMILIES.items() if k in n),None)
+    if family is None:
+        unclassified.append((day,role,name))
+        family="не классифицировано: "+n
     families[family].append((day,role,name))
     exact[n].append((day,role))
     photos[photo].append((day,role,name))
 print("MENU DIVERSITY AUDIT | 7 days × 4 meals")
 print("Unique exact names:",len(exact),"/ 28")
-print("Unique broad recipe families:",len(families),"/ 28")
+print("Provisional family labels (not recipe verification):",len(families),"/ 28")
+print("Entries without a verified broad-family rule:",len(unclassified),"/ 28")
 print("Unique photo keys:",len(photos),"/ 28")
 for title,groups in (("REPEATED RECIPE FAMILIES",families),
                      ("REPEATED PHOTO KEYS",photos),
@@ -58,8 +63,8 @@ for title,groups in (("REPEATED RECIPE FAMILIES",families),
             for item in items: print("   - "+" | ".join(item))
 # Explicit prohibition on releasing a claim of 28 distinct recipes unless
 # each is independently reviewed and matched to its unique recipe/photo ID.
-if len(families)!=28 or len(photos)!=28:
-    print("\nSTATUS: NEEDS_EDITORIAL_REWORK. Do not claim 28 distinct recipes.")
+if len(families)!=28 or len(photos)!=28 or len(exact)!=28 or unclassified:
+    print("\nSTATUS: RECIPE REVIEW NOT COMPLETE. Different titles/photos do not prove distinct verified recipes.")
     if "--strict" in sys.argv:
         sys.exit(1)
 else:
