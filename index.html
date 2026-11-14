@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="description" content="Тело под ключ — индивидуальное здоровое питание с расчётами под вашу цель и вкусы: похудение, рекомпозиция, набор мышц или поддержание веса. Методика Валентины Счастье." />
   <title>Тело под ключ — индивидуальное питание под вашу цель · Валентина Счастье</title>
+  <link rel="canonical" href="https://simakovavalentina789-cloud.github.io/telo-pod-kluch-site/" />
+  <meta property="og:url" content="https://simakovavalentina789-cloud.github.io/telo-pod-kluch-site/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://simakovavalentina789-cloud.github.io/telo-pod-kluch-site/assets/hero-01-fish.webp" />
   <meta property="og:locale" content="ru_RU" />
@@ -1585,9 +1587,11 @@ section[id],header[id]{scroll-margin-top:112px}
   ];
   const v45Names=['ПОНЕДЕЛЬНИК','ВТОРНИК','СРЕДА','ЧЕТВЕРГ','ПЯТНИЦА','СУББОТА','ВОСКРЕСЕНЬЕ'];
   const v45ClassNames=['v45-photo-omelet','v45-photo-chicken','v45-photo-salmon','v45-photo-dessert','v45-photo-steak','v45-photo-crab'];
-  document.querySelectorAll('[data-v45-day]').forEach(button=>button.addEventListener('click',()=>{
-    const index=Number(button.dataset.v45Day);
+  const v45DayButtons=Array.from(document.querySelectorAll('[data-v45-day]'));
+  const selectV45Day=(index)=>{
     if(!Number.isInteger(index)||!v45Days[index])return;
+    const button=v45DayButtons[index];
+    if(!button)return;
     document.querySelectorAll('[data-v45-day]').forEach(b=>{
       b.classList.toggle('is-active',b===button);
       b.setAttribute('aria-pressed',String(b===button));
@@ -1604,7 +1608,21 @@ section[id],header[id]{scroll-margin-top:112px}
       visual.classList.add('v45-photo-'+photo);
       visual.setAttribute('aria-label',name+'. Иллюстративная фотография.');
     });
-  }));
+  };
+  v45DayButtons.forEach((button,index)=>{
+    button.addEventListener('click',()=>selectV45Day(index));
+    button.addEventListener('keydown',(event)=>{
+      let next;
+      if(event.key==='ArrowRight')next=(index+1)%v45DayButtons.length;
+      else if(event.key==='ArrowLeft')next=(index+v45DayButtons.length-1)%v45DayButtons.length;
+      else if(event.key==='Home')next=0;
+      else if(event.key==='End')next=v45DayButtons.length-1;
+      else return;
+      event.preventDefault();
+      selectV45Day(next);
+      v45DayButtons[next].focus();
+    });
+  });
   const story = [
     {count:'01 — 04',title:'Устали начинать<br><em>с понедельника?</em>',lead:'Персональное питание с учётом вашей цели, образа жизни, вкусов и реальных возможностей. Без жёстких запретов и чувства вины.',main:'assets/hero-emotional.webp',caption:'ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС',alt:'Символический художественный образ двух женщин, отражающий усталость от ограничений и уверенность. Не реальное клиентское до и после'},
     {count:'02 — 04',title:'Ешьте вкусно.<br><em>Меняйтесь осознанно.</em>',lead:'Разнообразное питание не должно превращаться в список запретов. Наша методика соединяет индивидуальную цель, предпочтения и полноценные блюда.',main:'assets/hero-01-fish.webp',caption:'ПОЛНОЦЕННОЕ ПИТАНИЕ',alt:'Ресторанная композиция рыбы с овощами, салатом, десертом и напитком'},
