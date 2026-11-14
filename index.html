@@ -1210,10 +1210,41 @@ section[id],header[id]{scroll-margin-top:112px}
 @media(max-width:700px){.v45-gallery-photo,.v45-meal-photo{height:auto;aspect-ratio:320/186}}
 
 
-/* V45 photography polish — crop editorial art to image-only areas (no embedded screenshot labels) */
-.v45-meal-photo.v45-photo-omelet{background-size:298% 305%;background-position:100% 26%}
-.v45-meal-photo.v45-photo-chicken{background-size:298% 305%;background-position:25% 100%}
-.v45-meal-photo.v45-photo-dessert{background-size:298% 305%;background-position:100% 100%}
+/* V46 photography quality: original V45 used 298%/305% zoom on a
+   2x2 sprite, stretching individual dishes and making them blurry.
+   Display each complete quadrant at its native atlas scale instead.
+   Keep labels as real HTML, not pixels baked into the photograph. */
+.v45-gallery-photo.v45-photo-crab,
+.v45-meal-photo.v45-photo-crab,
+.v45-meal-photo.v45-photo-omelet,
+.v45-meal-photo.v45-photo-chicken,
+.v45-meal-photo.v45-photo-dessert {
+  background-image:url("assets/v45-food-atlas.webp");
+  background-size:200% 200%;
+  background-repeat:no-repeat;
+  image-rendering:auto;
+  filter:none;
+}
+.v45-gallery-photo.v45-photo-crab,
+.v45-meal-photo.v45-photo-crab { background-position:0% 0%; }
+.v45-meal-photo.v45-photo-omelet { background-position:100% 0%; }
+.v45-meal-photo.v45-photo-chicken { background-position:0% 100%; }
+.v45-meal-photo.v45-photo-dessert { background-position:100% 100%; }
+.v45-gallery-photo.v45-photo-steak,
+.v45-gallery-photo.v45-photo-composition,
+.v45-meal-photo.v45-photo-steak,
+.v45-meal-photo.v45-photo-salmon {
+  background-size:cover;
+  background-repeat:no-repeat;
+  image-rendering:auto;
+  filter:none;
+}
+/* Render predictable crops across Safari/iPad and desktop. */
+.v45-gallery-photo,.v45-meal-photo {
+  background-color:#112c22;
+  transform:none;
+  backdrop-filter:none;
+}
 
 </style>
 </head>
