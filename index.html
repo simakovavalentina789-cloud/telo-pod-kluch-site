@@ -1356,7 +1356,6 @@ section[id],header[id]{scroll-margin-top:112px}
     <div class="story-copy">
       <span class="story-kicker">ВАЛЕНТИНА СЧАСТЬЕ <span class="v30-kicker-break">·</span> АВТОРСКАЯ СИСТЕМА «ТЕЛО ПОД КЛЮЧ»</span>
       <div class="story-slides" id="story-slides" aria-live="off">
-        <p class="story-count" id="story-count">01 — 04</p>
         <h1 id="hero-title">Устали начинать<br><em>с понедельника?</em></h1>
         <p class="v30-thesis" id="hero-thesis">Вашему телу нужна не очередная диета.<br>Ему нужна ваша система.</p>
         <p class="story-lead" id="story-lead">Персональное питание с учётом вашей цели, образа жизни, вкусов и реальных возможностей. Без жёстких запретов и чувства вины.</p>
@@ -1370,7 +1369,6 @@ section[id],header[id]{scroll-margin-top:112px}
         <button type="button" class="story-pause" id="story-pause" aria-label="Остановить автоматическое переключение" aria-pressed="false" title="Остановить автопоказ">Ⅱ</button>
       </div>
     </div>
-    <div class="story-image-caption"><span>01 /</span> ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС</div>
   </div>
 </section>
 
@@ -1718,12 +1716,10 @@ section[id],header[id]{scroll-margin-top:112px}
     const title=document.getElementById('hero-title');
     if(!title)return;
     title.innerHTML=d.title;
-    document.getElementById('story-count').textContent=d.count;
     document.getElementById('story-lead').textContent=d.lead;
     const heroImage=document.getElementById('story-main-image');
     heroImage.src=d.main;
     heroImage.alt=d.alt;
-    document.querySelector('.story-image-caption').innerHTML='<span>'+String(storyIndex+1).padStart(2,'0')+' /</span> '+d.caption;
     document.querySelectorAll('[data-story-slide]').forEach((btn,index)=>{btn.classList.toggle('active',index===storyIndex);if(index===storyIndex)btn.setAttribute('aria-current','true');else btn.removeAttribute('aria-current')});
   };
   document.getElementById('story-prev')?.addEventListener('click',()=>setStory(storyIndex-1));
