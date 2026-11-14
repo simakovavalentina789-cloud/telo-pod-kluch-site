@@ -88,3 +88,38 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify published Pages response and approved photo assets
+        env:
+          PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python3 - <<'PY'
+          import os, time, urllib.request
+          base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
+          checks = {
+              "": b"Telo",
+              "assets/hero-01-fish.webp": b"RIFF",
+              "assets/hero-02-steak.webp": b"RIFF",
+              "assets/food-v60/apple-crumble.webp": b"RIFF",
+              "assets/food-v59/zucchini-ricotta.webp": b"RIFF",
+          }
+          for relative, magic in checks.items():
+              url = base + relative
+              last_error = None
+              for attempt in range(8):
+                  try:
+                      with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "TPK-Pages-QA/1.0"}), timeout=20) as res:
+                          data = res.read()
+                          assert res.status == 200, f"HTTP {res.status}"
+                          assert len(data) > 1024, f"Undersized response: {len(data)} bytes"
+                          if relative:
+                              assert data[:4] == magic and data[8:12] == b"WEBP", "Not a valid WebP header"
+                          else:
+                              assert b'const v45Days=' in data and b'<html lang="ru">' in data, "Wrong site version or HTML"
+                          print("PASS published", relative or "index.html", len(data), "bytes")
+                          break
+                  except Exception as exc:
+                      last_error = exc
+                      if attempt == 7:
+                          raise RuntimeError(f"Published asset verification failed: {url}") from last_error
+                      time.sleep(10)
+          PY
