@@ -168,6 +168,23 @@ def main():
         errors.append("V57 oatmeal image missing or below full Retina resolution")
     if "'oatmeal-berries':'assets/food-v57/oatmeal-berries.webp'" not in html:
         errors.append("V57 oatmeal must be mapped to the original full-res asset")
+    # V58: four previous V54 crops have fresh, larger standalone image assets.
+    expected_v58 = {
+        "stuffed-peppers": (1600, 900),
+        "zucchini-ricotta": (800, 450),
+        "apple-crumble": (800, 450),
+        "pumpkin-soup": (800, 450),
+    }
+    for key, (w, h) in expected_v58.items():
+        path = ASSETS / "food-v58" / (key + ".webp")
+        size = webp_size(path) if path.is_file() else None
+        if not size or size[0] < w or size[1] < h:
+            errors.append("V58 photo absent/undersized: " + str(path))
+        if "'" + key + "':'assets/food-v58/" + key + ".webp'" not in html:
+            errors.append("V58 meal must use new image file: " + key)
+    for dish in ("stuffed-peppers", "zucchini-ricotta", "apple-crumble", "pumpkin-soup"):
+        if "v45-photo-" + dish not in html and "'" + dish + "'" not in html:
+            errors.append("Missing V58 dish mapping: " + dish)
     # V47: validate the image pipeline rather than merely checking file existence.
     atlas_resolution = webp_size(atlas) if atlas.is_file() else None
     if atlas_resolution:
