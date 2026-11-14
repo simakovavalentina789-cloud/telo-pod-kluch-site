@@ -82,10 +82,6 @@ def main():
         errors.append("Unexpected storage or analytics code")
     if not ASSETS.is_dir():
         errors.append("Missing assets directory")
-    # The V45 meals and gallery use CSS background images instead of <img src>.
-    atlas = ASSETS / "v45-food-atlas.webp"
-    if not atlas.is_file() or atlas.stat().st_size < 1000:
-        errors.append("Missing/invalid V45 food photography atlas")
     if len(re.findall(r'data-v45-day="[0-6]"', html)) != 7:
         errors.append("V45 requires seven interactive day buttons")
     if len(re.findall(r'class="v45-meal"', html)) != 4:
@@ -195,15 +191,6 @@ def main():
             errors.append("V59 full-size food photograph missing/undersized: " + str(path))
         if "'" + key + "':'assets/food-v59/" + key + ".webp'" not in html:
             errors.append("V59 live photo mapping missing: " + key)
-    # V47: validate the image pipeline rather than merely checking file existence.
-    atlas_resolution = webp_size(atlas) if atlas.is_file() else None
-    if atlas_resolution:
-        print("V47 photo audit: atlas resolution:", atlas_resolution,
-              "effective single-dish pixels:", tuple(x // 2 for x in atlas_resolution))
-        if atlas_resolution[0] < 1280 or atlas_resolution[1] < 744:
-            print("WARN: photo atlas below Retina 2x for 320x186 cards; replace with dedicated high-res images.")
-    else:
-        errors.append("Unable to decode V45 food atlas dimensions")
     for asset in ("hero-01-fish.webp", "hero-02-steak.webp", "hero-03-constructor.webp"):
         size = webp_size(ASSETS / asset)
         if not size or min(size) < 700:
