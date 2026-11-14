@@ -66,7 +66,7 @@ def main():
     # Keep legitimate statistics, nutrition quantities and menu day controls.
     visible_markup = html.split("<body", 1)[-1].split("<script>", 1)[0]
     numbered_captions = re.findall(
-        r"<(?:span|div|p|small|strong|a|h[1-6])\\b[^>]*>(?:0[1-9]\\s*/|КЕЙС\\s*0[1-9]\\b)",
+        r"<(?:span|div|p|small|strong|a|h[1-6])\b[^>]*>(?:0[1-9]\s*/|КЕЙС\s*0[1-9]\b)",
         visible_markup,
         flags=re.I,
     )
