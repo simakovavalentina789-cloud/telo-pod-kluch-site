@@ -1276,6 +1276,11 @@ section[id],header[id]{scroll-margin-top:112px}
 .v45-gallery-photo,.v45-meal-photo{position:relative}
 .v48-food-image{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;max-width:none;filter:none;image-rendering:auto}
 .v48-food-image[hidden]{display:none!important}
+/* The high-resolution hero source contains negative space on its left.
+   Focus the card crop on the actual plated dish, never on the logo or drink. */
+.v48-food-image[src*="hero-01-fish"],.v48-food-image[src*="hero-02-steak"]{
+  width:200%;height:200%;left:-98%;top:-60%;object-fit:cover;
+}
 .v45-gallery-photo .v45-photo-index,.v45-meal-photo>span{z-index:3}
 .v45-gallery-photo::after,.v45-meal-photo::before{z-index:2}
 
