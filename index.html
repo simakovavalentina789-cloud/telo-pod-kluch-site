@@ -1246,6 +1246,30 @@ section[id],header[id]{scroll-margin-top:112px}
   backdrop-filter:none;
 }
 
+/* V47: maintain consistent, sharp photographic containers across breakpoints.
+   Avoid enlarging low-resolution atlas pixels beyond the source detail. */
+.v45-gallery-photo,.v45-meal-photo {
+  isolation:isolate;
+  overflow:hidden;
+  -webkit-transform:translateZ(0);
+}
+.v45-gallery-photo::after {
+  z-index:0;
+}
+.v45-gallery-copy h4,.v45-meal-body h4 {
+  overflow-wrap:break-word;
+}
+.v45-meal-photo span {
+  max-width:calc(100% - 20px);
+  white-space:normal;
+}
+@media (max-width:700px) {
+  .v45-meals { gap:14px; }
+  .v45-menu-panel { padding:18px 14px; }
+  .v45-meal-body { padding:16px; }
+  .v45-meal-photo { aspect-ratio:16/9; }
+}
+
 </style>
 </head>
 <body>
