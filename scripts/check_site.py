@@ -107,8 +107,13 @@ def main():
             errors.append("Hero photograph has missing or low dimensions: " + asset)
     if re.search(r"\.v45-meal-photo\.v45-photo-(?:omelet|chicken|dessert)\s*\{[^}]*background-size:\s*(?:[3-9]\d\d|[1-9]\d{3})%", html):
         errors.append("Excessive meal photo atlas zoom will introduce blur")
-    if len(re.findall(r"\[\['[^\n]+?','[^\n]+?',(?:'omelet'|'chicken'|'salmon'|'dessert'|'steak'|'crab')\]", html)) < 28:
-        print("WARN: 28 meal photo mappings should be reviewed for uniqueness and recipe fidelity")
+    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab)'\]", html)
+    if len(photo_mappings) != 28:
+        errors.append("Expected 28 weekly menu meal-to-photo mappings; found: " + str(len(photo_mappings)))
+    if len(set(photo_mappings)) < 7:
+        print("WARN: only", len(set(photo_mappings)), "distinct food photos serve 28 menu entries")
+    if 'const selectV45Day=' not in html or "event.key==='ArrowRight'" not in html:
+        errors.append("Weekly menu keyboard navigation missing")
     print(f"Site QA: {len(parser.ids)} IDs, {len(parser.anchors)} links, {len(set(parser.assets))} assets, {parser.images} images")
     if errors:
         for item in errors:
