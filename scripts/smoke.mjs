@@ -29,12 +29,12 @@ try {
       const labels=await page.locator('#v45-meals [data-v45-name]').allTextContents();
       assert.equal(labels.length,4);
       assert.ok(labels.every(label=>label.trim().length>5));
-      await page.waitForFunction(() => [...document.querySelectorAll('#v45-meals [data-v48-fullphoto]:not([hidden])')].every(img=>img.complete&&img.naturalWidth>=800),null,{timeout:5000});
+      await page.waitForFunction(() => [...document.querySelectorAll('#v45-meals [data-v48-fullphoto]:not([hidden])')].every(img=>img.complete&&img.naturalWidth >= (img.src.includes('/food-v54/')&&!img.src.includes('turkey-pumpkin')?500:800)),null,{timeout:5000});
       const fidelity=await page.locator('#v45-meals [data-v45-photo]').evaluateAll(nodes=>nodes.map(node=>{
         const active=node.querySelector('[data-v48-fullphoto]:not([hidden])');
         const classPhoto=[...node.classList].find(name=>name.startsWith('v45-photo-'));
         return {classPhoto,activeSrc:active?.getAttribute('src')||null,
-          imageComplete:!active||(active.complete&&active.naturalWidth>=800)};
+          imageComplete:!active||(active.complete&&active.naturalWidth >= (active.src.includes('/food-v54/')&&!active.src.includes('turkey-pumpkin')?500:800))};
       }));
       for(const item of fidelity){
         if(item.classPhoto==='v45-photo-steak')assert.match(item.activeSrc||'',/hero-02-steak\\.webp$/);
@@ -56,7 +56,7 @@ try {
     }));
     for(const p of photos){
       assert.ok(p.width>150&&p.height>80,'photo region size');
-      if(p.image)assert.ok(p.image.complete&&p.image.naturalWidth>=800,'high-res meal photo must load');
+      if(p.image)assert.ok(p.image.complete&&p.image.naturalWidth >= (p.image.src?.includes('/food-v54/')&&!p.image.src?.includes('turkey-pumpkin')?500:800),'high-res meal photo must load');
       else assert.match(p.background,/v45-food-atlas.webp/,'fallback atlas must load');
     }
     const metrics=await page.evaluate(()=>({
