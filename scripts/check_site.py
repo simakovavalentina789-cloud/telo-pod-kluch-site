@@ -48,7 +48,7 @@ def webp_size(path):
     if kind == b"VP8X":
         return (int.from_bytes(header[24:27], "little") + 1,
                 int.from_bytes(header[27:30], "little") + 1)
-    if kind == b"VP8 " and header[23:26] == b"\\x9d\\x01\\x2a":
+    if kind == b"VP8 " and header[23:26] == bytes((0x9d, 0x01, 0x2a)):
         return (struct.unpack_from("<H", header, 26)[0] & 0x3fff,
                 struct.unpack_from("<H", header, 28)[0] & 0x3fff)
     if kind == b"VP8L" and header[20] == 0x2f:
@@ -105,9 +105,9 @@ def main():
         size = webp_size(ASSETS / asset)
         if not size or min(size) < 700:
             errors.append("Hero photograph has missing or low dimensions: " + asset)
-    if re.search(r"\\.v45-meal-photo\\.v45-photo-(?:omelet|chicken|dessert)\\s*\\{[^}]*background-size:\\s*(?:[3-9]\\d\\d|[1-9]\\d{3})%", html):
+    if re.search(r"\.v45-meal-photo\.v45-photo-(?:omelet|chicken|dessert)\s*\{[^}]*background-size:\s*(?:[3-9]\d\d|[1-9]\d{3})%", html):
         errors.append("Excessive meal photo atlas zoom will introduce blur")
-    if len(re.findall(r"\\[\\['[^\\n]+?','[^\\n]+?',(?:'omelet'|'chicken'|'salmon'|'dessert'|'steak'|'crab')\\]", html)) < 28:
+    if len(re.findall(r"\[\['[^\n]+?','[^\n]+?',(?:'omelet'|'chicken'|'salmon'|'dessert'|'steak'|'crab')\]", html)) < 28:
         print("WARN: 28 meal photo mappings should be reviewed for uniqueness and recipe fidelity")
     print(f"Site QA: {len(parser.ids)} IDs, {len(parser.anchors)} links, {len(set(parser.assets))} assets, {parser.images} images")
     if errors:
