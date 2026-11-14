@@ -1323,6 +1323,9 @@ section[id],header[id]{scroll-margin-top:112px}
 
 /* V58 four refreshed standalone files: native quality, preserve existing dish composition. */
 .v48-food-image[src*="/food-v58/"]{object-fit:cover;object-position:center}
+
+/* V59 dedicated full-size food photos replace reduced collages for zucchini and soup. */
+.v48-food-image[src*="/food-v59/"]{object-fit:cover;object-position:center}
 </style>
 </head>
 <body>
@@ -1660,7 +1663,7 @@ section[id],header[id]{scroll-margin-top:112px}
       visual.setAttribute('aria-label',name+'. Иллюстративная фотография.');
       // Original local photographs for the distinct dishes; low-res dessert atlas remains temporary.
       let fullPhoto=visual.querySelector('[data-v48-fullphoto]');
-      const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp',...Object.fromEntries(['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa'].map(n=>[n,'assets/food-v52/'+n+'.webp'])),...Object.fromEntries(['syrniki-berries','avocado-poached-egg','turkey-bulgur','chicken-buckwheat','greek-yogurt-berries','chia-mango'].map(n=>[n,'assets/food-v53/'+n+'.webp'])),...Object.fromEntries(['oatmeal-berries','turkey-pumpkin','stuffed-peppers','zucchini-ricotta','apple-crumble','pumpkin-soup'].map(n=>[n,'assets/food-v54/'+n+'.webp'])),...Object.fromEntries(['shakshuka','buckwheat-egg-mushrooms','beef-meatballs-bulgur','cod-rice-broccoli','cottage-peach-berries','baked-pears-yogurt'].map(n=>[n,'assets/food-v55/'+n+'.webp'])), 'braised-beef-potato':'assets/food-v56/braised-beef-potato.webp', 'oatmeal-berries':'assets/food-v57/oatmeal-berries.webp', 'stuffed-peppers':'assets/food-v58/stuffed-peppers.webp', 'zucchini-ricotta':'assets/food-v58/zucchini-ricotta.webp', 'apple-crumble':'assets/food-v58/apple-crumble.webp', 'pumpkin-soup':'assets/food-v58/pumpkin-soup.webp'};
+      const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp',...Object.fromEntries(['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa'].map(n=>[n,'assets/food-v52/'+n+'.webp'])),...Object.fromEntries(['syrniki-berries','avocado-poached-egg','turkey-bulgur','chicken-buckwheat','greek-yogurt-berries','chia-mango'].map(n=>[n,'assets/food-v53/'+n+'.webp'])),...Object.fromEntries(['oatmeal-berries','turkey-pumpkin','stuffed-peppers','zucchini-ricotta','apple-crumble','pumpkin-soup'].map(n=>[n,'assets/food-v54/'+n+'.webp'])),...Object.fromEntries(['shakshuka','buckwheat-egg-mushrooms','beef-meatballs-bulgur','cod-rice-broccoli','cottage-peach-berries','baked-pears-yogurt'].map(n=>[n,'assets/food-v55/'+n+'.webp'])), 'braised-beef-potato':'assets/food-v56/braised-beef-potato.webp', 'oatmeal-berries':'assets/food-v57/oatmeal-berries.webp', 'stuffed-peppers':'assets/food-v58/stuffed-peppers.webp', 'zucchini-ricotta':'assets/food-v58/zucchini-ricotta.webp', 'apple-crumble':'assets/food-v58/apple-crumble.webp', 'pumpkin-soup':'assets/food-v58/pumpkin-soup.webp', 'zucchini-ricotta':'assets/food-v59/zucchini-ricotta.webp', 'pumpkin-soup':'assets/food-v59/pumpkin-soup.webp'};
       const fullPhotoSrc=fullPhotoPaths[photo];
       if(!fullPhotoSrc){
         console.error('Missing dedicated image for meal:',name,photo);
