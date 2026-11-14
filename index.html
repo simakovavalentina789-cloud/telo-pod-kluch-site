@@ -1272,10 +1272,11 @@ section[id],header[id]{scroll-margin-top:112px}
   .v45-meal-photo { aspect-ratio:16/9; }
 }
 
-/* V50: Tuesday frittata has a distinct, appropriately identified photograph.
-   Wikimedia Commons CC BY-SA 4.0, Cuklev; linked attribution below. */
+/* V51: original local photographs replace the low-resolution sprite. */
 .v45-meal-photo.v45-photo-frittata{background-image:none;background-color:#1a3528}
-.v48-food-image[src*="960px-%D0%A4%D1%80%D0%B8%D1%82%D0%B0%D1%82%D0%B0.jpg"]{object-position:center 56%}
+.v45-meal-photo.v45-photo-crab,.v45-meal-photo.v45-photo-omelet,.v45-meal-photo.v45-photo-chicken{background-image:none}
+.v45-gallery-photo.v45-photo-crab{background-image:none}
+.v48-food-image[src*="/food-v51/"]{object-position:center center}
  /* V48 full-resolution dish assets: independent images, not atlas zoom. */
 .v45-gallery-photo,.v45-meal-photo{position:relative}
 .v48-food-image{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;max-width:none;filter:none;image-rendering:auto}
@@ -1504,7 +1505,7 @@ section[id],header[id]{scroll-margin-top:112px}
    <div class="v45-topline"><span><span class="v45-gem" aria-hidden="true">✦</span> ТЕЛО ПОД КЛЮЧ / ГАСТРОНОМИЯ</span><span>ДИЗАЙН-КОНЦЕПТ ПРИЛОЖЕНИЯ</span></div>
    <div class="v45-gallery-heading"><div><span class="v45-kicker">СНАЧАЛА ВКУС. ЗАТЕМ — УДОБНАЯ СИСТЕМА.</span><h3>Еда, которую <em>хочется готовить.</em></h3></div><p>Знакомые продукты. Авторские сочетания. Подача, достойная хорошего ресторана — без сложных диетических ритуалов.</p></div>
    <div class="v45-gallery">
-    <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-crab" role="img" aria-label="Ресторанный салат с мясом краба, манго, авокадо и зеленью, рядом ягодный десерт"><span class="v45-photo-index">01 / ИЗЫСКАННЫЙ САЛАТ</span></div><div class="v45-gallery-copy"><h4>Краб, манго и авокадо</h4><p>Нежное мясо краба, фрукты и свежая зелень</p></div></article>
+    <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-crab" role="img" aria-label="Ресторанный салат с мясом краба, манго, авокадо и зеленью"><img class="v48-food-image" src="assets/food-v51/crab.webp" loading="lazy" decoding="async" width="1672" height="941" alt=""><span class="v45-photo-index">01 / ИЗЫСКАННЫЙ САЛАТ</span></div><div class="v45-gallery-copy"><h4>Краб, манго и авокадо</h4><p>Нежное мясо краба, фрукты и свежая зелень</p></div></article>
     <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-steak" role="img" aria-label="Говяжий стейк в ресторанной подаче с овощами"><img class="v48-food-image" src="assets/hero-02-steak.webp" loading="lazy" decoding="async" width="1500" height="844" alt=""><span class="v45-photo-index">02 / ЛЮБИМЫЕ ПРОДУКТЫ</span></div><div class="v45-gallery-copy"><h4>Стейк с овощами</h4><p>Питательно, красиво и без бессмысленных запретов</p></div></article>
     <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-composition" role="img" aria-label="Несколько ресторанных блюд из овощей, рыбы и других продуктов"><span class="v45-photo-index">03 / ПРОДУМАННЫЙ СОСТАВ</span></div><div class="v45-gallery-copy"><h4>Разнообразие каждый день</h4><p>Блюда под вашу цель и вкусовые предпочтения</p></div></article>
    </div>
@@ -1514,8 +1515,8 @@ section[id],header[id]{scroll-margin-top:112px}
     <div class="v45-menu-panel">
      <div class="v45-menu-head"><span id="v45-weekday" aria-live="polite">ПОНЕДЕЛЬНИК · ПРИМЕР МЕНЮ</span><span>4 ПРИЁМА ПИЩИ · ДИЗАЙН-КОНЦЕПТ</span></div>
      <div class="v45-meals" id="v45-meals">
-      <article class="v45-meal"><div class="v45-meal-photo v45-photo-omelet" data-v45-photo role="img" aria-label="Омлет с зеленью и томатами"><span>ЗАВТРАК</span></div><div class="v45-meal-body"><h4 data-v45-name>Омлет с зеленью и томатами</h4><p data-v45-note>Нежный, с овощами и ароматными травами</p></div></article>
-      <article class="v45-meal"><div class="v45-meal-photo v45-photo-chicken" data-v45-photo role="img" aria-label="Куриное филе с киноа и овощами"><span>ОБЕД</span></div><div class="v45-meal-body"><h4 data-v45-name>Курица с киноа и овощами</h4><p data-v45-note>Сытный обед с яркой подачей</p></div></article>
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-omelet" data-v45-photo role="img" aria-label="Омлет с зеленью и томатами"><img class="v48-food-image" data-v48-fullphoto src="assets/food-v51/omelet.webp" loading="lazy" decoding="async" width="1672" height="941" alt=""><span>ЗАВТРАК</span></div><div class="v45-meal-body"><h4 data-v45-name>Омлет с зеленью и томатами</h4><p data-v45-note>Нежный, с овощами и ароматными травами</p></div></article>
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-chicken" data-v45-photo role="img" aria-label="Куриное филе с киноа и овощами"><img class="v48-food-image" data-v48-fullphoto src="assets/food-v51/chicken.webp" loading="lazy" decoding="async" width="1672" height="941" alt=""><span>ОБЕД</span></div><div class="v45-meal-body"><h4 data-v45-name>Курица с киноа и овощами</h4><p data-v45-note>Сытный обед с яркой подачей</p></div></article>
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-salmon" data-v45-photo role="img" aria-label="Лосось с овощами"><img class="v48-food-image" data-v48-fullphoto src="assets/hero-01-fish.webp" loading="lazy" decoding="async" width="1500" height="844" alt=""><span>УЖИН</span></div><div class="v45-meal-body"><h4 data-v45-name>Лосось с овощами</h4><p data-v45-note>Тёплое блюдо с зеленью</p></div></article>
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-dessert" data-v45-photo role="img" aria-label="Ягодный творожный десерт"><span>ДЕСЕРТ / ПЕРЕКУС</span></div><div class="v45-meal-body"><h4 data-v45-name>Творожный мусс с ягодами</h4><p data-v45-note>Красивое завершение дня</p></div></article>
      </div>
@@ -1551,7 +1552,7 @@ section[id],header[id]{scroll-margin-top:112px}
   </div>
 </section>
 </main>
-  <footer class="footer"><div class="shell"><p class="v50-photo-credit"><small>Фотография фриттаты: <a href="https://commons.wikimedia.org/wiki/File:%D0%A4%D1%80%D0%B8%D1%82%D0%B0%D1%82%D0%B0.jpg" target="_blank" rel="noopener noreferrer">Cuklev / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Кадрирование для карточки.</small></p></div><div class="shell footer-main"><a class="brand" href="#top"><span class="brand-mark brand-real-logo"><img src="assets/logo-vs.webp" alt="" width="45" height="45" decoding="async"></span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ</span></a><p>Чистое питание под вашу цель и вкусы. Индивидуальные физические нагрузки — при личном сопровождении.<br>Методика Валентины Счастье.</p><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a></div><div class="shell footer-bottom"><span>© <span id="year"></span> «Тело под ключ»</span><span>Предварительная версия сайта · Информация о запуске обновляется</span><a href="#top">Наверх ↑</a></div></footer>
+  <footer class="footer"><div class="shell"></div><div class="shell footer-main"><a class="brand" href="#top"><span class="brand-mark brand-real-logo"><img src="assets/logo-vs.webp" alt="" width="45" height="45" decoding="async"></span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ</span></a><p>Чистое питание под вашу цель и вкусы. Индивидуальные физические нагрузки — при личном сопровождении.<br>Методика Валентины Счастье.</p><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a></div><div class="shell footer-bottom"><span>© <span id="year"></span> «Тело под ключ»</span><span>Предварительная версия сайта · Информация о запуске обновляется</span><a href="#top">Наверх ↑</a></div></footer>
   <script>
 (() => {
   const toggle = document.querySelector('.menu-toggle');
@@ -1623,10 +1624,9 @@ section[id],header[id]{scroll-margin-top:112px}
       visual.classList.remove(...v45ClassNames);
       visual.classList.add('v45-photo-'+photo);
       visual.setAttribute('aria-label',name+'. Иллюстративная фотография.');
-      // Full-resolution local photography for available dishes; atlas remains
-      // only for the four images awaiting dedicated replacement assets.
+      // Original local photographs for the distinct dishes; low-res dessert atlas remains temporary.
       let fullPhoto=visual.querySelector('[data-v48-fullphoto]');
-      const fullPhotoPaths={salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp',frittata:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/%D0%A4%D1%80%D0%B8%D1%82%D0%B0%D1%82%D0%B0.jpg/960px-%D0%A4%D1%80%D0%B8%D1%82%D0%B0%D1%82%D0%B0.jpg'};
+      const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp'};
       const fullPhotoSrc=fullPhotoPaths[photo];
       if(fullPhotoSrc){
         if(!fullPhoto){
@@ -1634,7 +1634,7 @@ section[id],header[id]{scroll-margin-top:112px}
           fullPhoto.className='v48-food-image';
           fullPhoto.setAttribute('data-v48-fullphoto','');
           fullPhoto.loading='lazy';fullPhoto.decoding='async';
-          fullPhoto.alt='';fullPhoto.width=1500;fullPhoto.height=844;
+          fullPhoto.alt='';fullPhoto.width=1672;fullPhoto.height=941;
           visual.prepend(fullPhoto);
         }
         if(fullPhoto.getAttribute('src')!==fullPhotoSrc)fullPhoto.src=fullPhotoSrc;
