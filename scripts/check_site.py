@@ -100,6 +100,20 @@ def main():
             errors.append("Missing/undersized original food photograph: " + str(file))
         if "assets/food-v51/" + dish + ".webp" not in html:
             errors.append("Food photograph is not connected to site: " + dish)
+    # V52: six new independently generated food photographs, each at Retina resolution.
+    v52_names = ("dessert-mousse", "dessert-berries", "omelet-tomato",
+                 "omelet-baked", "frittata-greens", "chicken-quinoa")
+    for dish in v52_names:
+        asset = ASSETS / "food-v52" / (dish + ".webp")
+        dimensions = webp_size(asset) if asset.is_file() else None
+        if not dimensions or dimensions[0] < 1200 or dimensions[1] < 675:
+            errors.append("V52 image missing or below Retina resolution: " + str(asset))
+        if "v45-photo-" + dish not in html:
+            errors.append("V52 dish photo is not connected to a meal: " + dish)
+        if dish + ".webp" not in html:
+            # JavaScript intentionally constructs the filename from a stable mapping.
+            if "'assets/food-v52/'+n+'.webp'" not in html:
+                errors.append("V52 image path is not found in code: " + dish)
     # V47: validate the image pipeline rather than merely checking file existence.
     atlas_resolution = webp_size(atlas) if atlas.is_file() else None
     if atlas_resolution:
@@ -115,10 +129,10 @@ def main():
             errors.append("Hero photograph has missing or low dimensions: " + asset)
     if re.search(r"\.v45-meal-photo\.v45-photo-(?:omelet|chicken|dessert)\s*\{[^}]*background-size:\s*(?:[3-9]\d\d|[1-9]\d{3})%", html):
         errors.append("Excessive meal photo atlas zoom will introduce blur")
-    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab|frittata)'\]", html)
+    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab|frittata|dessert-mousse|dessert-berries|omelet-tomato|omelet-baked|frittata-greens|chicken-quinoa)'\]", html)
     if len(photo_mappings) != 28:
         errors.append("Expected 28 weekly menu meal-to-photo mappings; found: " + str(len(photo_mappings)))
-    if photo_mappings[0] == photo_mappings[4]:
+    if len(photo_mappings) >= 5 and photo_mappings[0] == photo_mappings[4]:
         errors.append("Monday and Tuesday breakfast photos must not be identical")
     if 'Фриттата с зеленью и луком' not in html or "'frittata'" not in html:
         errors.append("Dedicated Tuesday frittata mapping missing")
