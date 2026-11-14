@@ -92,6 +92,14 @@ def main():
         errors.append("V45 requires four photo-based meal cards")
     if 'class="v44-approved-preview"' in html:
         errors.append("Flattened V44 screenshot must not appear")
+    # V51: original high-resolution photos must be present in the deployed assets.
+    for dish in ("omelet", "frittata", "crab", "chicken"):
+        file = ASSETS / "food-v51" / (dish + ".webp")
+        size = webp_size(file) if file.is_file() else None
+        if not size or size[0] < 1200 or size[1] < 675:
+            errors.append("Missing/undersized original food photograph: " + str(file))
+        if "assets/food-v51/" + dish + ".webp" not in html:
+            errors.append("Food photograph is not connected to site: " + dish)
     # V47: validate the image pipeline rather than merely checking file existence.
     atlas_resolution = webp_size(atlas) if atlas.is_file() else None
     if atlas_resolution:
