@@ -1126,6 +1126,20 @@ section[id],header[id]{scroll-margin-top:112px}
   .v40-media-outlets{width:100%;margin-top:0}
 }
 
+
+/* V44 — approved premium nutrition concept replaces the old text-only dashboard */
+.v44-approved-preview{margin:28px 0 0;background:#102b20;border:1px solid #a88b58;border-radius:19px;overflow:hidden;box-shadow:0 21px 50px #021d143b}
+.v44-approved-image{background:#09251b;line-height:0}
+.v44-approved-image img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain}
+.v44-approved-caption{display:flex;align-items:center;gap:18px 25px;padding:19px 25px;background:linear-gradient(110deg,#0b261b,#1a3b2c);color:#e7dfcb}
+.v44-approved-caption>span{font:750 10px/1.65 var(--sans);letter-spacing:.13em;color:#dab77c;flex:0 0 185px}
+.v44-approved-caption p{font:400 11px/1.65 var(--sans);color:#c2ccbd;margin:0;flex:1}
+.v44-approved-caption a{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;border:1px solid #dfc48c;border-radius:10px;padding:11px 16px;background:linear-gradient(145deg,#f0deae,#d5b16e);color:#203629;text-decoration:none;font:750 11px/1.45 var(--sans)}
+.v44-approved-caption a:hover{filter:brightness(1.06)}
+.v44-approved-caption a:focus-visible{outline:3px solid #f8e1a7;outline-offset:4px}
+@media(max-width:900px){.v44-approved-caption{align-items:flex-start;flex-wrap:wrap}.v44-approved-caption>span{flex-basis:100%}.v44-approved-caption p{flex-basis:100%}.v44-approved-caption a{flex:0 1 auto}}
+@media(max-width:580px){.v44-approved-preview{margin-top:18px;border-radius:12px}.v44-approved-caption{padding:17px;gap:12px}.v44-approved-caption a{width:100%;justify-content:center}}
+
 </style>
 </head>
 <body>
@@ -1341,67 +1355,11 @@ section[id],header[id]{scroll-margin-top:112px}
       <div><h2>Не диета по шаблону.<br><em>Питание, собранное под вас.</em></h2></div>
       <div class="v16-intro-aside"><p>В основе конструктора — индивидуальный расчёт энергии и нутриентов, цель и ваши любимые продукты. Всё это объединяется в меню на семь дней с рецептурами и покупками. Не случайная подборка блюд, а последовательная система.</p><div class="v16-release-note"><span class="v16-status-pulse"></span> Клиентская версия проходит проверку перед запуском</div></div>
     </div>
-    <div class="v25-app-showcase" aria-label="Визуальная демонстрация будущего интерфейса">
-      <div class="v25-demo-disclaimer"><span>КОНЦЕПЦИЯ ИНТЕРФЕЙСА · НЕ ДЕЙСТВУЮЩИЙ ЛИЧНЫЙ КАБИНЕТ</span><span>Приложение проходит проверку перед запуском</span></div>
-      <div class="v25-dashboard">
-        <aside class="v25-sidebar">
-          <div class="v25-dash-logo"><span>VS</span><strong>ТЕЛО ПОД КЛЮЧ<small>МОЁ ПИТАНИЕ</small></strong></div>
-          <div class="v25-side-item v25-side-active"><span aria-hidden="true">◈</span> Моя неделя</div>
-          <div class="v25-side-item"><span aria-hidden="true">◉</span> Рецепты</div>
-          <div class="v25-side-item"><span aria-hidden="true">▤</span> Покупки</div>
-          <div class="v25-side-item"><span aria-hidden="true">♡</span> Предпочтения</div>
-          <div class="v25-side-bottom">ВАШ ВКУС · ВАША ЦЕЛЬ</div>
-        </aside>
-        <div class="v25-dash-main">
-          <div class="v25-topbar"><span>ПЕРСОНАЛЬНАЯ НЕДЕЛЯ ПИТАНИЯ</span><span>01—07 / ДЕМО</span></div>
-          <div class="v25-dash-hero">
-            <div class="v25-dash-hero-photo" aria-hidden="true"><img src="assets/hero-01-fish.webp" alt="" loading="lazy" decoding="async"></div>
-            <div class="v25-dash-hero-shade"></div>
-            <div class="v25-dash-hero-copy">
-              <span>ПРОЕКТ «ТЕЛО ПОД КЛЮЧ»</span>
-              <h3>Ваше питание.<br><em>Ваши правила.</em></h3>
-              <p>Полноценная неделя с любимыми продуктами, рецептами и списком покупок — в единой системе.</p>
-              <a href="#formats">Выбрать свой формат <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-          <div class="v25-demo-content">
-            <div class="v26-photo-header"><div><span>ГАСТРОНОМИЧЕСКАЯ ВИТРИНА</span><h4>Еда, которую хочется готовить.</h4></div><p>Визуальный стиль будущей библиотеки: настоящие сочетания продуктов вместо скучных диетических шаблонов.</p></div>
-            <div class="v26-food-cards">
-              <article class="v26-food-card">
-                <div class="v26-food-image"><img src="assets/hero-01-fish.webp" alt="Лосось с овощами и зеленью в ресторанной подаче" loading="lazy" decoding="async"><span>01 / ПОЛНОЦЕННОЕ БЛЮДО</span></div>
-                <div class="v26-food-desc"><strong>Лосось, овощи и зелень</strong><p>Красота полноценного обеда</p></div>
-              </article>
-              <article class="v26-food-card">
-                <div class="v26-food-image"><img src="assets/hero-02-steak.webp" alt="Говяжий стейк с овощным гарниром в ресторанной подаче" loading="lazy" decoding="async"><span>02 / ЛЮБИМЫЕ ПРОДУКТЫ</span></div>
-                <div class="v26-food-desc"><strong>Говяжий стейк с овощами</strong><p>Без бессмысленных запретов</p></div>
-              </article>
-              <article class="v26-food-card">
-                <div class="v26-food-image"><img src="assets/hero-03-constructor.webp" alt="Иллюстрация подбора ингредиентов для блюда" loading="lazy" decoding="async"><span>03 / УМНАЯ СБОРКА</span></div>
-                <div class="v26-food-desc"><strong>Ингредиенты под задачу</strong><p>Сначала состав и расчёт</p></div>
-              </article>
-            </div>
-            <div class="v26-week-module">
-              <div class="v25-week-intro"><div><span>ПРИМЕР ПЛАНИРОВАНИЯ · НЕ ПЕРСОНАЛЬНЫЙ РАЦИОН</span><h4>Ваши семь дней</h4></div><p>Переключите день: названия приёмов пищи меняются, показывая структуру меню. Это демонстрация, а не работающий генератор.</p></div>
-              <div class="v25-day-list" role="group" aria-label="Выбрать день демонстрационного меню">
-                <button type="button" class="selected" aria-pressed="true" data-day="0">ПН</button><button type="button" aria-pressed="false" data-day="1">ВТ</button><button type="button" aria-pressed="false" data-day="2">СР</button><button type="button" aria-pressed="false" data-day="3">ЧТ</button><button type="button" aria-pressed="false" data-day="4">ПТ</button><button type="button" aria-pressed="false" data-day="5">СБ</button><button type="button" aria-pressed="false" data-day="6">ВС</button>
-              </div>
-              <div class="v26-day-context" id="v26-day-context" aria-live="polite">ПОНЕДЕЛЬНИК · ИЛЛЮСТРАТИВНОЕ МЕНЮ</div>
-              <div class="v26-meal-list" id="demo-meals" aria-live="polite">
-                <article class="v26-meal"><span>01 / ЗАВТРАК</span><strong>Омлет с овощами</strong><small>Пример блюда</small></article>
-                <article class="v26-meal"><span>02 / ОБЕД</span><strong>Курица, крупа и салат</strong><small>Пример блюда</small></article>
-                <article class="v26-meal"><span>03 / ДОПОЛНЕНИЕ</span><strong>Творожный десерт</strong><small>Пример блюда</small></article>
-              </div>
-            </div>
-            <div class="v25-lower-grid">
-              <div class="v25-info-tile"><span>РЕЦЕПТЫ</span><h5>Не просто названия блюд.</h5><p>Состав, понятные шаги приготовления и индивидуальные порции — предусмотренная логика конструктора.</p><div class="v25-recipe-mini"><span>01</span><span>Ингредиенты</span><span>02</span><span>Приготовление</span><span>03</span><span>Порция</span></div></div>
-              <div class="v25-info-tile v25-shopping"><span>ПОКУПКИ</span><h5>Вся неделя. Один список.</h5><p>Продукты собираются из запланированных блюд.</p><div class="v25-shopping-row"><span>◯</span> Овощи и зелень</div><div class="v25-shopping-row"><span>◯</span> Мясо и птица</div><div class="v25-shopping-row"><span>◯</span> Крупы и другие продукты</div></div>
-            </div>
-            <div class="v25-demo-footer"><span>ДЕМОНСТРАЦИОННЫЙ ДИЗАЙН · НЕ ПЕРСОНАЛЬНЫЙ ПЛАН И НЕ РАБОТАЮЩЕЕ ПРИЛОЖЕНИЕ</span><a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Узнать о запуске ↗</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+    <figure class="v44-approved-preview" aria-labelledby="v44-approved-title">
+      <div class="v44-approved-image"><img src="assets/v44-approved-menu.webp" alt="Утверждённый премиальный макет конструктора «Тело под ключ»: салат из краба и манго, говяжий стейк, гастрономическая витрина, меню на семь дней с фотографиями омлета, курицы с киноа, лосося с овощами и ягодного десерта" width="700" height="525" loading="lazy" decoding="async"></div>
+      <figcaption class="v44-approved-caption" id="v44-approved-title"><span>УТВЕРЖДЁННЫЙ ВИЗУАЛ БУДУЩЕГО ПРИЛОЖЕНИЯ</span><p>На изображении представлен дизайн-концепт, а не действующий личный кабинет. Блюда и значения калорийности иллюстративны: персональные порции и расчёты будут формироваться в приложении после запуска.</p><a href="#formats">Выбрать формат работы <span aria-hidden="true">↗</span></a></figcaption>
+    </figure>
+  </div>
 </section>
 
 
@@ -1468,31 +1426,6 @@ section[id],header[id]{scroll-margin-top:112px}
     pathAnswer.hidden=false;
     pathAnswer.innerHTML=btn.dataset.path==='healthy' ? '<strong>Ваш путь — приложение</strong>Индивидуальный план питания на семь дней под цель и вкусы. Тренировки в приложении не назначаются. Клиентская версия пока готовится к запуску. <a href="#app">Посмотреть демонстрацию ↗</a>' : '<strong>Ваш путь — личная работа</strong>Питание и, по необходимости, индивидуальный подбор посильной физической нагрузки. Если есть заболевания или симптомы, учитываются медицинские рекомендации и при необходимости требуется консультация врача. <a href="#formats">Посмотреть форматы ↗</a>';
   }));
-  const demoDays = [
-    ['Омлет с овощами','Курица, крупа и салат','Творожный десерт'],
-    ['Творожная запеканка','Индейка с овощами и рисом','Ягодный йогурт'],
-    ['Яйца и овощной тост','Говядина с гречкой и салатом','Запечённые фрукты'],
-    ['Сырники с ягодами','Овощной суп и мясное блюдо','Творожный мусс'],
-    ['Шакшука','Курица с картофелем и овощами','Фрукт и орехи'],
-    ['Овсяные оладьи','Индейка с крупой и салатом','Йогурт с ягодами'],
-    ['Омлет с зеленью','Говядина с овощами','Творожный десерт']
-  ];
-  const mealKinds=['ЗАВТРАК','ОБЕД','ДОПОЛНЕНИЕ'];
-  const demoMeals=document.getElementById('demo-meals');
-  const demoWeekdayNames=['ПОНЕДЕЛЬНИК','ВТОРНИК','СРЕДА','ЧЕТВЕРГ','ПЯТНИЦА','СУББОТА','ВОСКРЕСЕНЬЕ'];
-  document.querySelectorAll('[data-day]').forEach(btn=>btn.addEventListener('click',()=>{
-    document.querySelectorAll('[data-day]').forEach(button=>{
-      button.classList.toggle('selected',button===btn);
-      button.setAttribute('aria-pressed',String(button===btn));
-    });
-    const index=Number(btn.dataset.day);
-    const day=demoDays[index];
-    if(!day||!demoMeals)return;
-    demoMeals.innerHTML=day.map((meal,i)=>'<article class="v26-meal"><span>'+String(i+1).padStart(2,'0')+' / '+mealKinds[i]+'</span><strong>'+esc(meal)+'</strong><small>Иллюстративный пример</small></article>').join('');
-    const dayContext=document.getElementById('v26-day-context');
-    if(dayContext)dayContext.textContent=demoWeekdayNames[index]+' · ИЛЛЮСТРАТИВНОЕ МЕНЮ';
-  }));
-
   const story = [
     {count:'01 — 04',title:'Устали начинать<br><em>с понедельника?</em>',lead:'Персональное питание с учётом вашей цели, образа жизни, вкусов и реальных возможностей. Без жёстких запретов и чувства вины.',main:'assets/hero-emotional.webp',caption:'ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС',alt:'Символический художественный образ двух женщин, отражающий усталость от ограничений и уверенность. Не реальное клиентское до и после'},
     {count:'02 — 04',title:'Ешьте вкусно.<br><em>Меняйтесь осознанно.</em>',lead:'Разнообразное питание не должно превращаться в список запретов. Наша методика соединяет индивидуальную цель, предпочтения и полноценные блюда.',main:'assets/hero-01-fish.webp',caption:'ПОЛНОЦЕННОЕ ПИТАНИЕ',alt:'Ресторанная композиция рыбы с овощами, салатом, десертом и напитком'},
