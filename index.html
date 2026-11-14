@@ -1300,6 +1300,10 @@ section[id],header[id]{scroll-margin-top:112px}
 /* V53 distinct illustrated menu: these assets are separate local Retina photos. */
 .v45-meal-photo:is(.v45-photo-syrniki-berries,.v45-photo-avocado-poached-egg,.v45-photo-turkey-bulgur,.v45-photo-chicken-buckwheat,.v45-photo-greek-yogurt-berries,.v45-photo-chia-mango){background-image:none!important;background-color:#183d2d}
 .v48-food-image[src*="/food-v53/"]{object-fit:cover;object-position:center}
+
+/* V54 independent food photos, original approved salmon and steak assets retained. */
+.v45-meal-photo:is(.v45-photo-oatmeal-berries,.v45-photo-turkey-pumpkin,.v45-photo-stuffed-peppers,.v45-photo-zucchini-ricotta,.v45-photo-apple-crumble,.v45-photo-pumpkin-soup){background-image:none!important;background-color:#183d2d}
+.v48-food-image[src*="/food-v54/"]{object-fit:cover;object-position:50% 50%}
 </style>
 </head>
 <body>
@@ -1607,14 +1611,14 @@ section[id],header[id]{scroll-margin-top:112px}
   const v45Days=[
    [['Омлет с зеленью и томатами','Нежный, с овощами и ароматными травами','omelet'],['Курица с киноа и овощами','Сытный обед с яркой подачей','chicken'],['Лосось с овощами','Тёплое блюдо с зеленью','salmon'],['Творожный мусс с ягодами','Красивое завершение дня','dessert-mousse']],
    [['Фриттата с зеленью и луком','Запечённая фриттата с зеленью и луком','frittata'],['Стейк с овощным гарниром','Любимые продукты в ресторанной подаче','steak'],['Салат с крабом и манго','Свежесть, яркие вкусы и авокадо','crab'],['Ягодный десерт','Лёгкое сочетание сливочной основы и ягод','dessert-berries']],
-   [['Омлет с томатами и зеленью','Красочное начало дня','omelet-tomato'],['Индейка с булгуром и овощами','Нежная индейка, булгур и сезонные овощи','turkey-bulgur'],['Стейк с сезонными овощами','Насыщенный вкус и свежая зелень','steak'],['Греческий йогурт с ягодами и орехами','Натуральный йогурт, свежие ягоды и орехи','greek-yogurt-berries']],
-   [['Запечённый омлет с овощами','Завтрак с мягкой текстурой','omelet-baked'],['Курица с киноа, перцем и кабачком','Сытный обед со свежими овощами','chicken-quinoa'],['Лосось с овощным гарниром','Гастрономия привычных продуктов','salmon'],['Ягодный десерт','Красиво и вкусно','dessert']],
-   [['Фриттата со шпинатом и томатами','Запечённая фриттата с сочными овощами','frittata-greens'],['Курица с гречкой и салатом из томатов','Сочная курица, гречка и свежие томаты','chicken-buckwheat'],['Крабовый салат с манго','Свежесть и выразительная текстура','crab'],['Чиа-пудинг с манго','Нежный пудинг с кусочками спелого манго','chia-mango']],
-   [['Сырники с ягодами','Нежные сырники со свежими ягодами','syrniki-berries'],['Курица с киноа и зеленью','Полноценный обед','chicken'],['Стейк с овощным гарниром','Понятные продукты в красивой подаче','steak'],['Творожно-ягодный десерт','Нежная текстура и ягодный вкус','dessert']],
-   [['Тост с авокадо и яйцом пашот','Цельнозерновой тост, авокадо и яйцо','avocado-poached-egg'],['Салат с крабом и манго','Изысканная подача знакомых ингредиентов','crab'],['Лосось с овощами','Яркое завершение недели','salmon'],['Ягодный мусс','Десерт, который хочется повторить','dessert']]
+   [['Овсяная каша с ягодами, бананом и орехами','Нежная овсянка со свежими фруктами и орехами','oatmeal-berries'],['Индейка с булгуром и овощами','Нежная индейка, булгур и сезонные овощи','turkey-bulgur'],['Индейка с тыквой и стручковой фасолью','Нежная индейка, запечённая тыква и зелёная фасоль','turkey-pumpkin'],['Греческий йогурт с ягодами и орехами','Натуральный йогурт, свежие ягоды и орехи','greek-yogurt-berries']],
+   [['Запечённый омлет с овощами','Завтрак с мягкой текстурой','omelet-baked'],['Курица с киноа, перцем и кабачком','Сытный обед со свежими овощами','chicken-quinoa'],['Фаршированный перец с мясом и рисом','Запечённый сладкий перец с сытной начинкой','stuffed-peppers'],['Ягодный десерт','Красиво и вкусно','dessert']],
+   [['Фриттата со шпинатом и томатами','Запечённая фриттата с сочными овощами','frittata-greens'],['Курица с гречкой и салатом из томатов','Сочная курица, гречка и свежие томаты','chicken-buckwheat'],['Рулетики из кабачков с творогом и зеленью','Запечённые кабачки с нежной творожной начинкой','zucchini-ricotta'],['Чиа-пудинг с манго','Нежный пудинг с кусочками спелого манго','chia-mango']],
+   [['Сырники с ягодами','Нежные сырники со свежими ягодами','syrniki-berries'],['Курица с киноа и зеленью','Полноценный обед','chicken'],['Стейк с овощным гарниром','Понятные продукты в красивой подаче','steak'],['Яблочный крамбл с овсяными хлопьями','Тёплые яблоки под хрустящей овсяной крошкой','apple-crumble']],
+   [['Тост с авокадо и яйцом пашот','Цельнозерновой тост, авокадо и яйцо','avocado-poached-egg'],['Салат с крабом и манго','Изысканная подача знакомых ингредиентов','crab'],['Овощной суп с брокколи и кабачком','Тёплый овощной суп с сезонными овощами','pumpkin-soup'],['Ягодный мусс','Десерт, который хочется повторить','dessert']]
   ];
   const v45Names=['ПОНЕДЕЛЬНИК','ВТОРНИК','СРЕДА','ЧЕТВЕРГ','ПЯТНИЦА','СУББОТА','ВОСКРЕСЕНЬЕ'];
-  const v45ClassNames=['v45-photo-omelet','v45-photo-chicken','v45-photo-salmon','v45-photo-dessert','v45-photo-steak','v45-photo-crab','v45-photo-frittata',...['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa','syrniki-berries','avocado-poached-egg','turkey-bulgur','chicken-buckwheat','greek-yogurt-berries','chia-mango'].map(n=>'v45-photo-'+n)];
+  const v45ClassNames=['v45-photo-omelet','v45-photo-chicken','v45-photo-salmon','v45-photo-dessert','v45-photo-steak','v45-photo-crab','v45-photo-frittata',...['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa','syrniki-berries','avocado-poached-egg','turkey-bulgur','chicken-buckwheat','greek-yogurt-berries','chia-mango'].map(n=>'v45-photo-'+n),...['oatmeal-berries','turkey-pumpkin','stuffed-peppers','zucchini-ricotta','apple-crumble','pumpkin-soup'].map(n=>'v45-photo-'+n)];
   const v45DayButtons=Array.from(document.querySelectorAll('[data-v45-day]'));
   const selectV45Day=(index)=>{
     if(!Number.isInteger(index)||!v45Days[index])return;
@@ -1637,7 +1641,7 @@ section[id],header[id]{scroll-margin-top:112px}
       visual.setAttribute('aria-label',name+'. Иллюстративная фотография.');
       // Original local photographs for the distinct dishes; low-res dessert atlas remains temporary.
       let fullPhoto=visual.querySelector('[data-v48-fullphoto]');
-      const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp',...Object.fromEntries(['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa'].map(n=>[n,'assets/food-v52/'+n+'.webp'])),...Object.fromEntries(['syrniki-berries','avocado-poached-egg','turkey-bulgur','chicken-buckwheat','greek-yogurt-berries','chia-mango'].map(n=>[n,'assets/food-v53/'+n+'.webp']))};
+      const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp',...Object.fromEntries(['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa'].map(n=>[n,'assets/food-v52/'+n+'.webp'])),...Object.fromEntries(['syrniki-berries','avocado-poached-egg','turkey-bulgur','chicken-buckwheat','greek-yogurt-berries','chia-mango'].map(n=>[n,'assets/food-v53/'+n+'.webp'])),...Object.fromEntries(['oatmeal-berries','turkey-pumpkin','stuffed-peppers','zucchini-ricotta','apple-crumble','pumpkin-soup'].map(n=>[n,'assets/food-v54/'+n+'.webp']))};
       const fullPhotoSrc=fullPhotoPaths[photo];
       if(fullPhotoSrc){
         if(!fullPhoto){
