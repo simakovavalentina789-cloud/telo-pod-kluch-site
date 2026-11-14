@@ -1,15 +1,32 @@
 // Browser acceptance for the static nutrition-site demo.
 // Run: npm install --no-save playwright-core && node scripts/smoke.mjs
 import { chromium } from 'playwright-core';
-import { resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { resolve, extname, sep } from 'node:path';
+import { createServer } from 'node:http';
+import { createReadStream } from 'node:fs';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
 const binary = process.env.CHROME_BIN || ['/usr/bin/google-chrome','/usr/bin/chromium','/usr/bin/chromium-browser'].find(existsSync);
 if (!binary) throw Error('Chromium binary not available');
 const browser=await chromium.launch({executablePath:binary,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
-const source=pathToFileURL(resolve('_site/index.html')).href;
+// Serve the built site over HTTP so resource timing is measured correctly.
+const root=resolve('_site');
+const mime={'.html':'text/html; charset=utf-8','.webp':'image/webp','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml'};
+const server=createServer((req,res)=>{
+  let pathname;
+  try { pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname); }
+  catch { res.writeHead(400).end(); return; }
+  const target=resolve(root,'.'+pathname);
+  if(target!==root&&!target.startsWith(root+sep)){res.writeHead(403).end();return;}
+  const file=target===root?resolve(root,'index.html'):target;
+  if(!existsSync(file)){res.writeHead(404).end();return;}
+  res.setHeader('Content-Type',mime[extname(file).toLowerCase()]||'application/octet-stream');
+  res.setHeader('Cache-Control','public, max-age=3600');
+  createReadStream(file).on('error',()=>{if(!res.headersSent)res.writeHead(500);res.end();}).pipe(res);
+});
+await new Promise((ok,fail)=>{server.once('error',fail);server.listen(0,'127.0.0.1',ok);});
+const source='http://127.0.0.1:'+server.address().port+'/index.html';
 const sizes=[
   {name:'small-mobile',width:360,height:780},
   {name:'mobile',width:390,height:844},
@@ -111,4 +128,5 @@ try {
 }finally{
   writeFileSync('screenshots/performance-report.json',JSON.stringify({kind:'Chromium CI diagnostics; not real Safari or field Core Web Vitals',results:reports},null,2));
   await browser.close();
+  await new Promise(ok=>server.close(ok));
 }
