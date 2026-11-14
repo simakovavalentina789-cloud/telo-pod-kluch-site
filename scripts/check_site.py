@@ -127,6 +127,18 @@ def main():
         errors.append("V53 photo URL mapping missing")
     if "salmon:'assets/hero-01-fish.webp'" not in html or "steak:'assets/hero-02-steak.webp'" not in html:
         errors.append("Approved salmon or steak photos were changed")
+    # V54: independent, non-repeated photos for six precise menu slots.
+    v54_names = ("oatmeal-berries","turkey-pumpkin","stuffed-peppers","zucchini-ricotta","apple-crumble","pumpkin-soup")
+    for dish in v54_names:
+        asset = ASSETS / "food-v54" / (dish + ".webp")
+        dims = webp_size(asset) if asset.is_file() else None
+        expected_width = 1200 if dish == "turkey-pumpkin" else 500
+        if not dims or dims[0] < expected_width or dims[1] < 450:
+            errors.append("V54 photograph missing or undersized: " + str(asset))
+        if "'"+dish+"'" not in html:
+            errors.append("V54 unique dish mapping missing: " + dish)
+    if "assets/food-v54/" not in html:
+        errors.append("V54 photo URL mapping missing")
     # V47: validate the image pipeline rather than merely checking file existence.
     atlas_resolution = webp_size(atlas) if atlas.is_file() else None
     if atlas_resolution:
@@ -142,7 +154,7 @@ def main():
             errors.append("Hero photograph has missing or low dimensions: " + asset)
     if re.search(r"\.v45-meal-photo\.v45-photo-(?:omelet|chicken|dessert)\s*\{[^}]*background-size:\s*(?:[3-9]\d\d|[1-9]\d{3})%", html):
         errors.append("Excessive meal photo atlas zoom will introduce blur")
-    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab|frittata|dessert-mousse|dessert-berries|omelet-tomato|omelet-baked|frittata-greens|chicken-quinoa|syrniki-berries|avocado-poached-egg|turkey-bulgur|chicken-buckwheat|greek-yogurt-berries|chia-mango)'\]", html)
+    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab|frittata|dessert-mousse|dessert-berries|omelet-tomato|omelet-baked|frittata-greens|chicken-quinoa|syrniki-berries|avocado-poached-egg|turkey-bulgur|chicken-buckwheat|greek-yogurt-berries|chia-mango|oatmeal-berries|turkey-pumpkin|stuffed-peppers|zucchini-ricotta|apple-crumble|pumpkin-soup)'\]", html)
     if len(photo_mappings) != 28:
         errors.append("Expected 28 weekly menu meal-to-photo mappings; found: " + str(len(photo_mappings)))
     if len(photo_mappings) >= 5 and photo_mappings[0] == photo_mappings[4]:
