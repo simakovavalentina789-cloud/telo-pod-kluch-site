@@ -1289,6 +1289,13 @@ section[id],header[id]{scroll-margin-top:112px}
 .v45-gallery-photo .v45-photo-index,.v45-meal-photo>span{z-index:3}
 .v45-gallery-photo::after,.v45-meal-photo::before{z-index:2}
 
+
+/* V52: independent high-detail food photos, no low-resolution atlas for these six dishes. */
+.v45-meal-photo:is(.v45-photo-dessert-mousse,.v45-photo-dessert-berries,.v45-photo-omelet-tomato,.v45-photo-omelet-baked,.v45-photo-frittata-greens,.v45-photo-chicken-quinoa){
+  background-image:none!important;
+  background-color:#163b2d;
+}
+.v48-food-image[src*="/food-v52/"]{object-position:50% 50%}
 </style>
 </head>
 <body>
@@ -1518,7 +1525,7 @@ section[id],header[id]{scroll-margin-top:112px}
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-omelet" data-v45-photo role="img" aria-label="Омлет с зеленью и томатами"><img class="v48-food-image" data-v48-fullphoto src="assets/food-v51/omelet.webp" loading="lazy" decoding="async" width="1672" height="941" alt=""><span>ЗАВТРАК</span></div><div class="v45-meal-body"><h4 data-v45-name>Омлет с зеленью и томатами</h4><p data-v45-note>Нежный, с овощами и ароматными травами</p></div></article>
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-chicken" data-v45-photo role="img" aria-label="Куриное филе с киноа и овощами"><img class="v48-food-image" data-v48-fullphoto src="assets/food-v51/chicken.webp" loading="lazy" decoding="async" width="1672" height="941" alt=""><span>ОБЕД</span></div><div class="v45-meal-body"><h4 data-v45-name>Курица с киноа и овощами</h4><p data-v45-note>Сытный обед с яркой подачей</p></div></article>
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-salmon" data-v45-photo role="img" aria-label="Лосось с овощами"><img class="v48-food-image" data-v48-fullphoto src="assets/hero-01-fish.webp" loading="lazy" decoding="async" width="1500" height="844" alt=""><span>УЖИН</span></div><div class="v45-meal-body"><h4 data-v45-name>Лосось с овощами</h4><p data-v45-note>Тёплое блюдо с зеленью</p></div></article>
-      <article class="v45-meal"><div class="v45-meal-photo v45-photo-dessert" data-v45-photo role="img" aria-label="Ягодный творожный десерт"><span>ДЕСЕРТ / ПЕРЕКУС</span></div><div class="v45-meal-body"><h4 data-v45-name>Творожный мусс с ягодами</h4><p data-v45-note>Красивое завершение дня</p></div></article>
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-dessert-mousse" data-v45-photo role="img" aria-label="Творожный мусс с ягодами"><img class="v48-food-image" data-v48-fullphoto src="assets/food-v52/dessert-mousse.webp" loading="lazy" decoding="async" width="1672" height="941" alt=""><span>ДЕСЕРТ / ПЕРЕКУС</span></div><div class="v45-meal-body"><h4 data-v45-name>Творожный мусс с ягодами</h4><p data-v45-note>Красивое завершение дня</p></div></article>
      </div>
     </div>
    </div>
@@ -1594,16 +1601,16 @@ section[id],header[id]{scroll-margin-top:112px}
   }));
   // V45 — genuine interactive design demonstration. No fabricated nutrients.
   const v45Days=[
-   [['Омлет с зеленью и томатами','Нежный, с овощами и ароматными травами','omelet'],['Курица с киноа и овощами','Сытный обед с яркой подачей','chicken'],['Лосось с овощами','Тёплое блюдо с зеленью','salmon'],['Творожный мусс с ягодами','Красивое завершение дня','dessert']],
-   [['Фриттата с зеленью и луком','Запечённая фриттата с зеленью и луком','frittata'],['Стейк с овощным гарниром','Любимые продукты в ресторанной подаче','steak'],['Салат с крабом и манго','Свежесть, яркие вкусы и авокадо','crab'],['Ягодный десерт','Лёгкое сочетание сливочной основы и ягод','dessert']],
-   [['Омлет с томатами и зеленью','Красочное начало дня','omelet'],['Салат с крабом и авокадо','Изящная подача и любимые ингредиенты','crab'],['Стейк с сезонными овощами','Насыщенный вкус и свежая зелень','steak'],['Творожный мусс с ягодами','Десерт без ощущения диеты','dessert']],
-   [['Запечённый омлет с овощами','Завтрак с мягкой текстурой','omelet'],['Курица с крупой и зеленью','Продуманный сытный обед','chicken'],['Лосось с овощным гарниром','Гастрономия привычных продуктов','salmon'],['Ягодный десерт','Красиво и вкусно','dessert']],
-   [['Фриттата с зеленью','Сытный завтрак из обычных продуктов','omelet'],['Говяжий стейк с овощами','Ресторанная подача без сложных правил','steak'],['Крабовый салат с манго','Свежесть и выразительная текстура','crab'],['Мусс с ягодами','Десерт в конце насыщенного дня','dessert']],
+   [['Омлет с зеленью и томатами','Нежный, с овощами и ароматными травами','omelet'],['Курица с киноа и овощами','Сытный обед с яркой подачей','chicken'],['Лосось с овощами','Тёплое блюдо с зеленью','salmon'],['Творожный мусс с ягодами','Красивое завершение дня','dessert-mousse']],
+   [['Фриттата с зеленью и луком','Запечённая фриттата с зеленью и луком','frittata'],['Стейк с овощным гарниром','Любимые продукты в ресторанной подаче','steak'],['Салат с крабом и манго','Свежесть, яркие вкусы и авокадо','crab'],['Ягодный десерт','Лёгкое сочетание сливочной основы и ягод','dessert-berries']],
+   [['Омлет с томатами и зеленью','Красочное начало дня','omelet-tomato'],['Салат с крабом и авокадо','Изящная подача и любимые ингредиенты','crab'],['Стейк с сезонными овощами','Насыщенный вкус и свежая зелень','steak'],['Творожный мусс с ягодами','Десерт без ощущения диеты','dessert']],
+   [['Запечённый омлет с овощами','Завтрак с мягкой текстурой','omelet-baked'],['Курица с киноа, перцем и кабачком','Сытный обед со свежими овощами','chicken-quinoa'],['Лосось с овощным гарниром','Гастрономия привычных продуктов','salmon'],['Ягодный десерт','Красиво и вкусно','dessert']],
+   [['Фриттата со шпинатом и томатами','Запечённая фриттата с сочными овощами','frittata-greens'],['Говяжий стейк с овощами','Ресторанная подача без сложных правил','steak'],['Крабовый салат с манго','Свежесть и выразительная текстура','crab'],['Мусс с ягодами','Десерт в конце насыщенного дня','dessert']],
    [['Омлет с овощами','Лёгкость приготовления и любимый вкус','omelet'],['Курица с киноа и зеленью','Полноценный обед','chicken'],['Стейк с овощным гарниром','Понятные продукты в красивой подаче','steak'],['Творожно-ягодный десерт','Нежная текстура и ягодный вкус','dessert']],
    [['Омлет с травами и томатами','Спокойный вкусный завтрак','omelet'],['Салат с крабом и манго','Изысканная подача знакомых ингредиентов','crab'],['Лосось с овощами','Яркое завершение недели','salmon'],['Ягодный мусс','Десерт, который хочется повторить','dessert']]
   ];
   const v45Names=['ПОНЕДЕЛЬНИК','ВТОРНИК','СРЕДА','ЧЕТВЕРГ','ПЯТНИЦА','СУББОТА','ВОСКРЕСЕНЬЕ'];
-  const v45ClassNames=['v45-photo-omelet','v45-photo-chicken','v45-photo-salmon','v45-photo-dessert','v45-photo-steak','v45-photo-crab','v45-photo-frittata'];
+  const v45ClassNames=['v45-photo-omelet','v45-photo-chicken','v45-photo-salmon','v45-photo-dessert','v45-photo-steak','v45-photo-crab','v45-photo-frittata',...['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa'].map(n=>'v45-photo-'+n)];
   const v45DayButtons=Array.from(document.querySelectorAll('[data-v45-day]'));
   const selectV45Day=(index)=>{
     if(!Number.isInteger(index)||!v45Days[index])return;
@@ -1626,7 +1633,7 @@ section[id],header[id]{scroll-margin-top:112px}
       visual.setAttribute('aria-label',name+'. Иллюстративная фотография.');
       // Original local photographs for the distinct dishes; low-res dessert atlas remains temporary.
       let fullPhoto=visual.querySelector('[data-v48-fullphoto]');
-      const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp'};
+      const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp',...Object.fromEntries(['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa'].map(n=>[n,'assets/food-v52/'+n+'.webp']))};
       const fullPhotoSrc=fullPhotoPaths[photo];
       if(fullPhotoSrc){
         if(!fullPhoto){
