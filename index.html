@@ -1272,6 +1272,13 @@ section[id],header[id]{scroll-margin-top:112px}
   .v45-meal-photo { aspect-ratio:16/9; }
 }
 
+/* V48 full-resolution dish assets: independent images, not atlas zoom. */
+.v45-gallery-photo,.v45-meal-photo{position:relative}
+.v48-food-image{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;max-width:none;filter:none;image-rendering:auto}
+.v48-food-image[hidden]{display:none!important}
+.v45-gallery-photo .v45-photo-index,.v45-meal-photo>span{z-index:3}
+.v45-gallery-photo::after,.v45-meal-photo::before{z-index:2}
+
 </style>
 </head>
 <body>
@@ -1489,7 +1496,7 @@ section[id],header[id]{scroll-margin-top:112px}
    <div class="v45-gallery-heading"><div><span class="v45-kicker">СНАЧАЛА ВКУС. ЗАТЕМ — УДОБНАЯ СИСТЕМА.</span><h3>Еда, которую <em>хочется готовить.</em></h3></div><p>Знакомые продукты. Авторские сочетания. Подача, достойная хорошего ресторана — без сложных диетических ритуалов.</p></div>
    <div class="v45-gallery">
     <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-crab" role="img" aria-label="Ресторанный салат с мясом краба, манго, авокадо и зеленью, рядом ягодный десерт"><span class="v45-photo-index">01 / ИЗЫСКАННЫЙ САЛАТ</span></div><div class="v45-gallery-copy"><h4>Краб, манго и авокадо</h4><p>Нежное мясо краба, фрукты и свежая зелень</p></div></article>
-    <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-steak" role="img" aria-label="Говяжий стейк в ресторанной подаче с овощами"><span class="v45-photo-index">02 / ЛЮБИМЫЕ ПРОДУКТЫ</span></div><div class="v45-gallery-copy"><h4>Стейк с овощами</h4><p>Питательно, красиво и без бессмысленных запретов</p></div></article>
+    <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-steak" role="img" aria-label="Говяжий стейк в ресторанной подаче с овощами"><img class="v48-food-image" src="assets/hero-02-steak.webp" loading="lazy" decoding="async" width="1500" height="844" alt=""><span class="v45-photo-index">02 / ЛЮБИМЫЕ ПРОДУКТЫ</span></div><div class="v45-gallery-copy"><h4>Стейк с овощами</h4><p>Питательно, красиво и без бессмысленных запретов</p></div></article>
     <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-composition" role="img" aria-label="Несколько ресторанных блюд из овощей, рыбы и других продуктов"><span class="v45-photo-index">03 / ПРОДУМАННЫЙ СОСТАВ</span></div><div class="v45-gallery-copy"><h4>Разнообразие каждый день</h4><p>Блюда под вашу цель и вкусовые предпочтения</p></div></article>
    </div>
    <div class="v45-week">
@@ -1500,7 +1507,7 @@ section[id],header[id]{scroll-margin-top:112px}
      <div class="v45-meals" id="v45-meals">
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-omelet" data-v45-photo role="img" aria-label="Омлет с зеленью и томатами"><span>ЗАВТРАК</span></div><div class="v45-meal-body"><h4 data-v45-name>Омлет с зеленью и томатами</h4><p data-v45-note>Нежный, с овощами и ароматными травами</p></div></article>
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-chicken" data-v45-photo role="img" aria-label="Куриное филе с киноа и овощами"><span>ОБЕД</span></div><div class="v45-meal-body"><h4 data-v45-name>Курица с киноа и овощами</h4><p data-v45-note>Сытный обед с яркой подачей</p></div></article>
-      <article class="v45-meal"><div class="v45-meal-photo v45-photo-salmon" data-v45-photo role="img" aria-label="Лосось с овощами"><span>УЖИН</span></div><div class="v45-meal-body"><h4 data-v45-name>Лосось с овощами</h4><p data-v45-note>Тёплое блюдо с зеленью</p></div></article>
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-salmon" data-v45-photo role="img" aria-label="Лосось с овощами"><img class="v48-food-image" data-v48-fullphoto src="assets/hero-01-fish.webp" loading="lazy" decoding="async" width="1500" height="844" alt=""><span>УЖИН</span></div><div class="v45-meal-body"><h4 data-v45-name>Лосось с овощами</h4><p data-v45-note>Тёплое блюдо с зеленью</p></div></article>
       <article class="v45-meal"><div class="v45-meal-photo v45-photo-dessert" data-v45-photo role="img" aria-label="Ягодный творожный десерт"><span>ДЕСЕРТ / ПЕРЕКУС</span></div><div class="v45-meal-body"><h4 data-v45-name>Творожный мусс с ягодами</h4><p data-v45-note>Красивое завершение дня</p></div></article>
      </div>
     </div>
@@ -1607,6 +1614,26 @@ section[id],header[id]{scroll-margin-top:112px}
       visual.classList.remove(...v45ClassNames);
       visual.classList.add('v45-photo-'+photo);
       visual.setAttribute('aria-label',name+'. Иллюстративная фотография.');
+      // Full-resolution local photography for available dishes; atlas remains
+      // only for the four images awaiting dedicated replacement assets.
+      let fullPhoto=visual.querySelector('[data-v48-fullphoto]');
+      const fullPhotoPaths={salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp'};
+      const fullPhotoSrc=fullPhotoPaths[photo];
+      if(fullPhotoSrc){
+        if(!fullPhoto){
+          fullPhoto=document.createElement('img');
+          fullPhoto.className='v48-food-image';
+          fullPhoto.setAttribute('data-v48-fullphoto','');
+          fullPhoto.loading='lazy';fullPhoto.decoding='async';
+          fullPhoto.alt='';fullPhoto.width=1500;fullPhoto.height=844;
+          visual.prepend(fullPhoto);
+        }
+        if(fullPhoto.getAttribute('src')!==fullPhotoSrc)fullPhoto.src=fullPhotoSrc;
+        fullPhoto.hidden=false;
+      }else if(fullPhoto){
+        fullPhoto.hidden=true;
+        fullPhoto.removeAttribute('src');
+      }
     });
   };
   v45DayButtons.forEach((button,index)=>{
