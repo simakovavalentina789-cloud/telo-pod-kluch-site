@@ -58,6 +58,7 @@ try {
     const tabs=page.locator('[data-v45-day]');
     assert.equal(await tabs.count(),7,'exactly seven tabs');
     assert.equal(await page.locator('#v45-meals .v45-meal').count(),4,'four meals');
+    const allWeekPhotoUrls=[];
     for(let day=0;day<7;day++){
       await tabs.nth(day).click();
       assert.equal(await tabs.nth(day).getAttribute('aria-pressed'),'true');
@@ -65,20 +66,23 @@ try {
       const labels=await page.locator('#v45-meals [data-v45-name]').allTextContents();
       assert.equal(labels.length,4);
       assert.ok(labels.every(label=>label.trim().length>5));
-      await page.waitForFunction(() => [...document.querySelectorAll('#v45-meals [data-v48-fullphoto]:not([hidden])')].every(img=>img.complete&&img.naturalWidth >= (img.src.includes('/food-v54/')&&!img.src.includes('turkey-pumpkin')?500:800)),null,{timeout:5000});
+      await page.waitForFunction(() => [...document.querySelectorAll('#v45-meals [data-v48-fullphoto]:not([hidden])')].every(img=>img.complete&&img.naturalWidth>=1200&&img.naturalHeight>=675),null,{timeout:5000});
       const fidelity=await page.locator('#v45-meals [data-v45-photo]').evaluateAll(nodes=>nodes.map(node=>{
         const active=node.querySelector('[data-v48-fullphoto]:not([hidden])');
         const classPhoto=[...node.classList].find(name=>name.startsWith('v45-photo-'));
         return {classPhoto,activeSrc:active?.getAttribute('src')||null,
-          imageComplete:!!active&&(active.complete&&active.naturalWidth >= (active.src.includes('/food-v54/')&&!active.src.includes('turkey-pumpkin')?500:800))};
+          imageComplete:!!active&&(active.complete&&active.naturalWidth>=1200&&active.naturalHeight>=675)};
       }));
       for(const item of fidelity){
         if(item.classPhoto==='v45-photo-steak')assert.ok((item.activeSrc||'').endsWith('/hero-02-steak.webp'),'approved steak photo path');
         if(item.classPhoto==='v45-photo-salmon')assert.ok((item.activeSrc||'').endsWith('/hero-01-fish.webp'),'approved salmon photo path');
         assert.ok(item.activeSrc, 'every meal requires its own image mapping on day '+day);
-        assert.ok(item.imageComplete, 'active full-res dish must load in day '+day);
+        assert.ok(item.imageComplete, 'active Retina-resolution food photo must load on day '+day);
+        allWeekPhotoUrls.push(item.activeSrc);
       }
     }
+    assert.equal(allWeekPhotoUrls.length,28,'all menu photos checked');
+    assert.equal(new Set(allWeekPhotoUrls).size,28,'all 28 meals must use separate actual image URLs');
     await tabs.first().focus();
     await page.keyboard.press('ArrowRight');
     assert.equal(await tabs.nth(1).getAttribute('aria-pressed'),'true','keyboard next day');
@@ -93,7 +97,7 @@ try {
     }));
     for(const p of photos){
       assert.ok(p.width>150&&p.height>80,'photo region size');
-      if(p.image)assert.ok(p.image.complete&&p.image.naturalWidth >= (p.image.src?.includes('/food-v54/')&&!p.image.src?.includes('turkey-pumpkin')?500:800),'high-res meal photo must load');
+      if(p.image)assert.ok(p.image.complete&&p.image.naturalWidth>=1200,'high-res meal photo must load');
       else assert.fail('A meal photo must never fall back to the old atlas');
     }
     const metrics=await page.evaluate(()=>({
