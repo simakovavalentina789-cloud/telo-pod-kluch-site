@@ -97,6 +97,11 @@ try {
     await page.keyboard.press('End');
     assert.equal(await tabs.nth(6).getAttribute('aria-pressed'),'true','keyboard last day');
     await tabs.first().click();
+    // Day switching replaces image src asynchronously. Wait for the newly selected
+    // images to finish decoding/loading before checking image dimensions.
+    await page.waitForFunction(() => [...document.querySelectorAll('#v45-meals [data-v48-fullphoto]:not([hidden])')].length===4 &&
+      [...document.querySelectorAll('#v45-meals [data-v48-fullphoto]:not([hidden])')].every(img => img.complete && img.naturalWidth>=1200 && img.naturalHeight>=675),
+      null, {timeout:10000});
     const photos=await page.locator('#v45-meals [data-v45-photo]').evaluateAll(nodes=>nodes.map(node=>{
       const image=node.querySelector('img:not([hidden])');
       return {width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height,
