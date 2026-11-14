@@ -1201,6 +1201,14 @@ section[id],header[id]{scroll-margin-top:112px}
 @media(max-width:420px){.v45-gallery-heading h3{font-size:35px}.v45-week-top h3{font-size:31px}.v45-gallery-photo{height:200px}.v45-meal-photo{height:205px}.v45-day-tabs button{font-size:10px}.v45-menu-panel{padding:15px 10px 10px}}
 @media(prefers-reduced-motion:reduce){.v45-day-tabs button{transition:none}}
 
+
+/* V45 final polish: preserve image proportions and remove embedded demo-label artefacts */
+.v45-gallery-photo,.v45-meal-photo{height:auto;aspect-ratio:320/186}
+.v45-meal-photo::before{content:"";position:absolute;z-index:1;top:0;left:0;right:0;height:54px;background:linear-gradient(180deg,#0b241e 0%,#0b241eec 54%,transparent 100%);pointer-events:none}
+.v45-meal-photo span{z-index:2}
+.v45-meal-photo.v45-photo-steak::before,.v45-meal-photo.v45-photo-salmon::before{background:linear-gradient(180deg,#071c16cc,transparent)}
+@media(max-width:700px){.v45-gallery-photo,.v45-meal-photo{height:auto;aspect-ratio:320/186}}
+
 </style>
 </head>
 <body>

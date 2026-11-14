@@ -62,6 +62,16 @@ def main():
         errors.append("Unexpected storage or analytics code")
     if not ASSETS.is_dir():
         errors.append("Missing assets directory")
+    # The V45 meals and gallery use CSS background images instead of <img src>.
+    atlas = ASSETS / "v45-food-atlas.webp"
+    if not atlas.is_file() or atlas.stat().st_size < 1000:
+        errors.append("Missing/invalid V45 food photography atlas")
+    if len(re.findall(r'data-v45-day="[0-6]"', html)) != 7:
+        errors.append("V45 requires seven interactive day buttons")
+    if len(re.findall(r'class="v45-meal"', html)) != 4:
+        errors.append("V45 requires four photo-based meal cards")
+    if 'class="v44-approved-preview"' in html:
+        errors.append("Flattened V44 screenshot must not appear")
     print(f"Site QA: {len(parser.ids)} IDs, {len(parser.anchors)} links, {len(set(parser.assets))} assets, {parser.images} images")
     if errors:
         for item in errors:
