@@ -3,19 +3,32 @@
 import { chromium } from 'playwright-core';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { existsSync, mkdirSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
 const binary = process.env.CHROME_BIN || ['/usr/bin/google-chrome','/usr/bin/chromium','/usr/bin/chromium-browser'].find(existsSync);
 if (!binary) throw Error('Chromium binary not available');
 const browser=await chromium.launch({executablePath:binary,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
 const source=pathToFileURL(resolve('_site/index.html')).href;
-const sizes=[{name:'mobile',width:390,height:844},{name:'ipad',width:820,height:1180},{name:'desktop',width:1440,height:900}];
+const sizes=[
+  {name:'small-mobile',width:360,height:780},
+  {name:'mobile',width:390,height:844},
+  {name:'tablet-portrait',width:768,height:1024},
+  {name:'ipad',width:820,height:1180},
+  {name:'tablet-landscape',width:1024,height:768},
+  {name:'desktop',width:1440,height:900}
+];
+const reports=[];
 mkdirSync('screenshots',{recursive:true});
 try {
   for(const size of sizes){
     const page=await browser.newPage({viewport:{width:size.width,height:size.height},deviceScaleFactor:2});
     const failures=[];
+    await page.addInitScript(() => {
+      window.__siteVitals={lcp:0,cls:0};
+      try { new PerformanceObserver(list=>{for(const entry of list.getEntries()) window.__siteVitals.lcp=entry.startTime;}).observe({type:'largest-contentful-paint',buffered:true}); } catch {}
+      try { new PerformanceObserver(list=>{for(const e of list.getEntries()) if(!e.hadRecentInput) window.__siteVitals.cls+=e.value;}).observe({type:'layout-shift',buffered:true}); } catch {}
+    });
     page.on('pageerror',e=>failures.push('JS '+e.message));
     await page.goto(source+'#app',{waitUntil:'load'});
     await page.locator('#v45-meals .v45-meal').first().waitFor();
@@ -68,8 +81,33 @@ try {
       size.name+' horizontal overflow '+JSON.stringify(metrics));
     assert.deepEqual(metrics.broken,[],'all regular images load');
     assert.deepEqual(failures,[],'JavaScript console errors');
+    const performance=await page.evaluate(()=>{
+      const nav=performance.getEntriesByType('navigation')[0];
+      const paint=performance.getEntriesByType('paint');
+      const resources=performance.getEntriesByType('resource').filter(r=>/\.(webp|png|jpg|jpeg)(\?|$)/i.test(r.name));
+      const uniqueUrls=[...new Set(resources.map(r=>r.name))];
+      const largest=resources.slice().sort((a,b)=>b.duration-a.duration).slice(0,5).map(r=>({
+        url:r.name.split('/').slice(-2).join('/'),
+        durationMs:Math.round(r.duration),
+        transferBytes:r.transferSize||0
+      }));
+      return {
+        navigationMs:Math.round(nav?.duration||0),
+        domContentLoadedMs:Math.round(nav?.domContentLoadedEventEnd||0),
+        firstContentfulPaintMs:Math.round(paint.find(p=>p.name==='first-contentful-paint')?.startTime||0),
+        largestContentfulPaintMs:Math.round(window.__siteVitals?.lcp||0),
+        layoutShift:Number((window.__siteVitals?.cls||0).toFixed(4)),
+        imageRequests:resources.length,
+        distinctImageUrls:uniqueUrls.length,
+        slowestImageRequests:largest
+      };
+    });
+    reports.push({viewport:size.name,width:size.width,height:size.height,...performance});
     await page.locator('#app').screenshot({path:'screenshots/qa-app-'+size.name+'.png',animations:'disabled'});
     console.log('PASS',size.name, '7 day clicks, keyboard, images, layout, JS');
     await page.close();
   }
-}finally{await browser.close();}
+}finally{
+  writeFileSync('screenshots/performance-report.json',JSON.stringify({kind:'Chromium CI diagnostics; not real Safari or field Core Web Vitals',results:reports},null,2));
+  await browser.close();
+}
