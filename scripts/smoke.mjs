@@ -37,8 +37,8 @@ try {
           imageComplete:!active||(active.complete&&active.naturalWidth >= (active.src.includes('/food-v54/')&&!active.src.includes('turkey-pumpkin')?500:800))};
       }));
       for(const item of fidelity){
-        if(item.classPhoto==='v45-photo-steak')assert.match(item.activeSrc||'',/hero-02-steak\\.webp$/);
-        if(item.classPhoto==='v45-photo-salmon')assert.match(item.activeSrc||'',/hero-01-fish\\.webp$/);
+        if(item.classPhoto==='v45-photo-steak')assert.ok((item.activeSrc||'').endsWith('/hero-02-steak.webp'),'approved steak photo path');
+        if(item.classPhoto==='v45-photo-salmon')assert.ok((item.activeSrc||'').endsWith('/hero-01-fish.webp'),'approved salmon photo path');
         assert.ok(item.imageComplete, 'active full-res dish must load in day '+day);
       }
     }
