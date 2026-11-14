@@ -29,6 +29,17 @@ try {
       const labels=await page.locator('#v45-meals [data-v45-name]').allTextContents();
       assert.equal(labels.length,4);
       assert.ok(labels.every(label=>label.trim().length>5));
+      const fidelity=await page.locator('#v45-meals [data-v45-photo]').evaluateAll(nodes=>nodes.map(node=>{
+        const active=node.querySelector('[data-v48-fullphoto]:not([hidden])');
+        const classPhoto=[...node.classList].find(name=>name.startsWith('v45-photo-'));
+        return {classPhoto,activeSrc:active?.getAttribute('src')||null,
+          imageComplete:!active||(active.complete&&active.naturalWidth>=800)};
+      }));
+      for(const item of fidelity){
+        if(item.classPhoto==='v45-photo-steak')assert.match(item.activeSrc||'',/hero-02-steak\\.webp$/);
+        if(item.classPhoto==='v45-photo-salmon')assert.match(item.activeSrc||'',/hero-01-fish\\.webp$/);
+        assert.ok(item.imageComplete, 'active full-res dish must load in day '+day);
+      }
     }
     await tabs.first().focus();
     await page.keyboard.press('ArrowRight');
