@@ -30,7 +30,7 @@ jobs:
           Path("/tmp/tpk-inline.js").write_text(scripts[0], encoding="utf-8")
           PY
           node --check /tmp/tpk-inline.js
-      - name: Audit menu recipe and photography diversity (editorial report)
+      - name: Audit illustrative menu names and photo keys (no recipe or KBJU gate)
         run: python3 scripts/audit_menu_diversity.py
       - name: Prepare site
         run: |
