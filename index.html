@@ -1312,6 +1312,11 @@ section[id],header[id]{scroll-margin-top:112px}
 /* V56: unique Saturday slow-braised beef; the approved Tuesday steak is unchanged. */
 .v45-meal-photo.v45-photo-braised-beef-potato{background-image:none!important;background-color:#163c30}
 .v48-food-image[src*="braised-beef-potato.webp"]{object-fit:cover;object-position:center}
+
+/* V57: retired the obsolete 640×372 sprite entirely.
+   All 28 demo meals now have their own <img>; show a neutral paint while lazy-loading. */
+.v45-meal-photo{background-image:none!important;background-color:#153b2d}
+.v45-gallery-photo.v45-photo-crab{background-image:none!important;background-color:#153b2d}
 </style>
 </head>
 <body>
@@ -1651,6 +1656,9 @@ section[id],header[id]{scroll-margin-top:112px}
       let fullPhoto=visual.querySelector('[data-v48-fullphoto]');
       const fullPhotoPaths={omelet:'assets/food-v51/omelet.webp',frittata:'assets/food-v51/frittata.webp',chicken:'assets/food-v51/chicken.webp',crab:'assets/food-v51/crab.webp',salmon:'assets/hero-01-fish.webp',steak:'assets/hero-02-steak.webp',...Object.fromEntries(['dessert-mousse','dessert-berries','omelet-tomato','omelet-baked','frittata-greens','chicken-quinoa'].map(n=>[n,'assets/food-v52/'+n+'.webp'])),...Object.fromEntries(['syrniki-berries','avocado-poached-egg','turkey-bulgur','chicken-buckwheat','greek-yogurt-berries','chia-mango'].map(n=>[n,'assets/food-v53/'+n+'.webp'])),...Object.fromEntries(['oatmeal-berries','turkey-pumpkin','stuffed-peppers','zucchini-ricotta','apple-crumble','pumpkin-soup'].map(n=>[n,'assets/food-v54/'+n+'.webp'])),...Object.fromEntries(['shakshuka','buckwheat-egg-mushrooms','beef-meatballs-bulgur','cod-rice-broccoli','cottage-peach-berries','baked-pears-yogurt'].map(n=>[n,'assets/food-v55/'+n+'.webp'])), 'braised-beef-potato':'assets/food-v56/braised-beef-potato.webp'};
       const fullPhotoSrc=fullPhotoPaths[photo];
+      if(!fullPhotoSrc){
+        console.error('Missing dedicated image for meal:',name,photo);
+      }
       if(fullPhotoSrc){
         if(!fullPhoto){
           fullPhoto=document.createElement('img');
