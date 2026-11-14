@@ -152,6 +152,15 @@ def main():
         errors.append("V55 food image URL resolver missing")
     if "salmon:'assets/hero-01-fish.webp'" not in html or "steak:'assets/hero-02-steak.webp'" not in html:
         errors.append("Previously approved salmon/steak asset replaced")
+    # V56 release gate: each demo slot has a distinct displayed name and photo key.
+    unique_beef = ASSETS / "food-v56" / "braised-beef-potato.webp"
+    dimensions = webp_size(unique_beef) if unique_beef.is_file() else None
+    if not dimensions or dimensions[0] < 1600 or dimensions[1] < 900:
+        errors.append("Saturday braised beef photo missing or below Retina resolution")
+    if "'Томлёная говядина с картофелем и морковью'" not in html:
+        errors.append("Saturday dinner must be unique braised beef")
+    if "braised-beef-potato:'assets/food-v56/braised-beef-potato.webp'" not in html and "'braised-beef-potato':'assets/food-v56/braised-beef-potato.webp'" not in html:
+        errors.append("Saturday dinner photo mapping missing")
     # V47: validate the image pipeline rather than merely checking file existence.
     atlas_resolution = webp_size(atlas) if atlas.is_file() else None
     if atlas_resolution:
@@ -167,13 +176,20 @@ def main():
             errors.append("Hero photograph has missing or low dimensions: " + asset)
     if re.search(r"\.v45-meal-photo\.v45-photo-(?:omelet|chicken|dessert)\s*\{[^}]*background-size:\s*(?:[3-9]\d\d|[1-9]\d{3})%", html):
         errors.append("Excessive meal photo atlas zoom will introduce blur")
-    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab|frittata|dessert-mousse|dessert-berries|omelet-tomato|omelet-baked|frittata-greens|chicken-quinoa|syrniki-berries|avocado-poached-egg|turkey-bulgur|chicken-buckwheat|greek-yogurt-berries|chia-mango|oatmeal-berries|turkey-pumpkin|stuffed-peppers|zucchini-ricotta|apple-crumble|pumpkin-soup|shakshuka|buckwheat-egg-mushrooms|beef-meatballs-bulgur|cod-rice-broccoli|cottage-peach-berries|baked-pears-yogurt)'\]", html)
+    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab|frittata|dessert-mousse|dessert-berries|omelet-tomato|omelet-baked|frittata-greens|chicken-quinoa|syrniki-berries|avocado-poached-egg|turkey-bulgur|chicken-buckwheat|greek-yogurt-berries|chia-mango|oatmeal-berries|turkey-pumpkin|stuffed-peppers|zucchini-ricotta|apple-crumble|pumpkin-soup|shakshuka|buckwheat-egg-mushrooms|beef-meatballs-bulgur|cod-rice-broccoli|cottage-peach-berries|baked-pears-yogurt|braised-beef-potato)'\]", html)
     if len(photo_mappings) != 28:
         errors.append("Expected 28 weekly menu meal-to-photo mappings; found: " + str(len(photo_mappings)))
     if len(photo_mappings) >= 5 and photo_mappings[0] == photo_mappings[4]:
         errors.append("Monday and Tuesday breakfast photos must not be identical")
     if 'Фриттата с зеленью и луком' not in html or "'frittata'" not in html:
         errors.append("Dedicated Tuesday frittata mapping missing")
+    all_demo_meals = re.findall(r"\['([^'\n]+)','[^'\n]+','([^'\n]+)'\]", html[html.index("const v45Days="):html.index("const v45Names=")])
+    if len(all_demo_meals) != 28:
+        errors.append("Demo must contain exactly 28 meals")
+    elif len({name.casefold() for name, _ in all_demo_meals}) != 28:
+        errors.append("Demo contains duplicate dish names")
+    elif len({photo for _, photo in all_demo_meals}) != 28:
+        errors.append("Demo contains photo-key reuse, each card must be visually unique")
     if len(set(photo_mappings)) < 7:
         print("WARN: only", len(set(photo_mappings)), "distinct food photos serve 28 menu entries")
     if 'const selectV45Day=' not in html or "event.key==='ArrowRight'" not in html:
