@@ -1003,6 +1003,44 @@ section[id],header[id]{scroll-margin-top:112px}
 .v9-expert .v9-expert-copy .eyebrow{letter-spacing:.1em}
 @media(max-width:760px){.v37-bridge-inner{flex-direction:column;align-items:flex-start;gap:14px}.v37-bridge-inner a{white-space:normal}.v37-bridge-inner strong{font-size:23px}}
 
+
+/* V38 — editorial press kit, hierarchy without link clutter */
+.v38-positioning{font:italic 400 clamp(20px,2vw,27px)/1.38 var(--serif);color:#99723d;margin:7px 0 15px}
+.v38-authority-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px}
+.v38-authority-chips span{border:1px solid #afbcaa;background:#e5eae0;color:#36543f;padding:9px 13px;border-radius:999px;font:700 10px/1.4 var(--sans)}
+.v38-media{background:#f0eee8;color:#20392d;padding:clamp(55px,6vw,95px) 0;border-top:1px solid #d2d4c9}
+.v38-media-head{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:31px}
+.v38-media-head>div:first-child{max-width:855px}
+.v38-media-eyebrow{font:750 10px/1.7 var(--sans);letter-spacing:.15em;color:#829680}
+.v38-media h2{font:400 clamp(40px,4.6vw,72px)/1.1 var(--serif);letter-spacing:-.045em;margin:14px 0 16px}
+.v38-media h2 em{color:#ab864b}
+.v38-media-head p{font:400 14px/1.8 var(--sans);color:#657569;max-width:790px;margin:0}
+.v38-media-mark{flex:none;text-align:right;color:#ba9e73;font:500 17px/1.15 var(--serif);letter-spacing:.06em}
+.v38-media-mark strong{display:block;font:700 12px/1.5 var(--sans);letter-spacing:.1em}
+.v38-media-featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.v38-media-featured>a{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-height:185px;gap:10px;text-decoration:none;color:#f3eee1;background:linear-gradient(135deg,#173e2f,#10261d);border:1px solid #49684d;border-radius:12px;padding:24px 51px 22px 25px;transition:transform .2s ease}
+.v38-media-featured>a:hover{transform:translateY(-2px)}
+.v38-media-featured>a>span:first-child,.v38-media-honors span{font:750 10px/1.6 var(--sans);letter-spacing:.13em;color:#d3b786}
+.v38-media-featured strong{font:400 clamp(21px,2vw,29px)/1.2 var(--serif)}
+.v38-media-featured small{font:400 11px/1.5 var(--sans);color:#adbfaf;margin-top:auto}
+.v38-media-arrow{position:absolute;top:25px;right:25px;color:#dfc48d}
+.v38-media-honors{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}
+.v38-media-honors>div{padding:22px 24px;border:1px solid #c9bc9b;border-radius:11px;background:#e7e5d9}
+.v38-media-honors strong{display:block;font:400 25px/1.25 var(--serif);margin:9px 0}
+.v38-media-honors p{font:400 12px/1.6 var(--sans);color:#687669;margin:0 0 13px}
+.v38-media-honors a{color:#426347;font:750 11px/1.5 var(--sans);text-decoration:none;border-bottom:1px solid #7a987a;padding-bottom:4px}
+.v38-media-more{margin-top:20px;border-top:1px solid #c9cfc5;border-bottom:1px solid #c9cfc5;padding:18px 0}
+.v38-media-more summary{cursor:pointer;font:750 13px/1.5 var(--sans);display:flex;align-items:center;justify-content:space-between;gap:10px;list-style:none}
+.v38-media-more summary::-webkit-details-marker{display:none}
+.v38-media-more summary span{font-size:24px;color:#a6844d}
+.v38-media-moregrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 30px;margin-top:18px}
+.v38-media-moregrid a{color:#365541;text-decoration:none;font:650 12px/1.6 var(--sans);border-bottom:1px solid #d1d9cb;padding:11px 0}
+.v38-media-moregrid a:hover,.v38-media-honors a:hover{color:#987038}
+.v38-media-caveat{color:#839087;font:400 10px/1.6 var(--sans);margin:17px 0 2px}
+.v38-media a:focus-visible,.v38-media summary:focus-visible{outline:3px solid #c79c5e;outline-offset:4px}
+@media(max-width:760px){.v38-media-head{align-items:flex-start}.v38-media-mark{display:none}.v38-media-featured,.v38-media-honors{grid-template-columns:1fr}.v38-media-featured>a{min-height:145px;padding:20px 50px 20px 20px}.v38-media-honors>div{padding:20px}}
+@media(max-width:480px){.v38-media-moregrid{grid-template-columns:1fr}.v38-authority-chips{gap:6px}.v38-authority-chips span{font-size:9px}.v38-media h2{font-size:clamp(38px,10vw,54px)}}
+
 </style>
 </head>
 <body>
@@ -1011,14 +1049,14 @@ section[id],header[id]{scroll-margin-top:112px}
     <div class="shell nav-row">
       <a class="brand" href="#top" aria-label="Тело под ключ — на главную"><span class="brand-mark brand-real-logo"><img src="assets/logo-vs.webp" alt="" width="45" height="45" decoding="async"></span><span class="brand-text">ТЕЛО<br>ПОД КЛЮЧ<small>КОНСТРУКТОР ПИТАНИЯ</small></span></a>
       <nav class="desktop-nav" aria-label="Основное меню">
-        <a href="#app">Конструктор</a><a href="#exclusive">Наши принципы</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a>
+        <a href="#app">Конструктор</a><a href="#exclusive">Наши принципы</a><a href="#proof">Результаты</a><a href="#expert">Обо мне</a><a href="#formats">Форматы</a>
       </nav>
       <a class="nav-cta" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать лично <span aria-hidden="true">↗</span></a>
       <a class="mobile-contact-cta" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer" aria-label="Написать Валентине лично в Telegram"><span class="mobile-contact-label">Написать</span><span aria-hidden="true">↗</span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню"><span></span><span></span><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильное меню" hidden>
-      <a href="#app">Конструктор</a><a href="#exclusive">Наши принципы</a><a href="#proof">Результаты</a><a href="#expert">Эксперт</a><a href="#formats">Форматы</a><a href="#contact">Связаться</a>
+      <a href="#app">Конструктор</a><a href="#exclusive">Наши принципы</a><a href="#proof">Результаты</a><a href="#expert">Обо мне</a><a href="#formats">Форматы</a><a href="#contact">Связаться</a>
       <a class="mobile-nav-telegram" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Написать Валентине лично в Telegram <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
@@ -1146,12 +1184,43 @@ section[id],header[id]{scroll-margin-top:112px}
       <span class="eyebrow">05 / ОСНОВАТЕЛЬ И МЕТОДИКА</span>
       <h2>Сначала экспертиза.<br><em>Затем технология.</em></h2>
       <h3>Валентина Счастье</h3>
-      <p class="v9-expert-role">Нутрициолог · специалист по диетологии · мастер-тренер по бодибилдингу и фитнесу высшей категории · персональные тренировки онлайн и офлайн</p>
-      <p>Более 17 лет практики в работе с телом и питанием. Моя методика начинается с человека: его цели, состава продуктов, индивидуальных расчётов, привычек и реальных возможностей. Именно этот подход я переношу в конструктор «Тело под ключ».</p>
-      <p>В личной работе я объединяю питание с индивидуальными тренировками онлайн и офлайн и поддержкой в изменении привычек. Нагрузки подбираются по подготовке и возможностям; при заболеваниях учитываются рекомендации врача. В приложении автоматического назначения тренировок нет.</p>
+      <p class="v38-positioning">Эксперт по глубокой трансформации тела и образа жизни</p>
+      <p class="v9-expert-role">Диетолог · нутрициолог · мастер-тренер по бодибилдингу и фитнесу высшей категории · 17+ лет практики</p>
+      <div class="v38-authority-chips" aria-label="Профессиональные достижения"><span>17+ лет практики</span><span>Автор «Тело под ключ»</span><span>Экспертные публикации в СМИ</span><span>Проект ТОП-100 журнала «Триггер»</span></div>
+      <p>Моя работа — не просто меню и тренировки. Я помогаю разобраться в факторах, которые мешают человеку менять вес и физическую форму: особенностях питания, привычках, активности, восстановлении и условиях жизни. Более 17 лет практики стали основой авторской системы «Тело под ключ».</p>
+      <p>Мой подход — последовательная работа с целью человека, понятная программа действий, поддержка и корректировки. В индивидуальном сопровождении объединяю питание, тренировки и привычки; при заболеваниях учитываются медицинские рекомендации. В приложении автоматического назначения тренировок нет.</p>
       <div class="v9-expert-quote">«Я не начинаю с запретов. Я начинаю с человека, состава его питания и цели».</div>
       <a class="v9-expert-link" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Обсудить личную программу <span>↗</span></a>
     </div>
+  </div>
+</section>
+
+<section class="v38-media" id="media" aria-labelledby="media-heading">
+  <div class="shell">
+    <div class="v38-media-head"><div><span class="v38-media-eyebrow">ПУБЛИКАЦИИ · ПРОФЕССИОНАЛЬНОЕ ПРИЗНАНИЕ</span><h2 id="media-heading">Экспертность, <em>о которой пишут.</em></h2><p>Мои комментарии и экспертные материалы о питании, тренировках и работе с телом опубликованы в российских медиа. Ниже — подборка материалов с прямыми ссылками на первоисточники.</p></div><div class="v38-media-mark">В СМИ<br><strong>И ЖУРНАЛАХ</strong></div></div>
+    <div class="v38-media-featured">
+      <a href="https://aif.ru/health/secrets/bez-ukolov-ekspert-abramova-rasskazala-kakie-uprazhneniya-omolazhivayut" target="_blank" rel="noopener noreferrer"><span>АРГУМЕНТЫ И ФАКТЫ</span><strong>Физическая активность, красота и возраст</strong><small>Экспертные комментарии Валентины Счастье · 2025</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
+      <a href="https://riamo.ru/news/zdravoohranenie/fitnes-trener-rasskazala-kak-sohranit-spinu-zdorovoj-bez-sportzala/" target="_blank" rel="noopener noreferrer"><span>РИАМО</span><strong>Как сохранить спину здоровой без спортзала</strong><small>Комментарий тренера Валентины Счастье · 2025</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
+      <a href="https://www.sport-express.net/trops/training/reviews/oshibki-v-trenirovkah-privychki-kotorye-meshayut-progressu-pohudeniyu-i-rostu-myshc-i-kak-ih-ispravit-2470153/" target="_blank" rel="noopener noreferrer"><span>СПОРТ-ЭКСПРЕСС</span><strong>Привычки, которые мешают прогрессу в тренировках</strong><small>С участием Валентины Счастье · 2026</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
+      <a href="https://www.sport-express.net/trops/training/reviews/adaptacionnoe-plato-v-trenirovkah-po-fitnesu-pochemu-net-progressa-i-chto-delat-2465599/" target="_blank" rel="noopener noreferrer"><span>СПОРТ-ЭКСПРЕСС</span><strong>Адаптационное плато: почему нет прогресса</strong><small>Экспертный комментарий · 2026</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
+    </div>
+    <div class="v38-media-honors">
+      <div><span>ЖУРНАЛ «ТРИГГЕР» · ПРОЕКТ ТОП-100</span><strong>История подхода «Тело под ключ»</strong><p>Авторский материал об отношении к телу и системной трансформации.</p><a href="https://trigger-journal.ru/wp-content/uploads/2026/04/%D0%A2%D1%80%D0%B8%D0%B3%D0%B3%D0%B5%D1%80_%D0%BC%D0%B0%D1%80%D1%82_26_%D0%B2%D0%B5%D0%B1.pdf" target="_blank" rel="noopener noreferrer">Открыть публикацию <span aria-hidden="true">↗</span></a></div>
+      <div><span>IMPERIAL WOMEN · ОБЛОЖКА</span><strong>Героиня журнальной обложки</strong><p>Участие в журнале по материалам авторского медиакита.</p><a href="https://dzen.ru/a/aLhPmm17zGDxo58W" target="_blank" rel="noopener noreferrer">Материал об участии <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <details class="v38-media-more"><summary>Другие публикации и упоминания <span aria-hidden="true">+</span></summary>
+      <div class="v38-media-moregrid">
+        <a href="https://murmansk.mk.ru/social/2025/07/28/ekspert-sakhar-i-belaya-muka-glavnyy-vrag-sustavov-severyan.html" target="_blank" rel="noopener noreferrer">Московский комсомолец <span aria-hidden="true">↗</span></a>
+        <a href="https://www.kp.ru/woman/krasota/kak-zhenshhine-vyglyadet-molozhe-svoikh-let/" target="_blank" rel="noopener noreferrer">Комсомольская правда <span aria-hidden="true">↗</span></a>
+        <a href="https://mir24.tv/articles/16650624/kak-izmenit-sistemu-trenirovok-v-noyabre-poshagovoe-rukovodstvo" target="_blank" rel="noopener noreferrer">МИР 24 <span aria-hidden="true">↗</span></a>
+        <a href="https://www.jv.ru/news/cem-polezny-ajca-i-kak-ih-prigotovit-pp-recepty-dla-pohudenia" target="_blank" rel="noopener noreferrer">ЖИВИ! <span aria-hidden="true">↗</span></a>
+        <a href="https://izhlife.ru/beautyandhealth/pereedanie-ignorirovanie-boli-i-neudobnaya-obuv-8-privychek-kotorye-razrushayut-vashi-sustavy.html" target="_blank" rel="noopener noreferrer">IZHLIFE <span aria-hidden="true">↗</span></a>
+        <a href="https://online.fliphtml5.com/xdvnh/wefd/" target="_blank" rel="noopener noreferrer">Люди-Бренды <span aria-hidden="true">↗</span></a>
+        <a href="https://dzen.ru/a/aJ48CjntsUHhI8_E" target="_blank" rel="noopener noreferrer">Дзен <span aria-hidden="true">↗</span></a>
+        <a href="https://t.me/JournalTrigger/86" target="_blank" rel="noopener noreferrer">Журнал «Триггер» в Telegram <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="v38-media-caveat">Дополнительные ссылки указаны по предоставленному медиакиту; участие эксперта в каждом материале ещё требует отдельной сверки.</p>
+    </details>
   </div>
 </section>
 
