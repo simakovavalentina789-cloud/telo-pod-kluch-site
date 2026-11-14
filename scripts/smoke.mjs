@@ -1,15 +1,18 @@
 // Browser acceptance for the static nutrition-site demo.
 // Run: npm install --no-save playwright-core && node scripts/smoke.mjs
-import { chromium } from 'playwright-core';
+import { chromium, webkit } from 'playwright-core';
 import { resolve, extname, sep } from 'node:path';
 import { createServer } from 'node:http';
 import { createReadStream } from 'node:fs';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
+const engine=process.env.BROWSER_ENGINE==='webkit'?'webkit':'chromium';
 const binary = process.env.CHROME_BIN || ['/usr/bin/google-chrome','/usr/bin/chromium','/usr/bin/chromium-browser'].find(existsSync);
-if (!binary) throw Error('Chromium binary not available');
-const browser=await chromium.launch({executablePath:binary,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+if (engine==='chromium'&&!binary) throw Error('Chromium binary not available');
+const browser=engine==='webkit'
+  ? await webkit.launch({headless:true})
+  : await chromium.launch({executablePath:binary,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
 // Serve the built site over HTTP so resource timing is measured correctly.
 const root=resolve('_site');
 const mime={'.html':'text/html; charset=utf-8','.webp':'image/webp','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml'};
@@ -35,10 +38,13 @@ const sizes=[
   {name:'tablet-landscape',width:1024,height:768},
   {name:'desktop',width:1440,height:900}
 ];
+const selectedSizes=process.env.SMOKE_VIEWPORTS?.split(',').filter(Boolean);
+const viewports=selectedSizes?.length?sizes.filter(s=>selectedSizes.includes(s.name)):sizes;
+if(!viewports.length)throw Error('No viewports selected for '+engine);
 const reports=[];
 mkdirSync('screenshots',{recursive:true});
 try {
-  for(const size of sizes){
+  for(const size of viewports){
     const page=await browser.newPage({viewport:{width:size.width,height:size.height},deviceScaleFactor:2});
     const failures=[];
     await page.addInitScript(() => {
@@ -121,12 +127,12 @@ try {
       };
     });
     reports.push({viewport:size.name,width:size.width,height:size.height,...performance});
-    await page.locator('#app').screenshot({path:'screenshots/qa-app-'+size.name+'.png',animations:'disabled'});
-    console.log('PASS',size.name, '7 day clicks, keyboard, images, layout, JS');
+    await page.locator('#app').screenshot({path:'screenshots/qa-app-'+engine+'-'+size.name+'.png',animations:'disabled'});
+    console.log('PASS',engine,size.name, '7 day clicks, keyboard, images, layout, JS');
     await page.close();
   }
 }finally{
-  writeFileSync('screenshots/performance-report.json',JSON.stringify({kind:'Chromium CI diagnostics; not real Safari or field Core Web Vitals',results:reports},null,2));
+  writeFileSync('screenshots/performance-report-'+engine+'.json',JSON.stringify({kind:engine+' laboratory diagnostics; not physical iPad Safari or field Core Web Vitals',results:reports},null,2));
   await browser.close();
   await new Promise(ok=>server.close(ok));
 }
