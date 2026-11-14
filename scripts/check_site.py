@@ -176,7 +176,7 @@ def main():
         size = webp_size(path) if path.is_file() else None
         if not size or size[0] < w or size[1] < h:
             errors.append("V58 photo absent/undersized: " + str(path))
-        if key in ("stuffed-peppers", "apple-crumble") and "'" + key + "':'assets/food-v58/" + key + ".webp'" not in html:
+        if key == "stuffed-peppers" and "'" + key + "':'assets/food-v58/" + key + ".webp'" not in html:
             errors.append("V58 photo mapping missing: " + key)
     for dish in ("stuffed-peppers", "zucchini-ricotta", "apple-crumble", "pumpkin-soup"):
         if "v45-photo-" + dish not in html and "'" + dish + "'" not in html:
@@ -191,6 +191,13 @@ def main():
             errors.append("V59 full-size food photograph missing/undersized: " + str(path))
         if "'" + key + "':'assets/food-v59/" + key + ".webp'" not in html:
             errors.append("V59 live photo mapping missing: " + key)
+    # V60: all three improved V58 crops now have higher-resolution replacements.
+    crumble = ASSETS / "food-v60" / "apple-crumble.webp"
+    crumble_dims = webp_size(crumble) if crumble.is_file() else None
+    if not crumble_dims or crumble_dims[0] < 1600 or crumble_dims[1] < 900:
+        errors.append("V60 apple crumble photo missing/undersized")
+    if "'apple-crumble':'assets/food-v60/apple-crumble.webp'" not in html:
+        errors.append("V60 Saturday snack must use full-resolution apple crumble")
     for asset in ("hero-01-fish.webp", "hero-02-steak.webp", "hero-03-constructor.webp"):
         size = webp_size(ASSETS / asset)
         if not size or min(size) < 700:
