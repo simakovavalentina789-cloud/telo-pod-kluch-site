@@ -1,0 +1,35 @@
+name: Assemble approved V45 food photos
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/assemble-v45.yml'
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore approved photo atlas
+        run: |
+          python3 - <<'PY'
+          import base64,hashlib
+          from pathlib import Path
+          parts=sorted(Path("assets/.v45-parts").glob("part*.txt"))
+          assert len(parts)==7, f"Missing image chunks: {len(parts)}"
+          raw=base64.b64decode("".join(p.read_text().strip() for p in parts),validate=True)
+          sha=hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()
+          assert sha=="93ca99404eb9cb2d44cab1aa8ef41719aa0b034a", f"Image verification failed: {sha}"
+          assert raw[:4]==b'RIFF' and raw[8:12]==b'WEBP'
+          dest=Path("assets/v45-food-atlas.webp")
+          dest.write_bytes(raw)
+          print(f"Restored source-based gourmet photo atlas: {len(raw)} bytes")
+          PY
+      - name: Commit image
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/v45-food-atlas.webp
+          git commit -m 'V45 restore verified food atlas for the interactive gourmet dashboard'
+          git push origin HEAD:main
