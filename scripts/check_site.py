@@ -161,6 +161,13 @@ def main():
         errors.append("Saturday dinner must be unique braised beef")
     if "braised-beef-potato:'assets/food-v56/braised-beef-potato.webp'" not in html and "'braised-beef-potato':'assets/food-v56/braised-beef-potato.webp'" not in html:
         errors.append("Saturday dinner photo mapping missing")
+    # V57: dedicated full-resolution replacement for the old oatmeal crop.
+    crisp_oatmeal = ASSETS / "food-v57" / "oatmeal-berries.webp"
+    crisp_size = webp_size(crisp_oatmeal) if crisp_oatmeal.is_file() else None
+    if not crisp_size or crisp_size[0] < 1600 or crisp_size[1] < 900:
+        errors.append("V57 oatmeal image missing or below full Retina resolution")
+    if "'oatmeal-berries':'assets/food-v57/oatmeal-berries.webp'" not in html:
+        errors.append("V57 oatmeal must be mapped to the original full-res asset")
     # V47: validate the image pipeline rather than merely checking file existence.
     atlas_resolution = webp_size(atlas) if atlas.is_file() else None
     if atlas_resolution:
