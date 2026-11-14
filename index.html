@@ -904,6 +904,40 @@ section[id],header[id]{scroll-margin-top:112px}
  .site-header .mobile-contact-cta{min-width:80px;padding:9px}
 }
 
+
+/* V34 — approved pain-to-solution concept recreated as responsive, selectable content */
+.v34-solutions{position:relative;isolation:isolate;overflow:hidden;color:#f4ead4;background:radial-gradient(ellipse at 85% 12%,#174534 0%,transparent 42%),radial-gradient(ellipse at 9% 85%,#154132 0%,transparent 42%),linear-gradient(135deg,#06140f,#08271c 56%,#06140f);border-top:1px solid #9e82414d;border-bottom:1px solid #aa895044}
+.v34-solutions:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,transparent 12%,#d8b86c20 12.15%,transparent 12.3%,transparent 87%,#d8b86c14 87.2%,transparent 87.4%);opacity:.68}
+.v34-shell{position:relative;z-index:1;padding-top:clamp(65px,7vw,105px);padding-bottom:clamp(55px,6vw,85px)}
+.v34-kicker{display:block;color:#c9ab6d;font:700 10px/1.7 var(--sans);letter-spacing:.24em}
+.v34-intro{max-width:1030px;margin-bottom:36px}
+.v34-intro h2{font:400 clamp(43px,5vw,76px)/1.08 var(--serif);letter-spacing:-.04em;color:#f8f1e1;margin:15px 0 10px}
+.v34-intro h2 em{color:#e6bc72;font-weight:400}
+.v34-subheading{font:italic 400 clamp(20px,2.1vw,29px)/1.35 var(--serif);color:#e4bd7d;margin:0 0 13px}
+.v34-introcopy{font:400 clamp(13px,1.16vw,16px)/1.7 var(--sans);max-width:850px;color:#d7dfd5;margin:0}
+.v34-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.v34-card{display:flex;flex-direction:column;min-width:0;padding:clamp(19px,2vw,30px) clamp(17px,1.7vw,25px);border:1px solid #b99c59;border-radius:19px;background:linear-gradient(155deg,#0b3024 0%,#061c16 82%);box-shadow:inset 0 1px 0 #f2cb854d,0 12px 30px #0004;min-height:385px}
+.v34-mark{display:grid;place-items:center;width:76px;height:76px;margin:0 auto 20px;color:#ebc172;background:radial-gradient(circle,#cba65c17,transparent 73%);filter:drop-shadow(0 0 11px #d6a85652)}
+.v34-mark svg{width:66px;height:66px}
+.v34-card h3{font:400 clamp(22px,2vw,31px)/1.15 var(--serif);color:#f2e7d0;text-align:center;letter-spacing:-.035em;margin:0 0 20px;min-height:69px}
+.v34-pain{font:500 12px/1.55 var(--sans);color:#e5ddc9;border-radius:30px;padding:12px 12px;background:#ffffff12;margin:0 0 16px}
+.v34-pain span{color:#efbf70;margin-right:5px}
+.v34-solution{font:400 13px/1.65 var(--sans);color:#e7e7dd;margin:0 0 21px}
+.v34-solution span{color:#efc77c;font-weight:800;margin-right:6px}
+.v34-card>a{display:inline-flex;gap:10px;align-items:center;align-self:flex-start;color:#e8c47f;font:700 11px/1.5 var(--sans);text-decoration:none;margin-top:auto;padding:6px 0;border-bottom:1px solid #dfc27c70}
+.v34-card>a:hover{color:#fff1c8}
+.v34-card>a:focus-visible,.v34-action:focus-visible{outline:2px solid #f6dfa5;outline-offset:5px}
+.v34-footer{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:34px}
+.v34-benefits{display:flex;flex-wrap:wrap;gap:12px}
+.v34-benefits span{border:1px solid #b78b4d80;border-radius:99px;color:#f1e4cc;padding:12px 15px;font:600 11px/1.25 var(--sans);white-space:nowrap}
+.v34-action{display:inline-flex;justify-content:center;align-items:center;gap:22px;text-align:center;white-space:nowrap;text-decoration:none;min-height:58px;padding:15px 26px;border-radius:13px;border:1px solid #f6d9a0;color:#1c2a21;background:linear-gradient(160deg,#fff0c8,#e7c789 46%,#b98949);box-shadow:inset 0 2px 0 #fff9edd6,0 5px 0 #79592f,0 14px 26px #0006;font:800 13px/1.4 var(--sans);transition:transform .18s ease,filter .18s ease}
+.v34-action:hover{color:#152d20;filter:brightness(1.08);transform:translateY(-2px)}
+.v34-action:active{transform:translateY(4px);box-shadow:inset 0 2px 5px #79592f66,0 1px 0 #79592f}
+.v34-note{font:400 10px/1.6 var(--sans);color:#a9b6a9;margin:25px 0 0}
+@media(max-width:1130px){.v34-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v34-card{min-height:335px}.v34-card h3{min-height:0}.v34-footer{flex-direction:column;align-items:stretch}.v34-benefits{justify-content:center}.v34-action{align-self:center}}
+@media(max-width:650px){.v34-grid{grid-template-columns:1fr}.v34-card{min-height:0;padding:24px}.v34-card h3{font-size:29px}.v34-intro h2{font-size:clamp(40px,10vw,56px)}.v34-benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.v34-benefits span{white-space:normal;text-align:center;font-size:10px;padding:11px 8px}.v34-action{width:100%;white-space:normal}.v34-card h3{margin-bottom:14px}.v34-mark{margin-bottom:12px}}
+@media(prefers-reduced-motion:reduce){.v34-action{transition:none}}
+
 </style>
 </head>
 <body>
@@ -948,6 +982,52 @@ section[id],header[id]{scroll-margin-top:112px}
     <div class="story-image-caption"><span>01 /</span> ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС</div>
   </div>
   <div class="story-bottom"><div class="shell"><span>Снижение веса</span><span>Рекомпозиция</span><span>Набор мышц</span><span>Поддержание веса</span></div></div>
+</section>
+
+<section class="v34-solutions" id="solutions" aria-labelledby="solutions-heading">
+  <div class="shell v34-shell">
+    <div class="v34-intro">
+      <span class="v34-kicker">АВТОРСКАЯ СИСТЕМА «ТЕЛО ПОД КЛЮЧ»</span>
+      <h2 id="solutions-heading">Какие задачи <em>решает система</em></h2>
+      <p class="v34-subheading">Не очередная диета. А питание под вашу цель.</p>
+      <p class="v34-introcopy">Персональное питание с учётом вашего образа жизни, привычек и любимых продуктов. Выберите направление и посмотрите, как мы подходим к вашей задаче.</p>
+    </div>
+    <div class="v34-grid">
+      <article class="v34-card">
+        <div class="v34-mark" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none"><rect x="10" y="12" width="50" height="47" rx="12" stroke="currentColor" stroke-width="2"/><path d="M23 31a13 13 0 0 1 24 0M35 29v14m0 0-6-6m6 6 6-6" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Снижение веса</h3>
+        <p class="v34-pain"><span aria-hidden="true">✦</span> Голод, строгие ограничения и повторные попытки</p>
+        <p class="v34-solution"><span aria-hidden="true">✓</span> Индивидуальный расчёт, полноценное меню и привычные продукты — без голодных схем</p>
+        <a href="#situations" aria-label="Подробнее о снижении веса">Подробнее о цели <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="v34-card">
+        <div class="v34-mark" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none"><path d="M26 10c-7 7-10 18-8 28l-7 17m33-45c7 7 10 18 8 28l7 17M24 25c6 6 16 6 22 0M17 41c11 8 25 8 36 0M27 48c4 2 12 2 16 0" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></div>
+        <h3>Рекомпозиция тела</h3>
+        <p class="v34-pain"><span aria-hidden="true">✦</span> Вес меняется, а желаемая форма не появляется</p>
+        <p class="v34-solution"><span aria-hidden="true">✓</span> Питание под работу с составом тела, с учётом белка и активности</p>
+        <a href="#situations" aria-label="Подробнее о рекомпозиции тела">Подробнее о цели <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="v34-card">
+        <div class="v34-mark" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none"><path d="M11 31h8m32 0h8M19 24v14m7-19v24m18-24v24m7-19v14M26 31h18" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <h3>Набор мышц</h3>
+        <p class="v34-pain"><span aria-hidden="true">✦</span> Тренировки идут, а питания для прогресса не хватает</p>
+        <p class="v34-solution"><span aria-hidden="true">✓</span> Индивидуальная энергия и белок для поддержки роста мышц; тренировки — в личной работе</p>
+        <a href="#situations" aria-label="Подробнее о наборе мышц">Подробнее о цели <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="v34-card">
+        <div class="v34-mark" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none"><path d="M35 55c-12-9-20-19-20-31 13 0 22 7 20 31Zm0 0c12-9 20-19 20-31-13 0-22 7-20 31Zm0 0c0-16-2-24 0-40 13 11 13 25 0 40Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+        <h3>Поддержание веса</h3>
+        <p class="v34-pain"><span aria-hidden="true">✦</span> Сложно сохранять привычки без жёстких правил</p>
+        <p class="v34-solution"><span aria-hidden="true">✓</span> Разнообразный рацион и удобный режим, рассчитанные для повседневной жизни</p>
+        <a href="#situations" aria-label="Подробнее о поддержании веса">Подробнее о цели <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+    <div class="v34-footer">
+      <div class="v34-benefits"><span>◈ Индивидуальные расчёты</span><span>♡ Любимые продукты</span><span>◎ Под вашу цель</span><span>▤ План на 7 дней</span></div>
+      <a class="v34-action" href="#formats">Выбрать своё решение <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="v34-note">Конструктор находится в разработке. Индивидуальные результаты не гарантируются. Тренировочные программы доступны отдельно в личной работе.</p>
+  </div>
 </section>
 
 <section class="app-section section-pad v16-constructor" id="app">
