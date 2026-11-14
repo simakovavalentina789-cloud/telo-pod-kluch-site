@@ -1048,6 +1048,45 @@ section[id],header[id]{scroll-margin-top:112px}
 .v39-media-awards>p{font:400 12px/1.6 var(--sans);color:#d3e0d1;margin:0}
 @media(max-width:650px){.v39-media-awards{align-items:flex-start;flex-direction:column;padding:20px}}
 
+
+/* V40 premium editorial distinction — focused, compact, responsive */
+.v40-prestige{display:grid;grid-template-columns:1.14fr 1fr;gap:14px;margin:27px 0 15px;align-items:stretch}
+.v40-prestige a{text-decoration:none}
+.v40-prestige-hero,.v40-prestige-honor{position:relative;overflow:hidden;isolation:isolate;border-radius:18px;padding:29px;display:flex;flex-direction:column;min-width:0;border:1px solid #bda16c}
+.v40-prestige-hero{min-height:505px;color:#f7edda;background:radial-gradient(ellipse at 78% 35%,#37765a 0%,transparent 47%),linear-gradient(145deg,#081a14,#133c2d 62%,#091c16);box-shadow:0 16px 28px #001a1430}
+.v40-prestige-hero::before{content:"";position:absolute;inset:12px;border:1px solid #ceaa6a3c;border-radius:12px;pointer-events:none}
+.v40-prestige-hero::after{content:"";position:absolute;width:280px;height:280px;border:1px solid #c6a56c75;border-radius:50%;right:-85px;top:110px;box-shadow:0 0 0 23px #c6a56c13,0 0 0 50px #c6a56c0d;pointer-events:none}
+.v40-prestige-top{display:flex;justify-content:space-between;gap:14px;align-items:center;font:750 10px/1.6 var(--sans);letter-spacing:.16em;color:#dec08b;position:relative;z-index:1}
+.v40-prestige-emblem{position:absolute;right:50px;top:125px;color:#e6c78855;font:400 112px/1 var(--serif);letter-spacing:-.12em;z-index:0;transform:rotate(-12deg);pointer-events:none}
+.v40-prestige-content{margin-top:auto;position:relative;z-index:1}
+.v40-prestige-content>span:first-child{color:#d5b277;font:700 12px/1.5 var(--sans);letter-spacing:.27em}
+.v40-prestige-content h3,.v40-prestige-honor h3{font:400 clamp(36px,3.3vw,53px)/1.08 var(--serif);letter-spacing:-.045em;margin:12px 0 16px;color:#f8edda}
+.v40-prestige-content h3 em,.v40-prestige-honor h3 em{color:#e6bf78}
+.v40-prestige-content p,.v40-prestige-honor p{font:400 13px/1.75 var(--sans);color:#c4d4c9;max-width:390px;margin:0 0 28px}
+.v40-prestige-link{display:inline-flex;align-items:center;gap:13px;border-bottom:1px solid #dfc08491;padding-bottom:7px;font:750 11px/1.4 var(--sans);color:#efd4a5}
+.v40-prestige-right{display:grid;grid-template-rows:1fr auto;gap:14px;min-width:0}
+.v40-prestige-honor{min-height:344px;background:radial-gradient(circle at 86% 8%,#dac38d66,transparent 46%),linear-gradient(142deg,#2c3d2d,#536144 68%,#21392b);color:#f6e6ce}
+.v40-honor-number{font:400 94px/.9 var(--serif);letter-spacing:-.08em;color:#eed4a4;margin:14px 0 -20px;opacity:.58}
+.v40-honor-number span{font:400 20px/1 var(--serif);vertical-align:top;margin-left:8px}
+.v40-prestige-honor h3{font-size:clamp(30px,2.7vw,42px);position:relative;z-index:1}
+.v40-prestige-honor p{margin-bottom:13px}
+.v40-prestige-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;background:#e1e3d6;border:1px solid #c7d0bd;border-radius:14px;padding:18px 12px}
+.v40-prestige-stats>div{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:6px 10px;border-right:1px solid #c1c6b8}
+.v40-prestige-stats>div:last-child{border-right:0}
+.v40-prestige-stats strong{font:400 31px/1 var(--serif);color:#254b37}
+.v40-prestige-stats span{font:600 10px/1.4 var(--sans);color:#647267}
+.v40-media-bar{border-top:1px solid #c9cfc5;border-bottom:1px solid #c9cfc5;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.v40-media-bar-intro{max-width:225px;flex:0 0 225px}
+.v40-media-bar-intro span{display:block;font:750 9px/1.5 var(--sans);letter-spacing:.14em;color:#829481}
+.v40-media-bar-intro strong{font:400 22px/1.3 var(--serif);color:#2b4937}
+.v40-media-outlets{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:9px}
+.v40-media-outlets a{display:inline-flex;align-items:center;gap:10px;border:1px solid #c1c9bc;border-radius:80px;padding:11px 14px;font:750 11px/1.4 var(--sans);color:#29513d;text-decoration:none;background:#fbfaf5}
+.v40-media-outlets a span{font-size:14px;color:#a28a5f}
+.v40-prestige a:hover,.v40-media-outlets a:hover{filter:brightness(1.08)}
+.v40-prestige a:focus-visible,.v40-media-outlets a:focus-visible{outline:3px solid #c79d60;outline-offset:4px}
+@media(max-width:980px){.v40-prestige{grid-template-columns:1fr}.v40-prestige-hero{min-height:390px}.v40-prestige-right{grid-template-columns:minmax(0,1.5fr) minmax(215px,1fr);grid-template-rows:auto}.v40-prestige-honor{min-height:340px}.v40-prestige-stats{grid-template-columns:1fr;align-self:stretch}.v40-prestige-stats>div{border-right:0;border-bottom:1px solid #c1c6b8;justify-content:center}.v40-prestige-stats>div:last-child{border-bottom:0}.v40-media-bar{align-items:flex-start;flex-direction:column}.v40-media-outlets{justify-content:flex-start}}
+@media(max-width:580px){.v40-prestige-right{grid-template-columns:1fr}.v40-prestige-hero{min-height:420px}.v40-prestige-honor{min-height:340px}.v40-prestige-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.v40-prestige-stats>div{border-right:1px solid #c1c6b8;border-bottom:0;padding:7px}.v40-prestige-stats>div:last-child{border-right:0}.v40-prestige-stats strong{font-size:27px}.v40-prestige-stats span{font-size:9px}.v40-prestige-hero,.v40-prestige-honor{padding:23px}.v40-prestige-content h3{font-size:clamp(36px,9vw,49px)}.v40-media-outlets a{padding:10px 13px}}
+
 </style>
 </head>
 <body>
@@ -1205,19 +1244,41 @@ section[id],header[id]{scroll-margin-top:112px}
 <section class="v38-media" id="media" aria-labelledby="media-heading">
   <div class="shell">
     <div class="v38-media-head"><div><span class="v38-media-eyebrow">ПУБЛИКАЦИИ · ПРОФЕССИОНАЛЬНОЕ ПРИЗНАНИЕ</span><h2 id="media-heading">Экспертность, <em>о которой пишут.</em></h2><p>Моя экспертная позиция представлена в федеральных и региональных СМИ, спортивных изданиях и журналах. Обложка IMPERIAL WOMEN и участие в проектах ТОП-100 — часть моей профессиональной истории.</p></div><div class="v38-media-mark">В СМИ<br><strong>И ЖУРНАЛАХ</strong></div></div>
-    <div class="v38-media-featured">
-      <a href="https://aif.ru/health/secrets/bez-ukolov-ekspert-abramova-rasskazala-kakie-uprazhneniya-omolazhivayut" target="_blank" rel="noopener noreferrer"><span>АРГУМЕНТЫ И ФАКТЫ</span><strong>Физическая активность, красота и возраст</strong><small>Экспертные комментарии Валентины Счастье · 2025</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
-      <a href="https://riamo.ru/news/zdravoohranenie/fitnes-trener-rasskazala-kak-sohranit-spinu-zdorovoj-bez-sportzala/" target="_blank" rel="noopener noreferrer"><span>РИАМО</span><strong>Как сохранить спину здоровой без спортзала</strong><small>Комментарий тренера Валентины Счастье · 2025</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
-      <a href="https://www.sport-express.net/trops/training/reviews/oshibki-v-trenirovkah-privychki-kotorye-meshayut-progressu-pohudeniyu-i-rostu-myshc-i-kak-ih-ispravit-2470153/" target="_blank" rel="noopener noreferrer"><span>СПОРТ-ЭКСПРЕСС</span><strong>Привычки, которые мешают прогрессу в тренировках</strong><small>С участием Валентины Счастье · 2026</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
-      <a href="https://www.sport-express.net/trops/training/reviews/adaptacionnoe-plato-v-trenirovkah-po-fitnesu-pochemu-net-progressa-i-chto-delat-2465599/" target="_blank" rel="noopener noreferrer"><span>СПОРТ-ЭКСПРЕСС</span><strong>Адаптационное плато: почему нет прогресса</strong><small>Экспертный комментарий · 2026</small><span class="v38-media-arrow" aria-hidden="true">↗</span></a>
+    <div class="v40-prestige" aria-label="Профессиональные достижения">
+      <a class="v40-prestige-hero" href="https://dzen.ru/a/aLhPmm17zGDxo58W" target="_blank" rel="noopener noreferrer">
+        <span class="v40-prestige-top"><span>01 / ЖУРНАЛЬНАЯ ОБЛОЖКА</span><span aria-hidden="true">↗</span></span>
+        <div class="v40-prestige-emblem" aria-hidden="true">IW</div>
+        <div class="v40-prestige-content"><span>IMPERIAL WOMEN</span><h3>Лицо обложки<br><em>IMPERIAL WOMEN</em></h3><p>История эксперта и создателя системы «Тело под ключ»</p><span class="v40-prestige-link">Подробнее о публикации <span aria-hidden="true">↗</span></span></div>
+      </a>
+      <div class="v40-prestige-right">
+        <a class="v40-prestige-honor" href="https://t.me/JournalTrigger/86" target="_blank" rel="noopener noreferrer">
+          <span class="v40-prestige-top"><span>02 / ПРОФЕССИОНАЛЬНОЕ ПРИЗНАНИЕ</span><span aria-hidden="true">↗</span></span>
+          <div class="v40-honor-number">100<span aria-hidden="true">✦</span></div>
+          <h3>ТОП-100<br><em>экспертов России</em></h3>
+          <p>Проекты журналов «Триггер» и «РАМКИ»</p>
+          <span class="v40-prestige-link">Открыть публикацию <span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="v40-prestige-stats" aria-label="Профессиональная основа">
+          <div><strong>17+</strong><span>лет практики</span></div>
+          <div><strong>4</strong><span>направления работы с телом</span></div>
+          <div><strong>VS</strong><span>авторская методика</span></div>
+        </div>
+      </div>
     </div>
-    <div class="v39-media-awards"><span>ПРОФЕССИОНАЛЬНОЕ ПРИЗНАНИЕ</span><strong>ТОП-100 экспертов России</strong><p>Участие в проектах журналов «Триггер» и «РАМКИ». Лицо обложки IMPERIAL WOMEN.</p></div>
-    <div class="v38-media-honors">
-      <div><span>ТОП-100 ЭКСПЕРТОВ РОССИИ · ЖУРНАЛ «ТРИГГЕР»</span><strong>Валентина Счастье — участник ТОП-100</strong><p>Экспертный проект журнала «Триггер» и публикация об авторской методике.</p><a href="https://trigger-journal.ru/wp-content/uploads/2026/04/%D0%A2%D1%80%D0%B8%D0%B3%D0%B3%D0%B5%D1%80_%D0%BC%D0%B0%D1%80%D1%82_26_%D0%B2%D0%B5%D0%B1.pdf" target="_blank" rel="noopener noreferrer">Открыть публикацию <span aria-hidden="true">↗</span></a></div>
-      <div><span>IMPERIAL WOMEN · ЛИЦО ОБЛОЖКИ</span><strong>Валентина Счастье — лицо обложки</strong><p>Публикация в журнале IMPERIAL WOMEN.</p><a href="https://dzen.ru/a/aLhPmm17zGDxo58W" target="_blank" rel="noopener noreferrer">Материал об участии <span aria-hidden="true">↗</span></a></div>
+    <div class="v40-media-bar" aria-label="Избранные публикации">
+      <div class="v40-media-bar-intro"><span>ЭКСПЕРТНЫЕ ПУБЛИКАЦИИ</span><strong>Мой опыт — на страницах СМИ</strong></div>
+      <div class="v40-media-outlets">
+        <a href="https://aif.ru/health/secrets/bez-ukolov-ekspert-abramova-rasskazala-kakie-uprazhneniya-omolazhivayut" target="_blank" rel="noopener noreferrer">АиФ <span aria-hidden="true">↗</span></a>
+        <a href="https://riamo.ru/news/zdravoohranenie/fitnes-trener-rasskazala-kak-sohranit-spinu-zdorovoj-bez-sportzala/" target="_blank" rel="noopener noreferrer">РИАМО <span aria-hidden="true">↗</span></a>
+        <a href="https://www.sport-express.ru/trops/training/reviews/oshibki-v-trenirovkah-privychki-kotorye-meshayut-progressu-pohudeniyu-i-rostu-myshc-i-kak-ih-ispravit-2470153/" target="_blank" rel="noopener noreferrer">Спорт-Экспресс <span aria-hidden="true">↗</span></a>
+        <a href="https://mir24.tv/articles/16650624/kak-izmenit-sistemu-trenirovok-v-noyabre-poshagovoe-rukovodstvo" target="_blank" rel="noopener noreferrer">МИР 24 <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
-    <details class="v38-media-more"><summary>Другие публикации и упоминания <span aria-hidden="true">+</span></summary>
+    <details class="v38-media-more"><summary>Все публикации и журнальные проекты <span aria-hidden="true">+</span></summary>
       <div class="v38-media-moregrid">
+        <a href="https://www.sport-express.ru/trops/training/reviews/adaptacionnoe-plato-v-trenirovkah-po-fitnesu-pochemu-net-progressa-i-chto-delat-2465599/" target="_blank" rel="noopener noreferrer">Спорт-Экспресс · адаптационное плато <span aria-hidden="true">↗</span></a>
+        <a href="https://trigger-journal.ru/wp-content/uploads/2026/04/%D0%A2%D1%80%D0%B8%D0%B3%D0%B3%D0%B5%D1%80_%D0%BC%D0%B0%D1%80%D1%82_26_%D0%B2%D0%B5%D0%B1.pdf" target="_blank" rel="noopener noreferrer">Журнал «Триггер» · номер с публикацией <span aria-hidden="true">↗</span></a>
+
         <a href="https://murmansk.mk.ru/social/2025/07/28/ekspert-sakhar-i-belaya-muka-glavnyy-vrag-sustavov-severyan.html" target="_blank" rel="noopener noreferrer">Московский комсомолец <span aria-hidden="true">↗</span></a>
         <a href="https://www.kp.ru/woman/krasota/kak-zhenshhine-vyglyadet-molozhe-svoikh-let/" target="_blank" rel="noopener noreferrer">Комсомольская правда <span aria-hidden="true">↗</span></a>
         <a href="https://mir24.tv/articles/16650624/kak-izmenit-sistemu-trenirovok-v-noyabre-poshagovoe-rukovodstvo" target="_blank" rel="noopener noreferrer">МИР 24 <span aria-hidden="true">↗</span></a>
