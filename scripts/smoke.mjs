@@ -113,6 +113,37 @@ try {
       if(p.image)assert.ok(p.image.complete&&p.image.naturalWidth>=1200,'high-res meal photo must load');
       else assert.fail('A meal photo must never fall back to the old atlas');
     }
+    // Visitor journey: navigation, credibility, contact and hero controls.
+    // These tests do not open external Telegram pages or simulate a purchase.
+    const contactLinks=page.locator('a[href="https://t.me/Valysha_Schaste"]');
+    assert.ok(await contactLinks.count()>=3,'visible contact paths are wired to Telegram');
+    assert.equal(await page.locator('#formats .v36-path').count(),2,'future app and personal consultation are distinct paths');
+    const pathLabels=await page.locator('#formats .v36-path-status').allTextContents();
+    assert.ok(pathLabels.some(label=>label.includes('Готовится к запуску')),'app is not falsely presented as available');
+    assert.ok(pathLabels.some(label=>label.includes('доступно сейчас')),'current personal service is identified');
+    const faq=page.locator('#questions details').first();
+    await faq.locator('summary').click();
+    assert.ok(await faq.evaluate(node=>node.open),'FAQ expands');
+    await faq.locator('summary').click();
+    assert.ok(!(await faq.evaluate(node=>node.open)),'FAQ closes');
+    const firstHero=await page.locator('#hero-title').innerText();
+    await page.locator('#story-next').click();
+    assert.notEqual(await page.locator('#hero-title').innerText(),firstHero,'hero next control changes presentation');
+    await page.locator('#story-prev').click();
+    assert.equal(await page.locator('#hero-title').innerText(),firstHero,'hero previous restores presentation');
+    if(await page.locator('.menu-toggle').isVisible()){
+      const menuToggle=page.locator('.menu-toggle');
+      await menuToggle.click();
+      assert.equal(await menuToggle.getAttribute('aria-expanded'),'true','mobile menu opens');
+      assert.equal(await page.locator('#mobile-nav').isVisible(),true,'mobile menu content visible');
+      await page.keyboard.press('Escape');
+      assert.equal(await menuToggle.getAttribute('aria-expanded'),'false','Escape closes menu');
+      assert.equal(await page.locator('#mobile-nav').isVisible(),false,'mobile menu hidden');
+    }
+    // Removed editorial disclaimers must not reappear after deployment.
+    const unwanted=await page.evaluate(()=>document.body.innerText);
+    assert.ok(!unwanted.includes('Стандарт качества:'),'obsolete quality disclaimer removed');
+    assert.ok(!unwanted.includes('это концепция дизайна, а не работающая версия приложения'),'obsolete demo disclaimer removed');
     const metrics=await page.evaluate(()=>({
       scrollWidth:document.documentElement.scrollWidth,
       innerWidth:window.innerWidth,
