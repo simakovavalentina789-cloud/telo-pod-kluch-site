@@ -56,9 +56,6 @@ jobs:
           "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=6000 --window-size=390,3900 --screenshot=screenshots/mobile.png "$PAGE"
           "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=6000 --window-size=820,3350 --screenshot=screenshots/ipad.png "$PAGE"
           "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=6000 --window-size=1440,2300 --screenshot=screenshots/desktop.png "$PAGE"
-          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=7000 --window-size=1440,1050 --screenshot=screenshots/app-desktop.png "$PAGE#app"
-          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=7000 --window-size=820,1180 --screenshot=screenshots/app-ipad.png "$PAGE#app"
-          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --virtual-time-budget=7000 --window-size=390,844 --screenshot=screenshots/app-mobile.png "$PAGE#app"
       - name: Upload browser preview screenshots
         if: always()
         uses: actions/upload-artifact@v4
