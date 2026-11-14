@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://simakovavalentina789-cloud.github.io/telo-pod-kluch-site/sitemap.xml
