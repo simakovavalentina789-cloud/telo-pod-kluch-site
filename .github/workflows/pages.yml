@@ -46,6 +46,10 @@ jobs:
           test -s _site/assets/case-maintain.webp
           test -s _site/assets/case-recomposition.webp
           touch _site/.nojekyll
+      - name: Functional browser acceptance — seven days, photos and responsive layouts
+        run: |
+          npm install --no-save --ignore-scripts playwright-core
+          node scripts/smoke.mjs
       - name: Capture responsive previews and food gallery (required)
         run: |
           CHROME="$(command -v google-chrome || command -v chromium || true)"
