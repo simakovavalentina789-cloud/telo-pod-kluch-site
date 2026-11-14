@@ -62,6 +62,16 @@ def main():
     parser = SiteParser()
     parser.feed(html)
     errors = []
+    # Site editorial policy: no numbered chapter/card captions (01 / ..., etc.).
+    # Keep legitimate statistics, nutrition quantities and menu day controls.
+    visible_markup = html.split("<body", 1)[-1].split("<script>", 1)[0]
+    numbered_captions = re.findall(
+        r"<(?:span|div|p|small|strong|a|h[1-6])\\b[^>]*>(?:0[1-9]\\s*/|КЕЙС\\s*0[1-9]\\b)",
+        visible_markup,
+        flags=re.I,
+    )
+    if numbered_captions:
+        errors.append(f"Decorative numbered captions must not reappear: {len(numbered_captions)}")
     for anchor in parser.anchors:
         if anchor.startswith("#") and anchor[1:] not in parser.ids:
             errors.append("Broken anchor: " + anchor)
