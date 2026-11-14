@@ -1140,6 +1140,67 @@ section[id],header[id]{scroll-margin-top:112px}
 @media(max-width:900px){.v44-approved-caption{align-items:flex-start;flex-wrap:wrap}.v44-approved-caption>span{flex-basis:100%}.v44-approved-caption p{flex-basis:100%}.v44-approved-caption a{flex:0 1 auto}}
 @media(max-width:580px){.v44-approved-preview{margin-top:18px;border-radius:12px}.v44-approved-caption{padding:17px;gap:12px}.v44-approved-caption a{width:100%;justify-content:center}}
 
+
+/* V45 — fully responsive premium live HTML dashboard, not a flattened screenshot */
+.v45-frame{margin-top:30px;background:#f6f4ed;color:#193b2c;border:1px solid #d4d3c7;border-radius:18px;overflow:hidden;box-shadow:0 22px 55px #0620162c}
+.v45-topline{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#102b20;color:#e7ddc7;padding:17px clamp(18px,3vw,35px);font:750 10px/1.5 var(--sans);letter-spacing:.13em}
+.v45-topline>span:last-child{color:#b3c4b4}.v45-gem{color:#e1bd77;font-size:20px;vertical-align:middle;margin-right:6px}
+.v45-gallery-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:clamp(25px,3vw,43px) clamp(20px,3vw,35px) 23px}
+.v45-kicker{font:800 10px/1.6 var(--sans);letter-spacing:.15em;color:#82977d}
+.v45-gallery-heading h3,.v45-week-top h3{font:400 clamp(34px,3.2vw,49px)/1.12 var(--serif);letter-spacing:-.04em;color:#173d2c;margin:11px 0 0}
+.v45-gallery-heading h3 em,.v45-week-top h3 em{color:#957545}
+.v45-gallery-heading p{font:400 13px/1.7 var(--sans);color:#65796b;max-width:330px;margin:0}
+.v45-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;padding:0 clamp(20px,3vw,35px) clamp(26px,3vw,39px)}
+.v45-gallery-card{background:#102d21;border:1px solid #37644e;border-radius:13px;overflow:hidden;min-width:0;box-shadow:0 10px 17px #123c2420}
+.v45-gallery-photo{height:clamp(155px,14.5vw,216px);background-position:center;background-size:cover;position:relative}
+.v45-gallery-photo::after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#0d1f17b0);pointer-events:none}
+.v45-photo-index{position:absolute;z-index:1;bottom:13px;left:16px;font:800 10px/1.3 var(--sans);letter-spacing:.07em;color:#fff0cf;text-shadow:0 2px 7px #000}
+.v45-gallery-copy{padding:17px 18px 22px;color:#f4e9d7}
+.v45-gallery-copy h4{font:400 clamp(22px,2vw,29px)/1.22 var(--serif);margin:0 0 8px;color:inherit}
+.v45-gallery-copy p{font:400 11px/1.65 var(--sans);color:#b2c9b9;margin:0}
+.v45-photo-crab,.v45-photo-omelet,.v45-photo-chicken,.v45-photo-dessert{background-image:url("assets/v45-food-atlas.webp");background-size:200% 200%}
+.v45-photo-crab{background-position:left top}.v45-photo-omelet{background-position:right top}
+.v45-photo-chicken{background-position:left bottom}.v45-photo-dessert{background-position:right bottom}
+.v45-photo-steak{background-image:url("assets/hero-02-steak.webp");background-position:50% 52%}
+.v45-photo-salmon{background-image:url("assets/hero-01-fish.webp");background-position:50% 57%}
+.v45-photo-composition{background-image:url("assets/hero-03-constructor.webp");background-position:center}
+.v45-week{margin:0 clamp(20px,3vw,35px);padding:clamp(20px,3vw,30px);border:1px solid #c7d0bf;border-radius:13px;background:linear-gradient(120deg,#ebeee7,#e9e9df)}
+.v45-week-top{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:19px}
+.v45-week-top h3{font-size:clamp(31px,3vw,47px)}
+.v45-week-tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;max-width:400px}
+.v45-week-tags span{border:1px solid #c7b48c;color:#5c715c;padding:9px 11px;border-radius:100px;font:700 10px/1.3 var(--sans);white-space:nowrap;background:#f8f6ec}
+.v45-day-tabs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;margin-bottom:17px}
+.v45-day-tabs button{min-width:0;min-height:45px;padding:11px 5px;font:800 12px/1 var(--sans);background:#f9f7ef;border:1px solid #cdd5cc;color:#54715e;border-radius:8px;cursor:pointer;transition:background .16s ease,box-shadow .16s ease,color .16s ease}
+.v45-day-tabs button:hover{border-color:#92aa93;background:#e1e9de}
+.v45-day-tabs button.is-active{background:#173d2d;color:#f8e7bc;border-color:#c09b61;box-shadow:inset 0 0 0 1px #f0d8a640,0 3px 0 #997542}
+.v45-day-tabs button:focus-visible{outline:3px solid #a67b42;outline-offset:3px}
+.v45-menu-panel{background:#133e2c;padding:20px 16px 16px;border-radius:13px;color:#f5eddf}
+.v45-menu-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 7px 16px;font:800 10px/1.4 var(--sans);letter-spacing:.12em;color:#dfc28b}
+.v45-menu-head>span:last-child{font-size:9px;color:#a9c3ae}
+.v45-meals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.v45-meal{min-width:0;background:#f6f3e9;color:#243b2d;border:1px solid #e6d4ae;border-radius:11px;overflow:hidden;display:flex;flex-direction:column}
+.v45-meal-photo{height:clamp(145px,12vw,185px);background-size:cover;position:relative}
+.v45-meal-photo.v45-photo-crab,.v45-meal-photo.v45-photo-omelet,.v45-meal-photo.v45-photo-chicken,.v45-meal-photo.v45-photo-dessert{background-size:200% 200%}
+.v45-meal-photo span{position:absolute;left:10px;top:10px;display:inline-flex;border-radius:6px;background:#0d281ee0;color:#f4dfaa;padding:7px 9px;font:800 9px/1.2 var(--sans);letter-spacing:.08em}
+.v45-meal-body{padding:14px 13px 19px;display:flex;flex-direction:column;gap:8px;flex:1}
+.v45-meal-body h4{font:400 clamp(19px,1.65vw,25px)/1.15 var(--serif);letter-spacing:-.02em;color:#203f2d;margin:0}
+.v45-meal-body p{font:400 11px/1.6 var(--sans);color:#708375;margin:auto 0 0}
+.v45-benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:14px clamp(20px,3vw,35px) 0}
+.v45-benefits>div{background:#123c2a;color:#f3e7d2;border-radius:12px;padding:25px}
+.v45-benefits>div:last-child{background:#e6e4d8;color:#173c2b;border:1px solid #d2d1c3}
+.v45-benefits span{font:800 10px/1.3 var(--sans);letter-spacing:.13em;color:#d8be87}
+.v45-benefits>div:last-child span{color:#81917c}
+.v45-benefits h4{font:400 clamp(23px,2.2vw,32px)/1.2 var(--serif);margin:10px 0}
+.v45-benefits p{font:400 12px/1.7 var(--sans);opacity:.8;margin:0}
+.v45-foot{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:23px clamp(20px,3vw,35px) 26px}
+.v45-foot p{font:400 11px/1.6 var(--sans);max-width:760px;color:#677969;margin:0}
+.v45-foot a{display:inline-flex;align-items:center;justify-content:center;gap:9px;flex:0 0 auto;text-decoration:none;background:linear-gradient(150deg,#fff0c7,#d8b57b,#b58c4b);color:#233b2a;border:1px solid #f4dcab;box-shadow:inset 0 2px #fff7e4,0 4px #80643c,0 12px 19px #0003;border-radius:11px;padding:15px 20px;font:800 12px/1.4 var(--sans)}
+.v45-foot a:hover{filter:brightness(1.06)}.v45-foot a:focus-visible{outline:3px solid #99713b;outline-offset:4px}
+@media(max-width:1100px){.v45-gallery-heading,.v45-week-top{align-items:flex-start;flex-direction:column}.v45-week-tags{justify-content:flex-start;max-width:none}.v45-meals{grid-template-columns:repeat(2,minmax(0,1fr))}.v45-meal-photo{height:190px}}
+@media(max-width:700px){.v45-gallery{grid-template-columns:1fr}.v45-gallery-photo{height:240px}.v45-gallery-heading h3{font-size:40px}.v45-week{padding:18px 12px}.v45-week-top h3{font-size:35px}.v45-week-tags{gap:5px}.v45-week-tags span{font-size:9px}.v45-meals{grid-template-columns:1fr}.v45-meal-photo{height:230px}.v45-benefits{grid-template-columns:1fr}.v45-foot{align-items:stretch;flex-direction:column}.v45-foot a{width:100%}.v45-menu-head{flex-wrap:wrap}.v45-topline{flex-wrap:wrap}.v45-day-tabs{gap:4px}.v45-day-tabs button{min-height:43px;font-size:11px}}
+@media(max-width:420px){.v45-gallery-heading h3{font-size:35px}.v45-week-top h3{font-size:31px}.v45-gallery-photo{height:200px}.v45-meal-photo{height:205px}.v45-day-tabs button{font-size:10px}.v45-menu-panel{padding:15px 10px 10px}}
+@media(prefers-reduced-motion:reduce){.v45-day-tabs button{transition:none}}
+
 </style>
 </head>
 <body>
@@ -1348,18 +1409,35 @@ section[id],header[id]{scroll-margin-top:112px}
   </div>
 </section>
 
-<section class="app-section section-pad v16-constructor" id="app">
-  <div class="shell">
-    <div class="v16-section-meta"><span>06 / ВНУТРИ КОНСТРУКТОРА</span><span>ПЕРСОНАЛИЗАЦИЯ · РАСЧЁТЫ · ГАСТРОНОМИЯ</span></div>
-    <div class="v16-intro">
-      <div><h2>Не диета по шаблону.<br><em>Питание, собранное под вас.</em></h2></div>
-      <div class="v16-intro-aside"><p>В основе конструктора — индивидуальный расчёт энергии и нутриентов, цель и ваши любимые продукты. Всё это объединяется в меню на семь дней с рецептурами и покупками. Не случайная подборка блюд, а последовательная система.</p><div class="v16-release-note"><span class="v16-status-pulse"></span> Клиентская версия проходит проверку перед запуском</div></div>
+<section class="app-section section-pad v16-constructor" id="app" aria-labelledby="v45-main-title">
+ <div class="shell">
+  <div class="v16-section-meta"><span>06 / ВНУТРИ КОНСТРУКТОРА</span><span>ВКУС · ПЕРСОНАЛИЗАЦИЯ · ПОНЯТНЫЙ ПЛАН</span></div>
+  <div class="v16-intro"><div><h2 id="v45-main-title">Питание, в которое<br><em>хочется влюбиться.</em></h2></div><div class="v16-intro-aside"><p>Не скучный список продуктов и не случайное меню от ИИ. В основе — отбор ингредиентов, индивидуальные расчёты и рецепты, которые хочется готовить и есть.</p><div class="v16-release-note"><span class="v16-status-pulse"></span> Приложение проходит проверку перед запуском</div></div></div>
+  <div class="v45-frame">
+   <div class="v45-topline"><span><span class="v45-gem" aria-hidden="true">✦</span> ТЕЛО ПОД КЛЮЧ / ГАСТРОНОМИЯ</span><span>ДИЗАЙН-КОНЦЕПТ ПРИЛОЖЕНИЯ</span></div>
+   <div class="v45-gallery-heading"><div><span class="v45-kicker">СНАЧАЛА ВКУС. ЗАТЕМ — УДОБНАЯ СИСТЕМА.</span><h3>Еда, которую <em>хочется готовить.</em></h3></div><p>Знакомые продукты. Авторские сочетания. Подача, достойная хорошего ресторана — без сложных диетических ритуалов.</p></div>
+   <div class="v45-gallery">
+    <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-crab" role="img" aria-label="Ресторанный салат с мясом краба, манго, авокадо и зеленью, рядом ягодный десерт"><span class="v45-photo-index">01 / ИЗЫСКАННЫЙ САЛАТ</span></div><div class="v45-gallery-copy"><h4>Краб, манго и авокадо</h4><p>Нежное мясо краба, фрукты и свежая зелень</p></div></article>
+    <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-steak" role="img" aria-label="Говяжий стейк в ресторанной подаче с овощами"><span class="v45-photo-index">02 / ЛЮБИМЫЕ ПРОДУКТЫ</span></div><div class="v45-gallery-copy"><h4>Стейк с овощами</h4><p>Питательно, красиво и без бессмысленных запретов</p></div></article>
+    <article class="v45-gallery-card"><div class="v45-gallery-photo v45-photo-composition" role="img" aria-label="Несколько ресторанных блюд из овощей, рыбы и других продуктов"><span class="v45-photo-index">03 / ПРОДУМАННЫЙ СОСТАВ</span></div><div class="v45-gallery-copy"><h4>Разнообразие каждый день</h4><p>Блюда под вашу цель и вкусовые предпочтения</p></div></article>
+   </div>
+   <div class="v45-week">
+    <div class="v45-week-top"><div><span class="v45-kicker">ВОТ КАК МОЖЕТ ВЫГЛЯДЕТЬ ВАША НЕДЕЛЯ</span><h3>Семь дней <em>вкусного питания</em></h3></div><div class="v45-week-tags"><span>◈ Под вашу цель</span><span>♧ Разнообразные блюда</span><span>▤ Рецепты и закупки</span></div></div>
+    <div class="v45-day-tabs" role="group" aria-label="Переключить день демонстрационного меню"><button class="is-active" data-v45-day="0" aria-pressed="true" type="button">ПН</button><button data-v45-day="1" aria-pressed="false" type="button">ВТ</button><button data-v45-day="2" aria-pressed="false" type="button">СР</button><button data-v45-day="3" aria-pressed="false" type="button">ЧТ</button><button data-v45-day="4" aria-pressed="false" type="button">ПТ</button><button data-v45-day="5" aria-pressed="false" type="button">СБ</button><button data-v45-day="6" aria-pressed="false" type="button">ВС</button></div>
+    <div class="v45-menu-panel">
+     <div class="v45-menu-head"><span id="v45-weekday" aria-live="polite">ПОНЕДЕЛЬНИК · ПРИМЕР МЕНЮ</span><span>4 ПРИЁМА ПИЩИ · ДИЗАЙН-КОНЦЕПТ</span></div>
+     <div class="v45-meals" id="v45-meals">
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-omelet" data-v45-photo role="img" aria-label="Омлет с зеленью и томатами"><span>ЗАВТРАК</span></div><div class="v45-meal-body"><h4 data-v45-name>Омлет с зеленью и томатами</h4><p data-v45-note>Нежный, с овощами и ароматными травами</p></div></article>
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-chicken" data-v45-photo role="img" aria-label="Куриное филе с киноа и овощами"><span>ОБЕД</span></div><div class="v45-meal-body"><h4 data-v45-name>Курица с киноа и овощами</h4><p data-v45-note>Сытный обед с яркой подачей</p></div></article>
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-salmon" data-v45-photo role="img" aria-label="Лосось с овощами"><span>УЖИН</span></div><div class="v45-meal-body"><h4 data-v45-name>Лосось с овощами</h4><p data-v45-note>Тёплое блюдо с зеленью</p></div></article>
+      <article class="v45-meal"><div class="v45-meal-photo v45-photo-dessert" data-v45-photo role="img" aria-label="Ягодный творожный десерт"><span>ДЕСЕРТ / ПЕРЕКУС</span></div><div class="v45-meal-body"><h4 data-v45-name>Творожный мусс с ягодами</h4><p data-v45-note>Красивое завершение дня</p></div></article>
+     </div>
     </div>
-    <figure class="v44-approved-preview" aria-labelledby="v44-approved-title">
-      <div class="v44-approved-image"><img src="assets/v44-approved-menu.webp" alt="Утверждённый премиальный макет конструктора «Тело под ключ»: салат из краба и манго, говяжий стейк, гастрономическая витрина, меню на семь дней с фотографиями омлета, курицы с киноа, лосося с овощами и ягодного десерта" width="700" height="525" loading="lazy" decoding="async"></div>
-      <figcaption class="v44-approved-caption" id="v44-approved-title"><span>УТВЕРЖДЁННЫЙ ВИЗУАЛ БУДУЩЕГО ПРИЛОЖЕНИЯ</span><p>На изображении представлен дизайн-концепт, а не действующий личный кабинет. Блюда и значения калорийности иллюстративны: персональные порции и расчёты будут формироваться в приложении после запуска.</p><a href="#formats">Выбрать формат работы <span aria-hidden="true">↗</span></a></figcaption>
-    </figure>
+   </div>
+   <div class="v45-benefits"><div><span>01 / РЕЦЕПТЫ</span><h4>Не просто название блюда.</h4><p>Состав, порции и понятные шаги приготовления в одной системе.</p></div><div><span>02 / ПОКУПКИ</span><h4>Вся неделя. Один список.</h4><p>Продукты для выбранных блюд — без ручного подсчёта каждой покупки.</p></div></div>
+   <div class="v45-foot"><p><strong>Важно:</strong> это концепция дизайна, а не работающая версия приложения. Фото и сочетания блюд иллюстрируют стиль гастрономической библиотеки; расчёты и персональные порции появятся после завершения клиентских проверок.</p><a href="#formats">Выбрать свой формат <span aria-hidden="true">↗</span></a></div>
   </div>
+ </div>
 </section>
 
 
@@ -1425,6 +1503,38 @@ section[id],header[id]{scroll-margin-top:112px}
     if (!pathAnswer) return;
     pathAnswer.hidden=false;
     pathAnswer.innerHTML=btn.dataset.path==='healthy' ? '<strong>Ваш путь — приложение</strong>Индивидуальный план питания на семь дней под цель и вкусы. Тренировки в приложении не назначаются. Клиентская версия пока готовится к запуску. <a href="#app">Посмотреть демонстрацию ↗</a>' : '<strong>Ваш путь — личная работа</strong>Питание и, по необходимости, индивидуальный подбор посильной физической нагрузки. Если есть заболевания или симптомы, учитываются медицинские рекомендации и при необходимости требуется консультация врача. <a href="#formats">Посмотреть форматы ↗</a>';
+  }));
+  // V45 — genuine interactive design demonstration. No fabricated nutrients.
+  const v45Days=[
+   [['Омлет с зеленью и томатами','Нежный, с овощами и ароматными травами','omelet'],['Курица с киноа и овощами','Сытный обед с яркой подачей','chicken'],['Лосось с овощами','Тёплое блюдо с зеленью','salmon'],['Творожный мусс с ягодами','Красивое завершение дня','dessert']],
+   [['Фриттата с печёным перцем','Пряные травы и сочные овощи','omelet'],['Стейк с овощным гарниром','Любимые продукты в ресторанной подаче','steak'],['Салат с крабом и манго','Свежесть, яркие вкусы и авокадо','crab'],['Ягодный десерт','Лёгкое сочетание сливочной основы и ягод','dessert']],
+   [['Омлет с томатами и зеленью','Красочное начало дня','omelet'],['Салат с крабом и авокадо','Изящная подача и любимые ингредиенты','crab'],['Стейк с сезонными овощами','Насыщенный вкус и свежая зелень','steak'],['Творожный мусс с ягодами','Десерт без ощущения диеты','dessert']],
+   [['Запечённый омлет с овощами','Завтрак с мягкой текстурой','omelet'],['Курица с крупой и зеленью','Продуманный сытный обед','chicken'],['Лосось с овощным гарниром','Гастрономия привычных продуктов','salmon'],['Ягодный десерт','Красиво и вкусно','dessert']],
+   [['Фриттата с зеленью','Сытный завтрак из обычных продуктов','omelet'],['Говяжий стейк с овощами','Ресторанная подача без сложных правил','steak'],['Крабовый салат с манго','Свежесть и выразительная текстура','crab'],['Мусс с ягодами','Десерт в конце насыщенного дня','dessert']],
+   [['Омлет с овощами','Лёгкость приготовления и любимый вкус','omelet'],['Курица с киноа и зеленью','Полноценный обед','chicken'],['Стейк с овощным гарниром','Понятные продукты в красивой подаче','steak'],['Творожно-ягодный десерт','Нежная текстура и ягодный вкус','dessert']],
+   [['Омлет с травами и томатами','Спокойный вкусный завтрак','omelet'],['Салат с крабом и манго','Изысканная подача знакомых ингредиентов','crab'],['Лосось с овощами','Яркое завершение недели','salmon'],['Ягодный мусс','Десерт, который хочется повторить','dessert']]
+  ];
+  const v45Names=['ПОНЕДЕЛЬНИК','ВТОРНИК','СРЕДА','ЧЕТВЕРГ','ПЯТНИЦА','СУББОТА','ВОСКРЕСЕНЬЕ'];
+  const v45ClassNames=['v45-photo-omelet','v45-photo-chicken','v45-photo-salmon','v45-photo-dessert','v45-photo-steak','v45-photo-crab'];
+  document.querySelectorAll('[data-v45-day]').forEach(button=>button.addEventListener('click',()=>{
+    const index=Number(button.dataset.v45Day);
+    if(!Number.isInteger(index)||!v45Days[index])return;
+    document.querySelectorAll('[data-v45-day]').forEach(b=>{
+      b.classList.toggle('is-active',b===button);
+      b.setAttribute('aria-pressed',String(b===button));
+    });
+    const dayLabel=document.getElementById('v45-weekday');
+    if(dayLabel) dayLabel.textContent=v45Names[index]+' · ПРИМЕР МЕНЮ';
+    const meals=document.querySelectorAll('#v45-meals .v45-meal');
+    meals.forEach((el,i)=>{
+      const [name,note,photo]=v45Days[index][i];
+      el.querySelector('[data-v45-name]').textContent=name;
+      el.querySelector('[data-v45-note]').textContent=note;
+      const visual=el.querySelector('[data-v45-photo]');
+      visual.classList.remove(...v45ClassNames);
+      visual.classList.add('v45-photo-'+photo);
+      visual.setAttribute('aria-label',name+'. Иллюстративная фотография.');
+    });
   }));
   const story = [
     {count:'01 — 04',title:'Устали начинать<br><em>с понедельника?</em>',lead:'Персональное питание с учётом вашей цели, образа жизни, вкусов и реальных возможностей. Без жёстких запретов и чувства вины.',main:'assets/hero-emotional.webp',caption:'ОБРАЗ ПЕРЕМЕН · НЕ КЛИЕНТСКИЙ КЕЙС',alt:'Символический художественный образ двух женщин, отражающий усталость от ограничений и уверенность. Не реальное клиентское до и после'},
