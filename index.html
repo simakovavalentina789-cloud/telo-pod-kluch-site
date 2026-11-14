@@ -998,28 +998,28 @@ section[id],header[id]{scroll-margin-top:112px}
         <h3>Снижение веса</h3>
         <p class="v34-pain"><span aria-hidden="true">✦</span> Голод, строгие ограничения и повторные попытки</p>
         <p class="v34-solution"><span aria-hidden="true">✓</span> Индивидуальный расчёт, полноценное меню и привычные продукты — без голодных схем</p>
-        <a href="#situations" aria-label="Подробнее о снижении веса">Подробнее о цели <span aria-hidden="true">↗</span></a>
+        <a href="#situations" data-solution-goal="loss" aria-label="Подробнее о снижении веса">Подробнее о цели <span aria-hidden="true">↗</span></a>
       </article>
       <article class="v34-card">
         <div class="v34-mark" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none"><path d="M26 10c-7 7-10 18-8 28l-7 17m33-45c7 7 10 18 8 28l7 17M24 25c6 6 16 6 22 0M17 41c11 8 25 8 36 0M27 48c4 2 12 2 16 0" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></div>
         <h3>Рекомпозиция тела</h3>
         <p class="v34-pain"><span aria-hidden="true">✦</span> Вес меняется, а желаемая форма не появляется</p>
         <p class="v34-solution"><span aria-hidden="true">✓</span> Питание под работу с составом тела, с учётом белка и активности</p>
-        <a href="#situations" aria-label="Подробнее о рекомпозиции тела">Подробнее о цели <span aria-hidden="true">↗</span></a>
+        <a href="#situations" data-solution-goal="recomp" aria-label="Подробнее о рекомпозиции тела">Подробнее о цели <span aria-hidden="true">↗</span></a>
       </article>
       <article class="v34-card">
         <div class="v34-mark" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none"><path d="M11 31h8m32 0h8M19 24v14m7-19v24m18-24v24m7-19v14M26 31h18" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></div>
         <h3>Набор мышц</h3>
         <p class="v34-pain"><span aria-hidden="true">✦</span> Тренировки идут, а питания для прогресса не хватает</p>
         <p class="v34-solution"><span aria-hidden="true">✓</span> Индивидуальная энергия и белок для поддержки роста мышц; тренировки — в личной работе</p>
-        <a href="#situations" aria-label="Подробнее о наборе мышц">Подробнее о цели <span aria-hidden="true">↗</span></a>
+        <a href="#situations" data-solution-goal="muscle" aria-label="Подробнее о наборе мышц">Подробнее о цели <span aria-hidden="true">↗</span></a>
       </article>
       <article class="v34-card">
         <div class="v34-mark" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none"><path d="M35 55c-12-9-20-19-20-31 13 0 22 7 20 31Zm0 0c12-9 20-19 20-31-13 0-22 7-20 31Zm0 0c0-16-2-24 0-40 13 11 13 25 0 40Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
         <h3>Поддержание веса</h3>
         <p class="v34-pain"><span aria-hidden="true">✦</span> Сложно сохранять привычки без жёстких правил</p>
         <p class="v34-solution"><span aria-hidden="true">✓</span> Разнообразный рацион и удобный режим, рассчитанные для повседневной жизни</p>
-        <a href="#situations" aria-label="Подробнее о поддержании веса">Подробнее о цели <span aria-hidden="true">↗</span></a>
+        <a href="#situations" data-solution-goal="maintain" aria-label="Подробнее о поддержании веса">Подробнее о цели <span aria-hidden="true">↗</span></a>
       </article>
     </div>
     <div class="v34-footer">
@@ -1267,6 +1267,12 @@ section[id],header[id]{scroll-margin-top:112px}
     muscle: ['НАБОР МЫШЕЧНОЙ МАССЫ','Питание, поддерживающее рост мышц','Индивидуально рассчитываем энергию и белок, учитываем режим питания и предпочтения. Для роста мышц важна подходящая силовая нагрузка; подбор тренировок доступен в личной работе.'],
     maintain: ['ПОДДЕРЖАНИЕ ВЕСА','Баланс, который вписывается в жизнь','Рацион с индивидуальными расчётами, разнообразными блюдами, привычными продуктами и без необходимости постоянно начинать питание заново.']
   };
+  // Solution cards open the matching existing interactive goal, not the default tab.
+  document.querySelectorAll('[data-solution-goal]').forEach(link => link.addEventListener('click',()=>{
+    const selectedGoal=link.getAttribute('data-solution-goal');
+    const goalButton=document.querySelector('[data-goal="'+selectedGoal+'"]');
+    goalButton?.click();
+  }));
   const goalPanel = document.getElementById('goal-result');
   document.querySelectorAll('[data-goal]').forEach(btn => btn.addEventListener('click', () => {
     document.querySelectorAll('[data-goal]').forEach(b => {b.classList.toggle('is-active',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
