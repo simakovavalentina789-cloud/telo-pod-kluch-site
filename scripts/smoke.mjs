@@ -73,6 +73,14 @@ try {
         return {classPhoto,activeSrc:active?.getAttribute('src')||null,
           imageComplete:!!active&&(active.complete&&active.naturalWidth>=1200&&active.naturalHeight>=675)};
       }));
+      if(size.name==='ipad'){
+        // The seven actual gallery states can be visually reviewed in the CI artifact.
+        // This is a browser-engine screenshot, not evidence of physical iPad testing.
+        await page.locator('#v45-meals').screenshot({
+          path:'screenshots/qa-week-'+engine+'-day-'+String(day+1).padStart(2,'0')+'.png',
+          animations:'disabled'
+        });
+      }
       for(const item of fidelity){
         if(item.classPhoto==='v45-photo-steak')assert.ok((item.activeSrc||'').endsWith('/hero-02-steak.webp'),'approved steak photo path');
         if(item.classPhoto==='v45-photo-salmon')assert.ok((item.activeSrc||'').endsWith('/hero-01-fish.webp'),'approved salmon photo path');
