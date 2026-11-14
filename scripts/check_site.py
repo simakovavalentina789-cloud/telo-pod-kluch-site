@@ -107,9 +107,13 @@ def main():
             errors.append("Hero photograph has missing or low dimensions: " + asset)
     if re.search(r"\.v45-meal-photo\.v45-photo-(?:omelet|chicken|dessert)\s*\{[^}]*background-size:\s*(?:[3-9]\d\d|[1-9]\d{3})%", html):
         errors.append("Excessive meal photo atlas zoom will introduce blur")
-    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab)'\]", html)
+    photo_mappings = re.findall(r"\['[^'\n]+','[^'\n]+','(omelet|chicken|salmon|dessert|steak|crab|frittata)'\]", html)
     if len(photo_mappings) != 28:
         errors.append("Expected 28 weekly menu meal-to-photo mappings; found: " + str(len(photo_mappings)))
+    if photo_mappings[0] == photo_mappings[4]:
+        errors.append("Monday and Tuesday breakfast photos must not be identical")
+    if 'Фриттата с зеленью и луком' not in html or "'frittata'" not in html:
+        errors.append("Dedicated Tuesday frittata mapping missing")
     if len(set(photo_mappings)) < 7:
         print("WARN: only", len(set(photo_mappings)), "distinct food photos serve 28 menu entries")
     if 'const selectV45Day=' not in html or "event.key==='ArrowRight'" not in html:
