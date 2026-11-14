@@ -47,11 +47,12 @@ try {
         const active=node.querySelector('[data-v48-fullphoto]:not([hidden])');
         const classPhoto=[...node.classList].find(name=>name.startsWith('v45-photo-'));
         return {classPhoto,activeSrc:active?.getAttribute('src')||null,
-          imageComplete:!active||(active.complete&&active.naturalWidth >= (active.src.includes('/food-v54/')&&!active.src.includes('turkey-pumpkin')?500:800))};
+          imageComplete:!!active&&(active.complete&&active.naturalWidth >= (active.src.includes('/food-v54/')&&!active.src.includes('turkey-pumpkin')?500:800))};
       }));
       for(const item of fidelity){
         if(item.classPhoto==='v45-photo-steak')assert.ok((item.activeSrc||'').endsWith('/hero-02-steak.webp'),'approved steak photo path');
         if(item.classPhoto==='v45-photo-salmon')assert.ok((item.activeSrc||'').endsWith('/hero-01-fish.webp'),'approved salmon photo path');
+        assert.ok(item.activeSrc, 'every meal requires its own image mapping on day '+day);
         assert.ok(item.imageComplete, 'active full-res dish must load in day '+day);
       }
     }
@@ -70,7 +71,7 @@ try {
     for(const p of photos){
       assert.ok(p.width>150&&p.height>80,'photo region size');
       if(p.image)assert.ok(p.image.complete&&p.image.naturalWidth >= (p.image.src?.includes('/food-v54/')&&!p.image.src?.includes('turkey-pumpkin')?500:800),'high-res meal photo must load');
-      else assert.match(p.background,/v45-food-atlas.webp/,'fallback atlas must load');
+      else assert.fail('A meal photo must never fall back to the old atlas');
     }
     const metrics=await page.evaluate(()=>({
       scrollWidth:document.documentElement.scrollWidth,
