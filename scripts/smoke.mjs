@@ -29,6 +29,7 @@ try {
       const labels=await page.locator('#v45-meals [data-v45-name]').allTextContents();
       assert.equal(labels.length,4);
       assert.ok(labels.every(label=>label.trim().length>5));
+      await page.waitForFunction(() => [...document.querySelectorAll('#v45-meals [data-v48-fullphoto]:not([hidden])')].every(img=>img.complete&&img.naturalWidth>=800),{timeout:5000});
       const fidelity=await page.locator('#v45-meals [data-v45-photo]').evaluateAll(nodes=>nodes.map(node=>{
         const active=node.querySelector('[data-v48-fullphoto]:not([hidden])');
         const classPhoto=[...node.classList].find(name=>name.startsWith('v45-photo-'));
