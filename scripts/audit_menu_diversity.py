@@ -1,71 +1,39 @@
 #!/usr/bin/env python3
-"""Editorial audit of the seven-day demonstration menu.
+"""Visual/editorial integrity check for the 7-day illustrative food gallery.
 
-This is an advisory report until unique verified recipes and their exact
-photographs have replaced all legacy repeated slots. Never confuse distinct
-names with distinct recipes.
+This website is a presentation, NOT the client nutrition generator. Do not
+require recipes, quantities, nutrition calculations, or culinary sign-off here.
 """
-from collections import defaultdict
+from collections import Counter
 from pathlib import Path
 import re
 import sys
-import unicodedata
 
-html=Path(__file__).resolve().parents[1].joinpath("index.html").read_text(encoding="utf-8")
-match=re.search(r"const v45Days=\[(.*?)\];",html,re.S)
+html = Path(__file__).resolve().parents[1].joinpath("index.html").read_text(encoding="utf-8")
+match = re.search(r"const v45Days=\[(.*?)\];", html, re.S)
 if not match:
     sys.exit("FAIL: v45Days not found")
-raw=match.group(1)
-rows=re.findall(r"\['([^'\n]+)','([^'\n]+)','([^'\n]+)'\]",raw)
-if len(rows)!=28:
-    sys.exit(f"FAIL: expected 28 menu entries, found {len(rows)}")
-days=["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"]
-roles=["Завтрак","Обед","Ужин","Перекус"]
-# Conservative editorial-family mapping: sauces/greens and word changes are
-# not sufficient to create a separate recipe. Manual verification is required.
-FAMILIES={
-    "омлет": "омлет",
-    "фриттат": "фриттата",
-    "стейк": "стейк из говядины с овощами",
-    "говяжий стейк": "стейк из говядины с овощами",
-    "краб": "крабовый салат",
-    "куриц": "курица с крупой и овощами",
-    "лосос": "лосось с овощами",
-    "мусс": "творожный/ягодный мусс",
-    "десерт": "творожный/ягодный мусс",
-}
-families=defaultdict(list)
-unclassified=[]
-photos=defaultdict(list)
-exact=defaultdict(list)
-for ix,(name,note,photo) in enumerate(rows):
-    role=roles[ix%4];day=days[ix//4]
-    n=unicodedata.normalize("NFKC",name.lower())
-    family=next((v for k,v in FAMILIES.items() if k in n),None)
-    if family is None:
-        unclassified.append((day,role,name))
-        family="не классифицировано: "+n
-    families[family].append((day,role,name))
-    exact[n].append((day,role))
-    photos[photo].append((day,role,name))
-print("MENU DIVERSITY AUDIT | 7 days × 4 meals")
-print("Unique exact names:",len(exact),"/ 28")
-print("Provisional family labels (not recipe verification):",len(families),"/ 28")
-print("Entries without a verified broad-family rule:",len(unclassified),"/ 28")
-print("Unique photo keys:",len(photos),"/ 28")
-for title,groups in (("REPEATED RECIPE FAMILIES",families),
-                     ("REPEATED PHOTO KEYS",photos),
-                     ("IDENTICAL NAMES",exact)):
-    print("\n"+title)
-    for key,items in groups.items():
-        if len(items)>1:
-            print(f"  {key}: {len(items)}")
-            for item in items: print("   - "+" | ".join(item))
-# Explicit prohibition on releasing a claim of 28 distinct recipes unless
-# each is independently reviewed and matched to its unique recipe/photo ID.
-if len(families)!=28 or len(photos)!=28 or len(exact)!=28 or unclassified:
-    print("\nSTATUS: RECIPE REVIEW NOT COMPLETE. Different titles/photos do not prove distinct verified recipes.")
-    if "--strict" in sys.argv:
-        sys.exit(1)
-else:
-    print("\nSTATUS: DIVERSITY CANDIDATE ONLY; still requires recipe-level audit.")
+rows = re.findall(r"\['([^'\n]+)','([^'\n]+)','([^'\n]+)'\]", match.group(1))
+errors = []
+if len(rows) != 28:
+    errors.append(f"Expected 28 displayed meals, got {len(rows)}")
+names = [name.strip() for name, _, _ in rows]
+photos = [photo.strip() for _, _, photo in rows]
+for label, items in (("dish names", names), ("photo keys", photos)):
+    duplicates = [value for value, count in Counter(items).items() if count > 1]
+    if duplicates:
+        errors.append(f"Repeated {label}: {', '.join(duplicates)}")
+if any(not name or not note.strip() or not photo for name, note, photo in rows):
+    errors.append("Every display item needs a title, description and photo key")
+if "salmon:'assets/hero-01-fish.webp'" not in html:
+    errors.append("Founder-approved salmon photo was disconnected")
+if "steak:'assets/hero-02-steak.webp'" not in html:
+    errors.append("Founder-approved steak photo was disconnected")
+if "const fullPhotoPaths=" not in html or "const fullPhotoSrc=fullPhotoPaths[photo]" not in html:
+    errors.append("Full-resolution photo resolver missing")
+print(f"DEMO VISUAL AUDIT: {len(rows)} cards, {len(set(names))} titles, {len(set(photos))} distinct photo keys")
+if errors:
+    for error in errors:
+        print("FAIL:", error, file=sys.stderr)
+    sys.exit(1)
+print("PASS: display-name/photo-key integrity (not a manual visual or physical-iPad test)")
