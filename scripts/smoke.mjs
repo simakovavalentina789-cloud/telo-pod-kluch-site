@@ -62,7 +62,7 @@ try {
     const metrics=await page.evaluate(()=>({
       scrollWidth:document.documentElement.scrollWidth,
       innerWidth:window.innerWidth,
-      broken:[...document.querySelectorAll('img')].filter(img=>img.complete&&img.naturalWidth===0).map(img=>img.src)
+      broken:[...document.querySelectorAll('img[src]')].filter(img=>img.complete&&img.naturalWidth===0).map(img=>img.src)
     }));
     assert.ok(metrics.scrollWidth <= metrics.innerWidth+2,
       size.name+' horizontal overflow '+JSON.stringify(metrics));
