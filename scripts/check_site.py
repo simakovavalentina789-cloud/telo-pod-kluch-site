@@ -180,11 +180,21 @@ def main():
         size = webp_size(path) if path.is_file() else None
         if not size or size[0] < w or size[1] < h:
             errors.append("V58 photo absent/undersized: " + str(path))
-        if "'" + key + "':'assets/food-v58/" + key + ".webp'" not in html:
-            errors.append("V58 meal must use new image file: " + key)
+        if key in ("stuffed-peppers", "apple-crumble") and "'" + key + "':'assets/food-v58/" + key + ".webp'" not in html:
+            errors.append("V58 photo mapping missing: " + key)
     for dish in ("stuffed-peppers", "zucchini-ricotta", "apple-crumble", "pumpkin-soup"):
         if "v45-photo-" + dish not in html and "'" + dish + "'" not in html:
             errors.append("Missing V58 dish mapping: " + dish)
+    # V59: two formerly cropped images now have native larger originals.
+    v59_expected = {"zucchini-ricotta": (1600, 900),
+                    "pumpkin-soup": (1500, 850)}
+    for key, (min_w, min_h) in v59_expected.items():
+        path = ASSETS / "food-v59" / (key + ".webp")
+        size = webp_size(path) if path.is_file() else None
+        if not size or size[0] < min_w or size[1] < min_h:
+            errors.append("V59 full-size food photograph missing/undersized: " + str(path))
+        if "'" + key + "':'assets/food-v59/" + key + ".webp'" not in html:
+            errors.append("V59 live photo mapping missing: " + key)
     # V47: validate the image pipeline rather than merely checking file existence.
     atlas_resolution = webp_size(atlas) if atlas.is_file() else None
     if atlas_resolution:
