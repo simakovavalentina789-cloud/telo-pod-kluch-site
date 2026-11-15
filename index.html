@@ -950,6 +950,16 @@ section[id],header[id]{scroll-margin-top:112px}
 }
 
 
+/* V61 — second hero slide: user-supplied consultation photography. No effects on other slides. */
+@media(min-width:801px){
+ .v61-consultation-active #story-main-image{object-position:center center}
+ .v61-consultation-active .v14-hero-grad{background:linear-gradient(90deg,rgba(6,18,14,.91) 0%,rgba(7,20,15,.72) 42%,rgba(8,20,15,.18) 80%),linear-gradient(0deg,rgba(6,18,14,.3),transparent 50%)}
+}
+@media(max-width:800px){
+ .v61-consultation-active #story-main-image{object-position:center 35%;filter:contrast(1.02) saturate(.95)}
+ .v61-consultation-active .v14-hero-grad{background:linear-gradient(0deg,#0c100e 0%,rgba(12,16,14,.48) 42%,transparent 82%)}
+}
+
 /* V36 — exclusive quality promise and simple conversion choices */
 .v36-exclusive{background:radial-gradient(circle at 95% 10%,#23533e 0%,transparent 32%),linear-gradient(145deg,#071b15,#0c3023 52%,#071710);color:#eee7d5;position:relative;overflow:hidden;border-top:1px solid #b18b5055;border-bottom:1px solid #b18b5044}
 .v36-exclusive-shell{padding-top:clamp(65px,7vw,100px);padding-bottom:clamp(65px,7vw,100px)}
@@ -1701,7 +1711,7 @@ section[id],header[id]{scroll-margin-top:112px}
   });
   const story = [
     {title:'Устали начинать<br><em>с понедельника?</em>',lead:'Персональное питание с учётом вашей цели, образа жизни, вкусов и реальных возможностей. Без жёстких запретов и чувства вины.',main:'assets/hero-emotional.webp',alt:'Символический художественный образ двух женщин, отражающий усталость от ограничений и уверенность. Не реальное клиентское до и после'},
-    {title:'Чистые продукты.<br><em>Питание под вас.</em>',lead:'Чистое, полноценное и разнообразное питание на основе научных данных, рассчитанное индивидуально под ваше тело, вашу цель и вашу жизнь. Четыре цели: снижение веса, рекомпозиция, набор мышц и поддержание результата.',main:'assets/hero-01-fish.webp',alt:'Ресторанная композиция рыбы с овощами, салатом, десертом и напитком'},
+    {title:'Чистые продукты.<br><em>Питание под вас.</em>',lead:'Чистое, полноценное и разнообразное питание на основе научных данных, рассчитанное индивидуально под ваше тело, вашу цель и вашу жизнь. Четыре цели: снижение веса, рекомпозиция, набор мышц и поддержание результата.',main:'assets/hero-02-consultation.webp',alt:'Консультация по рациону: женщина обсуждает план питания с мужчиной за столом'},
     {title:'Неделя правильного питания —<br><em>минус лишние килограммы, плюс здоровье.</em>',lead:'Семь дней разнообразного питания из отобранных продуктов с индивидуальными расчётами — чтобы двигаться к желаемому весу без голодания и временных диет. 700 ₽ за неделю. Изменение веса индивидуально; снижение за семь дней не гарантируется.',main:'assets/case-weight.webp',alt:'Иллюстрация направления снижения веса. Не обещание потери веса за одну неделю'},
     {title:'Знаем состав.<br><em>Считаем нутриенты.</em>',lead:'Отобранная база продуктов и данные о пищевой ценности — фундамент рациона. Мы учитываем калории, БЖУ и доступные сведения о нутриентах, а не просто генерируем случайное меню.',main:'assets/hero-02-steak.webp',alt:'Говяжий стейк с овощами в премиальной ресторанной подаче'},
     {title:'Достичь цели.<br><em>Сохранить результат.</em>',lead:'Снижение веса, рекомпозиция, набор мышц или полноценное поддержание: индивидуальные расчёты соединяются в недельное меню с рецептами и закупками. Приложение ещё проходит проверку.',main:'assets/hero-03-constructor.webp',alt:'Гастрономическая визуализация ингредиентов, собирающихся в готовое блюдо'}
@@ -1714,6 +1724,7 @@ section[id],header[id]{scroll-margin-top:112px}
     if(thesis)thesis.hidden=storyIndex!==0;
     const d=story[storyIndex];
     carouselRoot?.classList.toggle('v28-emotional-active',storyIndex===0);
+    carouselRoot?.classList.toggle('v61-consultation-active',storyIndex===1);
     const title=document.getElementById('hero-title');
     if(!title)return;
     title.innerHTML=d.title;
