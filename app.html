@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10392c">
+<meta name="description" content="«Тело под ключ»: чистые ингредиенты, индивидуальные расчёты, вкусное меню на 7 дней, рецепты, замены и покупки. Четыре цели — ваш собственный темп.">
+<meta property="og:title" content="«Тело под ключ» — питание под вашу жизнь">
+<meta property="og:description" content="Не очередная диета, а система вкусного питания из отобранных продуктов с индивидуальными расчётами.">
+<meta property="og:image" content="https://simakovavalentina789-cloud.github.io/telo-pod-kluch-site/assets/food-v52/dessert-mousse.webp">
+<link rel="canonical" href="https://simakovavalentina789-cloud.github.io/telo-pod-kluch-site/app.html">
+<title>Приложение «Тело под ключ» — ваше питание, ваши правила</title>
+<style>
+:root{--pine:#103629;--deep:#0a251b;--ink:#243b31;--gold:#d2b074;--ivory:#faf7ef;--cream:#f5f2ec;--muted:#657a6e;--line:#d7ddd2;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font:16px/1.7 var(--sans);color:var(--ink);background:var(--cream)}img{display:block;max-width:100%}a{color:inherit}a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.wrap{width:min(1190px,calc(100% - 44px));margin:auto}.skip{position:absolute;top:0;left:-9999px;padding:10px;background:white;z-index:30}.skip:focus{left:8px}
+header{position:sticky;top:0;z-index:15;background:#10382df6;backdrop-filter:blur(14px);color:#f6efe0;border-bottom:1px solid #d7b77836}.head{min-height:79px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 16px/1.14 var(--serif);letter-spacing:.06em}.brand img{width:48px;height:48px;object-fit:cover}.brand small{display:block;color:#d7c59e;font:500 9px/1.6 var(--sans);letter-spacing:.13em}.nav{display:flex;gap:23px;align-items:center;font-size:12px}.nav a{text-decoration:none}.nav a:hover{text-decoration:underline}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:15px 22px;min-height:49px;border-radius:12px;text-decoration:none;font-weight:750;font-size:13px;text-align:center;line-height:1.3;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.gold{background:linear-gradient(145deg,#f9e9be,#c8a166);color:#1a3a2b;box-shadow:0 4px 0 #78623d}.outline{border:1px solid #bca274;color:#f4edde}.forest{background:var(--pine);color:white}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:#9a7744;font-weight:750;text-transform:uppercase}.dark .eyebrow{color:#e0c087}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacing:-.037em;margin:0}h1{font-size:clamp(48px,6vw,86px)}h2{font-size:clamp(36px,4.4vw,62px);margin:15px 0 24px}h3{font-size:clamp(25px,2.4vw,35px);margin-bottom:12px}.lead{font-size:clamp(16px,1.75vw,19px);line-height:1.75}.section{padding:90px 0}.muted{color:var(--muted)}.dark{background:#0c2c22;color:#f5f1e7}.dark .muted{color:#c3d2c5}.split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.card{border-radius:20px;border:1px solid #dce0d6;background:#fff;padding:27px}.card p{color:#61766a;margin:0;font-size:14px}.card strong{display:block;margin-bottom:10px}.panel{background:#fff;border:1px solid #e0e3d9;border-radius:23px;padding:30px}.pill{display:inline-flex;border:1px solid #aabca752;border-radius:50px;padding:8px 12px;font-size:12px;font-weight:700}.hero{color:#f8f4e9;background:radial-gradient(ellipse at 82% 32%,#315c42 0%,transparent 47%),linear-gradient(140deg,#071d16,#113f2f);overflow:hidden}.hero .wrap{display:grid;grid-template-columns:1.06fr .94fr;gap:40px;min-height:720px;align-items:center;padding-top:70px;padding-bottom:70px}.hero h1{margin:17px 0 24px}.hero h1 em{color:#e3c28c}.hero .lead{color:#e1e9e1}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}.device{justify-self:center;max-width:360px;width:90%;transform:rotate(3deg);border:7px solid #c3a46b;padding:12px;background:#091c15;border-radius:43px;box-shadow:23px 30px 60px #0009}.device-header{padding:12px;text-align:center;color:#f9edd0;font:700 22px/1.15 var(--serif)}.device-header span{display:block;font:500 10px/1.5 var(--sans);letter-spacing:.18em;color:#d4b881;margin-top:5px}.device-body{background:#f9f5eb;border-radius:21px;padding:13px;color:#163d2e}.device-body .week{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin:11px 0}.device-body .week span{font-size:11px;font-weight:750;text-align:center;border-radius:6px;padding:4px 0;background:#e6e8df}.device-body .week span:first-child{background:#e1ba74}.device-food{border-radius:13px;overflow:hidden;background:white}.device-food img{width:100%;height:200px;object-fit:cover}.device-food p{margin:0;padding:9px 12px;font-size:13px;line-height:1.4}.device-food b{display:block;font-size:10px;color:#668e68}.device-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.device-actions span{text-align:center;background:#e2e9dc;padding:9px 3px;border-radius:8px;font-weight:700;font-size:11px}.device-caption{text-align:center;color:#b6cab8;font-size:12px;margin:14px 0 0}
+.pains{background:#fff}.pains .card{background:#f8f8f4}.card-index{display:inline-block;color:#a9854b;font:700 12px var(--sans);margin-bottom:18px}.photo-frame{border-radius:22px;overflow:hidden;min-height:440px;position:relative}.photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.checks{display:grid;gap:10px}.checks p{margin:0;padding:10px 0;border-bottom:1px solid #c8d4c7}.checks p:before{content:"✓";display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#d9b979;color:#17392b;font-weight:800;margin-right:11px}
+.goals{grid-template-columns:repeat(4,1fr)}.goals .card{background:#174334;border-color:#537560;color:#f7f0e4}.goals .card p{color:#d4dfd4}.goals .card strong{font-family:var(--serif);font-size:24px;font-weight:400;line-height:1.2}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;counter-reset:n}.steps article{background:white;border:1px solid #dce0d7;border-radius:18px;padding:19px}.steps article:before{counter-increment:n;content:counter(n);display:grid;place-items:center;width:35px;height:35px;border-radius:50%;background:var(--pine);color:#e6c58c;margin-bottom:16px;font-weight:800}.steps strong{display:block;font-size:14px}.steps p{font-size:13px;color:var(--muted);margin:9px 0 0}.week-days{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.week-days span{border:1px solid #b7c6b6;padding:12px 0;text-align:center;border-radius:12px}.week-days span:first-child{background:#dab779;border-color:#dab779}.food-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}.food-grid img{width:100%;aspect-ratio:1.35;object-fit:cover;border-radius:13px}
+.journey{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.journey .stage{border-radius:15px;border:1px solid #adc1ae;padding:15px 20px;font-size:14px;font-weight:700}.journey .stage b{display:block;color:#bb965a;font-size:11px}.journey .arrow{font-size:25px;color:#bd995e}.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.compare .panel:last-child{background:#e6eee7}.compare ul{padding-left:20px;margin-bottom:0}.compare li{margin-bottom:9px}.price{background:radial-gradient(circle at 80% 15%,#376047,transparent 45%),#0d3025;color:white}.price-value{font:400 clamp(68px,10vw,136px)/1 var(--serif);color:#e5c489;margin:20px 0}.price-value small{font:500 18px var(--sans);color:#f3e8d3}.fineprint{font-size:12px;line-height:1.7;color:#667b6d}.dark .fineprint,.price .fineprint{color:#c2d0c1}
+.faq{max-width:910px;margin:auto}.faq details{padding:19px 0;border-bottom:1px solid #cbd5c9}.faq summary{cursor:pointer;font-weight:700;font-size:18px}.faq details p{color:var(--muted);margin:11px 0}footer{padding:41px 0;background:#071c16;color:#ece8de;font-size:13px}footer .wrap{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}footer a{color:#e0c089}
+@media(max-width:1050px){.goals{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(3,1fr)}.nav{gap:12px}}
+@media(max-width:760px){.wrap{width:min(100% - 32px,590px)}.section{padding:64px 0}.hero .wrap{grid-template-columns:1fr;padding-top:58px;min-height:0;gap:24px}.device{width:min(80%,315px)}.split,.compare{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.goals{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,1fr)}.nav a:not(.btn){display:none}.photo-frame{min-height:330px}.hero-actions{align-items:stretch}.week-days span{font-size:12px}.journey .arrow{display:none}}
+@media(max-width:480px){.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.goals,.steps{grid-template-columns:1fr}.device{width:min(86%,320px)}.brand{font-size:13px}.brand img{width:40px;height:40px}.nav .btn{font-size:11px;padding:12px}.journey .stage{width:100%}h1{font-size:clamp(43px,11vw,58px)}.week-days{gap:3px}.week-days span{padding:10px 0;font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Перейти к содержимому</a>
+<header><div class="wrap head">
+<a class="brand" href="index.html" aria-label="Вернуться на главную страницу"><img src="assets/logo-vs.webp" alt="" width="48" height="48"><span>ТЕЛО<br>ПОД КЛЮЧ<small>СИСТЕМА ПОЛНОЦЕННОГО ПИТАНИЯ</small></span></a>
+<nav class="nav" aria-label="Навигация"><a href="#approach">Принципы</a><a href="#work">Как работает</a><a href="#goals">Цели</a><a class="btn gold" href="#access">Получить доступ ↗</a></nav>
+</div></header>
+<main id="content">
+<section class="hero dark"><div class="wrap">
+<div><span class="eyebrow">АВТОРСКАЯ СИСТЕМА ВАЛЕНТИНЫ СЧАСТЬЕ</span><h1>Ваше тело уникально.<br><em>Питание тоже.</em></h1>
+<p class="lead">Не очередная диета. Полноценный, вкусный и разнообразный рацион из специально отобранных продуктов, рассчитанный под ваши параметры, активность, вкусы и цель.</p>
+<div class="hero-actions"><a class="btn gold" href="#work">Посмотреть, как работает ↗</a><a class="btn outline" href="index.html#formats">Вернуться к выбору формата</a></div>
+<div class="badges"><span class="pill">4 цели</span><span class="pill">7 дней питания</span><span class="pill">Ваши вкусы</span><span class="pill">Без голодных марафонов</span></div>
+<p style="font-size:13px;color:#c9d9ca;margin-top:24px">Рацион в смартфоне и браузере — всегда под рукой, дома, в магазине и на кухне.</p>
+</div>
+<div><div class="device" role="img" aria-label="Иллюстрация интерфейса приложения «Тело под ключ»: недельное меню и творожный мусс с ягодами">
+<div class="device-header">ТЕЛО ПОД КЛЮЧ<span>МОЁ МЕНЮ НА 7 ДНЕЙ</span></div><div class="device-body">
+<b style="font-size:13px">План питания · Понедельник</b>
+<div class="week"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+<div class="device-food"><img src="assets/food-v52/dessert-mousse.webp" alt="" loading="eager" decoding="async"><p><b>ВКУСНОЕ ПИТАНИЕ</b>Творожный мусс с ягодами</p></div>
+<div class="device-actions"><span>Рецепты</span><span>Замены</span><span>Покупки</span></div>
+</div></div><p class="device-caption">Иллюстрация концепции интерфейса · не индивидуальный расчёт клиента</p></div>
+</div></section>
+<section class="section pains"><div class="wrap"><span class="eyebrow">ЗНАКОМЫЕ ПРОБЛЕМЫ</span><h2>Сколько раз вы начинали<br>с понедельника?</h2>
+<div class="grid">
+<div class="card"><span class="card-index">ПОСТОЯННЫЕ ОГРАНИЧЕНИЯ</span><h3>Надоело запрещать себе вкусное?</h3><p>Вместо бесконечных «нельзя» — рацион с разнообразными полноценными блюдами.</p></div>
+<div class="card"><span class="card-index">ЕЖЕДНЕВНЫЙ ХАОС</span><h3>Опять не знаете, что приготовить?</h3><p>Меню, рецепты и покупки собраны на неделю. Меньше решений и суеты каждый день.</p></div>
+<div class="card"><span class="card-index">ВОЗВРАЩЕНИЕ ВЕСА</span><h3>Не хотите снова начинать с нуля?</h3><p>Смена цели от снижения веса к поддержанию — естественная часть системы, а не новая диета.</p></div>
+</div></div></section>
+<section class="section" id="approach" style="background:#e9eee7"><div class="wrap split">
+<div><span class="eyebrow">ФУНДАМЕНТ ПРОДУКТА</span><h2>Не просто персонализация.<br><em style="color:#829c88">Сначала качество.</em></h2>
+<p class="lead">Обычный генератор может выдать список блюд. Мы выстраиваем питание иначе: сначала специально подготовленная база ингредиентов и справочные данные о пищевой ценности, затем расчёты и только после — индивидуальный рацион.</p>
+<div class="checks"><p>Отобранные ингредиенты с понятным составом.</p><p>Рецептуры без добавленного сахара.</p><p>Данные по энергии, белкам, жирам, углеводам и доступным нутриентам.</p><p>Разнообразные блюда и продуманные сочетания в рамках недели.</p></div>
+<p class="fineprint" style="margin-top:17px">Натуральные сахара в ягодах, фруктах и молочных продуктах не приравниваются к добавленному сахару. Полнота данных по отдельным микронутриентам различается.</p>
+</div>
+<div class="photo-frame"><img src="assets/hero-01-fish.webp" alt="Ресторанная композиция полноценного питания: рыба, овощи, зелень и другие блюда" loading="lazy"></div>
+</div></section>
+<section class="section dark" id="goals"><div class="wrap">
+<span class="eyebrow">ЧЕТЫРЕ ЦЕЛИ</span><h2>Разные задачи.<br>Один продуманный путь.</h2><p class="lead muted">Вы выбираете направление. Система рассчитывает питание по вашим данным и предпочтениям.</p>
+<div class="grid goals">
+<div class="card"><strong>Снижение веса</strong><p>Питание с индивидуально рассчитанной энергетической потребностью без голодных марафонов.</p></div>
+<div class="card"><strong>Рекомпозиция тела</strong><p>Питание под работу с составом тела и подходящую человеку активность.</p></div>
+<div class="card"><strong>Набор мышц</strong><p>Учет потребности в энергии и белке для поддержки тренировки и восстановления.</p></div>
+<div class="card"><strong>Поддержание результата</strong><p>Полноценное питание на каждый день после достижения цели — без возвращения к старым схемам.</p></div>
+</div>
+<p class="fineprint" style="margin-top:22px">Приложение формирует питание и не назначает тренировочные программы. Изменение веса и состава тела индивидуально.</p>
+</div></section>
+<section class="section" id="work"><div class="wrap"><span class="eyebrow">КАК ЭТО РАБОТАЕТ</span><h2>От ваших данных —<br>к готовой неделе питания.</h2>
+<div class="steps">
+<article><strong>Расскажите о себе</strong><p>Укажите параметры тела, повседневную активность, цель и предпочтения.</p></article>
+<article><strong>Получите расчёт</strong><p>Энергетические потребности и ориентиры нутриентов определяются по установленной методике.</p></article>
+<article><strong>Откройте меню</strong><p>На семь дней подбираются блюда, сочетания и индивидуальные порции.</p></article>
+<article><strong>Готовьте с удобством</strong><p>Рецепты, доступные замены и список продуктов остаются под рукой.</p></article>
+<article><strong>Продолжайте путь</strong><p>Актуализируйте параметры и формируйте следующую неделю под свою цель.</p></article>
+</div></div></section>
+<section class="section" style="background:#e9eee7" id="week"><div class="wrap split">
+<div><span class="eyebrow">ПОЧЕМУ ИМЕННО НЕДЕЛЯ</span><h2>Семь дней —<br>не срок диеты.<br><em style="color:#789586">Это ритм жизни.</em></h2>
+<p class="lead">За неделю удобно спланировать блюда и покупки, а затем обновить рацион. Питание меняется вместе с вашим графиком, вкусами и целями — без необходимости начинать заново.</p>
+<p><b>Новая неделя — новые сочетания, а не новый запрет.</b></p>
+</div><div class="panel"><div class="week-days"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+<div class="food-grid">
+<img src="assets/food-v52/dessert-mousse.webp" alt="Творожный мусс с ягодами" loading="lazy">
+<img src="assets/food-v55/shakshuka.webp" alt="Шакшука с овощами" loading="lazy">
+<img src="assets/hero-01-fish.webp" alt="Рыба с овощами" loading="lazy">
+<img src="assets/food-v55/baked-pears-yogurt.webp" alt="Запеченные груши с йогуртом" loading="lazy"></div>
+<p class="fineprint" style="margin:14px 0 0">Изображения показывают гастрономическое разнообразие, а не обещают конкретные блюда каждому пользователю.</p>
+</div></div></section>
+<section class="section" id="progress"><div class="wrap"><span class="eyebrow">ПУТЬ К РЕЗУЛЬТАТУ</span><h2>Вы меняетесь.<br>Питание меняется вместе с вами.</h2>
+<p class="lead">Снижение веса — не финал истории. Следующий этап может быть поддержанием результата, рекомпозицией или другой целью. При переходе учитываются новые параметры и условия расчёта.</p>
+<div class="journey"><div class="stage"><b>ВАША ПЕРВАЯ ЦЕЛЬ</b>Снижение веса</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>НОВЫЙ ЭТАП</b>Поддержание</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ПРИ ЖЕЛАНИИ</b>Рекомпозиция</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ВСЕГДА АКТУАЛЬНО</b>Полноценное питание</div></div>
+<div class="panel" style="margin-top:28px;background:#f9faf6"><h3>Как отслеживать прогресс?</h3><p>Вес, объёмы, динамика привычек и индивидуальные ощущения помогают оценивать движение к цели. Для сравнения важна тенденция во времени, а не единичная цифра. История показателей и удобный переход между целями входят в дорожную карту интерфейса; их выпуск и точный функционал будут подтверждены тестами.</p></div>
+</div></section>
+<section class="section" style="background:#fff"><div class="wrap"><span class="eyebrow">ГЛАВНОЕ ОТЛИЧИЕ</span><h2>Почему не просто попросить ИИ<br>написать вам меню?</h2><div class="compare">
+<div class="panel"><h3>Случайный список рецептов</h3><ul><li>Красивые идеи, которые нужно самостоятельно проверять.</li><li>Не всегда понятные источники данных и расчёты.</li><li>Нужно вручную связать блюда, порции, замены и закупки.</li></ul></div>
+<div class="panel"><h3>Система «Тело под ключ»</h3><ul><li>Подготовленный каталог продуктов и правила отбора ингредиентов.</li><li>Единая методика индивидуальных расчётов.</li><li>Меню, рецепты, замены и покупки внутри связанного недельного плана.</li></ul></div>
+</div><p class="fineprint" style="margin-top:18px">Сравниваются подходы к организации питания, а не заявляется абсолютная точность любого расчёта.</p></div></section>
+<section class="section price" id="access"><div class="wrap split">
+<div><span class="eyebrow" style="color:#ddbd86">ВАША НЕДЕЛЯ</span><h2>Вкусное питание.<br>Ваш собственный темп.</h2>
+<p class="lead">Готовый недельный план, рецепты, замены и список покупок — без ежедневных догадок «что сегодня приготовить».</p><div class="price-value">700 ₽ <small>за 7 дней</small></div>
+<p class="fineprint">Цена недельного доступа. Продукты приобретаются отдельно. Условия доступа и оплата будут активированы после завершения клиентских проверок.</p>
+<a class="btn gold" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Задать вопрос о доступе ↗</a>
+</div>
+<div class="panel" style="background:#163e30;border-color:#62785d;color:#f8f4e8"><h3>Без давления и марафонов.</h3><p>Не нужно соревноваться с другими, следовать одинаковым диетам или постоянно отказываться от любимого вкуса. Вы выстраиваете питание под свои параметры и ритм жизни, постепенно превращая ежедневные решения в удобную систему.</p>
+<p style="color:#e5c485;font:400 28px/1.3 var(--serif);margin-top:30px">Тело под ключ —<br>полноценное питание под вас.</p>
+<img src="assets/hero-05-maintenance.webp" alt="Валентина Счастье, автор системы" loading="lazy" style="margin-top:25px;height:190px;width:100%;object-fit:cover;object-position:center 35%;border-radius:14px">
+</div></div></section>
+<section class="section" id="faq"><div class="wrap faq"><span class="eyebrow">ВАЖНО ЗНАТЬ</span><h2>Вопросы, на которые<br>стоит ответить заранее.</h2>
+<details><summary>Можно ли пользоваться приложением без тренировок?</summary><p>Да. Основная функция приложения — индивидуальная организация питания. Оно не назначает тренировочные программы; при необходимости физическая нагрузка обсуждается в личной работе со специалистом.</p></details>
+<details><summary>Почему меню только на семь дней?</summary><p>Семидневный цикл помогает удобно готовить, покупать продукты и обновлять рацион по мере изменения предпочтений и цели. Это не семидневная диета.</p></details>
+<details><summary>Как перейти от похудения к поддержанию?</summary><p>Цель меняется вместе с расчётными ориентирами рациона. Удобный сценарий изменения цели и история прогресса предусмотрены продуктовой дорожной картой; клиентские функции проходят проверку до запуска.</p></details>
+<details><summary>Может ли каждый похудеть за одну неделю?</summary><p>Нет. Вес и состав тела меняются индивидуально. Питание может поддерживать движение к цели, но определённое снижение за семь дней не гарантируется.</p></details>
+<details><summary>Кому подходит автоматический рацион?</summary><p>Система предназначена для здоровых взрослых. При заболеваниях, симптомах, приёме лекарств и особых медицинских потребностях нужны рекомендации врача и индивидуальная оценка; автоматический рацион не заменяет медицинскую помощь.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><div><b>ТЕЛО ПОД КЛЮЧ</b><br>Авторская методика Валентины Счастье</div><div><a href="index.html#formats">Выбрать формат</a> · <a href="index.html">Главная</a> · <a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Telegram</a></div></div></footer>
+</body></html>
