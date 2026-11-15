@@ -1381,6 +1381,57 @@ section[id],header[id]{scroll-margin-top:112px}
   .v14-hero.v66-week-active .story-copy {max-width:100%}
 }
 
+
+/* V67 – responsive live version of the approved two-path visual.
+   Real text, active CTA links, and brand-owned imagery; no rasterized buttons. */
+.v36-paths.v67-format-choices{gap:20px;align-items:stretch}
+.v67-format-choices .v36-path{padding:0;overflow:hidden;min-height:0;border-radius:19px;box-shadow:0 14px 36px rgba(14,38,28,.1)}
+.v67-format-choices .v67-path-app{background:#103b2e;color:#f7f1df;border-color:#bc9c65}
+.v67-format-choices .v67-path-expert{background:#f0e8dc;color:#233b31;border-color:#cfb78d}
+.v67-format-choices .v67-path-info{padding:clamp(22px,2.6vw,36px);display:flex;flex-direction:column;flex:1}
+.v67-format-choices .v67-path-info h3{margin:4px 0 14px;font-size:clamp(36px,3.15vw,51px)}
+.v67-format-choices .v67-path-info p{max-width:100%;min-height:72px}
+.v67-format-choices .v67-path-app .v36-path-kicker{color:#e7c992}
+.v67-format-choices .v67-path-expert .v36-path-kicker{color:#80653d}
+.v67-format-choices .v67-path-expert .v36-path-tags span{border-color:#c8b595}
+.v67-format-choices .v67-path-app .v36-path-tags span{border-color:#759d88}
+.v67-format-choices .v67-format-visual{height:320px;overflow:hidden;position:relative;isolation:isolate}
+.v67-format-choices .v67-app-visual{background:radial-gradient(circle at 25% 72%,#427b4b 0%,transparent 39%),linear-gradient(135deg,#08251d,#1d5640 56%,#082e24);display:flex;justify-content:center;align-items:center}
+.v67-format-choices .v67-food-atmosphere{position:absolute;width:270px;height:270px;border-radius:50%;background:radial-gradient(circle,#5f8862a0,transparent 70%);left:4%;bottom:-35%;filter:blur(18px);opacity:.7}
+.v67-format-choices .v67-phone{position:relative;width:218px;height:348px;transform:translateY(27px) rotate(-6deg);background:#102b22;border:5px solid #b6985c;border-radius:31px;box-shadow:15px 13px 0 #06241b66,0 22px 40px #020f0bcc;overflow:hidden;padding:16px 9px 9px;display:flex;flex-direction:column}
+.v67-format-choices .v67-phone-speaker{position:absolute;top:4px;left:81px;width:49px;height:6px;border-radius:0 0 8px 8px;background:#030e0a}
+.v67-format-choices .v67-phone-top{min-height:62px;display:flex;align-items:center;justify-content:space-around;color:#f9edd2;text-align:center}
+.v67-format-choices .v67-phone-logo{font:700 15px/1.1 Georgia,serif;letter-spacing:.055em}
+.v67-format-choices .v67-phone-mini{font-size:25px;color:#dec18a}
+.v67-format-choices .v67-phone-tools{display:flex;gap:3px;justify-content:center;margin-bottom:7px}
+.v67-format-choices .v67-phone-tools span{color:#f7e9cc;border-radius:5px;background:#255541;padding:5px 4px;font:700 8px/1.1 var(--sans)}
+.v67-format-choices .v67-phone-tools span:first-child{background:#c7a35e;color:#183e2d}
+.v67-format-choices .v67-phone-inner{background:#f8f3e8;color:#163d2b;border-radius:11px 11px 17px 17px;flex:1;padding:9px;display:flex;flex-direction:column;gap:7px}
+.v67-format-choices .v67-phone-inner strong{font:700 13px/1.2 var(--sans);text-align:center}
+.v67-format-choices .v67-week-tabs{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.v67-format-choices .v67-week-tabs span{font:700 8px/1.5 var(--sans);text-align:center;background:#e3e2d7;border-radius:4px}
+.v67-format-choices .v67-week-tabs span:first-child{background:#e9c579}
+.v67-format-choices .v67-phone-meal{flex:1;min-height:95px;overflow:hidden;border-radius:8px}
+.v67-format-choices .v67-phone-meal img{width:100%;height:100%;object-fit:cover;display:block}
+.v67-format-choices .v67-phone-caption{font:700 8px/1.35 var(--sans);text-align:center;color:#315343}
+.v67-format-choices .v67-mock-foot{border-top:1px solid #d2d5c6;padding-top:5px;font:700 8px/1.3 var(--sans);text-align:center}
+.v67-format-choices .v67-expert-visual{background:#e8dbca}
+.v67-format-choices .v67-expert-visual img{width:100%;height:100%;object-fit:cover;object-position:center 37%;display:block}
+.v67-format-choices .v67-expert-visual:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 -34px 45px #f0e8dc4a}
+.v67-format-choices .v67-path-info .v36-path-status{margin:9px 0 7px;opacity:.83}
+.v67-format-choices .v36-path-action{margin-top:auto;align-self:flex-start}
+@media(max-width:900px){
+ .v67-format-choices .v67-format-visual{height:290px}
+ .v67-format-choices .v67-path-info{padding:23px}
+ .v67-format-choices .v67-path-info p{min-height:0}
+}
+@media(max-width:650px){
+ .v36-paths.v67-format-choices{grid-template-columns:1fr;gap:24px}
+ .v67-format-choices .v67-format-visual{height:300px}
+ .v67-format-choices .v67-path-info{padding:24px}
+ .v67-format-choices .v36-path-action{width:100%;align-self:stretch}
+}
+
 </style>
 </head>
 <body>
@@ -1626,9 +1677,23 @@ section[id],header[id]{scroll-margin-top:112px}
 <section class="formats section-pad v36-formats" id="formats" aria-labelledby="formats-heading"><div class="shell">
 <div class="v17-prelude"><span>ВЫБЕРИТЕ ФОРМАТ</span><span>ДВА ПУТИ · ОДНА ЭКСПЕРТНАЯ МЕТОДИКА</span></div>
 <div class="v17-format-head"><h2 id="formats-heading">Как вы хотите<br><em>начать изменения?</em></h2><p>Выберите свой путь: будущий конструктор питания или персональную экспертную работу, доступную уже сейчас.</p></div>
-<div class="v36-paths">
-<article class="v36-path"><span class="v36-path-kicker">КОНСТРУКТОР ПИТАНИЯ</span><span class="v36-path-status">Готовится к запуску</span><h3>Ваше меню.<br>Ваши правила.</h3><p>Для здоровых взрослых: персональные расчёты, отобранные ингредиенты, рецепты, порции и закупки на неделю.</p><div class="v36-path-tags"><span>4 цели</span><span>7 дней</span><span>Ваши вкусы</span></div><a class="v36-path-action" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Узнать о запуске <span aria-hidden="true">↗</span></a></article>
-<article class="v36-path v36-path-personal"><span class="v36-path-kicker">ЛИЧНАЯ РАБОТА С ВАЛЕНТИНОЙ</span><span class="v36-path-status">Обращение доступно сейчас</span><h3>Ваш эксперт.<br>Ваш результат.</h3><p>Индивидуальная диагностика, питание, работа с привычками, персональные тренировки и сопровождение. При заболеваниях учитываются рекомендации врача.</p><div class="v36-path-tags"><span>Диагностика</span><span>Сопровождение</span><span>Тренировки</span></div><a class="v36-path-action" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Обсудить мою задачу <span aria-hidden="true">↗</span></a></article>
+<div class="v36-paths v67-format-choices">
+<article class="v36-path v67-path-app">
+  <div class="v67-format-visual v67-app-visual" role="img" aria-label="Иллюстративный экран будущего приложения «Тело под ключ»: недельное меню, блюда, замены, рецепты и покупки">
+    <div class="v67-food-atmosphere" aria-hidden="true"></div>
+    <div class="v67-phone" aria-hidden="true">
+      <div class="v67-phone-speaker"></div>
+      <div class="v67-phone-top"><span class="v67-phone-logo">ТЕЛО<br>ПОД КЛЮЧ</span><span class="v67-phone-mini">✦</span></div>
+      <div class="v67-phone-tools"><span>Меню</span><span>Рецепты</span><span>Покупки</span><span>Замены</span></div>
+      <div class="v67-phone-inner"><strong>Моё меню на 7 дней</strong><div class="v67-week-tabs"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div class="v67-phone-meal"><img src="assets/hero-01-fish.webp" alt="" loading="lazy" decoding="async"></div><div class="v67-phone-caption">Индивидуально рассчитанное питание</div><div class="v67-mock-foot">Блюда · Рецепты · Список покупок</div></div>
+    </div>
+  </div>
+  <div class="v67-path-info"><span class="v36-path-kicker">КОНСТРУКТОР ПИТАНИЯ</span><span class="v36-path-status">Готовится к запуску</span><h3>Ваше меню.<br>Ваши правила.</h3><p>Для здоровых взрослых: персональные расчёты, отобранные ингредиенты, рецепты, порции, замены и закупки на неделю.</p><div class="v36-path-tags"><span>4 цели</span><span>7 дней</span><span>Ваши вкусы</span></div><a class="v36-path-action" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Узнать о запуске <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="v36-path v36-path-personal v67-path-expert">
+  <div class="v67-format-visual v67-expert-visual"><img src="assets/hero-05-maintenance.webp" alt="Валентина Счастье — эксперт по питанию и сопровождению" loading="lazy" decoding="async"></div>
+  <div class="v67-path-info"><span class="v36-path-kicker">ЛИЧНАЯ РАБОТА С ВАЛЕНТИНОЙ</span><span class="v36-path-status">Обращение доступно сейчас</span><h3>Ваш эксперт.<br>Ваш результат.</h3><p>Индивидуальная диагностика, питание, работа с привычками, персональные тренировки и сопровождение. При заболеваниях учитываются рекомендации врача.</p><div class="v36-path-tags"><span>Диагностика</span><span>Сопровождение</span><span>Тренировки</span></div><a class="v36-path-action" href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Обсудить мою задачу <span aria-hidden="true">↗</span></a></div>
+</article>
 </div><p class="v17-price-note">Приложение ещё не открыто для клиентов. Условия личной работы обсуждаются напрямую. На сайте нет оплаты и форм сбора контактов.</p>
 </div></section>
 
