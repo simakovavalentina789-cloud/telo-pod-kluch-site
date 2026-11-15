@@ -138,7 +138,7 @@ try {
     assert.equal(await page.locator('#hero-title').innerText(),firstHero,'hero previous restores presentation');
     // Five-slide brand story acceptance: no missing media, no accidental remapping.
     const expectedHeroPhotos=[
-      'hero-emotional.webp','hero-02-consultation.webp','hero-02-steak.webp',
+      'hero-emotional.webp','hero-01-fish.webp','hero-02-steak.webp',
       'hero-03-constructor.webp','hero-05-maintenance.webp'
     ];
     const slideDots=page.locator('[data-story-slide]');
