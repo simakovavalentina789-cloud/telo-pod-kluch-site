@@ -207,6 +207,15 @@ try {
     });
     reports.push({viewport:size.name,width:size.width,height:size.height,...performance});
     await page.locator('#app').screenshot({path:'screenshots/qa-app-'+engine+'-'+size.name+'.png',animations:'disabled'});
+    const formats=page.locator('#formats');
+    assert.equal(await formats.locator('.v67-format-choices .v36-path').count(),2,'two visual format options');
+    assert.equal(await formats.locator('.v36-path-action[href^="https://t.me/"]').count(),2,'both format CTAs remain real Telegram links');
+    const appVisual=formats.locator('.v67-app-visual>img');
+    const portrait=formats.locator('.v67-expert-visual>img');
+    for(const img of [appVisual,portrait]){await img.evaluate(node=>node.decode());assert.ok(await img.evaluate(node=>node.naturalWidth>=400),'format visual must load at native width');}
+    if(engine==='chromium'&&(size.name==='desktop'||size.name==='mobile'||size.name==='ipad')){
+      await formats.screenshot({path:'screenshots/qa-formats-'+size.name+'.png',animations:'disabled'});
+    }
     console.log('PASS',engine,size.name, '7 day clicks, keyboard, images, layout, JS');
     await page.close();
   }
