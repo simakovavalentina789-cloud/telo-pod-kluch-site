@@ -1339,6 +1339,47 @@ section[id],header[id]{scroll-margin-top:112px}
 
 /* V60 — independent 1672px apple crumble photograph replaces the small V58 crop. */
 .v48-food-image[src*="/food-v60/"]{object-fit:cover;object-position:center}
+
+/* V66 — final visual audit: slide-specific harmony, readability and spacing.
+   All approved media and slide texts remain untouched. */
+@media (min-width:801px) {
+  .v14-hero.v66-week-active h1 {
+    font-size:clamp(43px,4.25vw,62px);
+    line-height:1.09;
+    letter-spacing:-.042em;
+    max-width:670px;
+  }
+  .v14-hero.v66-week-active .story-copy {max-width:640px;width:min(100%,640px)}
+  .v14-hero.v66-week-active .v14-hero-layout {min-height:740px}
+  .v14-hero.v66-maintenance-active .v14-hero-grad {
+    background:linear-gradient(90deg,rgba(13,37,31,.90) 0%,rgba(13,37,31,.82) 28%,rgba(13,37,31,.42) 47%,rgba(13,37,31,0) 70%);
+  }
+  .v14-hero.v66-maintenance-active #story-main-image {object-position:center 44%}
+}
+.v14-hero.v66-maintenance-active h1,
+.v14-hero.v66-maintenance-active .story-kicker,
+.v14-hero.v66-maintenance-active .story-lead,
+.v14-hero.v66-maintenance-active .story-secondary,
+.v14-hero.v66-maintenance-active .story-proofline {
+  text-shadow:0 2px 14px rgba(5,21,16,.72);
+}
+@media (max-width:800px) {
+  .v14-hero.v66-week-active h1 {
+    font-size:clamp(38px,7.8vw,57px);
+    line-height:1.1;
+    letter-spacing:-.035em;
+    overflow-wrap:normal;
+  }
+  .v14-hero.v66-maintenance-active .v14-hero-grad {
+    background:linear-gradient(0deg,#0c100e 0%,rgba(12,16,14,.9) 20%,rgba(12,16,14,.18) 62%,transparent 87%);
+  }
+  .v14-hero.v66-maintenance-active #story-main-image {object-position:center 36%}
+}
+@media (max-width:520px) {
+  .v14-hero.v66-week-active h1 {font-size:clamp(35px,9vw,42px);line-height:1.1}
+  .v14-hero.v66-week-active .story-copy {max-width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -1725,6 +1766,8 @@ section[id],header[id]{scroll-margin-top:112px}
     const d=story[storyIndex];
     carouselRoot?.classList.toggle('v28-emotional-active',storyIndex===0);
     carouselRoot?.classList.toggle('v61-consultation-active',storyIndex===1);
+    carouselRoot?.classList.toggle('v66-week-active',storyIndex===2);
+    carouselRoot?.classList.toggle('v66-maintenance-active',storyIndex===4);
     const title=document.getElementById('hero-title');
     if(!title)return;
     title.innerHTML=d.title;
