@@ -126,6 +126,11 @@ try {
     assert.ok(await faq.evaluate(node=>node.open),'FAQ expands');
     await faq.locator('summary').click();
     assert.ok(!(await faq.evaluate(node=>node.open)),'FAQ closes');
+    // Freeze automatic rotation and start on a known slide before testing next/previous.
+    // An elapsed WebKit timer could otherwise rotate between two Playwright clicks.
+    const pauseButton=page.locator('#story-pause');
+    if((await pauseButton.getAttribute('aria-pressed'))==='false')await pauseButton.click();
+    await page.locator('[data-story-slide="0"]').click();
     const firstHero=await page.locator('#hero-title').innerText();
     await page.locator('#story-next').click();
     assert.notEqual(await page.locator('#hero-title').innerText(),firstHero,'hero next control changes presentation');
