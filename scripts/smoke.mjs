@@ -208,6 +208,7 @@ try {
     reports.push({viewport:size.name,width:size.width,height:size.height,...performance});
     await page.locator('#app').screenshot({path:'screenshots/qa-app-'+engine+'-'+size.name+'.png',animations:'disabled'});
     const formats=page.locator('#formats');
+    await formats.scrollIntoViewIfNeeded(); // Load below-the-fold lazy imagery before decode()
     assert.equal(await formats.locator('.v67-format-choices .v36-path').count(),2,'two visual format options');
     assert.equal(await formats.locator('.v36-path-action[href^="https://t.me/"]').count(),2,'both format CTAs remain real Telegram links');
     const appVisual=formats.locator('.v67-app-visual>img');
