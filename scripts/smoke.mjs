@@ -210,14 +210,40 @@ try {
     const formats=page.locator('#formats');
     await formats.scrollIntoViewIfNeeded(); // Load below-the-fold lazy imagery before decode()
     assert.equal(await formats.locator('.v67-format-choices .v36-path').count(),2,'two visual format options');
-    assert.equal(await formats.locator('.v36-path-action[href^="https://t.me/"]').count(),2,'both format CTAs remain real Telegram links');
+    assert.equal(await formats.locator('.v36-path-action[href="app.html"]').count(),1,'app card links to dedicated product page');
+    assert.equal(await formats.locator('.v36-path-personal .v36-path-action[href^="https://t.me/"]').count(),1,'personal CTA remains a real Telegram link');
     const appVisual=formats.locator('.v67-app-visual>img');
     const portrait=formats.locator('.v67-expert-visual>img');
     for(const img of [appVisual,portrait]){await img.evaluate(node=>node.decode());assert.ok(await img.evaluate(node=>node.naturalWidth>=400),'format visual must load at native width');}
     if(engine==='chromium'&&(size.name==='desktop'||size.name==='mobile'||size.name==='ipad')){
       await formats.screenshot({path:'screenshots/qa-formats-'+size.name+'.png',animations:'disabled'});
     }
-    console.log('PASS',engine,size.name, '7 day clicks, keyboard, images, layout, JS');
+    // Dedicated app story: complete explanatory path and mobile readability.
+    const product=await browser.newPage({viewport:{width:size.width,height:size.height},deviceScaleFactor:2});
+    const response=await product.goto('http://127.0.0.1:'+server.address().port+'/app.html',{waitUntil:'domcontentloaded'});
+    assert.equal(response?.status(),200,'dedicated app page serves HTTP 200');
+    assert.ok((await product.title()).includes('Тело под ключ'),'product page title');
+    assert.equal(await product.locator('h1').count(),1,'one product hero headline');
+    assert.ok((await product.locator('#goals .card').count())===4,'four nutrition goals explained');
+    assert.equal(await product.locator('#work .steps article').count(),5,'five-step experience explained');
+    assert.ok((await product.locator('#access').innerText()).includes('700 ₽'),'weekly offer is explained');
+    assert.equal(await product.locator('a[href="index.html#formats"]').count(),2,'back-to-choices links present');
+    assert.equal(await product.locator('form').count(),0,'no unlaunched signup form');
+    assert.ok(await product.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+3),'product page no horizontal overflow');
+    const productImages=product.locator('img');
+    for(let n=0;n<await productImages.count();n++){
+      const img=productImages.nth(n);await img.scrollIntoViewIfNeeded();await img.evaluate(node=>node.decode());
+      assert.ok(await img.evaluate(node=>node.naturalWidth>300),'product page images must load');
+    }
+    const details=product.locator('#faq details').first();
+    await details.locator('summary').click();
+    assert.ok(await details.evaluate(node=>node.open),'product FAQ opens');
+    if(engine==='chromium'&&(size.name==='desktop'||size.name==='mobile'||size.name==='ipad')){
+      await product.locator('.hero').screenshot({path:'screenshots/qa-product-hero-'+size.name+'.png',animations:'disabled'});
+      await product.locator('#access').screenshot({path:'screenshots/qa-product-offer-'+size.name+'.png',animations:'disabled'});
+    }
+    await product.close();
+    console.log('PASS',engine,size.name, '7 day clicks, keyboard, images, layout, JS, product story');
     await page.close();
   }
 }finally{
