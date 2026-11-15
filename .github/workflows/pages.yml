@@ -36,7 +36,10 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/index.html
+          cp app.html _site/app.html
           cp robots.txt sitemap.xml _site/
+          test -s _site/app.html
+          grep -q 'Ваше тело уникально' _site/app.html
           test -d assets
           cp -R assets _site/assets
           test -s _site/assets/logo-vs.webp
@@ -97,6 +100,7 @@ jobs:
           base = os.environ["PUBLISHED_URL"].rstrip("/") + "/"
           checks = {
               "": b"Telo",
+              "app.html": b"<!doctype html>",
               "assets/hero-01-fish.webp": b"RIFF",
               "assets/hero-02-steak.webp": b"RIFF",
               "assets/food-v60/apple-crumble.webp": b"RIFF",
@@ -111,7 +115,9 @@ jobs:
                           data = res.read()
                           assert res.status == 200, f"HTTP {res.status}"
                           assert len(data) > 1024, f"Undersized response: {len(data)} bytes"
-                          if relative:
+                          if relative == "app.html":
+                              assert b'lang="ru"' in data and b'700' in data and b'food-v52/dessert-mousse.webp' in data, "Missing dedicated app story"
+                          elif relative:
                               assert data[:4] == magic and data[8:12] == b"WEBP", "Not a valid WebP header"
                           else:
                               assert b'const v45Days=' in data and b'<html lang="ru">' in data, "Wrong site version or HTML"
