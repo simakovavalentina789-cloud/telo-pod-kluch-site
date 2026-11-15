@@ -131,6 +131,32 @@ try {
     assert.notEqual(await page.locator('#hero-title').innerText(),firstHero,'hero next control changes presentation');
     await page.locator('#story-prev').click();
     assert.equal(await page.locator('#hero-title').innerText(),firstHero,'hero previous restores presentation');
+    // Five-slide brand story acceptance: no missing media, no accidental remapping.
+    const expectedHeroPhotos=[
+      'hero-emotional.webp','hero-02-consultation.webp','hero-02-steak.webp',
+      'hero-03-constructor.webp','hero-05-maintenance.webp'
+    ];
+    const slideDots=page.locator('[data-story-slide]');
+    assert.equal(await slideDots.count(),5,'five editorial hero slides');
+    for(let index=0;index<5;index++){
+      await slideDots.nth(index).click();
+      assert.equal(await slideDots.nth(index).getAttribute('aria-current'),'true','correct active hero dot '+index);
+      const img=page.locator('#story-main-image');
+      await img.evaluate(node=>node.decode());
+      const state=await img.evaluate(node=>({src:node.currentSrc,width:node.naturalWidth,height:node.naturalHeight}));
+      assert.ok(state.src.endsWith('/'+expectedHeroPhotos[index]),'correct hero image for slide '+index);
+      assert.ok(state.width>=500&&state.height>=350,'adequate hero resolution on slide '+index);
+      const label=await page.locator('#hero-title').innerText();
+      assert.ok(label.trim().length>10,'visible headline slide '+index);
+      if((size.name==='desktop'||size.name==='mobile') && engine==='chromium'){
+        await page.locator('.v14-hero').screenshot({
+          path:'screenshots/qa-hero-'+size.name+'-slide-'+String(index+1).padStart(2,'0')+'.png',
+          animations:'disabled'
+        });
+      }
+    }
+    await slideDots.first().click();
+
     if(await page.locator('.menu-toggle').isVisible()){
       const menuToggle=page.locator('.menu-toggle');
       await menuToggle.click();
