@@ -124,6 +124,35 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 @media(max-width:760px){.goals-heading{grid-template-columns:1fr;gap:14px}.goal-explorer{grid-template-columns:1fr}.goal-switches{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}.goal-switch{font-size:17px;min-height:70px}.goal-feature{grid-template-columns:43% 57%;min-height:310px}.goal-photo{height:auto}}
 @media(max-width:480px){.goal-feature{grid-template-columns:1fr}.goal-photo{height:225px}.goal-description{padding:23px}.goal-description h3{font-size:29px}.goal-switch{padding:12px;font-size:16px}}
 
+
+/* TPK interactive day-in-the-life: product comprehension without invented macros. */
+.daily-experience{background:#e8eee7}
+.daily-head{display:grid;grid-template-columns:1.1fr .8fr;gap:clamp(24px,6vw,80px);align-items:end;margin-bottom:35px}
+.daily-head h2{font-size:clamp(39px,4.8vw,70px)}
+.daily-head h2 em{color:#7b9881}
+.daily-head .lead{margin:0}
+.daily-notice{font-size:12px;line-height:1.6;color:#607667}
+.daily-experience-shell{background:#10372a;border-radius:22px;overflow:hidden;border:1px solid #b3a071;box-shadow:0 20px 55px rgba(22,53,33,.12)}
+.daily-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:12px;gap:8px;background:#10372a}
+.daily-tab{appearance:none;background:transparent;border:1px solid #547b61;border-radius:12px;color:#f3ecdc;font:700 13px/1.3 var(--sans);padding:15px 8px;cursor:pointer}
+.daily-tab.active,.daily-tab:hover{background:#dab777;color:#193a2b;border-color:#e6c98b}
+.daily-tab:focus-visible{outline:3px solid #eac88d;outline-offset:1px}
+.daily-stage{display:grid;grid-template-columns:47% 53%;min-height:430px;background:#f9f7f1}
+.daily-stage-media{position:relative;min-height:380px;background:#3d5d45}
+.daily-stage-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.daily-stage-media>span{position:absolute;bottom:19px;left:19px;right:19px;width:fit-content;max-width:calc(100% - 38px);background:#0f372be6;color:#f0d8a7;font-size:10px;font-weight:800;letter-spacing:.12em;padding:9px 14px;border-radius:50px}
+.daily-stage-details{padding:clamp(25px,4vw,59px);display:flex;flex-direction:column;justify-content:center}
+.daily-stage-details h3{font-size:clamp(31px,3.4vw,48px);margin:13px 0 20px}
+.daily-stage-details p{font-size:16px;line-height:1.7}
+.daily-mini-calendar{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0}
+.daily-mini-calendar span{display:inline-grid;place-items:center;width:35px;height:35px;background:#e4eadf;color:#20452f;border-radius:9px;font-size:12px;font-weight:700}
+.daily-mini-calendar span:first-child{background:#dfbd7f}
+.daily-detail-line{border-top:1px solid #d8dfd2;margin-top:13px;padding-top:18px;color:#54735b;font-size:14px;font-weight:650}
+.daily-footer{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:26px}
+.daily-footer p{margin:0;font-size:15px}
+@media(max-width:760px){.daily-head,.daily-footer{grid-template-columns:1fr;gap:13px}.daily-stage{grid-template-columns:1fr}.daily-stage-media{min-height:270px}.daily-stage-details{padding:27px}.daily-nav{gap:5px;padding:8px}.daily-tab{padding:12px 5px;font-size:12px}}
+@media(max-width:390px){.daily-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 </style>
 </head>
 <body>
@@ -198,18 +227,27 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 <article><strong>Готовьте с удобством</strong><p>Рецепты, доступные замены и список продуктов остаются под рукой.</p></article>
 <article><strong>Продолжайте путь</strong><p>Актуализируйте параметры и формируйте следующую неделю под свою цель.</p></article>
 </div></div></section>
-<section class="section" style="background:#e9eee7" id="week"><div class="wrap split">
-<div><span class="eyebrow">ПОЧЕМУ ИМЕННО НЕДЕЛЯ</span><h2>Семь дней —<br>не срок диеты.<br><em style="color:#789586">Это ритм жизни.</em></h2>
-<p class="lead">За неделю удобно спланировать блюда и покупки, а затем обновить рацион. Питание меняется вместе с вашим графиком, вкусами и целями — без необходимости начинать заново.</p>
-<p><b>Новая неделя — новые сочетания, а не новый запрет.</b></p>
-</div><div class="panel"><div class="week-days"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
-<div class="food-grid">
-<img src="assets/food-v52/dessert-mousse.webp" alt="Творожный мусс с ягодами" loading="lazy">
-<img src="assets/food-v55/shakshuka.webp" alt="Шакшука с овощами" loading="lazy">
-<img src="assets/hero-01-fish.webp" alt="Рыба с овощами" loading="lazy">
-<img src="assets/food-v55/baked-pears-yogurt.webp" alt="Запеченные груши с йогуртом" loading="lazy"></div>
-<p class="fineprint" style="margin:14px 0 0">Изображения показывают гастрономическое разнообразие, а не обещают конкретные блюда каждому пользователю.</p>
-</div></div></section>
+<section class="section daily-experience" id="week"><div class="wrap">
+<div class="daily-head"><div><span class="eyebrow">ПОСМОТРИТЕ, ЧТО У ВАС ПОД РУКОЙ</span><h2>Не просто семь дней.<br><em>Целая система на каждый день.</em></h2></div>
+<div><p class="lead">Знакомство с пользовательским сценарием: меню, приготовление, выбор другого блюда и список закупок.</p><p class="daily-notice">Ниже — интерактивная демонстрация принципов интерфейса, не действующий персональный расчёт.</p></div></div>
+<div class="daily-experience-shell" id="daily-experience">
+<div class="daily-nav" role="group" aria-label="Разделы демонстрации приложения">
+<button type="button" class="daily-tab active" data-daily="0" aria-pressed="true">Моя неделя</button>
+<button type="button" class="daily-tab" data-daily="1" aria-pressed="false">Рецепты</button>
+<button type="button" class="daily-tab" data-daily="2" aria-pressed="false">Замены</button>
+<button type="button" class="daily-tab" data-daily="3" aria-pressed="false">Закупки</button>
+</div>
+<div class="daily-stage">
+<div class="daily-stage-media"><img id="daily-photo" src="assets/food-v52/dessert-mousse.webp" alt="Десерт — творожный мусс с ягодами" loading="lazy" decoding="async"><span id="daily-photo-label">РАЗНООБРАЗИЕ В МЕНЮ</span></div>
+<div class="daily-stage-details" aria-live="polite">
+<span class="eyebrow" id="daily-kicker">ВАШ ПЛАН</span>
+<h3 id="daily-title">Неделя, о которой уже позаботились.</h3>
+<p id="daily-description">Вместо ежедневного вопроса «что приготовить?» — собранный план на семь дней. Разные приёмы пищи, красивые блюда и порции, рассчитанные с учётом выбранной цели.</p>
+<div class="daily-mini-calendar" aria-label="Пример семидневного периода"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+<div class="daily-detail-line" id="daily-detail-line">Откройте день, посмотрите блюда и переходите к рецепту.</div>
+</div></div></div>
+<div class="daily-footer"><p><strong>Почему именно неделя?</strong> Это удобный цикл планирования питания и покупок, а не семидневная диета. Следующая неделя подстраивается под актуальные параметры и предпочтения.</p><p class="fineprint">Демонстрационные блюда и тексты иллюстрируют будущий пользовательский опыт; состав, порции и нутриенты конкретного человека рассчитываются отдельно.</p></div>
+</div></section>
 <section class="section" id="progress"><div class="wrap"><span class="eyebrow">ПУТЬ К РЕЗУЛЬТАТУ</span><h2>Вы меняетесь.<br>Питание меняется вместе с вами.</h2>
 <p class="lead">Снижение веса — не финал истории. Следующий этап может быть поддержанием результата, рекомпозицией или другой целью. При переходе учитываются новые параметры и условия расчёта.</p>
 <div class="journey"><div class="stage"><b>ВАША ПЕРВАЯ ЦЕЛЬ</b>Снижение веса</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>НОВЫЙ ЭТАП</b>Поддержание</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ПРИ ЖЕЛАНИИ</b>Рекомпозиция</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ВСЕГДА АКТУАЛЬНО</b>Полноценное питание</div></div>
@@ -259,6 +297,26 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
     image.src=stage.src;image.alt=stage.alt;kicker.textContent=stage.k;title.textContent=stage.t;desc.textContent=stage.d;signal.textContent=stage.s;
   }
   buttons.forEach((btn,index)=>btn.addEventListener('click',()=>show(index)));
+  const dailyTabs=[...document.querySelectorAll('[data-daily]')];
+  const dailyPhoto=document.getElementById('daily-photo');
+  const dailyPhotoLabel=document.getElementById('daily-photo-label');
+  const dailyKicker=document.getElementById('daily-kicker');
+  const dailyTitle=document.getElementById('daily-title');
+  const dailyDescription=document.getElementById('daily-description');
+  const dailyLine=document.getElementById('daily-detail-line');
+  const dailyStages=[
+    {img:'assets/food-v52/dessert-mousse.webp',alt:'Десерт — творожный мусс с ягодами',label:'РАЗНООБРАЗИЕ В МЕНЮ',k:'ВАШ ПЛАН',title:'Неделя, о которой уже позаботились.',desc:'Вместо ежедневного вопроса «что приготовить?» — собранный план на семь дней. Разные приёмы пищи, красивые блюда и порции, рассчитанные с учётом выбранной цели.',detail:'Откройте день, посмотрите блюда и переходите к рецепту.'},
+    {img:'assets/food-v55/shakshuka.webp',alt:'Шакшука с овощами',label:'РЕЦЕПТЫ С ПОНЯТНЫМИ ШАГАМИ',k:'ПРИГОТОВЛЕНИЕ',title:'От красивого блюда — к понятному рецепту.',desc:'Выбираете блюдо и находите его ингредиенты и способ приготовления. Никакой необходимости собирать инструкции из десятков источников.',detail:'Рецепты связаны с индивидуальными порциями в рационе.'},
+    {img:'assets/food-v55/baked-pears-yogurt.webp',alt:'Запечённые груши с йогуртом',label:'ЕСТЬ ВЫБОР, А НЕ ЗАПРЕТ',k:'ВАШИ ПРЕДПОЧТЕНИЯ',title:'Захотелось другого? Выбирайте замену.',desc:'Не обязаны есть одно и то же блюдо. Система предусматривает подбор подходящего альтернативного варианта с учётом правил расчёта и предпочтений.',detail:'Замена должна оставаться частью согласованного недельного питания.'},
+    {img:'assets/hero-01-fish.webp',alt:'Рыба и овощи в ресторанной подаче',label:'ПОКУПКИ БЕЗ ЛИШНЕЙ СУЕТЫ',k:'СПИСОК ПРОДУКТОВ',title:'Знаете, что купить на неделю.',desc:'Из сформированного плана получается список необходимых продуктов. Меньше ручных записей, забытых ингредиентов и бесконечных походов в магазин.',detail:'Покупки рассчитываются из состава выбранных блюд и порций.'}
+  ];
+  if(dailyTabs.length===4&&dailyPhoto&&dailyPhotoLabel&&dailyKicker&&dailyTitle&&dailyDescription&&dailyLine){
+    dailyTabs.forEach((tab,i)=>tab.addEventListener('click',()=>{
+      const stage=dailyStages[i]; if(!stage)return;
+      dailyTabs.forEach((btn,index)=>{const on=index===i;btn.classList.toggle('active',on);btn.setAttribute('aria-pressed',String(on))});
+      dailyPhoto.src=stage.img;dailyPhoto.alt=stage.alt;dailyPhotoLabel.textContent=stage.label;dailyKicker.textContent=stage.k;dailyTitle.textContent=stage.title;dailyDescription.textContent=stage.desc;dailyLine.textContent=stage.detail;
+    }));
+  }
   const goalButtons=[...document.querySelectorAll('[data-goal]')];
   const goalPhoto=document.getElementById('goal-photo');
   const goalKicker=document.getElementById('goal-kicker');
