@@ -224,7 +224,16 @@ try {
     assert.equal(response?.status(),200,'dedicated app page serves HTTP 200');
     assert.ok((await product.title()).includes('Тело под ключ'),'product page title');
     assert.equal(await product.locator('h1').count(),1,'one product hero headline');
-    assert.ok((await product.locator('#goals .card').count())===4,'four nutrition goals explained');
+    const goalSwitches=product.locator('#goals .goal-switch');
+    assert.equal(await goalSwitches.count(),4,'four nutrition goals offered');
+    await goalSwitches.nth(3).click();
+    assert.equal(await goalSwitches.nth(3).getAttribute('aria-pressed'),'true','selected goal identified');
+    assert.ok((await product.locator('#goal-title').innerText()).includes('Достигли цели'),'maintenance message explained');
+    const goalImage=product.locator('#goal-photo');
+    await goalImage.evaluate(node=>node.decode());
+    assert.ok((await goalImage.getAttribute('src')).includes('case-maintain.webp'),'goal illustration changes');
+    await goalSwitches.first().click();
+    assert.equal(await goalSwitches.first().getAttribute('aria-pressed'),'true','goal switching reversible');
     assert.equal(await product.locator('#work .steps article').count(),5,'five-step experience explained');
     // Product differentiation must be a real accessible interaction, not a static mock.
     const processTabs=product.locator('#process-experience .process-switch');
