@@ -25,13 +25,90 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 @media(max-width:760px){.wrap{width:min(100% - 32px,590px)}.section{padding:64px 0}.hero .wrap{grid-template-columns:1fr;padding-top:58px;min-height:0;gap:24px}.device{width:min(80%,315px)}.split,.compare{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.goals{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,1fr)}.nav a:not(.btn){display:none}.photo-frame{min-height:330px}.hero-actions{align-items:stretch}.week-days span{font-size:12px}.journey .arrow{display:none}}
 @media(max-width:480px){.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.goals,.steps{grid-template-columns:1fr}.device{width:min(86%,320px)}.brand{font-size:13px}.brand img{width:40px;height:40px}.nav .btn{font-size:11px;padding:12px}.journey .stage{width:100%}h1{font-size:clamp(43px,11vw,58px)}.week-days{gap:3px}.week-days span{padding:10px 0;font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* Editorial brand system V2: deliberate typographic variation and a genuine
+   explorable product explanation instead of repeated SaaS feature cards. */
+.editorial-opening{background:#faf9f5}
+.editorial-opening-grid{display:grid;grid-template-columns:1.05fr .75fr;gap:clamp(28px,6vw,100px);align-items:end}
+.editorial-opening h2{font-size:clamp(47px,5.4vw,79px);line-height:1.08}
+.editorial-opening h2 em{color:#7b9780;font-weight:400}
+.editorial-opening-answer{border-left:2px solid #d3b27d;padding-left:30px}
+.editorial-opening-answer p{font-size:19px;line-height:1.75;margin:0 0 14px}
+.editorial-opening-answer strong{font-size:15px;line-height:1.6;color:#28563b}
+.editorial-problems{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid #bdcbbd;border-bottom:1px solid #bdcbbd;margin-top:60px}
+.editorial-problems>div{padding:28px 29px 30px 0}
+.editorial-problems>div+div{border-left:1px solid #ccd8cb;padding-left:29px}
+.editorial-problems span{font-size:10px;letter-spacing:.12em;font-weight:750;color:#947750;display:block;margin-bottom:13px}
+.editorial-problems strong{display:block;font:400 27px/1.2 var(--serif);margin-bottom:11px}
+.editorial-problems p{font-size:14px;line-height:1.6;color:#62756b;margin:0}
+.process-editorial{background:#e8eee7}
+.process-heading{display:grid;grid-template-columns:1.05fr .8fr;gap:45px;align-items:end;margin-bottom:37px}
+.process-heading h2{font-size:clamp(43px,5.3vw,70px)}
+.process-heading h2 em{color:#73917a}
+.process-heading .lead{margin-bottom:12px}
+.process-experience{display:grid;grid-template-columns:330px minmax(0,1fr);border:1px solid #b8c9bb;border-radius:24px;overflow:hidden;background:#f9f8f3;box-shadow:0 22px 55px rgba(26,55,36,.09)}
+.process-menu{background:#113a2d;padding:17px}
+.process-switch{display:block;width:100%;appearance:none;background:transparent;color:#f5f5e9;border:1px solid transparent;border-radius:14px;padding:17px;text-align:left;cursor:pointer;transition:background .2s,border-color .2s}
+.process-switch+ .process-switch{margin-top:8px}
+.process-switch span{display:block;color:#d9bb82;font:700 10px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.process-switch strong{display:block;font:400 22px/1.22 var(--serif)}
+.process-switch small{font:400 12px/1.6 var(--sans);color:#b5cebd;display:block;margin-top:6px}
+.process-switch:hover,.process-switch.active{background:#275641;border-color:#729477}
+.process-switch:focus-visible{outline:3px solid #e9c78b;outline-offset:-3px}
+.process-scene{display:grid;grid-template-rows:minmax(235px,340px) auto}
+.process-scene-media{background:#dfdfd4;overflow:hidden}
+.process-scene-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.process-scene-copy{padding:30px 35px 36px}
+.process-scene-copy h3{font-size:clamp(28px,3vw,44px);margin:8px 0 12px}
+.process-scene-copy p{font-size:16px;line-height:1.7;margin:0}
+.process-signal{font:700 12px/1.5 var(--sans);color:#557a5d;border-top:1px solid #d6dfd4;padding-top:14px;margin-top:22px}
+.process-disclaimer{margin:17px 0 0;max-width:930px}
+.editor-contrast{background:#f5f1e6}
+.contrast-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,8vw,130px);align-items:start}
+.editor-contrast h2{font-size:clamp(44px,6vw,86px);line-height:1.08}
+.editor-contrast h2 em{color:#789580}
+.contrast-right{border-top:2px solid #bd9b63;padding-top:22px}
+.contrast-big{font:400 clamp(35px,4vw,57px)/1.13 var(--serif);color:#183e2b}
+.contrast-big i{color:#a98752}
+.contrast-points{margin-top:24px}
+.contrast-points p{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;border-bottom:1px solid #cfd2c4;padding:17px 0;margin:0}
+.contrast-points b{font-size:14px}
+.contrast-points span{font-size:13px;color:#6d776d}
+.editor-contrast .fineprint{margin-top:30px}
+@media(max-width:900px){
+ .process-experience{grid-template-columns:270px minmax(0,1fr)}
+ .process-switch{padding:14px}.process-switch strong{font-size:19px}
+ .process-scene{grid-template-rows:240px auto}
+}
+@media(max-width:760px){
+ .editorial-opening-grid,.process-heading,.contrast-layout{grid-template-columns:1fr;gap:20px}
+ .editorial-opening-answer{padding-left:22px}
+ .editorial-problems{grid-template-columns:1fr;margin-top:35px}
+ .editorial-problems>div,.editorial-problems>div+div{padding:21px 0;border-left:0}
+ .editorial-problems>div+div{border-top:1px solid #cbd7ca}
+ .process-experience{grid-template-columns:1fr}
+ .process-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}
+ .process-switch+.process-switch{margin-top:0}
+ .process-switch{padding:12px}
+ .process-switch strong{font-size:17px}
+ .process-switch small{font-size:11px}
+ .process-scene{grid-template-rows:220px auto}
+ .process-scene-copy{padding:23px}
+}
+@media(max-width:430px){
+ .process-switch strong{font-size:16px}
+ .process-switch span{font-size:9px}
+ .process-scene-media{height:205px}
+ .process-scene{grid-template-rows:205px auto}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#content">Перейти к содержимому</a>
 <header><div class="wrap head">
 <a class="brand" href="index.html" aria-label="Вернуться на главную страницу"><img src="assets/logo-vs.webp" alt="" width="48" height="48"><span>ТЕЛО<br>ПОД КЛЮЧ<small>СИСТЕМА ПОЛНОЦЕННОГО ПИТАНИЯ</small></span></a>
-<nav class="nav" aria-label="Навигация"><a href="#approach">Принципы</a><a href="#work">Как работает</a><a href="#goals">Цели</a><a class="btn gold" href="#access">Получить доступ ↗</a></nav>
+<nav class="nav" aria-label="Навигация"><a href="#approach">Принципы</a><a href="#work">Как работает</a><a href="#goals">Цели</a><a class="btn gold" href="#access">Условия недели ↗</a></nav>
 </div></header>
 <main id="content">
 <section class="hero dark"><div class="wrap">
@@ -49,19 +126,28 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 <div class="device-actions"><span>Рецепты</span><span>Замены</span><span>Покупки</span></div>
 </div></div><p class="device-caption">Иллюстрация концепции интерфейса · не индивидуальный расчёт клиента</p></div>
 </div></section>
-<section class="section pains"><div class="wrap"><span class="eyebrow">ЗНАКОМЫЕ ПРОБЛЕМЫ</span><h2>Сколько раз вы начинали<br>с понедельника?</h2>
-<div class="grid">
-<div class="card"><span class="card-index">ПОСТОЯННЫЕ ОГРАНИЧЕНИЯ</span><h3>Надоело запрещать себе вкусное?</h3><p>Вместо бесконечных «нельзя» — рацион с разнообразными полноценными блюдами.</p></div>
-<div class="card"><span class="card-index">ЕЖЕДНЕВНЫЙ ХАОС</span><h3>Опять не знаете, что приготовить?</h3><p>Меню, рецепты и покупки собраны на неделю. Меньше решений и суеты каждый день.</p></div>
-<div class="card"><span class="card-index">ВОЗВРАЩЕНИЕ ВЕСА</span><h3>Не хотите снова начинать с нуля?</h3><p>Смена цели от снижения веса к поддержанию — естественная часть системы, а не новая диета.</p></div>
+<section class="section pains editorial-opening" id="why"><div class="wrap">
+<div class="editorial-opening-grid"><div><span class="eyebrow">НЕ НОВАЯ ДИЕТА. ДРУГОЙ ПОДХОД.</span><h2>Больше не нужно<br><em>начинать сначала.</em></h2></div>
+<div class="editorial-opening-answer"><p>Вы не обязаны каждый день решать одни и те же вопросы: что приготовить, сколько положить в тарелку и как удержать достигнутый результат.</p><strong>У вашего питания может быть система. Причём ваша собственная.</strong></div></div>
+<div class="editorial-problems">
+<div><span>01 / ВМЕСТО ЗАПРЕТОВ</span><strong>Настоящая еда, а не список «нельзя».</strong><p>Разнообразные блюда, включая десерты, в рамках индивидуального плана.</p></div>
+<div><span>02 / ВМЕСТО ХАОСА</span><strong>Неделя продумана заранее.</strong><p>Рецепты, порции, доступные замены и закупки — в одном месте.</p></div>
+<div><span>03 / ВМЕСТО КАЧЕЛЕЙ</span><strong>Цель меняется. Система остаётся.</strong><p>От снижения веса к поддержанию и другим задачам — без бесконечных диет.</p></div>
 </div></div></section>
-<section class="section" id="approach" style="background:#e9eee7"><div class="wrap split">
-<div><span class="eyebrow">ФУНДАМЕНТ ПРОДУКТА</span><h2>Не просто персонализация.<br><em style="color:#829c88">Сначала качество.</em></h2>
-<p class="lead">Обычный генератор может выдать список блюд. Мы выстраиваем питание иначе: сначала специально подготовленная база ингредиентов и справочные данные о пищевой ценности, затем расчёты и только после — индивидуальный рацион.</p>
-<div class="checks"><p>Отобранные ингредиенты с понятным составом.</p><p>Рецептуры без добавленного сахара.</p><p>Данные по энергии, белкам, жирам, углеводам и доступным нутриентам.</p><p>Разнообразные блюда и продуманные сочетания в рамках недели.</p></div>
-<p class="fineprint" style="margin-top:17px">Натуральные сахара в ягодах, фруктах и молочных продуктах не приравниваются к добавленному сахару. Полнота данных по отдельным микронутриентам различается.</p>
+<section class="section process-editorial" id="approach"><div class="wrap">
+<div class="process-heading"><div><span class="eyebrow">ЧТО ОТЛИЧАЕТ «ТЕЛО ПОД КЛЮЧ»</span><h2>Не просто меню.<br><em>Система за каждым блюдом.</em></h2></div><p class="lead">Обычная подборка рецептов начинается с ответа «что приготовить». Мы начинаем раньше — с того, <strong>из чего, для кого и зачем</strong> создаётся рацион.</p></div>
+<div class="process-experience" id="process-experience">
+<div class="process-menu" role="group" aria-label="Этапы создания рациона">
+<button type="button" class="process-switch active" data-process="0" aria-pressed="true"><span>Отбор</span><strong>01. Продукты с понятным составом</strong><small>Основа качества и вкуса</small></button>
+<button type="button" class="process-switch" data-process="1" aria-pressed="false"><span>Методика</span><strong>02. Индивидуальные расчёты</strong><small>Параметры, активность, цель</small></button>
+<button type="button" class="process-switch" data-process="2" aria-pressed="false"><span>Гастрономия</span><strong>03. Вкусные блюда и порции</strong><small>Разнообразие вместо однообразия</small></button>
+<button type="button" class="process-switch" data-process="3" aria-pressed="false"><span>Ваш план</span><strong>04. Неделя, которая связана воедино</strong><small>Рецепты, замены и покупки</small></button>
 </div>
-<div class="photo-frame"><img src="assets/hero-01-fish.webp" alt="Ресторанная композиция полноценного питания: рыба, овощи, зелень и другие блюда" loading="lazy"></div>
+<div class="process-scene">
+<div class="process-scene-media"><img id="process-image" src="assets/hero-01-fish.webp" alt="Отобранные ингредиенты в готовой ресторанной композиции" loading="lazy" decoding="async"></div>
+<div class="process-scene-copy" aria-live="polite"><span class="eyebrow" id="process-kicker">ОТПРАВНАЯ ТОЧКА</span><h3 id="process-title">Сначала — ингредиенты.</h3><p id="process-desc">В основе системы — подготовленная продуктовая база, правила отбора и справочные данные о пищевой ценности. Мы начинаем не со случайной идеи блюда, а с проверяемого состава.</p><div class="process-signal" id="process-signal">Понятный состав · натуральный вкус · данные о нутриентах</div></div>
+</div></div>
+<p class="fineprint process-disclaimer">Это интерактивная иллюстрация методики, а не персональный расчёт посетителя. Мы используем рецептуры без добавленного сахара; естественные сахара в ягодах, фруктах и молочных продуктах не исключаются. Полнота данных по отдельным нутриентам различается.</p>
 </div></section>
 <section class="section dark" id="goals"><div class="wrap">
 <span class="eyebrow">ЧЕТЫРЕ ЦЕЛИ</span><h2>Разные задачи.<br>Один продуманный путь.</h2><p class="lead muted">Вы выбираете направление. Система рассчитывает питание по вашим данным и предпочтениям.</p>
@@ -98,10 +184,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 <div class="journey"><div class="stage"><b>ВАША ПЕРВАЯ ЦЕЛЬ</b>Снижение веса</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>НОВЫЙ ЭТАП</b>Поддержание</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ПРИ ЖЕЛАНИИ</b>Рекомпозиция</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ВСЕГДА АКТУАЛЬНО</b>Полноценное питание</div></div>
 <div class="panel" style="margin-top:28px;background:#f9faf6"><h3>Как отслеживать прогресс?</h3><p>Вес, объёмы, динамика привычек и индивидуальные ощущения помогают оценивать движение к цели. Для сравнения важна тенденция во времени, а не единичная цифра. История показателей и удобный переход между целями входят в дорожную карту интерфейса; их выпуск и точный функционал будут подтверждены тестами.</p></div>
 </div></section>
-<section class="section" style="background:#fff"><div class="wrap"><span class="eyebrow">ГЛАВНОЕ ОТЛИЧИЕ</span><h2>Почему не просто попросить ИИ<br>написать вам меню?</h2><div class="compare">
-<div class="panel"><h3>Случайный список рецептов</h3><ul><li>Красивые идеи, которые нужно самостоятельно проверять.</li><li>Не всегда понятные источники данных и расчёты.</li><li>Нужно вручную связать блюда, порции, замены и закупки.</li></ul></div>
-<div class="panel"><h3>Система «Тело под ключ»</h3><ul><li>Подготовленный каталог продуктов и правила отбора ингредиентов.</li><li>Единая методика индивидуальных расчётов.</li><li>Меню, рецепты, замены и покупки внутри связанного недельного плана.</li></ul></div>
-</div><p class="fineprint" style="margin-top:18px">Сравниваются подходы к организации питания, а не заявляется абсолютная точность любого расчёта.</p></div></section>
+<section class="section editor-contrast" id="difference"><div class="wrap contrast-layout">
+<div><span class="eyebrow">НАША РАЗНИЦА</span><h2>Рецепт —<br>это идея.<br><em>А система — решение.</em></h2><p class="lead">ИИ способен предложить меню по запросу. Но красивый текст сам по себе не гарантирует согласованности недели, проверяемого состава и расчёта порций.</p></div>
+<div class="contrast-right"><div class="contrast-big">Не список.<br><i>Целая неделя.</i></div><div class="contrast-points"><p><b>Отбор ингредиентов</b><span>Не случайный набор продуктов</span></p><p><b>Расчётная методика</b><span>Питание под данные и выбранную цель</span></p><p><b>Связанный результат</b><span>Блюда, порции, замены и закупки в одном плане</span></p></div></div>
+</div><div class="wrap"><p class="fineprint">Сравниваем принципы построения продукта, а не утверждаем, что все решения ИИ работают одинаково или что любая методика исключает ошибки.</p></div></section>
 <section class="section price" id="access"><div class="wrap split">
 <div><span class="eyebrow" style="color:#ddbd86">ВАША НЕДЕЛЯ</span><h2>Вкусное питание.<br>Ваш собственный темп.</h2>
 <p class="lead">Готовый недельный план, рецепты, замены и список покупок — без ежедневных догадок «что сегодня приготовить».</p><div class="price-value">700 ₽ <small>за 7 дней</small></div>
@@ -121,4 +207,27 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 </div></section>
 </main>
 <footer><div class="wrap"><div><b>ТЕЛО ПОД КЛЮЧ</b><br>Авторская методика Валентины Счастье</div><div><a href="index.html#formats">Выбрать формат</a> · <a href="index.html">Главная</a> · <a href="https://t.me/Valysha_Schaste" target="_blank" rel="noopener noreferrer">Telegram</a></div></div></footer>
+<script>
+(() => {
+  const buttons=[...document.querySelectorAll('[data-process]')];
+  const image=document.getElementById('process-image');
+  const kicker=document.getElementById('process-kicker');
+  const title=document.getElementById('process-title');
+  const desc=document.getElementById('process-desc');
+  const signal=document.getElementById('process-signal');
+  if(!buttons.length||!image||!kicker||!title||!desc||!signal)return;
+  const stages=[
+    {k:'ОТПРАВНАЯ ТОЧКА',t:'Сначала — ингредиенты.',d:'В основе системы — подготовленная продуктовая база, правила отбора и справочные данные о пищевой ценности. Мы начинаем не со случайной идеи блюда, а с проверяемого состава.',s:'Понятный состав · натуральный вкус · данные о нутриентах',src:'assets/hero-01-fish.webp',alt:'Ресторанная композиция с рыбой и овощами'},
+    {k:'ВАШИ ПАРАМЕТРЫ',t:'Затем — расчёт под вас.',d:'Возраст, параметры тела, повседневная активность, предпочтения и выбранная цель определяют ориентиры по энергии и питательным веществам. Не один шаблон для всех.',s:'4 цели · индивидуальные ориентиры · учёт предпочтений',src:'assets/format-app-visual-v67.webp',alt:'Иллюстрация индивидуального недельного питания на экране смартфона'},
+    {k:'ГАСТРОНОМИЯ',t:'Вкус — часть системы.',d:'Разнообразная рецептурная библиотека позволяет сочетать сытные блюда, овощи, ягоды и десерты с продуманными порциями. Полноценное питание не обязано быть скучным.',s:'Рецептуры · порции · разнообразие',src:'assets/food-v52/dessert-mousse.webp',alt:'Аппетитный творожный мусс с ягодами'},
+    {k:'НЕДЕЛЬНЫЙ РЕЗУЛЬТАТ',t:'И всё соединяется в одну неделю.',d:'На семь дней формируется согласованный план с блюдами, рецептами, доступными заменами и продуктами для покупок. Это снимает ежедневную задачу заново придумывать питание.',s:'7 дней · рецепты · замены · закупки',src:'assets/hero-03-constructor.webp',alt:'Гастрономическая композиция ингредиентов и готового блюда'}
+  ];
+  function show(i){
+    const stage=stages[i]; if(!stage)return;
+    buttons.forEach((btn,index)=>{const active=index===i;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))});
+    image.src=stage.src;image.alt=stage.alt;kicker.textContent=stage.k;title.textContent=stage.t;desc.textContent=stage.d;signal.textContent=stage.s;
+  }
+  buttons.forEach((btn,index)=>btn.addEventListener('click',()=>show(index)));
+})();
+</script>
 </body></html>
