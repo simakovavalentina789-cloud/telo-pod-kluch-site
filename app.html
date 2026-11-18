@@ -153,6 +153,29 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 @media(max-width:760px){.daily-head,.daily-footer{grid-template-columns:1fr;gap:13px}.daily-stage{grid-template-columns:1fr}.daily-stage-media{min-height:270px}.daily-stage-details{padding:27px}.daily-nav{gap:5px;padding:8px}.daily-tab{padding:12px 5px;font-size:12px}}
 @media(max-width:390px){.daily-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
+
+/* Editorial founder-and-method signature — authored, not generic SaaS cards. */
+.founder-method{background:#f8f4eb;border-top:1px solid #e3e1d8;border-bottom:1px solid #d8d9ce}
+.founder-layout{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(30px,6.3vw,100px);align-items:start}
+.founder-photo{position:sticky;top:108px;min-height:650px;border-radius:4px 70px 4px 4px;overflow:hidden;background:#e7ded0}
+.founder-photo img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center}
+.founder-photo-label{position:absolute;left:0;right:0;bottom:0;padding:75px 30px 30px;color:#f7f1e5;font:400 clamp(22px,3vw,34px)/1.1 var(--serif);letter-spacing:.04em;background:linear-gradient(0deg,rgba(9,32,22,.94),rgba(9,32,22,0))}
+.founder-photo-label span{font:650 12px/1.5 var(--sans);letter-spacing:.14em;color:#efd3a1}
+.founder-copy h2{font-size:clamp(40px,4.65vw,70px);margin:17px 0 22px}
+.founder-copy h2 em{color:#799881}
+.founder-copy .lead{margin-top:0}
+.founder-sign{font:italic 28px/1.3 var(--serif);color:#9a794c;margin:22px 0 38px}
+.founder-principles{border-top:1px solid #bccbbd}
+.founder-principles>div{padding:21px 0;border-bottom:1px solid #ccd6c8}
+.founder-principles span{font:750 10px/1.5 var(--sans);letter-spacing:.12em;color:#9b7b4c;display:block;margin-bottom:7px}
+.founder-principles strong{display:block;font:400 clamp(22px,2.3vw,32px)/1.2 var(--serif)}
+.founder-principles p{font-size:14px;color:#65796b;line-height:1.65;margin:9px 0 0}
+.founder-proof{font-size:12px;line-height:1.75;color:#66796c;margin:27px 0}
+.founder-link{display:inline-block;padding-bottom:5px;color:#184a34;text-decoration:none;font-weight:750;border-bottom:1px solid #9a7c48}
+.founder-link:hover{color:#946d39}
+@media(max-width:900px){.founder-layout{grid-template-columns:.8fr 1.2fr;gap:28px}.founder-photo{min-height:520px}}
+@media(max-width:760px){.founder-layout{grid-template-columns:1fr}.founder-photo{position:relative;top:auto;min-height:0;aspect-ratio:4/3;max-height:470px}.founder-copy h2{font-size:clamp(37px,8.5vw,55px)}.founder-photo-label{padding:58px 20px 22px}}
+
 </style>
 </head>
 <body>
@@ -253,6 +276,21 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 <div class="journey"><div class="stage"><b>ВАША ПЕРВАЯ ЦЕЛЬ</b>Снижение веса</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>НОВЫЙ ЭТАП</b>Поддержание</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ПРИ ЖЕЛАНИИ</b>Рекомпозиция</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ВСЕГДА АКТУАЛЬНО</b>Полноценное питание</div></div>
 <div class="panel" style="margin-top:28px;background:#f9faf6"><h3>Как отслеживать прогресс?</h3><p>Вес, объёмы, динамика привычек и индивидуальные ощущения помогают оценивать движение к цели. Для сравнения важна тенденция во времени, а не единичная цифра. История показателей и удобный переход между целями входят в дорожную карту интерфейса; их выпуск и точный функционал будут подтверждены тестами.</p></div>
 </div></section>
+<section class="section founder-method" id="author" aria-labelledby="founder-title"><div class="wrap founder-layout">
+<div class="founder-photo"><img src="assets/hero-05-maintenance.webp" alt="Валентина Счастье — автор системы «Тело под ключ»" loading="lazy" decoding="async"><div class="founder-photo-label">ВАЛЕНТИНА СЧАСТЬЕ<br><span>Автор системы</span></div></div>
+<div class="founder-copy">
+<span class="eyebrow">ЗА ТЕХНОЛОГИЕЙ СТОИТ ЧЕЛОВЕК</span>
+<h2 id="founder-title">Опыт эксперта.<br><em>Точность системы.</em></h2>
+<p class="lead">«Тело под ключ» выросло из практики работы с питанием, физической активностью и привычками. Я создаю инструмент, который помогает людям применять понятные принципы полноценного питания в обычной жизни — без необходимости каждый день обращаться к эксперту за новым меню.</p>
+<p class="founder-sign">Валентина Счастье</p>
+<div class="founder-principles" aria-label="Как экспертная методика превращается в продукт">
+<div><span>ПРИНЦИП КАЧЕСТВА</span><strong>Сначала ингредиенты, потом рецепты.</strong><p>Отбор состава и данные о пищевой ценности — фундамент, а не декоративное обещание.</p></div>
+<div><span>ПРИНЦИП ИНДИВИДУАЛЬНОСТИ</span><strong>Не меню на всех — расчёт под человека.</strong><p>Цель, параметры, активность, предпочтения и размеры порций взаимосвязаны.</p></div>
+<div><span>ПРИНЦИП УДОБСТВА</span><strong>Питание должно работать в реальной жизни.</strong><p>Разнообразная неделя, понятные рецепты, замены и покупки без бесконечного планирования.</p></div>
+</div>
+<p class="founder-proof"><strong>Важно:</strong> индивидуальное сопровождение и автоматический расчёт в приложении — разные форматы. Приложение предназначено для здоровых взрослых, а персональные тренировки и медицински сложные ситуации не относятся к автоматическому меню.</p>
+<a class="founder-link" href="index.html#about">Больше об авторе и экспертном опыте <span aria-hidden="true">↗</span></a>
+</div></div></section>
 <section class="section editor-contrast" id="difference"><div class="wrap contrast-layout">
 <div><span class="eyebrow">НАША РАЗНИЦА</span><h2>Рецепт —<br>это идея.<br><em>А система — решение.</em></h2><p class="lead">ИИ способен предложить меню по запросу. Но красивый текст сам по себе не гарантирует согласованности недели, проверяемого состава и расчёта порций.</p></div>
 <div class="contrast-right"><div class="contrast-big">Не список.<br><i>Целая неделя.</i></div><div class="contrast-points"><p><b>Отбор ингредиентов</b><span>Не случайный набор продуктов</span></p><p><b>Расчётная методика</b><span>Питание под данные и выбранную цель</span></p><p><b>Связанный результат</b><span>Блюда, порции, замены и закупки в одном плане</span></p></div></div>
