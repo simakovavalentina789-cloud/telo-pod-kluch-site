@@ -261,6 +261,11 @@ try {
     const evidence=product.locator('#real-interface');
     assert.equal(await evidence.locator('[data-evidence]').count(),2,'archived PWA screenshots available');
     assert.ok((await evidence.innerText()).includes('синтетическими'),'screenshots clearly labelled synthetic');
+    const releaseMap=product.locator('#evidence-state');
+    assert.equal(await releaseMap.locator('.evidence-state-row').count(),4,'pilot capabilities and planned features are separated');
+    assert.equal(await releaseMap.locator('.evidence-state-row.is-future').count(),1,'progress roadmap flagged as in development');
+    assert.ok((await releaseMap.innerText()).includes('Приватный профиль'),'authenticated pilot capability explained');
+    assert.ok((await releaseMap.innerText()).includes('Защищённое предложение замены'),'restricted pilot substitution explained');
     const evidenceImage=evidence.locator('#evidence-screenshot');
     await evidenceImage.scrollIntoViewIfNeeded();await evidenceImage.evaluate(node=>node.decode());
     assert.ok(await evidenceImage.evaluate(node=>node.naturalWidth>900),'genuine PWA weekly screenshot loads');
