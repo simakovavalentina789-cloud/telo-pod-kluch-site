@@ -291,7 +291,8 @@ try {
     assert.ok((await processImage.getAttribute('src')).includes('dessert-mousse.webp'),'stage changes real food image');
     await processTabs.last().click();
     assert.ok((await product.locator('#process-desc').innerText()).includes('семь дней'),'weekly flow explanation accessible');
-    assert.ok((await product.locator('#access').innerText()).includes('700 ₽'),'weekly offer is explained');
+    assert.ok((await product.locator('#access').innerText()).includes('Скоро запуск'),'prelaunch status is explained');
+    assert.ok(!(await product.locator('#access').innerText()).includes('700 ₽'),'unapproved price is not displayed');
     assert.equal(await product.locator('a[href="index.html#formats"]').count(),2,'back-to-choices links present');
     assert.equal(await product.locator('form').count(),0,'no unlaunched signup form');
     assert.ok(await product.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+3),'product page no horizontal overflow');
