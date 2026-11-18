@@ -176,6 +176,35 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 @media(max-width:900px){.founder-layout{grid-template-columns:.8fr 1.2fr;gap:28px}.founder-photo{min-height:520px}}
 @media(max-width:760px){.founder-layout{grid-template-columns:1fr}.founder-photo{position:relative;top:auto;min-height:0;aspect-ratio:4/3;max-height:470px}.founder-copy h2{font-size:clamp(37px,8.5vw,55px)}.founder-photo-label{padding:58px 20px 22px}}
 
+
+/* Real PWA screenshots documented in private 2026 pilot: not stock mockups. */
+.evidence-section{background:#102f25;color:#f5eee1}
+.evidence-heading{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(25px,6vw,95px);align-items:end;margin-bottom:38px}
+.evidence-heading .eyebrow,.evidence-explain .eyebrow{color:#e1c088}
+.evidence-heading h2{font-size:clamp(43px,5.3vw,74px);margin-bottom:0}
+.evidence-heading h2 em{color:#d9bd88}
+.evidence-heading .lead{margin:0 0 13px;color:#e4eade}
+.evidence-small{font-size:12px;color:#c7d6c7;line-height:1.75;margin:0}
+.evidence-browser{background:#f6f2e9;color:#183a2c;border-radius:19px;overflow:hidden;border:1px solid #a98e5d;box-shadow:0 35px 75px rgba(0,0,0,.2)}
+.evidence-toolbar{background:#183e30;color:#eee7d9;display:flex;align-items:center;gap:15px;padding:12px 17px;min-height:66px;flex-wrap:wrap}
+.browser-dots{display:flex;gap:6px}.browser-dots span{display:block;width:8px;height:8px;border-radius:50%;background:#c1a66d}
+.browser-dots span:nth-child(2){opacity:.7}.browser-dots span:nth-child(3){opacity:.45}
+.evidence-toolbar-name{font-size:10px;letter-spacing:.13em;font-weight:750;flex:1}
+.evidence-tabs{display:flex;flex-wrap:wrap;gap:7px}
+.evidence-tab{appearance:none;background:transparent;color:#f6eee1;border:1px solid #8b9c80;border-radius:9px;padding:10px 13px;font:700 12px var(--sans);cursor:pointer}
+.evidence-tab.active,.evidence-tab:hover{background:#dfc38b;color:#193b2c;border-color:#dfc38b}
+.evidence-tab:focus-visible{outline:3px solid #efcd89;outline-offset:2px}
+.evidence-display{background:#e9e8dc;padding:14px;display:grid;place-items:center;min-height:270px}
+.evidence-display img{display:block;max-width:100%;width:100%;height:auto;border-radius:8px;box-shadow:0 10px 35px rgba(19,37,27,.12);object-fit:contain}
+.evidence-explain{display:grid;grid-template-columns:1fr auto;align-items:end;gap:22px;padding:22px 28px 28px}
+.evidence-explain h3{font-size:clamp(24px,2.8vw,36px);margin:8px 0}
+.evidence-explain p{margin:0;font-size:14px;color:#5c7362;line-height:1.65}
+.evidence-explain .eyebrow{color:#93764d}
+.evidence-explain a{white-space:nowrap;padding:11px 15px;border:1px solid #b5c1af;border-radius:9px;color:#174330;text-decoration:none;font-size:12px;font-weight:750}
+.evidence-explain a:hover{background:#e7e9df}
+.evidence-footnote{font-size:13px;line-height:1.7;color:#ccd9cb;margin-top:23px;max-width:850px}
+@media(max-width:760px){.evidence-heading,.evidence-explain{grid-template-columns:1fr}.evidence-toolbar-name{flex:auto;width:100%;order:-1}.evidence-display{padding:8px}.evidence-explain{padding:22px}.evidence-explain a{justify-self:start}}
+
 </style>
 </head>
 <body>
@@ -271,6 +300,31 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 </div></div></div>
 <div class="daily-footer"><p><strong>Почему именно неделя?</strong> Это удобный цикл планирования питания и покупок, а не семидневная диета. Следующая неделя подстраивается под актуальные параметры и предпочтения.</p><p class="fineprint">Демонстрационные блюда и тексты иллюстрируют будущий пользовательский опыт; состав, порции и нутриенты конкретного человека рассчитываются отдельно.</p></div>
 </div></section>
+<section class="section evidence-section" id="real-interface">
+<div class="wrap">
+<div class="evidence-heading">
+ <div><span class="eyebrow">ЗА КРАСИВЫМИ СЛОВАМИ — РАБОЧИЙ ИНТЕРФЕЙС</span><h2>Как выглядит<br><em>наш продукт на деле.</em></h2></div>
+ <div><p class="lead">Не очередной придуманный макет смартфона. Это сохранённые снимки настоящего браузерного интерфейса тестовой PWA «Тело под ключ»: недельное меню и покупки.</p><p class="evidence-small">На снимках — историческая демонстрационная сборка с синтетическими рецептами и условными расчётами. Это не текущий клиентский рацион и не подтверждение готовности приложения к запуску.</p></div>
+</div>
+<div class="evidence-browser">
+ <div class="evidence-toolbar">
+  <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  <span class="evidence-toolbar-name">ТЕЛО ПОД КЛЮЧ · ТЕСТОВЫЙ ИНТЕРФЕЙС</span>
+  <div class="evidence-tabs" role="group" aria-label="Выбор настоящего снимка интерфейса">
+   <button class="evidence-tab active" type="button" data-evidence="0" aria-pressed="true">Меню недели</button>
+   <button class="evidence-tab" type="button" data-evidence="1" aria-pressed="false">Список покупок</button>
+  </div>
+ </div>
+ <div class="evidence-display">
+  <img id="evidence-screenshot" src="assets/product-ui-week-source.jpg" width="1360" height="894" loading="lazy" decoding="async" alt="Сохранённый реальный снимок тестовой PWA «Тело под ключ»: меню на семь дней, четыре приёма пищи, кнопки рецептов и замены блюда">
+ </div>
+ <div class="evidence-explain" aria-live="polite">
+  <div><span class="eyebrow" id="evidence-label">МЕНЮ НЕДЕЛИ · ТЕСТОВАЯ PWA</span><h3 id="evidence-title">План питания, с которым можно работать.</h3><p id="evidence-description">На этом реальном тестовом экране есть переключение дней, карточки приёмов пищи, рецепты, замены и управление порциями. Показанные числа служат демонстрационными данными.</p></div>
+  <a id="evidence-enlarge" href="assets/product-ui-week-source.jpg" target="_blank" rel="noopener noreferrer" aria-label="Открыть снимок интерфейса в полном размере">Развернуть снимок <span aria-hidden="true">↗</span></a>
+ </div>
+</div>
+<p class="evidence-footnote"><strong>Почему мы показываем это отдельно:</strong> визуальная концепция объясняет настроение бренда, а сохранённый скриншот — фактическое устройство тестового интерфейса. Окончательные экраны приложения могут измениться до выпуска.</p>
+</div></section>
 <section class="section" id="progress"><div class="wrap"><span class="eyebrow">ПУТЬ К РЕЗУЛЬТАТУ</span><h2>Вы меняетесь.<br>Питание меняется вместе с вами.</h2>
 <p class="lead">Снижение веса — не финал истории. Следующий этап может быть поддержанием результата, рекомпозицией или другой целью. При переходе учитываются новые параметры и условия расчёта.</p>
 <div class="journey"><div class="stage"><b>ВАША ПЕРВАЯ ЦЕЛЬ</b>Снижение веса</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>НОВЫЙ ЭТАП</b>Поддержание</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ПРИ ЖЕЛАНИИ</b>Рекомпозиция</div><span class="arrow" aria-hidden="true">→</span><div class="stage"><b>ВСЕГДА АКТУАЛЬНО</b>Полноценное питание</div></div>
@@ -353,6 +407,25 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
       const stage=dailyStages[i]; if(!stage)return;
       dailyTabs.forEach((btn,index)=>{const on=index===i;btn.classList.toggle('active',on);btn.setAttribute('aria-pressed',String(on))});
       dailyPhoto.src=stage.img;dailyPhoto.alt=stage.alt;dailyPhotoLabel.textContent=stage.label;dailyKicker.textContent=stage.k;dailyTitle.textContent=stage.title;dailyDescription.textContent=stage.desc;dailyLine.textContent=stage.detail;
+    }));
+  }
+  const evidenceButtons=[...document.querySelectorAll('[data-evidence]')];
+  const evidenceImage=document.getElementById('evidence-screenshot');
+  const evidenceLabel=document.getElementById('evidence-label');
+  const evidenceTitle=document.getElementById('evidence-title');
+  const evidenceDescription=document.getElementById('evidence-description');
+  const evidenceEnlarge=document.getElementById('evidence-enlarge');
+  const evidencePages=[
+    {src:'assets/product-ui-week-source.jpg',label:'МЕНЮ НЕДЕЛИ · ТЕСТОВАЯ PWA',title:'План питания, с которым можно работать.',description:'На этом реальном тестовом экране есть переключение дней, карточки приёмов пищи, рецепты, замены и управление порциями. Показанные числа служат демонстрационными данными.',alt:'Сохранённый снимок тестовой PWA: меню на семь дней, четыре приёма пищи и кнопки замен'},
+    {src:'assets/product-ui-shopping-source.jpg',label:'СПИСОК ПОКУПОК · ТЕСТОВАЯ PWA',title:'Покупки связаны с недельным планом.',description:'На настоящем снимке тестового интерфейса продукты сгруппированы по категориям. Строки с непроверенными данными честно помечены как требующие уточнения, а не выдаются за готовый список для клиента.',alt:'Сохранённый снимок тестовой PWA: покупки на неделю по категориям продуктов'}
+  ];
+  if(evidenceButtons.length===2&&evidenceImage&&evidenceLabel&&evidenceTitle&&evidenceDescription&&evidenceEnlarge){
+    evidenceButtons.forEach((button,index)=>button.addEventListener('click',()=>{
+      const item=evidencePages[index];if(!item)return;
+      evidenceButtons.forEach((tab,i)=>{const on=index===i;tab.classList.toggle('active',on);tab.setAttribute('aria-pressed',String(on));});
+      evidenceImage.src=item.src;evidenceImage.alt=item.alt;
+      evidenceLabel.textContent=item.label;evidenceTitle.textContent=item.title;
+      evidenceDescription.textContent=item.description;evidenceEnlarge.href=item.src;
     }));
   }
   const goalButtons=[...document.querySelectorAll('[data-goal]')];
