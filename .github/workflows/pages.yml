@@ -39,6 +39,8 @@ jobs:
           cp app.html _site/app.html
           cp robots.txt sitemap.xml _site/
           test -s _site/app.html
+          grep -q 'data:image/webp;base64,UklGRpIc' _site/app.html
+          grep -q 'Square portrait supplied by the founder' _site/app.html
           grep -q 'Ваше тело уникально' _site/app.html
           test -d assets
           cp -R assets _site/assets
@@ -117,6 +119,7 @@ jobs:
                           assert len(data) > 1024, f"Undersized response: {len(data)} bytes"
                           if relative == "app.html":
                               assert b'lang="ru"' in data and b'700' in data and b'food-v52/dessert-mousse.webp' in data, "Missing dedicated app story"
+                              assert b'data:image/webp;base64,UklGRpIc' in data, "Founder portrait is not updated in deployed HTML"
                           elif relative:
                               assert data[:4] == magic and data[8:12] == b"WEBP", "Not a valid WebP header"
                           else:
