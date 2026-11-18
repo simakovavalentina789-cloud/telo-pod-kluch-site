@@ -235,6 +235,15 @@ try {
     await goalSwitches.first().click();
     assert.equal(await goalSwitches.first().getAttribute('aria-pressed'),'true','goal switching reversible');
     assert.equal(await product.locator('#work .steps article').count(),5,'five-step experience explained');
+    // Founder/methodology proof must remain distinct from app features and link to a real section.
+    const founder=product.locator('#author');
+    assert.ok((await founder.innerText()).includes('Валентина Счастье'),'founder authorship visible');
+    assert.equal(await founder.locator('.founder-principles>div').count(),3,'founder methodology is explicit');
+    assert.equal(await founder.locator('a[href="index.html#expert"]').count(),1,'founder link points to existing homepage expert section');
+    const founderPortrait=founder.locator('.founder-photo img');
+    await founderPortrait.scrollIntoViewIfNeeded();
+    await founderPortrait.evaluate(node=>node.decode());
+    assert.ok(await founderPortrait.evaluate(node=>node.naturalWidth>400),'approved founder portrait loads');
     const dailyTabs=product.locator('#daily-experience .daily-tab');
     assert.equal(await dailyTabs.count(),4,'four walkthrough sections explain app benefit');
     assert.equal(await dailyTabs.first().getAttribute('aria-pressed'),'true','weekly menu starts selected');
@@ -277,6 +286,7 @@ try {
       await product.locator('#process-experience').screenshot({path:'screenshots/qa-product-method-'+size.name+'.png',animations:'disabled'});
       await product.locator('#goal-explorer').screenshot({path:'screenshots/qa-product-goals-'+size.name+'.png',animations:'disabled'});
       await product.locator('#daily-experience').screenshot({path:'screenshots/qa-product-daily-'+size.name+'.png',animations:'disabled'});
+      await product.locator('#author').screenshot({path:'screenshots/qa-product-founder-'+size.name+'.png',animations:'disabled'});
       await product.locator('#access').screenshot({path:'screenshots/qa-product-offer-'+size.name+'.png',animations:'disabled'});
     }
     await product.close();
