@@ -244,6 +244,8 @@ try {
     await founderPortrait.scrollIntoViewIfNeeded();
     await founderPortrait.evaluate(node=>node.decode());
     assert.ok(await founderPortrait.evaluate(node=>node.naturalWidth>400),'approved founder portrait loads');
+    assert.ok((await founderPortrait.getAttribute('src')).startsWith('data:image/webp;base64,UklGR'),'founder-approved square portrait must be used');
+    assert.equal(await product.locator('img[src="assets/hero-05-maintenance.webp"]').count(),0,'outdated founder portrait must not appear elsewhere on product page');
     const dailyTabs=product.locator('#daily-experience .daily-tab');
     assert.equal(await dailyTabs.count(),4,'four walkthrough sections explain app benefit');
     assert.equal(await dailyTabs.first().getAttribute('aria-pressed'),'true','weekly menu starts selected');
