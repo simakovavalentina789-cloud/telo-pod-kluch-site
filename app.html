@@ -205,6 +205,21 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 .evidence-footnote{font-size:13px;line-height:1.7;color:#ccd9cb;margin-top:23px;max-width:850px}
 @media(max-width:760px){.evidence-heading,.evidence-explain{grid-template-columns:1fr}.evidence-toolbar-name{flex:auto;width:100%;order:-1}.evidence-display{padding:8px}.evidence-explain{padding:22px}.evidence-explain a{justify-self:start}}
 
+
+/* Genuine pilot-to-release capability map, visually separate from historical screenshots. */
+.evidence-state{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,5vw,75px);padding:43px 0 0;margin-top:34px;border-top:1px solid rgba(224,197,140,.45)}
+.evidence-state-intro h3{font-size:clamp(29px,3vw,43px);color:#f6efe4;margin:14px 0 22px}
+.evidence-state-intro h3 em{color:#e1c18a}
+.evidence-state-intro p{color:#cad6cb;font-size:15px;line-height:1.75}
+.evidence-state-rows{display:grid;gap:0}
+.evidence-state-row{padding:18px 0;border-bottom:1px solid rgba(218,230,214,.23)}
+.evidence-state-row:first-child{padding-top:0}
+.evidence-state-status{display:inline-flex;padding:5px 10px;border:1px solid #a6c2aa73;border-radius:99px;color:#cfe7c8;font-size:10px;letter-spacing:.11em;font-weight:750;margin-bottom:11px}
+.evidence-state-row.is-future .evidence-state-status{border-color:#deb77678;color:#e7c590}
+.evidence-state-row strong{display:block;font:400 clamp(21px,2.3vw,30px)/1.25 var(--serif);color:#f6f0e4}
+.evidence-state-row p{margin:7px 0 0;color:#c9d7c9;font-size:13px;line-height:1.65}
+@media(max-width:760px){.evidence-state{grid-template-columns:1fr;gap:14px}.evidence-state-intro h3{margin:8px 0 15px}}
+
 </style>
 </head>
 <body>
@@ -304,7 +319,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 <div class="wrap">
 <div class="evidence-heading">
  <div><span class="eyebrow">ЗА КРАСИВЫМИ СЛОВАМИ — РАБОЧИЙ ИНТЕРФЕЙС</span><h2>Как выглядит<br><em>наш продукт на деле.</em></h2></div>
- <div><p class="lead">Не очередной придуманный макет смартфона. Это сохранённые снимки настоящего браузерного интерфейса тестовой PWA «Тело под ключ»: недельное меню и покупки.</p><p class="evidence-small">На снимках — историческая демонстрационная сборка с синтетическими рецептами и условными расчётами. Это не текущий клиентский рацион и не подтверждение готовности приложения к запуску.</p></div>
+ <div><p class="lead">Не очередной придуманный макет смартфона. Это сохранённые снимки настоящего браузерного интерфейса тестовой PWA «Тело под ключ»: недельное меню и покупки.</p><p class="evidence-small">На снимках — более ранняя демонстрационная сборка с синтетическими рецептами и условными расчётами. Функции текущего приватного пилота описаны отдельно ниже. До публичного запуска требуется дополнительная проверка.</p></div>
 </div>
 <div class="evidence-browser">
  <div class="evidence-toolbar">
@@ -323,7 +338,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
   <a id="evidence-enlarge" href="assets/product-ui-week-source.jpg" target="_blank" rel="noopener noreferrer" aria-label="Открыть снимок интерфейса в полном размере">Развернуть снимок <span aria-hidden="true">↗</span></a>
  </div>
 </div>
-<p class="evidence-footnote"><strong>Почему мы показываем это отдельно:</strong> визуальная концепция объясняет настроение бренда, а сохранённый скриншот — фактическое устройство тестового интерфейса. Окончательные экраны приложения могут измениться до выпуска.</p>
+<p class="evidence-footnote"><strong>Почему мы показываем это отдельно:</strong> визуальная концепция объясняет настроение бренда, а сохранённый скриншот — фактическое устройство прежнего тестового интерфейса. Текущая приватная версия развивается отдельно; снимки не выдаются за её последний экран.</p>
+<div class="evidence-state" id="evidence-state">
+  <div class="evidence-state-intro"><span class="eyebrow">ОТ ПРОТОТИПА К ПОЛНОЦЕННОМУ ПРИЛОЖЕНИЮ</span><h3>Что уже проверяли.<br><em>Что ещё готовим.</em></h3><p>Помимо изображённого интерфейса, мы разрабатываем приватную версию системы с сохранением недельного рациона, авторизацией и защищёнными заменами. Расскажем о возможностях без выдуманных результатов и обещаний, которые пока нельзя подтвердить.</p></div>
+  <div class="evidence-state-rows">
+    <div class="evidence-state-row"><span class="evidence-state-status">ПРОВЕРЯЛОСЬ В ПИЛОТЕ</span><strong>Неделя питания, рецепты и закупки</strong><p>Проверялись сохранённая неделя на семь дней, состав блюд и связанный список покупок. Это результаты закрытого тестирования, а не запуск для всех.</p></div>
+    <div class="evidence-state-row"><span class="evidence-state-status">ПРОВЕРЯЛОСЬ В ПИЛОТЕ</span><strong>Приватный профиль и сохранение недели</strong><p>В закрытых сценариях проверялись доступ пользователя и восстановление ранее созданного плана после повторного входа.</p></div>
+    <div class="evidence-state-row"><span class="evidence-state-status">ПРОВЕРЯЛОСЬ В ПИЛОТЕ</span><strong>Защищённое предложение замены</strong><p>Система предлагает замену по заданным условиям; если подходящего варианта нет, нельзя подменять его случайным блюдом. Тестирование продолжается.</p></div>
+    <div class="evidence-state-row is-future"><span class="evidence-state-status">ЭТАП РАЗРАБОТКИ</span><strong>История изменений и переход между целями</strong><p>Планируем удобное наблюдение за динамикой и изменение цели внутри приложения. Полноценную работу этих сценариев предстоит подтвердить перед выпуском.</p></div>
+  </div>
+</div>
 </div></section>
 <section class="section" id="progress"><div class="wrap"><span class="eyebrow">ПУТЬ К РЕЗУЛЬТАТУ</span><h2>Вы меняетесь.<br>Питание меняется вместе с вами.</h2>
 <p class="lead">Снижение веса — не финал истории. Следующий этап может быть поддержанием результата, рекомпозицией или другой целью. При переходе учитываются новые параметры и условия расчёта.</p>
