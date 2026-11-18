@@ -226,6 +226,18 @@ try {
     assert.equal(await product.locator('h1').count(),1,'one product hero headline');
     assert.ok((await product.locator('#goals .card').count())===4,'four nutrition goals explained');
     assert.equal(await product.locator('#work .steps article').count(),5,'five-step experience explained');
+    // Product differentiation must be a real accessible interaction, not a static mock.
+    const processTabs=product.locator('#process-experience .process-switch');
+    assert.equal(await processTabs.count(),4,'four product method stages');
+    assert.equal(await processTabs.first().getAttribute('aria-pressed'),'true','first method stage active');
+    await processTabs.nth(2).click();
+    assert.equal(await processTabs.nth(2).getAttribute('aria-pressed'),'true','stage switch updates pressed state');
+    assert.ok((await product.locator('#process-title').innerText()).includes('Вкус'),'stage switch updates editorial explanation');
+    const processImage=product.locator('#process-image');
+    await processImage.evaluate(node=>node.decode());
+    assert.ok((await processImage.getAttribute('src')).includes('dessert-mousse.webp'),'stage changes real food image');
+    await processTabs.last().click();
+    assert.ok((await product.locator('#process-desc').innerText()).includes('семь дней'),'weekly flow explanation accessible');
     assert.ok((await product.locator('#access').innerText()).includes('700 ₽'),'weekly offer is explained');
     assert.equal(await product.locator('a[href="index.html#formats"]').count(),2,'back-to-choices links present');
     assert.equal(await product.locator('form').count(),0,'no unlaunched signup form');
