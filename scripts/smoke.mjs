@@ -235,6 +235,19 @@ try {
     await goalSwitches.first().click();
     assert.equal(await goalSwitches.first().getAttribute('aria-pressed'),'true','goal switching reversible');
     assert.equal(await product.locator('#work .steps article').count(),5,'five-step experience explained');
+    const dailyTabs=product.locator('#daily-experience .daily-tab');
+    assert.equal(await dailyTabs.count(),4,'four walkthrough sections explain app benefit');
+    assert.equal(await dailyTabs.first().getAttribute('aria-pressed'),'true','weekly menu starts selected');
+    await dailyTabs.nth(1).click();
+    assert.equal(await dailyTabs.nth(1).getAttribute('aria-pressed'),'true','recipe section selected');
+    assert.ok((await product.locator('#daily-title').innerText()).includes('рецепту'),'recipe walkthrough text changes');
+    await dailyTabs.nth(2).click();
+    const dailyImage=product.locator('#daily-photo');await dailyImage.evaluate(node=>node.decode());
+    assert.ok((await dailyImage.getAttribute('src')).includes('baked-pears-yogurt.webp'),'swap visual changes');
+    await dailyTabs.nth(3).click();
+    assert.ok((await product.locator('#daily-title').innerText()).includes('купить'),'shopping benefit explained');
+    await dailyTabs.first().click();
+    assert.equal(await dailyTabs.first().getAttribute('aria-pressed'),'true','walkthrough resets to weekly plan');
     // Product differentiation must be a real accessible interaction, not a static mock.
     const processTabs=product.locator('#process-experience .process-switch');
     assert.equal(await processTabs.count(),4,'four product method stages');
@@ -263,6 +276,7 @@ try {
       await product.locator('.hero').screenshot({path:'screenshots/qa-product-hero-'+size.name+'.png',animations:'disabled'});
       await product.locator('#process-experience').screenshot({path:'screenshots/qa-product-method-'+size.name+'.png',animations:'disabled'});
       await product.locator('#goal-explorer').screenshot({path:'screenshots/qa-product-goals-'+size.name+'.png',animations:'disabled'});
+      await product.locator('#daily-experience').screenshot({path:'screenshots/qa-product-daily-'+size.name+'.png',animations:'disabled'});
       await product.locator('#access').screenshot({path:'screenshots/qa-product-offer-'+size.name+'.png',animations:'disabled'});
     }
     await product.close();
