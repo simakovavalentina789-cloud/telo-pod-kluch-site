@@ -102,6 +102,28 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
  .process-scene{grid-template-rows:205px auto}
 }
 
+
+/* Distinctive goal explorer replaces another SaaS grid of matching feature cards. */
+.goals-heading{display:grid;grid-template-columns:1.1fr .75fr;gap:clamp(25px,6vw,90px);align-items:end;margin-bottom:36px}
+.goals-heading h2{font-size:clamp(40px,4.85vw,70px)}
+.goals-heading h2 em{color:#d7b77c}
+.goal-explorer{display:grid;grid-template-columns:minmax(230px,.65fr) minmax(0,1.35fr);gap:20px;align-items:stretch}
+.goal-switches{display:grid;grid-template-rows:repeat(4,1fr);gap:10px}
+.goal-switch{background:transparent;color:#f5f2e7;border:1px solid #557764;border-radius:14px;padding:20px 17px;text-align:left;font:400 clamp(19px,2vw,26px)/1.2 var(--serif);display:flex;justify-content:space-between;align-items:center;gap:14px;cursor:pointer;transition:background .2s,border-color .2s}
+.goal-switch b{font:400 23px var(--sans);color:#d9bd84}
+.goal-switch.active,.goal-switch:hover{background:#2c5a42;border-color:#c6ab72}
+.goal-switch:focus-visible{outline:3px solid #d2b074;outline-offset:2px}
+.goal-feature{min-width:0;background:#f4f0e5;color:#143527;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:48% 52%;min-height:390px}
+.goal-photo{background:#405b43;min-width:0}.goal-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.goal-description{padding:clamp(21px,3vw,40px);display:flex;flex-direction:column;justify-content:center}
+.goal-description h3{font-size:clamp(27px,3vw,42px);margin:15px 0 14px}
+.goal-description p{font-size:15px;line-height:1.7}
+.goal-highlight{border-top:1px solid #cad3c5;margin-top:18px;padding-top:14px;color:#436f52;font-size:12px;font-weight:750}
+.goal-caption{margin-top:20px}
+@media(max-width:990px){.goal-feature{grid-template-columns:1fr}.goal-photo{height:240px}.goal-switch{padding:16px;font-size:20px}}
+@media(max-width:760px){.goals-heading{grid-template-columns:1fr;gap:14px}.goal-explorer{grid-template-columns:1fr}.goal-switches{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}.goal-switch{font-size:17px;min-height:70px}.goal-feature{grid-template-columns:43% 57%;min-height:310px}.goal-photo{height:auto}}
+@media(max-width:480px){.goal-feature{grid-template-columns:1fr}.goal-photo{height:225px}.goal-description{padding:23px}.goal-description h3{font-size:29px}.goal-switch{padding:12px;font-size:16px}}
+
 </style>
 </head>
 <body>
@@ -130,18 +152,18 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 <div class="editorial-opening-grid"><div><span class="eyebrow">НЕ НОВАЯ ДИЕТА. ДРУГОЙ ПОДХОД.</span><h2>Больше не нужно<br><em>начинать сначала.</em></h2></div>
 <div class="editorial-opening-answer"><p>Вы не обязаны каждый день решать одни и те же вопросы: что приготовить, сколько положить в тарелку и как удержать достигнутый результат.</p><strong>У вашего питания может быть система. Причём ваша собственная.</strong></div></div>
 <div class="editorial-problems">
-<div><span>01 / ВМЕСТО ЗАПРЕТОВ</span><strong>Настоящая еда, а не список «нельзя».</strong><p>Разнообразные блюда, включая десерты, в рамках индивидуального плана.</p></div>
-<div><span>02 / ВМЕСТО ХАОСА</span><strong>Неделя продумана заранее.</strong><p>Рецепты, порции, доступные замены и закупки — в одном месте.</p></div>
-<div><span>03 / ВМЕСТО КАЧЕЛЕЙ</span><strong>Цель меняется. Система остаётся.</strong><p>От снижения веса к поддержанию и другим задачам — без бесконечных диет.</p></div>
+<div><span>ВМЕСТО ЗАПРЕТОВ</span><strong>Настоящая еда, а не список «нельзя».</strong><p>Разнообразные блюда, включая десерты, в рамках индивидуального плана.</p></div>
+<div><span>ВМЕСТО ХАОСА</span><strong>Неделя продумана заранее.</strong><p>Рецепты, порции, доступные замены и закупки — в одном месте.</p></div>
+<div><span>ВМЕСТО КАЧЕЛЕЙ</span><strong>Цель меняется. Система остаётся.</strong><p>От снижения веса к поддержанию и другим задачам — без бесконечных диет.</p></div>
 </div></div></section>
 <section class="section process-editorial" id="approach"><div class="wrap">
 <div class="process-heading"><div><span class="eyebrow">ЧТО ОТЛИЧАЕТ «ТЕЛО ПОД КЛЮЧ»</span><h2>Не просто меню.<br><em>Система за каждым блюдом.</em></h2></div><p class="lead">Обычная подборка рецептов начинается с ответа «что приготовить». Мы начинаем раньше — с того, <strong>из чего, для кого и зачем</strong> создаётся рацион.</p></div>
 <div class="process-experience" id="process-experience">
 <div class="process-menu" role="group" aria-label="Этапы создания рациона">
-<button type="button" class="process-switch active" data-process="0" aria-pressed="true"><span>Отбор</span><strong>01. Продукты с понятным составом</strong><small>Основа качества и вкуса</small></button>
-<button type="button" class="process-switch" data-process="1" aria-pressed="false"><span>Методика</span><strong>02. Индивидуальные расчёты</strong><small>Параметры, активность, цель</small></button>
-<button type="button" class="process-switch" data-process="2" aria-pressed="false"><span>Гастрономия</span><strong>03. Вкусные блюда и порции</strong><small>Разнообразие вместо однообразия</small></button>
-<button type="button" class="process-switch" data-process="3" aria-pressed="false"><span>Ваш план</span><strong>04. Неделя, которая связана воедино</strong><small>Рецепты, замены и покупки</small></button>
+<button type="button" class="process-switch active" data-process="0" aria-pressed="true"><span>Отбор</span><strong>Продукты с понятным составом</strong><small>Основа качества и вкуса</small></button>
+<button type="button" class="process-switch" data-process="1" aria-pressed="false"><span>Методика</span><strong>Индивидуальные расчёты</strong><small>Параметры, активность, цель</small></button>
+<button type="button" class="process-switch" data-process="2" aria-pressed="false"><span>Гастрономия</span><strong>Вкусные блюда и порции</strong><small>Разнообразие вместо однообразия</small></button>
+<button type="button" class="process-switch" data-process="3" aria-pressed="false"><span>Ваш план</span><strong>Неделя, которая связана воедино</strong><small>Рецепты, замены и покупки</small></button>
 </div>
 <div class="process-scene">
 <div class="process-scene-media"><img id="process-image" src="assets/hero-01-fish.webp" alt="Отобранные ингредиенты в готовой ресторанной композиции" loading="lazy" decoding="async"></div>
@@ -149,15 +171,24 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
 </div></div>
 <p class="fineprint process-disclaimer">Это интерактивная иллюстрация методики, а не персональный расчёт посетителя. Мы используем рецептуры без добавленного сахара; естественные сахара в ягодах, фруктах и молочных продуктах не исключаются. Полнота данных по отдельным нутриентам различается.</p>
 </div></section>
-<section class="section dark" id="goals"><div class="wrap">
-<span class="eyebrow">ЧЕТЫРЕ ЦЕЛИ</span><h2>Разные задачи.<br>Один продуманный путь.</h2><p class="lead muted">Вы выбираете направление. Система рассчитывает питание по вашим данным и предпочтениям.</p>
-<div class="grid goals">
-<div class="card"><strong>Снижение веса</strong><p>Питание с индивидуально рассчитанной энергетической потребностью без голодных марафонов.</p></div>
-<div class="card"><strong>Рекомпозиция тела</strong><p>Питание под работу с составом тела и подходящую человеку активность.</p></div>
-<div class="card"><strong>Набор мышц</strong><p>Учет потребности в энергии и белке для поддержки тренировки и восстановления.</p></div>
-<div class="card"><strong>Поддержание результата</strong><p>Полноценное питание на каждый день после достижения цели — без возвращения к старым схемам.</p></div>
+<section class="section dark goals-editorial" id="goals"><div class="wrap">
+<div class="goals-heading"><div><span class="eyebrow">ВАША ЦЕЛЬ — ВАШ МАРШРУТ</span><h2>Не четыре диеты.<br><em>Четыре направления жизни.</em></h2></div><p class="lead muted">Меняются цели и потребности. Не обязательно менять всю систему питания. Выберите направление и посмотрите, на чём мы сосредоточим расчёты.</p></div>
+<div class="goal-explorer" id="goal-explorer">
+<nav class="goal-switches" aria-label="Выбор цели для знакомства с системой">
+<button class="goal-switch active" type="button" data-goal="0" aria-pressed="true"><span>Снижение веса</span><b aria-hidden="true">↗</b></button>
+<button class="goal-switch" type="button" data-goal="1" aria-pressed="false"><span>Рекомпозиция тела</span><b aria-hidden="true">↗</b></button>
+<button class="goal-switch" type="button" data-goal="2" aria-pressed="false"><span>Набор мышечной массы</span><b aria-hidden="true">↗</b></button>
+<button class="goal-switch" type="button" data-goal="3" aria-pressed="false"><span>Поддержание результата</span><b aria-hidden="true">↗</b></button>
+</nav>
+<div class="goal-feature">
+<div class="goal-photo"><img id="goal-photo" src="assets/case-weight.webp" alt="Иллюстрация направления снижения веса" loading="lazy" decoding="async"></div>
+<div class="goal-description" aria-live="polite"><span class="eyebrow" id="goal-kicker">НАПРАВЛЕНИЕ: СНИЖЕНИЕ ВЕСА</span>
+<h3 id="goal-title">Меньше лишнего — без голодного марафона.</h3>
+<p id="goal-body">Расчёт питания учитывает вашу энергетическую потребность, активность и предпочтения. Цель — двигаться к комфортному весу, не превращая еду в ежедневное ограничение.</p>
+<div id="goal-highlight" class="goal-highlight">Индивидуальные ориентиры · полноценное меню · ваш темп</div>
+</div></div>
 </div>
-<p class="fineprint" style="margin-top:22px">Приложение формирует питание и не назначает тренировочные программы. Изменение веса и состава тела индивидуально.</p>
+<p class="fineprint goal-caption">Это демонстрация принципов подбора рациона, а не автоматически сформированный план для посетителя. Приложение организует питание и не назначает тренировки. Динамика веса и состава тела индивидуальна.</p>
 </div></section>
 <section class="section" id="work"><div class="wrap"><span class="eyebrow">КАК ЭТО РАБОТАЕТ</span><h2>От ваших данных —<br>к готовой неделе питания.</h2>
 <div class="steps">
@@ -228,6 +259,25 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13;letter-spacin
     image.src=stage.src;image.alt=stage.alt;kicker.textContent=stage.k;title.textContent=stage.t;desc.textContent=stage.d;signal.textContent=stage.s;
   }
   buttons.forEach((btn,index)=>btn.addEventListener('click',()=>show(index)));
+  const goalButtons=[...document.querySelectorAll('[data-goal]')];
+  const goalPhoto=document.getElementById('goal-photo');
+  const goalKicker=document.getElementById('goal-kicker');
+  const goalTitle=document.getElementById('goal-title');
+  const goalBody=document.getElementById('goal-body');
+  const goalHighlight=document.getElementById('goal-highlight');
+  const goals=[
+    {k:'НАПРАВЛЕНИЕ: СНИЖЕНИЕ ВЕСА',t:'Меньше лишнего — без голодного марафона.',p:'Расчёт питания учитывает вашу энергетическую потребность, активность и предпочтения. Цель — двигаться к комфортному весу, не превращая еду в ежедневное ограничение.',h:'Индивидуальные ориентиры · полноценное меню · ваш темп',src:'assets/case-weight.webp',alt:'Иллюстрация направления снижения веса'},
+    {k:'НАПРАВЛЕНИЕ: РЕКОМПОЗИЦИЯ',t:'Меняется не только вес. Меняется состав тела.',p:'Подбор энергии и питательных веществ направлен на поддержку работы с соотношением жировой и мышечной массы. Физическая активность учитывается, а тренировки в приложении не назначаются.',h:'Поддержка работы с составом тела · питание без крайностей',src:'assets/case-recomposition.webp',alt:'Иллюстрация направления рекомпозиции тела'},
+    {k:'НАПРАВЛЕНИЕ: НАБОР МЫШЦ',t:'Питайтесь под рост нагрузки и восстановление.',p:'Рацион учитывает цель набора мышечной массы, потребность в энергии и белке. Это подход к организации питания, а не замена тренировочному плану.',h:'Энергия · белок · разнообразные продукты',src:'assets/case-muscle.webp',alt:'Иллюстрация направления набора мышц'},
+    {k:'НАПРАВЛЕНИЕ: ПОДДЕРЖАНИЕ',t:'Достигли цели? Продолжайте жить и вкусно есть.',p:'Питание не должно заканчиваться вместе с периодом похудения. Можно выбрать поддержание результата и продолжать составлять разнообразные недели без временных диет.',h:'Полноценное питание · свобода вкуса · устойчивые привычки',src:'assets/case-maintain.webp',alt:'Иллюстрация направления поддержания веса'}
+  ];
+  if(goalButtons.length&&goalPhoto&&goalKicker&&goalTitle&&goalBody&&goalHighlight){
+    goalButtons.forEach((btn,index)=>btn.addEventListener('click',()=>{
+      const entry=goals[index];if(!entry)return;
+      goalButtons.forEach((item,i)=>{const active=index===i;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+      goalPhoto.src=entry.src;goalPhoto.alt=entry.alt;goalKicker.textContent=entry.k;goalTitle.textContent=entry.t;goalBody.textContent=entry.p;goalHighlight.textContent=entry.h;
+    }));
+  }
 })();
 </script>
 </body></html>
