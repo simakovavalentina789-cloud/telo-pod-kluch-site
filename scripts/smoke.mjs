@@ -257,6 +257,21 @@ try {
     assert.ok((await product.locator('#daily-title').innerText()).includes('купить'),'shopping benefit explained');
     await dailyTabs.first().click();
     assert.equal(await dailyTabs.first().getAttribute('aria-pressed'),'true','walkthrough resets to weekly plan');
+    // Archived real screenshots must be legible, honest about synthetic data and switch correctly.
+    const evidence=product.locator('#real-interface');
+    assert.equal(await evidence.locator('[data-evidence]').count(),2,'archived PWA screenshots available');
+    assert.ok((await evidence.innerText()).includes('синтетическими'),'screenshots clearly labelled synthetic');
+    const evidenceImage=evidence.locator('#evidence-screenshot');
+    await evidenceImage.scrollIntoViewIfNeeded();await evidenceImage.evaluate(node=>node.decode());
+    assert.ok(await evidenceImage.evaluate(node=>node.naturalWidth>900),'genuine PWA weekly screenshot loads');
+    await evidence.locator('[data-evidence="1"]').click();
+    assert.equal(await evidence.locator('[data-evidence="1"]').getAttribute('aria-pressed'),'true','shopping screenshot tab selected');
+    await evidenceImage.evaluate(node=>node.decode());
+    assert.ok((await evidenceImage.getAttribute('src')).includes('product-ui-shopping-source.jpg'),'shopping evidence image switches');
+    assert.ok((await evidence.locator('#evidence-title').innerText()).includes('Покупки'),'shopping screenshot explanation updates');
+    await evidence.locator('[data-evidence="0"]').click();
+    assert.equal(await evidence.locator('[data-evidence="0"]').getAttribute('aria-pressed'),'true','weekly screenshot tab restored');
+    assert.equal(await evidence.locator('#evidence-enlarge').getAttribute('href'),'assets/product-ui-week-source.jpg','full size evidence link follows selection');
     // Product differentiation must be a real accessible interaction, not a static mock.
     const processTabs=product.locator('#process-experience .process-switch');
     assert.equal(await processTabs.count(),4,'four product method stages');
@@ -286,6 +301,7 @@ try {
       await product.locator('#process-experience').screenshot({path:'screenshots/qa-product-method-'+size.name+'.png',animations:'disabled'});
       await product.locator('#goal-explorer').screenshot({path:'screenshots/qa-product-goals-'+size.name+'.png',animations:'disabled'});
       await product.locator('#daily-experience').screenshot({path:'screenshots/qa-product-daily-'+size.name+'.png',animations:'disabled'});
+      await product.locator('#real-interface').screenshot({path:'screenshots/qa-product-evidence-'+size.name+'.png',animations:'disabled'});
       await product.locator('#author').screenshot({path:'screenshots/qa-product-founder-'+size.name+'.png',animations:'disabled'});
       await product.locator('#access').screenshot({path:'screenshots/qa-product-offer-'+size.name+'.png',animations:'disabled'});
     }
