@@ -261,6 +261,8 @@ try {
     assert.ok(await details.evaluate(node=>node.open),'product FAQ opens');
     if(engine==='chromium'&&(size.name==='desktop'||size.name==='mobile'||size.name==='ipad')){
       await product.locator('.hero').screenshot({path:'screenshots/qa-product-hero-'+size.name+'.png',animations:'disabled'});
+      await product.locator('#process-experience').screenshot({path:'screenshots/qa-product-method-'+size.name+'.png',animations:'disabled'});
+      await product.locator('#goal-explorer').screenshot({path:'screenshots/qa-product-goals-'+size.name+'.png',animations:'disabled'});
       await product.locator('#access').screenshot({path:'screenshots/qa-product-offer-'+size.name+'.png',animations:'disabled'});
     }
     await product.close();
